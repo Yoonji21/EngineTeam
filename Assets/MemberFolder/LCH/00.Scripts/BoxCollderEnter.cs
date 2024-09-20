@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BoxCollderEnter : MonoBehaviour
 {
+    [SerializeField] private float _forceAmount;
     private Rigidbody2D _rb;
 
     private void Awake()
@@ -22,12 +23,12 @@ public class BoxCollderEnter : MonoBehaviour
 
             if (direction < 0)
             {
-                _rb.AddForce(Vector2.right * 100f);
+                _rb.AddForce(Vector2.right * _forceAmount);
                 Debug.Log("발사");
             }
             else
             {
-                _rb.AddForce(Vector2.left * 100f);
+                _rb.AddForce(Vector2.left * _forceAmount);
                 Debug.Log("발사");
             }
         }
