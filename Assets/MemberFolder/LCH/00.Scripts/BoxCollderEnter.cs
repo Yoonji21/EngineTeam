@@ -12,7 +12,6 @@ public class BoxCollderEnter : MonoBehaviour
         // "Ball" 태그를 가진 오브젝트의 Rigidbody2D를 가져옴
         _rb = GetComponent<Rigidbody2D>();
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Box")) // 특정 태그 확인
