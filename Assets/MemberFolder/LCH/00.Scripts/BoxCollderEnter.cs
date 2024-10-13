@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,13 +24,24 @@ public class BoxCollderEnter : MonoBehaviour
             if (direction < 0)
             {
                 _rb.AddForce(Vector2.right * _forceAmount);
-                Debug.Log("발사");
+                EnterCollderCoroutine(6f);
             }
             else
             {
                 _rb.AddForce(Vector2.left * _forceAmount);
-                Debug.Log("발사");
+                EnterCollderCoroutine(6f);
             }
         }
+    }
+
+    private void EnterCollderCoroutine(float time)
+    {
+        StartCoroutine(EnterCollder(time));
+    }
+
+    private IEnumerator EnterCollder(float time)
+    {
+        yield return new WaitForSeconds(time);
+       _rb.velocity = new Vector2(0, _rb.velocity.y);
     }
 }
