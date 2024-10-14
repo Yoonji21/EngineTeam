@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     {
         MovementCompo = GetComponent<PlayerMovement>();
         SwitchingCompo = GetComponent<SwitchingPlayer>();
-        offPlayerDicCompo = GameObject.Find("Toadstool").GetComponent<Toadstool>();
+        offPlayerDicCompo = FindAnyObjectByType<Toadstool>();
     }
 
     private void OnEnable()
@@ -23,12 +23,18 @@ public class Player : MonoBehaviour
         InputCompo.OnMovementEvent += MovementCompo.GetMove;
         InputCompo.OnJumpEvent += MovementCompo.GetJump;
         InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
-        InputCompo.OnInteractionEvent += offPlayerDicCompo.offPlayerDic;
+        if (offPlayerDicCompo != null)
+        {
+            InputCompo.OnInteractionEvent += offPlayerDicCompo.offPlayerDic;
+        }
     }
 
     private void OnDisable()
     {
-        InputCompo.OnInteractionEvent -= offPlayerDicCompo.offPlayerDic;
+        if (offPlayerDicCompo != null)
+        {
+            InputCompo.OnInteractionEvent -= offPlayerDicCompo.offPlayerDic;
+        }
         InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;
         InputCompo.OnMovementEvent -= MovementCompo.GetMove;
         InputCompo.OnJumpEvent -= MovementCompo.GetJump;
