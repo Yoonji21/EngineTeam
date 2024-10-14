@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2039532473551975844}
   - component: {fileID: 2861725288657165426}
   - component: {fileID: 1831061665050146622}
-  - component: {fileID: 5914640575254499773}
+  - component: {fileID: 4417568815231321829}
   m_Layer: 0
   m_Name: TestPlayer2
   m_TagString: Untagged
@@ -215,7 +215,7 @@ MonoBehaviour:
     m_Bits: 64
   _groundChecker: {fileID: 7794865608566876548}
   _checkerSize: {x: 1, y: 0.5}
---- !u!114 &5914640575254499773
+--- !u!114 &4417568815231321829
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,3 +227,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7874a0382a41d9f4b9f325a9e2e370d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _switchingUI: {fileID: 0}
+  _player: {fileID: 0}

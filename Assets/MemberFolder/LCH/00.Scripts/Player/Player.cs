@@ -6,21 +6,30 @@ public class Player : MonoBehaviour
 {
 	[field : SerializeField]public InputSystem InputCompo { get; private set; }
     public PlayerMovement MovementCompo { get; private set; }
+    public SwitchingPlayer SwitchingCompo { get; private set; }
+
+    public Toadstool offPlayerDicCompo { get; private set; }
     
 
     private void Awake()
     {
         MovementCompo = GetComponent<PlayerMovement>();
+        SwitchingCompo = GetComponent<SwitchingPlayer>();
+        offPlayerDicCompo = GameObject.Find("Toadstool").GetComponent<Toadstool>();
     }
 
     private void OnEnable()
     {
         InputCompo.OnMovementEvent += MovementCompo.GetMove;
         InputCompo.OnJumpEvent += MovementCompo.GetJump;
+        InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
+        InputCompo.OnInteractionEvent += offPlayerDicCompo.offPlayerDic;
     }
 
     private void OnDisable()
     {
+        InputCompo.OnInteractionEvent -= offPlayerDicCompo.offPlayerDic;
+        InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;
         InputCompo.OnMovementEvent -= MovementCompo.GetMove;
         InputCompo.OnJumpEvent -= MovementCompo.GetJump;
     }

@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 1984281578277988643}
   - component: {fileID: 720691712774654556}
   - component: {fileID: 860848768701693000}
-  - component: {fileID: 9191049963091239250}
+  - component: {fileID: 1936614882220665211}
+  - component: {fileID: 622714861642393487}
   m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Untagged
@@ -184,7 +185,19 @@ MonoBehaviour:
     m_Bits: 64
   _groundChecker: {fileID: 3000709007212361777}
   _checkerSize: {x: 1, y: 0.5}
---- !u!114 &9191049963091239250
+--- !u!114 &1936614882220665211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4979308764983352817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc830b0ded82b140ab6b90c2f40c903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &622714861642393487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,6 +209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7874a0382a41d9f4b9f325a9e2e370d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _switchingUI: {fileID: 0}
+  _player: {fileID: 0}
 --- !u!1 &7964787240138505964
 GameObject:
   m_ObjectHideFlags: 0
