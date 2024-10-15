@@ -46,9 +46,10 @@ GameObject:
   - component: {fileID: 2861725288657165426}
   - component: {fileID: 1831061665050146622}
   - component: {fileID: 4417568815231321829}
+  - component: {fileID: 4517579703799374264}
   m_Layer: 0
   m_Name: TestPlayer2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +64,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.45, y: 3.03, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7794865608566876548}
@@ -214,7 +215,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _groundChecker: {fileID: 7794865608566876548}
-  _checkerSize: {x: 1, y: 0.5}
+  _checkerSize: {x: 0.58, y: 0.5}
 --- !u!114 &4417568815231321829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,3 +230,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _switchingUI: {fileID: 0}
   _player: {fileID: 0}
+--- !u!114 &4517579703799374264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2787553386231487176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ed4baec51b51e49a34af4d67238c61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnoffPlayerDictctionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Toadstool, Assembly-CSharp
+        m_MethodName: OffDicPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
