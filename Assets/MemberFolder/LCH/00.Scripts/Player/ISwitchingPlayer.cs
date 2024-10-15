@@ -10,7 +10,7 @@ public class SwitchingPlayer : MonoBehaviour
 
     public void SwitchingPlayerUI()
     {
-        StartCoroutine(UIclose(_switchingUI, _player, 1.5f));
+        StartCoroutine(UIclose(_switchingUI, _player, 0.5f));
     }
 
     private IEnumerator UIclose(GameObject UI, GameObject player, float timer)

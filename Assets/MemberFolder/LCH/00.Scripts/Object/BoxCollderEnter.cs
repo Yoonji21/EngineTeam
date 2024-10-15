@@ -24,12 +24,12 @@ public class BoxCollderEnter : MonoBehaviour
             if (direction < 0)
             {
                 _rb.AddForce(Vector2.right * _forceAmount);
-                EnterCollderCoroutine(6f);
+                EnterCollderCoroutine(4f);
             }
             else
             {
                 _rb.AddForce(Vector2.left * _forceAmount);
-                EnterCollderCoroutine(6f);
+                EnterCollderCoroutine(4f);
             }
         }
     }

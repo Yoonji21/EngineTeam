@@ -7,15 +7,14 @@ public class Player : MonoBehaviour
 	[field : SerializeField]public InputSystem InputCompo { get; private set; }
     public PlayerMovement MovementCompo { get; private set; }
     public SwitchingPlayer SwitchingCompo { get; private set; }
-
-    public Toadstool offPlayerDicCompo { get; private set; }
     
+    public Interaction IntaractionCompo { get; private set; }
 
     private void Awake()
     {
+        IntaractionCompo = GetComponent<Interaction>();
         MovementCompo = GetComponent<PlayerMovement>();
         SwitchingCompo = GetComponent<SwitchingPlayer>();
-        offPlayerDicCompo = FindAnyObjectByType<Toadstool>();
     }
 
     private void OnEnable()
@@ -23,18 +22,12 @@ public class Player : MonoBehaviour
         InputCompo.OnMovementEvent += MovementCompo.GetMove;
         InputCompo.OnJumpEvent += MovementCompo.GetJump;
         InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
-        if (offPlayerDicCompo != null)
-        {
-            InputCompo.OnInteractionEvent += offPlayerDicCompo.offPlayerDic;
-        }
+        InputCompo.OnInteractionEvent += IntaractionCompo.InteractionPress;
     }
 
     private void OnDisable()
     {
-        if (offPlayerDicCompo != null)
-        {
-            InputCompo.OnInteractionEvent -= offPlayerDicCompo.offPlayerDic;
-        }
+        InputCompo.OnInteractionEvent -= IntaractionCompo.InteractionPress;
         InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;
         InputCompo.OnMovementEvent -= MovementCompo.GetMove;
         InputCompo.OnJumpEvent -= MovementCompo.GetJump;
