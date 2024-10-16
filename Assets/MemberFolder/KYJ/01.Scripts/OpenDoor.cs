@@ -4,39 +4,25 @@ using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
-    private Key _key;
+    [SerializeField] private BoxCollider2D _boxCollider;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Key key = collision.gameObject.GetComponent<Key>();
+        Key key = collision.gameObject.GetComponentInChildren<Key>();
 
         if (key != null)
         {
             if (key.hasKey)
             {
-                print("¹® ¿­¸²");
                 key.hasKey = false;
-            }
-            else
-            {
-                print("¹® ´ÝÈû");
+                _boxCollider.enabled = false;
+                key.DestroyKey();
             }
         }
-        else
-        {
-            print("³Î");
-        }
-    }
 
-    private void KeyCheck()
-    {
-        if (_key.hasKey)
-        {
-            print("¹® ¿­¸²");
-        }
         else
         {
-            print("¹® ´ÝÈû");
+            _boxCollider.enabled = true;
         }
     }
 }

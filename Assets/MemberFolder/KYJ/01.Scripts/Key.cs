@@ -5,13 +5,8 @@ using DG.Tweening;
 
 public class Key : MonoBehaviour
 {
-    private GameObject _barrier;
     [SerializeField] private Transform _playerTrm;
-
     public bool hasKey;
-    private bool isHoleHit;
-
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,7 +17,6 @@ public class Key : MonoBehaviour
             hasKey = true;
         }
     }
-
 
     private void FixedUpdate()
     {
@@ -38,11 +32,8 @@ public class Key : MonoBehaviour
             (transform.position, _playerTrm.position, 0.05f);
     }
 
-    private void OnKeyEnter()
+    public void DestroyKey()
     {
-        hasKey = false;
-
-        gameObject.SetActive(false);
-        _barrier.gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }
