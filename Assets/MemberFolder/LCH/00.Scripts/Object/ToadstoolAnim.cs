@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ToadstoolAnim : MonoBehaviour
 {
-     [field: SerializeField]public GameObject Element { get; set; }
-    public bool isOff { get; set; } = false;
+    [SerializeField] private GameObject Element;
+    private bool isOff  = false;
 
 
     private Animator _animator;
@@ -13,6 +13,11 @@ public class ToadstoolAnim : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+
+        if(Element == null)
+        {
+            Element = null;
+        }
     }
 
     public void OffDicPlayer()
