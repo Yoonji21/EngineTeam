@@ -924,7 +924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a2843fec113b04ba28253b1e2953cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  def: 100
+  def: 20
   laserPoint: {fileID: 1201597293}
   linerenderer: {fileID: 1201597292}
   target:
