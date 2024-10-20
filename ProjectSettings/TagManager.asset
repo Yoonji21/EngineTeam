@@ -14,7 +14,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - Agent
+  - Player
   - 
   - 
   - 
@@ -40,9 +40,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3964792537
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Camera
     uniqueID: 2758117189
+    locked: 0
+  - name: Object
+    uniqueID: 2384229223
+    locked: 0
+  - name: Player
+    uniqueID: 1041707723
     locked: 0
