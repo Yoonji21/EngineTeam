@@ -9,7 +9,9 @@ public class Laser : MonoBehaviour
     public LineRenderer linerenderer;
     private Transform _transform;
 
-    public LayerMask agent;
+    public LayerMask target;
+
+    [SerializeField] private Respawn respawn;
 
     private void Awake()
     {
@@ -21,13 +23,17 @@ public class Laser : MonoBehaviour
         ShootLaser();   
     }
 
+    private bool DrawwRaw()
+    {
+        bool isPlayer = Physics2D.Raycast(transform.position, transform.right, target);
+        return isPlayer;
+    }
+
     private void ShootLaser()
     {
-        if (Physics2D.Raycast(_transform.position, transform.right, agent))
+        if (DrawwRaw())
         {
-            RaycastHit2D _hit = Physics2D.Raycast(laserPoint.position, transform.right);
-            Draw2DRay(laserPoint.position, _hit.point);
-            print("dd");
+            respawn.RespawnObject(true);
         }
         else
         {
@@ -38,6 +44,6 @@ public class Laser : MonoBehaviour
     private void Draw2DRay(Vector2 startPos, Vector2 endPos)
     {
         linerenderer.SetPosition(0, startPos);
-        linerenderer.SetPosition(1, endPos);    
+        linerenderer.SetPosition(1, endPos);
     }
 }
