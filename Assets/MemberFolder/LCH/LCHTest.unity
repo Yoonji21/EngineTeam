@@ -1707,7 +1707,7 @@ GameObject:
   - component: {fileID: 2059305291}
   - component: {fileID: 2059305290}
   m_Layer: 0
-  m_Name: Lazer
+  m_Name: LazerObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1774,7 +1774,7 @@ Transform:
   m_GameObject: {fileID: 2059305289}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.36320376, w: 0.93170977}
-  m_LocalPosition: {x: 0.76, y: -1.47, z: 0}
+  m_LocalPosition: {x: 0.49, y: 0.68, z: 0}
   m_LocalScale: {x: 1, y: 0.5422, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
