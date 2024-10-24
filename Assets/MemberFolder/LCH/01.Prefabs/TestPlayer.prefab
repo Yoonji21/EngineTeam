@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 3795629074918946361}
   - component: {fileID: 5303410789962738851}
   - component: {fileID: 1984281578277988643}
-  - component: {fileID: 720691712774654556}
   - component: {fileID: 860848768701693000}
   - component: {fileID: 1936614882220665211}
   - component: {fileID: 622714861642393487}
   - component: {fileID: 5833417204083784688}
+  - component: {fileID: 5241009846116785150}
   m_Layer: 7
   m_Name: TestPlayer
   m_TagString: Player
@@ -154,19 +154,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
---- !u!114 &720691712774654556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4979308764983352817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5d5c3b3f57728d4381a06fb15fcc584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <InputCompo>k__BackingField: {fileID: 11400000, guid: 81733159bc0a41c4f938fccd26baa4d4, type: 2}
 --- !u!114 &860848768701693000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +226,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5241009846116785150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4979308764983352817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b928e2c57107dc2438579f2c54db75be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <InputCompo>k__BackingField: {fileID: 11400000, guid: 81733159bc0a41c4f938fccd26baa4d4, type: 2}
 --- !u!1 &7964787240138505964
 GameObject:
   m_ObjectHideFlags: 0
