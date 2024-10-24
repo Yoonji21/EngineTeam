@@ -15,15 +15,16 @@ public enum PlayerState
 
 public class Player : Agent
 {
-    public StateMachine stateMachine;
-    protected override void Awake()
-    {
-        base.Awake();
-        stateMachine = new StateMachine();
-    }
+    //public StateMachine stateMachine;
+    //protected override void Awake()
+    //{
+    //    base.Awake();
+    //    stateMachine = new StateMachine();
+    //    stateMachine.Initialized(PlayerState.Idle, this);
+    //}
 
-    private void Update()
-    {
-        stateMachine.CurrentState.UpdateState();
-    }
+    //private void Update()
+    //{
+    //    stateMachine.CurrentState.UpdateState();
+    //}
 }

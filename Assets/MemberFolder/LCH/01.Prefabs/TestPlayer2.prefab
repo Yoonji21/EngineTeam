@@ -43,10 +43,11 @@ GameObject:
   - component: {fileID: 5068641156758174174}
   - component: {fileID: 1536963954844481728}
   - component: {fileID: 2039532473551975844}
-  - component: {fileID: 2861725288657165426}
   - component: {fileID: 1831061665050146622}
   - component: {fileID: 4417568815231321829}
   - component: {fileID: 4517579703799374264}
+  - component: {fileID: 9070934313945889822}
+  - component: {fileID: 817148979973068123}
   m_Layer: 7
   m_Name: TestPlayer2
   m_TagString: Player
@@ -184,19 +185,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
---- !u!114 &2861725288657165426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2787553386231487176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5d5c3b3f57728d4381a06fb15fcc584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <InputCompo>k__BackingField: {fileID: 11400000, guid: 81733159bc0a41c4f938fccd26baa4d4, type: 2}
 --- !u!114 &1831061665050146622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,3 +245,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &9070934313945889822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2787553386231487176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0790ced3528a9941bcf0a1b5c5836eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &817148979973068123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2787553386231487176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b928e2c57107dc2438579f2c54db75be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <InputCompo>k__BackingField: {fileID: 11400000, guid: 81733159bc0a41c4f938fccd26baa4d4, type: 2}

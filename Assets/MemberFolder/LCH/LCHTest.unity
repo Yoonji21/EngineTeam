@@ -430,9 +430,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0018854141, y: -0.0018852949}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.49434388
 --- !u!50 &471429011
 Rigidbody2D:
   serializedVersion: 4
@@ -502,7 +502,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -522,7 +522,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.84, y: 2.5, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -988,7 +988,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1422574375}
   - component: {fileID: 1422574377}
-  - component: {fileID: 1422574376}
   m_Layer: 0
   m_Name: DrawLazer
   m_TagString: Untagged
@@ -1011,19 +1010,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1422574376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422574374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 354fc5bb556da4740b74f7bc6ba2d84d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lastPos: {fileID: 0}
 --- !u!120 &1422574377
 LineRenderer:
   serializedVersion: 2
@@ -1257,9 +1243,10 @@ GameObject:
   - component: {fileID: 1738186653}
   - component: {fileID: 1738186652}
   - component: {fileID: 1738186651}
+  - component: {fileID: 1738186655}
   m_Layer: 0
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: InvisibleObj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1276,11 +1263,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5
+  m_Mass: 30
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 568bf3031a4d7c74b9eb25ed5797d025, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1300,7 +1287,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1738186649}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 568bf3031a4d7c74b9eb25ed5797d025, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1377,8 +1364,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f933f206b6da67a40b33f9b49eb508b2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1397,12 +1384,24 @@ Transform:
   m_GameObject: {fileID: 1738186649}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.921, y: -3.96, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalPosition: {x: -4.04, y: -3.74, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1738186655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738186649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131c9962a19f6f14c962a404174cd682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1837101012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,7 +1484,7 @@ GameObject:
   - component: {fileID: 1953038699}
   m_Layer: 0
   m_Name: Wedge
-  m_TagString: Untagged
+  m_TagString: InvisibleObj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1862,28 +1861,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2787553386231487176, guid: db6d7939b2211b54297c309ea05b0ba5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1559759574309831331}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db6d7939b2211b54297c309ea05b0ba5, type: 3}
 --- !u!1 &1559759574309831330 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2787553386231487176, guid: db6d7939b2211b54297c309ea05b0ba5, type: 3}
   m_PrefabInstance: {fileID: 1400667070424995623}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1559759574309831331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1559759574309831330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0790ced3528a9941bcf0a1b5c5836eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4176510170228434267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2004,7 +1988,19 @@ PrefabInstance:
     - target: {fileID: 1785113960812461645, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
       propertyPath: Element
       value: 
+      objectReference: {fileID: 1738186649}
+    - target: {fileID: 1785113960812461645, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: Elements.Array.size
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1785113960812461645, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: Elements.Array.data[0]
+      value: 
+      objectReference: {fileID: 880939124}
+    - target: {fileID: 1785113960812461645, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: Elements.Array.data[1]
+      value: 
+      objectReference: {fileID: 1422574374}
     - target: {fileID: 5367369477814413393, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
       propertyPath: m_Name
       value: Toadstool
