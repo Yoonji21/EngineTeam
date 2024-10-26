@@ -1244,7 +1244,7 @@ GameObject:
   - component: {fileID: 1738186652}
   - component: {fileID: 1738186651}
   - component: {fileID: 1738186655}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box
   m_TagString: InvisibleObj
   m_Icon: {fileID: 0}
@@ -1802,17 +1802,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 817148979973068123, guid: db6d7939b2211b54297c309ea05b0ba5, type: 3}
+      propertyPath: whatIsPushOrHoldObj.m_Bits
+      value: 1792
+      objectReference: {fileID: 0}
     - target: {fileID: 2787553386231487176, guid: db6d7939b2211b54297c309ea05b0ba5, type: 3}
       propertyPath: m_Name
       value: TestPlayer2
       objectReference: {fileID: 0}
     - target: {fileID: 3493640765411549955, guid: db6d7939b2211b54297c309ea05b0ba5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.45
+      value: -7.16
       objectReference: {fileID: 0}
     - target: {fileID: 3493640765411549955, guid: db6d7939b2211b54297c309ea05b0ba5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.03
+      value: 3.4199998
       objectReference: {fileID: 0}
     - target: {fileID: 3493640765411549955, guid: db6d7939b2211b54297c309ea05b0ba5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1854,10 +1858,6 @@ PrefabInstance:
       propertyPath: _switchingUI
       value: 
       objectReference: {fileID: 1340795654}
-    - target: {fileID: 4517579703799374264, guid: db6d7939b2211b54297c309ea05b0ba5, type: 3}
-      propertyPath: OnoffPlayerDictctionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 855506004}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1886,11 +1886,11 @@ PrefabInstance:
       objectReference: {fileID: 580314874}
     - target: {fileID: 2719955774264852428, guid: f586bf68280a10741885042f41bc8727, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.45
+      value: -5.63
       objectReference: {fileID: 0}
     - target: {fileID: 2719955774264852428, guid: f586bf68280a10741885042f41bc8727, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.03
+      value: -3.22
       objectReference: {fileID: 0}
     - target: {fileID: 2719955774264852428, guid: f586bf68280a10741885042f41bc8727, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1928,10 +1928,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestPlayer
       objectReference: {fileID: 0}
-    - target: {fileID: 5833417204083784688, guid: f586bf68280a10741885042f41bc8727, type: 3}
-      propertyPath: OnoffPlayerDictctionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 855506004}
+    - target: {fileID: 5241009846116785150, guid: f586bf68280a10741885042f41bc8727, type: 3}
+      propertyPath: whatIsPushOrHoldObj.m_Bits
+      value: 1792
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1945,6 +1945,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 158306231222445328, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: OnOffeDit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 158306231222445328, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: OnOffeDit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 158306231222445328, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: OnOffeDit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 855506004}
+    - target: {fileID: 158306231222445328, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: OnOffeDit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 158306231222445328, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: OnOffeDit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OffDicPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 158306231222445328, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: OnOffeDit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ToadstoolAnim, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 158306231222445328, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: OnOffeDit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1354326116488940559, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.4

@@ -18,6 +18,7 @@ public class PushObj : MonoBehaviour
             Debug.Log("플레이어");
             if(_rbComp.constraints == RigidbodyConstraints2D.FreezePositionX)
             {
+                Debug.Log("꺼버려");
                 _rbComp.constraints = RigidbodyConstraints2D.None;
             }
         }
