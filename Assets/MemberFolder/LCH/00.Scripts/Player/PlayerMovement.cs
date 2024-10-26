@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    [field:SerializeField] public float _speed;
     [SerializeField] private float _jumpPower;
     [SerializeField] private LayerMask _whatIsGround;
     [SerializeField] private Transform _groundChecker;
     [SerializeField] private Vector2 _checkerSize;
     private Rigidbody2D _rbcompo;
-    private Vector3 _xMove;
+    public Vector3 _xMove;
 
     private void Awake()
     {

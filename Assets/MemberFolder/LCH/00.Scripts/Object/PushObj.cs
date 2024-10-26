@@ -5,27 +5,19 @@ using UnityEngine;
 public class PushObj : MonoBehaviour
 {
 	private Rigidbody2D _rbComp;
+    private Player _playerCheck;
 
     private void Awake()
     {
         _rbComp = GetComponent<Rigidbody2D>();
+        _playerCheck = FindObjectOfType<Player>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Update()
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (!_playerCheck.IsPushObj())
         {
-            Debug.Log("플레이어");
-            if(_rbComp.constraints == RigidbodyConstraints2D.FreezePositionX)
-            {
-                Debug.Log("꺼버려");
-                _rbComp.constraints = RigidbodyConstraints2D.None;
-            }
+            _rbComp.velocity = new Vector2(0,_rbComp.velocity.y);
         }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        _rbComp.constraints = RigidbodyConstraints2D.FreezePositionX;
     }
 }
