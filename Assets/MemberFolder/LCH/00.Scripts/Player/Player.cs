@@ -15,14 +15,22 @@ public enum PlayerState
 
 public class Player : Agent
 {
-    [SerializeField] private LayerMask whatIsPushOrHoldObj;
+    [SerializeField] private LayerMask whatIsPushObj;
+    [SerializeField] private LayerMask whatIsHoldObj;
     [SerializeField] private float _rayDirction;
 
-    public bool IsPushOrHoldObj()
+    public bool IsPushObj()
     {
-        bool isPushOrHoldObj = Physics2D.Raycast(transform.position, Vector2.right, _rayDirction, whatIsPushOrHoldObj);
-        return isPushOrHoldObj;
+        bool isPushObj = Physics2D.Raycast(transform.position, Vector2.right, _rayDirction, whatIsPushObj);
+        return isPushObj;
     }
+
+    public bool IsHoldObj()
+    {
+        bool isHoldObj = Physics2D.Raycast(transform.position, Vector2.right, _rayDirction, whatIsHoldObj);
+        return isHoldObj;
+    }
+
     //public StateMachine stateMachine;
     //protected override void Awake()
     //{
@@ -34,6 +42,13 @@ public class Player : Agent
     private void Update()
     {
         //stateMachine.CurrentState.UpdateState();
-        IsPushOrHoldObj();
+        IsPushObj();
+        IsHoldObj();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(transform.position,Vector3.right * _rayDirction);
     }
 }

@@ -1277,7 +1277,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 6
 --- !u!61 &1738186652
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1803,6 +1803,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 817148979973068123, guid: db6d7939b2211b54297c309ea05b0ba5, type: 3}
+      propertyPath: _rayDirction
+      value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 817148979973068123, guid: db6d7939b2211b54297c309ea05b0ba5, type: 3}
+      propertyPath: whatIsHoldObj.m_Bits
+      value: 1280
+      objectReference: {fileID: 0}
+    - target: {fileID: 817148979973068123, guid: db6d7939b2211b54297c309ea05b0ba5, type: 3}
+      propertyPath: whatIsPushObj.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 817148979973068123, guid: db6d7939b2211b54297c309ea05b0ba5, type: 3}
       propertyPath: whatIsPushOrHoldObj.m_Bits
       value: 1792
       objectReference: {fileID: 0}
@@ -1885,8 +1897,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 580314874}
     - target: {fileID: 2719955774264852428, guid: f586bf68280a10741885042f41bc8727, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719955774264852428, guid: f586bf68280a10741885042f41bc8727, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.63
+      value: -5.59
       objectReference: {fileID: 0}
     - target: {fileID: 2719955774264852428, guid: f586bf68280a10741885042f41bc8727, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1927,6 +1943,18 @@ PrefabInstance:
     - target: {fileID: 4979308764983352817, guid: f586bf68280a10741885042f41bc8727, type: 3}
       propertyPath: m_Name
       value: TestPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5241009846116785150, guid: f586bf68280a10741885042f41bc8727, type: 3}
+      propertyPath: _rayDirction
+      value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 5241009846116785150, guid: f586bf68280a10741885042f41bc8727, type: 3}
+      propertyPath: whatIsHoldObj.m_Bits
+      value: 1280
+      objectReference: {fileID: 0}
+    - target: {fileID: 5241009846116785150, guid: f586bf68280a10741885042f41bc8727, type: 3}
+      propertyPath: whatIsPushObj.m_Bits
+      value: 768
       objectReference: {fileID: 0}
     - target: {fileID: 5241009846116785150, guid: f586bf68280a10741885042f41bc8727, type: 3}
       propertyPath: whatIsPushOrHoldObj.m_Bits
