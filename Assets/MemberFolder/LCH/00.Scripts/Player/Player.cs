@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum PlayerState
 {
@@ -17,17 +18,17 @@ public class Player : Agent
 {
     [SerializeField] private LayerMask whatIsPushObj;
     [SerializeField] private LayerMask whatIsHoldObj;
-    [SerializeField] private float _rayDirction;
+    [SerializeField] private Vector2 _objCheckSize;
 
     public bool IsPushObj()
     {
-        bool isPushObj = Physics2D.Raycast(transform.position, Vector2.right, _rayDirction, whatIsPushObj);
+        bool isPushObj = Physics2D.OverlapBox(transform.position,_objCheckSize ,0,whatIsPushObj);
         return isPushObj;
     }
 
     public bool IsHoldObj()
     {
-        bool isHoldObj = Physics2D.Raycast(transform.position, Vector2.right, _rayDirction, whatIsHoldObj);
+        bool isHoldObj = Physics2D.OverlapBox(transform.position, _objCheckSize, 0, whatIsHoldObj);
         return isHoldObj;
     }
 
@@ -42,13 +43,11 @@ public class Player : Agent
     private void Update()
     {
         //stateMachine.CurrentState.UpdateState();
-        IsPushObj();
-        IsHoldObj();
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawRay(transform.position,Vector3.right * _rayDirction);
+        Gizmos.DrawWireCube(transform.position, _objCheckSize);
     }
 }

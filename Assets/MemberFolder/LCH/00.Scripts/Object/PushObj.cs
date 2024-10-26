@@ -13,11 +13,11 @@ public class PushObj : MonoBehaviour
         _playerCheck = FindObjectOfType<Player>();
     }
 
-    private void MoveObj()
+    private void Update()
     {
-        if (_playerCheck.IsPushObj())
+        if (!_playerCheck.IsPushObj())
         {
-            _rbComp.velocity = new Vector2(_playerCheck.MovementCompo._xMove.x * _playerCheck.MovementCompo._speed, _rbComp.velocity.y);
+            _rbComp.velocity = new Vector2(0,_rbComp.velocity.y);
         }
     }
 }
