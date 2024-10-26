@@ -15,6 +15,14 @@ public enum PlayerState
 
 public class Player : Agent
 {
+    [SerializeField] private LayerMask whatIsPushOrHoldObj;
+    [SerializeField] private float _rayDirction;
+
+    public bool IsPushOrHoldObj()
+    {
+        bool isPushOrHoldObj = Physics2D.Raycast(transform.position, Vector2.right, _rayDirction, whatIsPushOrHoldObj);
+        return isPushOrHoldObj;
+    }
     //public StateMachine stateMachine;
     //protected override void Awake()
     //{
@@ -23,8 +31,9 @@ public class Player : Agent
     //    stateMachine.Initialized(PlayerState.Idle, this);
     //}
 
-    //private void Update()
-    //{
-    //    stateMachine.CurrentState.UpdateState();
-    //}
+    private void Update()
+    {
+        //stateMachine.CurrentState.UpdateState();
+        IsPushOrHoldObj();
+    }
 }

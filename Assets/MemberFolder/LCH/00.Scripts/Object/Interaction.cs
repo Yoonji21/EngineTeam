@@ -8,10 +8,10 @@ public class Interaction : MonoBehaviour
     public UnityEvent OnoffPlayerDictctionEvent;
     public void InteractionPress()
     {
-        offPlayerDic();
+        InteractionObj();
     }
 
-	private void offPlayerDic()
+	private void InteractionObj()
     {
         OnoffPlayerDictctionEvent?.Invoke();
     }
