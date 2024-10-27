@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &934317122065371386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3874695815943556897}
+  m_Layer: 7
+  m_Name: HoldPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3874695815943556897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934317122065371386}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.058, y: -0.076, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2719955774264852428}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4979308764983352817
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,10 +65,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.45, y: 3.03, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3000709007212361777}
+  - {fileID: 3874695815943556897}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3795629074918946361
@@ -173,6 +205,7 @@ MonoBehaviour:
     m_Bits: 64
   _groundChecker: {fileID: 3000709007212361777}
   _checkerSize: {x: 0.85, y: 0.5}
+  _xMove: {x: 0, y: 0, z: 0}
 --- !u!114 &1936614882220665211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +260,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <InputCompo>k__BackingField: {fileID: 11400000, guid: 81733159bc0a41c4f938fccd26baa4d4, type: 2}
+  whatIsPushObj:
+    serializedVersion: 2
+    m_Bits: 768
+  whatIsHoldObj:
+    serializedVersion: 2
+    m_Bits: 1280
+  _objCheckSize: {x: 1.1, y: 2}
 --- !u!1 &7964787240138505964
 GameObject:
   m_ObjectHideFlags: 0
