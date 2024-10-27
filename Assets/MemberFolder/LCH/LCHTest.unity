@@ -1910,15 +1910,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1536963954844481728, guid: db6d7939b2211b54297c309ea05b0ba5, type: 3}
       propertyPath: m_Constraints
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2787553386231487176, guid: db6d7939b2211b54297c309ea05b0ba5, type: 3}
       propertyPath: m_Name
       value: TestPlayer2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2787553386231487176, guid: db6d7939b2211b54297c309ea05b0ba5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3493640765411549955, guid: db6d7939b2211b54297c309ea05b0ba5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2033,10 +2029,6 @@ PrefabInstance:
     - target: {fileID: 2719955774264852428, guid: f586bf68280a10741885042f41bc8727, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3874695815943556897, guid: f586bf68280a10741885042f41bc8727, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.058
       objectReference: {fileID: 0}
     - target: {fileID: 4979308764983352817, guid: f586bf68280a10741885042f41bc8727, type: 3}
       propertyPath: m_Name

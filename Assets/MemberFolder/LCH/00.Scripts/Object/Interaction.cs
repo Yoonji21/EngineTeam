@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Interaction : MonoBehaviour
 {
-    public UnityEvent OnoffPlayerDictctionEvent;
+    public UnityEvent OnInteractionEvnets;
     public void InteractionPress()
     {
         InteractionObj();
@@ -13,6 +13,6 @@ public class Interaction : MonoBehaviour
 
 	private void InteractionObj()
     {
-        OnoffPlayerDictctionEvent?.Invoke();
+        OnInteractionEvnets?.Invoke();
     }
 }
