@@ -5,26 +5,17 @@ using UnityEngine;
 public class StateMachine : MonoBehaviour
 {
 	public State CurrentState { get; private set; }
-	public Dictionary<PlayerState, State> StateDictionary = new Dictionary<PlayerState, State>();
-	public Agent _player;
-
-    public void Initialized(PlayerState Startstate, Agent player)
+    public void Initialized(State startState)
     {
-        _player = player;
-        CurrentState = StateDictionary[Startstate];
+        CurrentState = startState;
 
-        //CurrentState.Enter();
+        CurrentState.Enter();
     }
 
-    public void ChangeState(PlayerState newState)
+    public void ChangeState(State newState)
     {
-        //CurrentState.Exit();
-        CurrentState = StateDictionary[newState];
-        //CurrentState.Enter();
-    }
-
-    public void AddState(PlayerState playerEnum, State playerState)
-    {
-        StateDictionary.Add(playerEnum, playerState);
+        CurrentState.Exit();
+        CurrentState = newState;
+        CurrentState.Enter();
     }
 }

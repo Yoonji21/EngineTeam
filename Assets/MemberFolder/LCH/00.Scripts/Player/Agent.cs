@@ -10,8 +10,11 @@ public abstract class Agent : MonoBehaviour
     
     public Interaction IntaractionCompo { get; private set; }
 
+    public PlayerRenderer RendererCompo { get; private set; }
+
     protected virtual void Awake()
     {
+        RendererCompo = GetComponentInChildren<PlayerRenderer>();
         IntaractionCompo = GetComponent<Interaction>();
         MovementCompo = GetComponent<PlayerMovement>();
         SwitchingCompo = GetComponent<SwitchingPlayer>();
@@ -19,7 +22,6 @@ public abstract class Agent : MonoBehaviour
 
     private void OnEnable()
     {
-        InputCompo.OnMovementEvent += MovementCompo.GetMove;
         InputCompo.OnJumpEvent += MovementCompo.GetJump;
         InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
         InputCompo.OnInteractionEvent += IntaractionCompo.InteractionPress;
@@ -29,7 +31,6 @@ public abstract class Agent : MonoBehaviour
     {
         InputCompo.OnInteractionEvent -= IntaractionCompo.InteractionPress;
         InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;
-        InputCompo.OnMovementEvent -= MovementCompo.GetMove;
         InputCompo.OnJumpEvent -= MovementCompo.GetJump;
     }
 }

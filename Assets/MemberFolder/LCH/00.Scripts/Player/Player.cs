@@ -1,23 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public enum PlayerState
-{
-    Idle, //가만히있는 애니메이션
-    Jump, // 폴짝 뛰는 애니메이션
-    Fail, // 뭔가 들고 떨어질수도있어서 그것도 찍어야함 
-    Move, // 아기자기하게 걸어다니게하는 모션
-    Push, // 물건을 미는모션
-    Swith, // 스위치를 내리고 올리는 모션
-    Holde // 물건을 아래서 부터 드는 애니메이션
-}
-
 public class Player : Agent
 {
+    [Header("FSM")]
+
+    [SerializeField] private List<StateTypeSO> _statList;
+
     [SerializeField] private LayerMask whatIsPushObj;
     [SerializeField] private Vector2 _objCheckSize;
+
+    [SerializeField] private float _jumpPower = 12f;
+    [SerializeField] private int _jumpCount = 2;
+
+    private int _currentJumpCount = 0;
+    private PlayerMovement _mover;
+
+    private StateMachine _stateMachine;
+    private Dictionary<StateTypeSO, State> _stateDictionary;
 
     public bool IsPushObj()
     {
@@ -25,13 +28,27 @@ public class Player : Agent
         return isPushObj;
     }
 
-    //public StateMachine stateMachine;
-    //protected override void Awake()
-    //{
-    //    base.Awake();
-    //    stateMachine = new StateMachine();
-    //    stateMachine.Initialized(PlayerState.Idle, this);
-    //}
+    public StateMachine stateMachine;
+    protected override void Awake()
+    {
+        base.Awake();
+        _stateMachine = new StateMachine();
+        _stateDictionary = new Dictionary<StateTypeSO, State>();
+
+        foreach (StateTypeSO state in _statList)
+        {
+            try
+            {
+                Type type = Type.GetType(state.className);
+                var playerState = Activator.CreateInstance(type, this, state.stateAnim) as State;
+                _stateDictionary.Add(state, playerState);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"<color=red>{state.className}</color> loading error, Message : {ex.Message}");
+            }
+        }
+    }
 
     private void Update()
     {

@@ -6,17 +6,18 @@ public abstract class State
 {
 	protected Agent owner;
 	protected StateMachine StateMachine;
-	protected int _animBoolHash; 
+	protected AnimationTypeSO _animParam;
 	protected bool _endTriggerCalled;
 
-	public State(Agent agent,StateMachine stateMachine, string animBoolName)
+	public State(Agent agent,AnimationTypeSO animationType)
     {
 		owner = agent;
-		StateMachine = stateMachine;
-    }
+		_animParam = animationType;
+	}
 
 	public virtual void Enter()
     {
+		owner.RendererCompo.SetParam(_animParam, true);
 		_endTriggerCalled = false;
     }
 
@@ -27,8 +28,8 @@ public abstract class State
 
 	public virtual void Exit()
     {
-		
-    }
+		owner.RendererCompo.SetParam(_animParam, false);
+	}
 
 	public void AnimationEndTrigger()
 	{
