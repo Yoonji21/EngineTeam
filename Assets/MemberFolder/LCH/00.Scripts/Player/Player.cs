@@ -17,19 +17,12 @@ public enum PlayerState
 public class Player : Agent
 {
     [SerializeField] private LayerMask whatIsPushObj;
-    [SerializeField] private LayerMask whatIsHoldObj;
     [SerializeField] private Vector2 _objCheckSize;
 
     public bool IsPushObj()
     {
         bool isPushObj = Physics2D.OverlapBox(transform.position,_objCheckSize ,0,whatIsPushObj);
         return isPushObj;
-    }
-
-    public bool IsHoldObj()
-    {
-        bool isHoldObj = Physics2D.OverlapBox(transform.position, _objCheckSize, 0, whatIsHoldObj);
-        return isHoldObj;
     }
 
     //public StateMachine stateMachine;
