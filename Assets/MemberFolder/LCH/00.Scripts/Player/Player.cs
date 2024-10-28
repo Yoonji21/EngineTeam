@@ -1,24 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public enum PlayerState
-{
-    Idle,
-    Jump,
-    Fail,
-    Move,
-    Push,
-    Swith,
-    Holde
-}
-
 public class Player : Agent
 {
+    [Header("FSM")]
+
+    [SerializeField] private List<StateTypeSO> _statList;
+
     [SerializeField] private LayerMask whatIsPushObj;
-    [SerializeField] private LayerMask whatIsHoldObj;
     [SerializeField] private Vector2 _objCheckSize;
+
+    [SerializeField] private float _jumpPower = 12f;
+    [SerializeField] private int _jumpCount = 2;
+
+    private int _currentJumpCount = 0;
+    private PlayerMovement _mover;
+
+    private StateMachine _stateMachine;
+    private Dictionary<StateTypeSO, State> _stateDictionary;
 
     public bool IsPushObj()
     {
@@ -26,19 +28,27 @@ public class Player : Agent
         return isPushObj;
     }
 
-    public bool IsHoldObj()
+    public StateMachine stateMachine;
+    protected override void Awake()
     {
-        bool isHoldObj = Physics2D.OverlapBox(transform.position, _objCheckSize, 0, whatIsHoldObj);
-        return isHoldObj;
-    }
+        base.Awake();
+        _stateMachine = new StateMachine();
+        _stateDictionary = new Dictionary<StateTypeSO, State>();
 
-    //public StateMachine stateMachine;
-    //protected override void Awake()
-    //{
-    //    base.Awake();
-    //    stateMachine = new StateMachine();
-    //    stateMachine.Initialized(PlayerState.Idle, this);
-    //}
+        foreach (StateTypeSO state in _statList)
+        {
+            try
+            {
+                Type type = Type.GetType(state.className);
+                var playerState = Activator.CreateInstance(type, this, state.stateAnim) as State;
+                _stateDictionary.Add(state, playerState);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"<color=red>{state.className}</color> loading error, Message : {ex.Message}");
+            }
+        }
+    }
 
     private void Update()
     {
