@@ -22,4 +22,6 @@ public class PushState : State
         else if (!_player.IsPushObj())
             _player.stateMachine.ChangeState(PlayerType.Move);
     }
+
+
 }

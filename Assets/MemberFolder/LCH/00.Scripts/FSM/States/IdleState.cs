@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,7 +20,15 @@ public class IdleState : State
         float xMove = _player.InputCompo.InputDriection.x;
         if (Mathf.Abs(xMove) > 0)
            _player.stateMachine.ChangeState(PlayerType.Move);
+        if (_player.IsToadstoolObj())
+            _player.StartCoroutine(SwithOnOffCoroutine(1.2f));
         base.UpdateState();
+    }
+
+    private IEnumerator SwithOnOffCoroutine(float time)
+    {
+        yield return new WaitForSeconds(time);
+        _player.stateMachine.ChangeState(PlayerType.SwithUp);
     }
 
     protected override void HandleJumpPressed()

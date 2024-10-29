@@ -12,11 +12,13 @@ public enum PlayerType
     Fail, 
     Move, 
     Push, 
-    Swith 
+    SwithUp,
+    SwithDown
 }
 public class Player : Agent
 {
     [SerializeField] private LayerMask whatIsPushObj;
+    [SerializeField] private LayerMask whatIsToadstoolObj;
     [SerializeField] private Vector2 _objCheckSize;
     public float _jumpPower { get; private set; } = 12f;
 
@@ -26,6 +28,12 @@ public class Player : Agent
     {
         bool isPushObj = Physics2D.OverlapBox(transform.position,_objCheckSize ,0,whatIsPushObj);
         return isPushObj;
+    }
+
+    public bool IsToadstoolObj()
+    {
+        bool isToadstoolobj = Physics2D.OverlapBox(transform.position, _objCheckSize, 0, whatIsToadstoolObj);
+        return isToadstoolobj;
     }
 
     protected override void Awake()
