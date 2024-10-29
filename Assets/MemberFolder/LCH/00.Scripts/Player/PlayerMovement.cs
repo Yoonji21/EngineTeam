@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Vector2 _checkerSize;
     public bool IsGrounded { get; private set; }
     private float _xMovement;
-    public event Action<bool> OnGroundStateChange;
 
     private PlayerRenderer _renderer;
     private void Awake()
@@ -47,9 +46,8 @@ public class PlayerMovement : MonoBehaviour
         bool before = IsGrounded;
         IsGrounded = Physics2D.OverlapBox(
             _groundChecker.position, _checkerSize, 0, _whatIsGround);
-        if (before != false)
-            OnGroundStateChange?.Invoke(IsGrounded);
     }
+
 
     private void MoveCharacter()
     {

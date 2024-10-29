@@ -18,11 +18,7 @@ public class Player : Agent
 {
     [SerializeField] private LayerMask whatIsPushObj;
     [SerializeField] private Vector2 _objCheckSize;
-
-    [SerializeField] private float _jumpPower = 12f;
-    [SerializeField] private int _jumpCount = 2;
-
-    private int _currentJumpCount = 0;
+    public float _jumpPower { get; private set; } = 7f;
 
     public StateMachine stateMachine;
 
@@ -36,26 +32,23 @@ public class Player : Agent
     {
         base.Awake();
         stateMachine = new StateMachine();
-        MovementCompo.OnGroundStateChange += HandleGroundStateChange;
 
-        //foreach (PlayerType stateEnum in Enum.GetValues(typeof(PlayerType)))
-        //{
-        //    try
-        //    {
-        //        string enumName = stateEnum.ToString();
-        //        Type t = Type.GetType(enumName + "State");
-        //        State state = Activator.CreateInstance(t, this) as State;
-        //        _stateMachine._stateDictionary.Add(stateEnum, state);
+        foreach (PlayerType stateEnum in Enum.GetValues(typeof(PlayerType)))
+        {
+            try
+            {
+                string enumName = stateEnum.ToString();
+                Type t = Type.GetType(enumName + "State");
+                State state = Activator.CreateInstance(t, this, stateMachine, enumName) as State;
 
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        Debug.LogError($"<color=red>{stateEnum.ToString()}</color> loading error, Message : {ex.Message}");
-        //    }
-        //}
+                stateMachine._stateDictionary.Add(stateEnum, state);
 
-        stateMachine.AddState(PlayerType.Idle, new IdleState(this, stateMachine , "Idle"));
-        stateMachine.AddState(PlayerType.Move, new MoveState(this, stateMachine, "Move"));
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"<color=red>{stateEnum.ToString()}</color> loading error, Message : {ex.Message}");
+            }
+        }
 
     }
 
@@ -64,20 +57,10 @@ public class Player : Agent
         stateMachine.Initialized(PlayerType.Idle, this);
         
     }
-    private void HandleGroundStateChange(bool isGrounded)
-    {
-        if (isGrounded)
-            _currentJumpCount = _jumpCount;
-    }
 
     private void Update()
     {
         stateMachine.CurrentState.UpdateState();
-    }
-
-    private void OnDestroy()
-    {
-        MovementCompo.OnGroundStateChange -= HandleGroundStateChange;
     }
 
     private void OnDrawGizmos()

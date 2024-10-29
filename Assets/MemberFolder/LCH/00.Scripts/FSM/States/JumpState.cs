@@ -7,4 +7,15 @@ public class JumpState : State
     public JumpState(Player agent, StateMachine state, string animBoolName) : base(agent, state, animBoolName)
     {
     }
+
+    public override void Enter()
+    {
+        base.Enter();
+        _player.RbCompo.AddForce(Vector2.up * _player._jumpPower, ForceMode2D.Impulse);
+    }
+
+    public override void UpdateState()
+    {
+        base.UpdateState();
+    }
 }

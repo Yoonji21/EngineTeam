@@ -17,5 +17,15 @@ public class MoveState : State
 
         if (Mathf.Approximately(xMove, 0))
             _player.stateMachine.ChangeState(PlayerType.Idle);
+
+        if (_player.IsPushObj())
+            _player.stateMachine.ChangeState(PlayerType.Push);
+    }
+
+    protected override void HandleJumpPressed()
+    {
+        if (_player.MovementCompo.IsGrounded)
+            _player.stateMachine.ChangeState(PlayerType.Jump);
+        base.HandleJumpPressed();
     }
 }

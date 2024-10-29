@@ -18,6 +18,7 @@ public abstract class State
 
 	public virtual void Enter()
     {
+		_player.InputCompo.OnJumpEvent += HandleJumpPressed;
 		_player.AnimatorCompo.SetBool(_animBoolHash, true);
 		_endTriggerCalled = false;
     }
@@ -27,8 +28,14 @@ public abstract class State
 
     }
 
+	protected virtual void HandleJumpPressed()
+	{
+
+	}
+
 	public virtual void Exit()
     {
+		_player.InputCompo.OnJumpEvent -= HandleJumpPressed;
 		_player.AnimatorCompo.SetBool(_animBoolHash, false);
 	}
 
