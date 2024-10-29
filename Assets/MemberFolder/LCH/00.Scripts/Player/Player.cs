@@ -12,8 +12,7 @@ public enum PlayerType
     Fail, 
     Move, 
     Push, 
-    SwithUp,
-    SwithDown
+    SwithUp
 }
 public class Player : Agent
 {
@@ -21,6 +20,8 @@ public class Player : Agent
     [SerializeField] private LayerMask whatIsToadstoolObj;
     [SerializeField] private Vector2 _objCheckSize;
     public float _jumpPower { get; private set; } = 12f;
+
+    public bool isSwithOn { get; set; } = false;
 
     public StateMachine stateMachine;
 
@@ -76,5 +77,10 @@ public class Player : Agent
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(transform.position, _objCheckSize);
        
+    }
+
+    public override void AnimationEndTrigger()
+    {
+        stateMachine.CurrentState.AnimationEndTrigger();
     }
 }

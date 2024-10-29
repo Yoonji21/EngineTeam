@@ -20,8 +20,8 @@ public class IdleState : State
         float xMove = _player.InputCompo.InputDriection.x;
         if (Mathf.Abs(xMove) > 0)
            _player.stateMachine.ChangeState(PlayerType.Move);
-        if (_player.IsToadstoolObj())
-            _player.StartCoroutine(SwithOnOffCoroutine(1.2f));
+        if (_player.IsToadstoolObj() && !_player.isSwithOn)
+            _player.StartCoroutine(SwithOnOffCoroutine(2f));
         base.UpdateState();
     }
 

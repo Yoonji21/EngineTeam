@@ -34,4 +34,6 @@ public abstract class Agent : MonoBehaviour
         InputCompo.OnInteractionEvent -= IntaractionCompo.InteractionPress;
         InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;
     }
+
+    public abstract void AnimationEndTrigger();
 }
