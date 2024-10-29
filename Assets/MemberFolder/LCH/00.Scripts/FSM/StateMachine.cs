@@ -2,20 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateMachine : MonoBehaviour
+public class StateMachine
 {
 	public State CurrentState { get; private set; }
-    public void Initialized(State startState)
+    public Dictionary<PlayerType, State> _stateDictionary = new Dictionary<PlayerType, State>();
+    private Player player;
+    public void Initialized(PlayerType startState, Player _player)
     {
-        CurrentState = startState;
-
+        player = _player;
+        CurrentState = _stateDictionary[startState];
         CurrentState.Enter();
     }
 
-    public void ChangeState(State newState)
+    public void ChangeState(PlayerType newState)
     {
         CurrentState.Exit();
-        CurrentState = newState;
+        CurrentState = _stateDictionary[newState];
         CurrentState.Enter();
+    }
+
+    public void AddState(PlayerType stateEnum, State enemyState) 
+    {
+        _stateDictionary.Add(stateEnum, enemyState);
     }
 }

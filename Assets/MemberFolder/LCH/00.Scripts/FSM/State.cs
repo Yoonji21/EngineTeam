@@ -4,20 +4,21 @@ using UnityEngine;
 
 public abstract class State 
 {
-	protected Agent owner;
+	protected Player _player;
 	protected StateMachine StateMachine;
-	protected AnimationTypeSO _animParam;
 	protected bool _endTriggerCalled;
+	protected int _animBoolHash;
 
-	public State(Agent agent,AnimationTypeSO animationType)
-    {
-		owner = agent;
-		_animParam = animationType;
+	public State(Player agent,StateMachine state, string animBoolName)
+	{
+		_player = agent;
+		StateMachine = state;
+		_animBoolHash = Animator.StringToHash(animBoolName);
 	}
 
 	public virtual void Enter()
     {
-		owner.RendererCompo.SetParam(_animParam, true);
+		_player.AnimatorCompo.SetBool(_animBoolHash, true);
 		_endTriggerCalled = false;
     }
 
@@ -28,7 +29,7 @@ public abstract class State
 
 	public virtual void Exit()
     {
-		owner.RendererCompo.SetParam(_animParam, false);
+		_player.AnimatorCompo.SetBool(_animBoolHash, false);
 	}
 
 	public void AnimationEndTrigger()
