@@ -6,15 +6,18 @@ public abstract class Agent : MonoBehaviour
 {
 	[field : SerializeField]public InputSystem InputCompo { get; private set; }
     public PlayerMovement MovementCompo { get; private set; }
+
+    public Rigidbody2D RbCompo { get; private set; }
     public SwitchingPlayer SwitchingCompo { get; private set; }
     
     public Interaction IntaractionCompo { get; private set; }
 
-    public PlayerRenderer RendererCompo { get; private set; }
+    public Animator AnimatorCompo { get; private set; }
 
     protected virtual void Awake()
     {
-        RendererCompo = GetComponentInChildren<PlayerRenderer>();
+        RbCompo = GetComponent<Rigidbody2D>();
+        AnimatorCompo = GetComponentInChildren<Animator>();
         IntaractionCompo = GetComponent<Interaction>();
         MovementCompo = GetComponent<PlayerMovement>();
         SwitchingCompo = GetComponent<SwitchingPlayer>();
@@ -22,7 +25,6 @@ public abstract class Agent : MonoBehaviour
 
     private void OnEnable()
     {
-        InputCompo.OnJumpEvent += MovementCompo.GetJump;
         InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
         InputCompo.OnInteractionEvent += IntaractionCompo.InteractionPress;
     }
@@ -31,6 +33,7 @@ public abstract class Agent : MonoBehaviour
     {
         InputCompo.OnInteractionEvent -= IntaractionCompo.InteractionPress;
         InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;
-        InputCompo.OnJumpEvent -= MovementCompo.GetJump;
     }
+
+    public abstract void AnimationEndTrigger();
 }

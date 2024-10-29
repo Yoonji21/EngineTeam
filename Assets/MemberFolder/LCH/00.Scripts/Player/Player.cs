@@ -4,23 +4,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+
+public enum PlayerType
+{
+    Idle, 
+    Jump, 
+    Fail, 
+    Move, 
+    Push, 
+    SwithUp
+}
 public class Player : Agent
 {
-    [Header("FSM")]
-
-    [SerializeField] private List<StateTypeSO> _statList;
-
     [SerializeField] private LayerMask whatIsPushObj;
+    [SerializeField] private LayerMask whatIsToadstoolObj;
     [SerializeField] private Vector2 _objCheckSize;
+    public float _jumpPower { get; private set; } = 12f;
 
-    [SerializeField] private float _jumpPower = 12f;
-    [SerializeField] private int _jumpCount = 2;
+    public bool isSwithOn { get; set; } = false;
 
-    private int _currentJumpCount = 0;
-    private PlayerMovement _mover;
-
-    private StateMachine _stateMachine;
-    private Dictionary<StateTypeSO, State> _stateDictionary;
+    public StateMachine stateMachine;
 
     public bool IsPushObj()
     {
@@ -28,36 +31,56 @@ public class Player : Agent
         return isPushObj;
     }
 
-    public StateMachine stateMachine;
+    public bool IsToadstoolObj()
+    {
+        bool isToadstoolobj = Physics2D.OverlapBox(transform.position, _objCheckSize, 0, whatIsToadstoolObj);
+        return isToadstoolobj;
+    }
+
     protected override void Awake()
     {
         base.Awake();
-        _stateMachine = new StateMachine();
-        _stateDictionary = new Dictionary<StateTypeSO, State>();
+        stateMachine = new StateMachine();
 
-        foreach (StateTypeSO state in _statList)
+        foreach (PlayerType stateEnum in Enum.GetValues(typeof(PlayerType)))
         {
             try
             {
-                Type type = Type.GetType(state.className);
-                var playerState = Activator.CreateInstance(type, this, state.stateAnim) as State;
-                _stateDictionary.Add(state, playerState);
+                string enumName = stateEnum.ToString();
+                Type t = Type.GetType(enumName + "State");
+                State state = Activator.CreateInstance(t, this, stateMachine, enumName) as State;
+
+                stateMachine._stateDictionary.Add(stateEnum, state);
+
             }
             catch (Exception ex)
             {
-                Debug.LogError($"<color=red>{state.className}</color> loading error, Message : {ex.Message}");
+                Debug.LogError($"<color=red>{stateEnum.ToString()}</color> loading error, Message : {ex.Message}");
             }
         }
+
+    }
+
+    private void Start()
+    {
+        stateMachine.Initialized(PlayerType.Idle, this);
+        
     }
 
     private void Update()
     {
-        //stateMachine.CurrentState.UpdateState();
+        stateMachine.CurrentState.UpdateState();
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(transform.position, _objCheckSize);
+       
+    }
+
+    public override void AnimationEndTrigger()
+    {
+        stateMachine.CurrentState.AnimationEndTrigger();
     }
 }
