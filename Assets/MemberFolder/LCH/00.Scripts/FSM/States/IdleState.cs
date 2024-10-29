@@ -21,4 +21,10 @@ public class IdleState : State
            _player.stateMachine.ChangeState(PlayerType.Move);
         base.UpdateState();
     }
+
+    protected override void HandleJumpPressed()
+    {
+        if (_player.MovementCompo.IsGrounded)
+            _player.stateMachine.ChangeState(PlayerType.Jump);
+    }
 }

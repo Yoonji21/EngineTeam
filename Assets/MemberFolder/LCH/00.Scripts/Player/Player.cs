@@ -18,7 +18,7 @@ public class Player : Agent
 {
     [SerializeField] private LayerMask whatIsPushObj;
     [SerializeField] private Vector2 _objCheckSize;
-    public float _jumpPower { get; private set; } = 7f;
+    public float _jumpPower { get; private set; } = 12f;
 
     public StateMachine stateMachine;
 

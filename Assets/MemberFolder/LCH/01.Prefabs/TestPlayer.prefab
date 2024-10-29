@@ -55,8 +55,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_GravityScale: 4
+  m_Material: {fileID: 6200000, guid: 3e57334dbeff20c489df48a3ad03eab7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -79,14 +79,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0544870fad1e8cd409990a8807f6773a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveParma: {fileID: 11400000, guid: e5f5ef8d4bc4ec3498cc521363f9a408, type: 2}
   _speed: 6
   _xMove: {x: 0, y: 0, z: 0}
   _whatIsGround:
     serializedVersion: 2
     m_Bits: 64
   _groundChecker: {fileID: 3000709007212361777}
-  _checkerSize: {x: 0.46, y: 0.24}
+  _checkerSize: {x: 0.51, y: 0.2}
 --- !u!114 &1936614882220665211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,17 +140,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <InputCompo>k__BackingField: {fileID: 11400000, guid: 81733159bc0a41c4f938fccd26baa4d4, type: 2}
-  IdleState: {fileID: 11400000, guid: d43044e64e709234f8ad447c286d55af, type: 2}
-  MoveState: {fileID: 11400000, guid: ddb5bb90af7d5ca4fa10027f40c95031, type: 2}
-  _statList:
-  - {fileID: 11400000, guid: d43044e64e709234f8ad447c286d55af, type: 2}
-  - {fileID: 11400000, guid: ddb5bb90af7d5ca4fa10027f40c95031, type: 2}
   whatIsPushObj:
     serializedVersion: 2
     m_Bits: 512
-  _objCheckSize: {x: 0.73, y: 1.52}
-  _jumpPower: 12
-  _jumpCount: 2
+  _objCheckSize: {x: 0.75, y: 1.22}
 --- !u!61 &820228366403178333
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -184,7 +176,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0051891804, y: 0.022618532}
+  m_Offset: {x: 0.014640689, y: 0.052585125}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -195,7 +187,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.69897115, y: 1.4737749}
+  m_Size: {x: 0.6892655, y: 1.4227109}
   m_EdgeRadius: 0
 --- !u!1 &7076593531374484274
 GameObject:
@@ -269,11 +261,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1041707723
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1559252416, guid: 550701756c33fe9419e0a810acfeea19, type: 3}
-  m_Color: {r: 0.9433962, g: 0.34709847, b: 0.34709847, a: 1}
+  m_Sprite: {fileID: -1511837213, guid: d3369d0b54878eb4aabd7a569dcb1ee6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

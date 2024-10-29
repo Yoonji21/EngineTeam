@@ -17,5 +17,7 @@ public class JumpState : State
     public override void UpdateState()
     {
         base.UpdateState();
+        if (_player.RbCompo.velocity.y < 0)
+            _player.stateMachine.ChangeState(PlayerType.Fail);
     }
 }
