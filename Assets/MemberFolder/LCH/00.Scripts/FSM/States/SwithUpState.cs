@@ -10,7 +10,6 @@ public class SwithUpState : State
 
     public override void Enter()
     {
-        _player.MovementCompo.StopIimmediately(false);
         base.Enter();
     }
 
@@ -18,7 +17,9 @@ public class SwithUpState : State
     {
         if (_endTriggerCalled)
         {
-            _player.stateMachine.ChangeState(PlayerType.Idle);
+            float xMove = _player.InputCompo.InputDriection.x;
+            if (Mathf.Abs(xMove) > 0)
+                _player.stateMachine.ChangeState(PlayerType.Move);
         }
         base.UpdateState();
     }

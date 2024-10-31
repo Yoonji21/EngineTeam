@@ -15,11 +15,18 @@ public class SwithOnOff : MonoBehaviour
         _swithAnim = GetComponentInChildren<ToadstoolAnim>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.CompareTag("Player"))
+        if (_player.IsToadstoolObj())
         {
             StartCoroutine(SwithOnCoroutine());
+        }
+        if (!_player.IsToadstoolObj())
+        {
+            if (_player.isSwithOn)
+            {
+                StartCoroutine(SwithOffCoroutine());
+            }
         }
     }
 
@@ -28,15 +35,6 @@ public class SwithOnOff : MonoBehaviour
         yield return new WaitForSeconds(2f);
         _player.isSwithOn = true;
         _swithAnim.isON = true;
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (_player.isSwithOn)
-        {
-          
-            StartCoroutine(SwithOffCoroutine());
-        }
     }
 
     private IEnumerator SwithOffCoroutine()
