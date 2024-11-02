@@ -11,7 +11,7 @@ public class IdleState : State
 
     public override void Enter()
     {
-        _player.MovementCompo.StopIimmediately(false);
+        _player.MovementCompo.StopIimmediately(true);
         base.Enter();
     }
 
@@ -20,8 +20,10 @@ public class IdleState : State
         float xMove = _player.InputCompo.InputDriection.x;
         if (Mathf.Abs(xMove) > 0)
            _player.stateMachine.ChangeState(PlayerType.Move);
-        if (_player.IsToadstoolObj() && !_player.isSwithOn)
-            _player.StartCoroutine(SwithOnOffCoroutine(2f));
+        if (_player.IsToadstoolObj())
+            _player.StartCoroutine(SwithOnOffCoroutine(1.6f));
+        if (!_player.IsToadstoolObj())
+            _player.StopAllCoroutines();
         base.UpdateState();
     }
 
