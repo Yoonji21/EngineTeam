@@ -22,11 +22,6 @@ public class PlayerMovement : MonoBehaviour
         _renderer = GetComponentInChildren<PlayerRenderer>();
     }
 
-    public void AddForceToEnitity(Vector2 force, ForceMode2D mode = ForceMode2D.Impulse)
-    {
-        _rbcompo.AddForce(force, mode);
-    }
-
     public void StopIimmediately(bool isYAxIsTOO = false)
     {
         if (isYAxIsTOO)

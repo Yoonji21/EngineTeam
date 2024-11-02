@@ -69,8 +69,8 @@ public class Player : Agent
 
     private void Update()
     {
-        stateMachine.CurrentState.UpdateState();
         Debug.Log(stateMachine.CurrentState);
+        stateMachine.CurrentState.UpdateState();
     }
 
     private void OnDrawGizmos()

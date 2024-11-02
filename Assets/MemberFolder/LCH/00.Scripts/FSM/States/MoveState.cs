@@ -10,7 +10,6 @@ public class MoveState : State
 
     public override void UpdateState()
     {
-        base.UpdateState();
         float xMove = _player.InputCompo.InputDriection.x;
 
         _player.MovementCompo.SetXMovement(xMove);
@@ -20,6 +19,8 @@ public class MoveState : State
 
         if (_player.IsPushObj())
             _player.stateMachine.ChangeState(PlayerType.Push);
+
+        base.UpdateState();
     }
 
     protected override void HandleJumpPressed()
