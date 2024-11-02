@@ -5,7 +5,8 @@ using UnityEngine;
 public class ToadstoolAnim : MonoBehaviour
 {
     [SerializeField] private GameObject Element;
-    private bool isOff  = false;
+    [SerializeField] private GameObject[] Elements;
+    public bool isON { get; set; } = false;
 
 
     private Animator _animator;
@@ -14,29 +15,48 @@ public class ToadstoolAnim : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
 
-        if(Element == null)
-        {
-            Element = null;
-        }
+        if (Element == null)
+            return;
+        if (Elements == null)
+            return;
     }
+
+    private void Update()
+    {
+        OffDicPlayer();
+    }
+    
 
     public void OffDicPlayer()
     {
 
-        if (!isOff)
+        if (isON)
         {
-            _animator.SetBool("OFF", !isOff);
-            isOff = true;
+            _animator.SetBool("ON", true);
         }
         else 
         {
-            _animator.SetBool("OFF", !isOff);
-            isOff = false;
+            _animator.SetBool("ON", false);
         }
     }
 
     public void EndAnimCall()
     {
-         Element.SetActive(!isOff);
+        if (isON)
+        {
+            Element.SetActive(false);
+            for (int i = 0; i < Elements.Length; i++)
+            {
+                Elements[i].SetActive(false);
+            }
+        }
+        else
+        {
+            Element.SetActive(true);
+            for (int i = 0; i < Elements.Length; i++)
+            {
+                Elements[i].SetActive(true);
+            }
+        }
     }
 }

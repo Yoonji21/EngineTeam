@@ -9,7 +9,7 @@ using static InputReder;
 public class InputSystem : ScriptableObject, IPlayerActions
 {
 
-    public Action<Vector2> OnMovementEvent;
+    public Vector2 InputDriection { get; private set; }
     public Action OnJumpEvent;
     public Action OnswithingPlayerEvent;
     public Action OnHoldObjEvent;
@@ -48,8 +48,7 @@ public class InputSystem : ScriptableObject, IPlayerActions
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        Vector2 value = context.ReadValue<Vector2>();
-        OnMovementEvent?.Invoke(value);
+        InputDriection = context.ReadValue<Vector2>();
     }
 
     public void OnSwitchingPlayer(InputAction.CallbackContext context)

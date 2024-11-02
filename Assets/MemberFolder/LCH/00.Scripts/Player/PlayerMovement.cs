@@ -1,44 +1,61 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _speed;
-    [SerializeField] private float _jumpPower;
+    [field:SerializeField] public float _speed;
+    private Rigidbody2D _rbcompo;
+    public Vector3 _xMove;
     [SerializeField] private LayerMask _whatIsGround;
     [SerializeField] private Transform _groundChecker;
     [SerializeField] private Vector2 _checkerSize;
-    private Rigidbody2D _rbcompo;
-    private Vector3 _xMove;
+    public bool IsGrounded { get; private set; }
+    private float _xMovement;
 
+    private PlayerRenderer _renderer;
     private void Awake()
     {
         _rbcompo = GetComponent<Rigidbody2D>();
+        _renderer = GetComponentInChildren<PlayerRenderer>();
     }
 
-    private bool GroundChecker()
+    public void StopIimmediately(bool isYAxIsTOO = false)
     {
-        bool isGround = Physics2D.OverlapBox(_groundChecker.position, _checkerSize, 0, _whatIsGround);
-        return isGround;
+        if (isYAxIsTOO)
+            _rbcompo.velocity = Vector2.zero;
+        else
+            _rbcompo.velocity = new Vector2(0,_rbcompo.velocity.y);
+        _xMovement = 0;
     }
 
-    public void GetJump()
+    public void SetXMovement(float xMovement)
     {
-        if (GroundChecker())
-        {
-            _rbcompo.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
-        }
+        _xMovement = xMovement;
     }
 
-    public void GetMove(Vector2 value)
+    private void GroundChecker()
     {
-        _xMove.x = value.x;
+        bool before = IsGrounded;
+        IsGrounded = Physics2D.OverlapBox(
+            _groundChecker.position, _checkerSize, 0, _whatIsGround);
     }
+
+
+    private void MoveCharacter()
+    {
+       _rbcompo.velocity = new Vector2(_xMovement * _speed,_rbcompo.velocity.y);
+        _renderer.FlipController(_xMovement);
+    }
+
+
 
     private void FixedUpdate()
     {
-        _rbcompo.velocity = new Vector2(_xMove.x * _speed, _rbcompo.velocity.y);
+        MoveCharacter();
+        GroundChecker();
     }
 
     private void OnDrawGizmos()
@@ -46,4 +63,5 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(_groundChecker.position, _checkerSize);
     }
+
 }

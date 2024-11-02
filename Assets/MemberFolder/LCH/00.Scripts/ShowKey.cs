@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ShowKey : MonoBehaviour
 {
@@ -10,8 +11,8 @@ public class ShowKey : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("나 등장");
             _fkey.SetActive(true);
+            
         }
     }
 
@@ -19,7 +20,6 @@ public class ShowKey : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("나 퇴장");
             _fkey.SetActive(false);
         }
     }

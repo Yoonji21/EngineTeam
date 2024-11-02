@@ -1,35 +1,87 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class Player : MonoBehaviour
+
+public enum PlayerType
 {
-	[field : SerializeField]public InputSystem InputCompo { get; private set; }
-    public PlayerMovement MovementCompo { get; private set; }
-    public SwitchingPlayer SwitchingCompo { get; private set; }
-    
-    public Interaction IntaractionCompo { get; private set; }
+    Idle, 
+    Jump, 
+    Fail, 
+    Move, 
+    Push, 
+    SwithUp
+}
+public class Player : Agent
+{
+    [SerializeField] private LayerMask whatIsPushObj;
+    [SerializeField] private LayerMask whatIsToadstoolObj;
+    [SerializeField] private Vector2 _objCheckSize;
+    public float _jumpPower { get; private set; } = 12f;
 
-    private void Awake()
+    public bool isSwithOn { get; set; } = false;
+
+    public StateMachine stateMachine;
+
+    public bool IsPushObj()
     {
-        IntaractionCompo = GetComponent<Interaction>();
-        MovementCompo = GetComponent<PlayerMovement>();
-        SwitchingCompo = GetComponent<SwitchingPlayer>();
+        bool isPushObj = Physics2D.OverlapBox(transform.position,_objCheckSize ,0,whatIsPushObj);
+        return isPushObj;
     }
 
-    private void OnEnable()
+    public bool IsToadstoolObj()
     {
-        InputCompo.OnMovementEvent += MovementCompo.GetMove;
-        InputCompo.OnJumpEvent += MovementCompo.GetJump;
-        InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
-        InputCompo.OnInteractionEvent += IntaractionCompo.InteractionPress;
+        bool isToadstoolobj = Physics2D.OverlapBox(transform.position, _objCheckSize, 0, whatIsToadstoolObj);
+        return isToadstoolobj;
     }
 
-    private void OnDisable()
+    protected override void Awake()
     {
-        InputCompo.OnInteractionEvent -= IntaractionCompo.InteractionPress;
-        InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;
-        InputCompo.OnMovementEvent -= MovementCompo.GetMove;
-        InputCompo.OnJumpEvent -= MovementCompo.GetJump;
+        base.Awake();
+        stateMachine = new StateMachine();
+
+        foreach (PlayerType stateEnum in Enum.GetValues(typeof(PlayerType)))
+        {
+            try
+            {
+                string enumName = stateEnum.ToString();
+                Type t = Type.GetType(enumName + "State");
+                State state = Activator.CreateInstance(t, this, stateMachine, enumName) as State;
+
+                stateMachine._stateDictionary.Add(stateEnum, state);
+
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"<color=red>{stateEnum.ToString()}</color> loading error, Message : {ex.Message}");
+            }
+        }
+
+    }
+
+    private void Start()
+    {
+        stateMachine.Initialized(PlayerType.Idle, this);
+        
+    }
+
+    private void Update()
+    {
+        Debug.Log(stateMachine.CurrentState);
+        stateMachine.CurrentState.UpdateState();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(transform.position, _objCheckSize);
+       
+    }
+
+    public override void AnimationEndTrigger()
+    {
+        stateMachine.CurrentState.AnimationEndTrigger();
     }
 }
