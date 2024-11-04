@@ -19,6 +19,7 @@ public class Player : Agent
     [SerializeField] private LayerMask whatIsPushObj;
     [SerializeField] private LayerMask whatIsToadstoolObj;
     [SerializeField] private Vector2 _objCheckSize;
+    [SerializeField] private Transform _checkTrm;
     public float _jumpPower { get; private set; } = 12f;
 
     public bool isSwithOn { get; set; } = false;
@@ -27,13 +28,13 @@ public class Player : Agent
 
     public bool IsPushObj()
     {
-        bool isPushObj = Physics2D.OverlapBox(transform.position,_objCheckSize ,0,whatIsPushObj);
+        bool isPushObj = Physics2D.OverlapBox(_checkTrm.position,_objCheckSize ,0,whatIsPushObj);
         return isPushObj;
     }
 
     public bool IsToadstoolObj()
     {
-        bool isToadstoolobj = Physics2D.OverlapBox(transform.position, _objCheckSize, 0, whatIsToadstoolObj);
+        bool isToadstoolobj = Physics2D.OverlapBox(_checkTrm.position, _objCheckSize, 0, whatIsToadstoolObj);
         return isToadstoolobj;
     }
 
@@ -76,7 +77,7 @@ public class Player : Agent
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.position, _objCheckSize);
+        Gizmos.DrawWireCube(_checkTrm.position, _objCheckSize);
        
     }
 

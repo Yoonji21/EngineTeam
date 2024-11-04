@@ -1546,11 +1546,11 @@ PrefabInstance:
       objectReference: {fileID: 580314874}
     - target: {fileID: 2719955774264852428, guid: f586bf68280a10741885042f41bc8727, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.27
+      value: -3.41
       objectReference: {fileID: 0}
     - target: {fileID: 2719955774264852428, guid: f586bf68280a10741885042f41bc8727, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.43
+      value: -3.32
       objectReference: {fileID: 0}
     - target: {fileID: 2719955774264852428, guid: f586bf68280a10741885042f41bc8727, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1588,6 +1588,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AchromaticPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 4979308764983352817, guid: f586bf68280a10741885042f41bc8727, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1603,11 +1607,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 743019578151208491, guid: 574daccf714467f40ac895e4d7cb8cf3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.27
+      value: -5.41
       objectReference: {fileID: 0}
     - target: {fileID: 743019578151208491, guid: 574daccf714467f40ac895e4d7cb8cf3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.51
+      value: 2.6200001
       objectReference: {fileID: 0}
     - target: {fileID: 743019578151208491, guid: 574daccf714467f40ac895e4d7cb8cf3, type: 3}
       propertyPath: m_LocalPosition.z
