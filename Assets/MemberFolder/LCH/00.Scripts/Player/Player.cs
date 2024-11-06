@@ -38,9 +38,8 @@ public class Player : Agent
         return isToadstoolobj;
     }
 
-    protected override void Awake()
+    private void AddState()
     {
-        base.Awake();
         stateMachine = new StateMachine();
 
         foreach (PlayerType stateEnum in Enum.GetValues(typeof(PlayerType)))
@@ -59,18 +58,10 @@ public class Player : Agent
                 Debug.LogError($"<color=red>{stateEnum.ToString()}</color> loading error, Message : {ex.Message}");
             }
         }
-
-    }
-
-    private void Start()
-    {
-        stateMachine.Initialized(PlayerType.Idle, this);
-        
     }
 
     private void Update()
     {
-        Debug.Log(stateMachine.CurrentState);
         stateMachine.CurrentState.UpdateState();
     }
 
@@ -84,5 +75,19 @@ public class Player : Agent
     public override void AnimationEndTrigger()
     {
         stateMachine.CurrentState.AnimationEndTrigger();
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        AddState();
+        stateMachine.Initialized(PlayerType.Idle, this);
+        stateMachine.CurrentState.Enter();
+    }
+
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        stateMachine.CurrentState.Exit();
     }
 }

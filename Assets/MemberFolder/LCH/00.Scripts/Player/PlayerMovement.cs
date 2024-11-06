@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private float _xMovement;
 
     private PlayerRenderer _renderer;
-    private void Awake()
+
+    private void OnEnable()
     {
         _rbcompo = GetComponent<Rigidbody2D>();
         _renderer = GetComponentInChildren<PlayerRenderer>();
