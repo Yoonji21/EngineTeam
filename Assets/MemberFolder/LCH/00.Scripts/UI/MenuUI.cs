@@ -1,15 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuUI : MonoBehaviour
 {
-	[SerializeField] private Canvas _levelUI;
-
 	public void LevelButtonClik()
     {
-        gameObject.SetActive(false);
-        _levelUI.gameObject.SetActive(true);
+        SceneManager.LoadScene(1);
     }
 }

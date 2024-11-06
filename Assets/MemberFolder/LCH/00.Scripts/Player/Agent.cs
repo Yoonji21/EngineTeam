@@ -13,23 +13,18 @@ public abstract class Agent : MonoBehaviour
     public Interaction IntaractionCompo { get; private set; }
 
     public Animator AnimatorCompo { get; private set; }
-
-    protected virtual void Awake()
+    protected virtual void OnEnable()
     {
         RbCompo = GetComponent<Rigidbody2D>();
         AnimatorCompo = GetComponentInChildren<Animator>();
         IntaractionCompo = GetComponent<Interaction>();
         MovementCompo = GetComponent<PlayerMovement>();
         SwitchingCompo = GetComponent<SwitchingPlayer>();
-    }
-
-    private void OnEnable()
-    {
         InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
         InputCompo.OnInteractionEvent += IntaractionCompo.InteractionPress;
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         InputCompo.OnInteractionEvent -= IntaractionCompo.InteractionPress;
         InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;

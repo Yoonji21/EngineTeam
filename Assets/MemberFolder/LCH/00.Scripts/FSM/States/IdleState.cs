@@ -11,7 +11,6 @@ public class IdleState : State
 
     public override void Enter()
     {
-        _player.MovementCompo.StopIimmediately(true);
         base.Enter();
     }
 

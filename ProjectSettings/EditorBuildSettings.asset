@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/MemberFolder/LCH/MainScene.unity
     guid: e0f1c90f16da7c24f98d630d79f9dca9
   - enabled: 1
+    path: Assets/MemberFolder/LCH/LevelSelect.unity
+    guid: dfc45ccd955ded946bd58f6f1931eed2
+  - enabled: 1
     path: Assets/MemberFolder/LJH/Stage1.unity
     guid: ceba5d060e43c91499bba86ca2beb041
   - enabled: 1
