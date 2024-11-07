@@ -62,6 +62,7 @@ public class Player : Agent
 
     private void Update()
     {
+        //Debug.Log(stateMachine.CurrentState);
         stateMachine.CurrentState.UpdateState();
     }
 
