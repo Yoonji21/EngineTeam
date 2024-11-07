@@ -20,11 +20,11 @@ public class Player : Agent
     [SerializeField] private LayerMask whatIsToadstoolObj;
     [SerializeField] private Vector2 _objCheckSize;
     [SerializeField] private Transform _checkTrm;
-    public float _jumpPower { get; private set; } = 12f;
+    public float _jumpPower { get; private set; } = 6f;
 
     public bool isSwithOn { get; set; } = false;
 
-    public StateMachine stateMachine;
+    [SerializeField] public StateMachine stateMachine;
 
     public bool IsPushObj()
     {

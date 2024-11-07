@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
         if (isYAxIsTOO)
             _rbcompo.velocity = Vector2.zero;
         else
-            _rbcompo.velocity = new Vector2(0,_rbcompo.velocity.y);
+            _rbcompo.velocity = new Vector2(0, _rbcompo.velocity.y);
         _xMovement = 0;
     }
 
