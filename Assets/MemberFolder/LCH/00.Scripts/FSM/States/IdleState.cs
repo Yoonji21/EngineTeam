@@ -12,13 +12,12 @@ public class IdleState : State
     public override void Enter()
     {
         base.Enter();
-        _player.RbCompo.velocity = Vector2.zero;
+        _player.MovementCompo.StopIimmediately(true);
     }
 
     public override void UpdateState()
     {
         float xMove = _player.InputCompo.InputDriection.x;
-
        if(Mathf.Approximately(xMove, 0))
         {
             _player.RbCompo.velocity = Vector2.zero;

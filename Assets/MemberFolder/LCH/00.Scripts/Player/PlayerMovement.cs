@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class PlayerMovement : MonoBehaviour
 {
     [field:SerializeField] public float _speed;
-    private Rigidbody2D _rbcompo;
+    [SerializeField] private Rigidbody2D _rbcompo;
     public Vector3 _xMove;
     [SerializeField] private LayerMask _whatIsGround;
     [SerializeField] private Transform _groundChecker;
@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        _rbcompo = GetComponent<Rigidbody2D>();
         _renderer = GetComponentInChildren<PlayerRenderer>();
     }
 

@@ -844,6 +844,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4979308764983352817, guid: f586bf68280a10741885042f41bc8727, type: 3}
   m_PrefabInstance: {fileID: 4176510170228434267}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1172254151 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 5303410789962738851, guid: f586bf68280a10741885042f41bc8727, type: 3}
+  m_PrefabInstance: {fileID: 4176510170228434267}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1340795654 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1410985374127405072, guid: 7ffe24c146fffc14d9a3dbd975f3d2a7, type: 3}
@@ -988,6 +993,11 @@ LineRenderer:
 --- !u!1 &1435749551 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7704123991364690966, guid: 574daccf714467f40ac895e4d7cb8cf3, type: 3}
+  m_PrefabInstance: {fileID: 5994566867183856838}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1435749558 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7379434965349094724, guid: 574daccf714467f40ac895e4d7cb8cf3, type: 3}
   m_PrefabInstance: {fileID: 5994566867183856838}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1713574602
@@ -1560,6 +1570,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.1194222
       objectReference: {fileID: 0}
+    - target: {fileID: 860848768701693000, guid: f586bf68280a10741885042f41bc8727, type: 3}
+      propertyPath: _rbcompo
+      value: 
+      objectReference: {fileID: 1172254151}
     - target: {fileID: 2719955774264852428, guid: f586bf68280a10741885042f41bc8727, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1690,6 +1704,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2594878674130093487, guid: 574daccf714467f40ac895e4d7cb8cf3, type: 3}
+      propertyPath: _rbcompo
+      value: 
+      objectReference: {fileID: 1435749558}
     - target: {fileID: 2635323047977957050, guid: 574daccf714467f40ac895e4d7cb8cf3, type: 3}
       propertyPath: m_Size.x
       value: 1.0061369
