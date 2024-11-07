@@ -25,10 +25,7 @@ public class SwithOnOff : MonoBehaviour
         }
         if (!_player.IsToadstoolObj())
         {
-            if (_player.isSwithOn)
-            {
-                StartCoroutine(SwithOffCoroutine());
-            }
+            StopAllCoroutines();
         }
     }
 

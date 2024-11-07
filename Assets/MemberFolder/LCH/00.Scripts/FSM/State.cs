@@ -18,6 +18,7 @@ public abstract class State
 
 	public virtual void Enter()
     {
+
 		_player.InputCompo.OnJumpEvent += HandleJumpPressed;
 		_player.AnimatorCompo.SetBool(_animBoolHash, true);
 		_endTriggerCalled = false;
