@@ -9,4 +9,9 @@ public class LevelChose : MonoBehaviour
     {
         SceneManager.LoadScene(sceneCount);
     }
+
+    public void BackButtonClik()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
