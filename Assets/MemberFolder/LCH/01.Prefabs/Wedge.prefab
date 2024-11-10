@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3497440174860734611}
   - component: {fileID: 6705919490844458856}
   - component: {fileID: 8850693114292176883}
-  - component: {fileID: 4908785998498463683}
   - component: {fileID: 3382210172739548308}
   m_Layer: 6
   m_Name: Wedge
@@ -115,18 +114,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4908785998498463683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6174635417065734548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 131c9962a19f6f14c962a404174cd682, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &3382210172739548308
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -188,6 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5979203876311534788}
   - component: {fileID: 2240414919137202922}
+  - component: {fileID: 8823110426691309566}
   m_Layer: 9
   m_Name: PushCollider
   m_TagString: Untagged
@@ -255,3 +243,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.053659678, y: 0.5686483}
   m_EdgeRadius: 0
+--- !u!114 &8823110426691309566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8326143517848713463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 131c9962a19f6f14c962a404174cd682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
