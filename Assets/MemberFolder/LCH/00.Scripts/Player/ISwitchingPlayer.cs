@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class SwitchingPlayer : MonoBehaviour
+public class SwitchingPlayer : MonoBehaviour,IEntityComponent
 {
     private CinemachineVirtualCamera vCam;
     [SerializeField] private GameObject _switchingUI;
     [SerializeField] private GameObject _player;
 
-    private void Awake()
-    {
-        vCam = FindObjectOfType<CinemachineVirtualCamera>();
-    }
+    private Entity _entity;
 
     public void SwitchingPlayerUI()
     {
@@ -28,5 +25,11 @@ public class SwitchingPlayer : MonoBehaviour
         gameObject.SetActive(false);
         player.SetActive(true);
         vCam.Follow = player.transform;
+    }
+
+    public void Initialize(Entity entity)
+    {
+        _entity = entity;
+        vCam = FindObjectOfType<CinemachineVirtualCamera>();
     }
 }

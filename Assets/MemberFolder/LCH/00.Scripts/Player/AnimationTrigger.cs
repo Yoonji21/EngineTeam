@@ -8,6 +8,6 @@ public class AnimationTrigger : MonoBehaviour
 
     public void AnimationEnd()
     {
-        _palyer.AnimationEndTrigger();
+        //_palyer.AnimationEndTrigger();
     }
 }

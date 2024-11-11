@@ -25,7 +25,7 @@ public class SwithOnOff : MonoBehaviour
         }
         if (!_player.IsToadstoolObj())
         {
-            StopAllCoroutines();
+           StartCoroutine(SwithOffCoroutine());
         }
     }
 
@@ -33,14 +33,12 @@ public class SwithOnOff : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         _swithAnim.isON = true;
-        yield return new WaitUntil(() => _player.isSwithOn = true);
         _playerTrigger.enabled = false;
     }
 
     private IEnumerator SwithOffCoroutine()
     {
         yield return new WaitForSeconds(2f);
-        _player.isSwithOn = false;
         _swithAnim.isON = false;
         _playerTrigger.enabled = true;
     }

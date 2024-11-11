@@ -783,6 +783,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AchromaticPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 2119028655432220398, guid: 26331ccd76e8b1c44a376212b9332992, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691485845959860606, guid: 26331ccd76e8b1c44a376212b9332992, type: 3}
+      propertyPath: _playerFSM
+      value: 
+      objectReference: {fileID: 11400000, guid: 12124b86f27350a4e8f8eee466ed1684, type: 2}
     - target: {fileID: 5413857004991898346, guid: 26331ccd76e8b1c44a376212b9332992, type: 3}
       propertyPath: _player
       value: 
@@ -1304,7 +1312,7 @@ MonoBehaviour:
   _checkerSize: {x: 0.78, y: 0.5}
   _whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 640
+    m_Bits: 128
 --- !u!4 &1760798895 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3497440174860734611, guid: 1bf27a363d9769240b4fe1b01e47d98b, type: 3}
@@ -1321,6 +1329,10 @@ PrefabInstance:
     - target: {fileID: 2197343056379206661, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
       propertyPath: m_Name
       value: ChromaticColorPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2197343056379206661, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3322181603204223594, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1366,6 +1378,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 572353846}
+    - target: {fileID: 7648476780767622616, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
+      propertyPath: _playerFSM
+      value: 
+      objectReference: {fileID: 11400000, guid: 12124b86f27350a4e8f8eee466ed1684, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1999,7 +2015,11 @@ PrefabInstance:
     - target: {fileID: 1785113960812461645, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
       propertyPath: Element
       value: 
-      objectReference: {fileID: 1738186649}
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785113960812461645, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: Elements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1785113960812461645, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
       propertyPath: Elements.Array.data[0]
       value: 

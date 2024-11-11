@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour,IEntityComponent
 {
     [field:SerializeField] public float _speed;
-    [SerializeField] private Rigidbody2D _rbcompo;
+     private Rigidbody2D _rbcompo;
     public Vector3 _xMove;
     [SerializeField] private LayerMask _whatIsGround;
     [SerializeField] private Transform _groundChecker;
     [SerializeField] private Vector2 _checkerSize;
+
+    private Entity _entity;
     public bool IsGrounded { get; private set; }
     private float _xMovement;
 
@@ -19,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        _renderer = GetComponentInChildren<PlayerRenderer>();
+        
     }
 
     public void StopIimmediately(bool isYAxIsTOO = false)
@@ -64,4 +66,10 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawWireCube(_groundChecker.position, _checkerSize);
     }
 
+    public void Initialize(Entity entity)
+    {
+        _entity = entity;
+        _renderer = GetComponentInChildren<PlayerRenderer>();
+        _rbcompo = GetComponent<Rigidbody2D>();
+    }
 }
