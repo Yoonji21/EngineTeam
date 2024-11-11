@@ -44,6 +44,10 @@ public class ToadstoolAnim : MonoBehaviour
     {
         if (isON)
         {
+            if (Element == null)
+                return;
+            if (Elements == null)
+                return;
             Element.SetActive(false);
             for (int i = 0; i < Elements.Length; i++)
             {
@@ -52,6 +56,10 @@ public class ToadstoolAnim : MonoBehaviour
         }
         else
         {
+            if (Element == null)
+                return;
+            if (Elements == null)
+                return;
             Element.SetActive(true);
             for (int i = 0; i < Elements.Length; i++)
             {

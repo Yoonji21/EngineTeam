@@ -8,7 +8,9 @@ public class WedgePush : MonoBehaviour
 
     private float _originMass = 0;
 
-    [SerializeField] private Vector2 _checkerSize;
+    [SerializeField] private float _raydirect;
+
+    [SerializeField] private Transform _cherkerTrm;
 
     [SerializeField] private LayerMask _whatIsPlayer;
 
@@ -18,17 +20,15 @@ public class WedgePush : MonoBehaviour
         _originMass = _rbcompo.mass;
     }
 
-    public bool PlayerChecker()
+    public RaycastHit2D PlayerChecker()
     {
-        bool isbool = Physics2D.OverlapBox(transform.position, _checkerSize, 0, _whatIsPlayer);
-        return isbool;
+      return Physics2D.Raycast(_cherkerTrm.position, Vector2.right, _raydirect, _whatIsPlayer);
     }
 
     private void Update()
     {
         if (PlayerChecker())
         {
-            Debug.Log(_originMass);
             _rbcompo.mass = 1f;
         }
         else
@@ -41,6 +41,7 @@ public class WedgePush : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, _checkerSize);
+        Gizmos.DrawRay(_cherkerTrm.position, Vector2.right * _raydirect);
+
     }
 }

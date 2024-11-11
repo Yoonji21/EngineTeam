@@ -14,8 +14,20 @@ public enum PlayerType
     Push, 
     SwithUp
 }
-public class Player : Agent
+public class Player : Entity
 {
+
+    [Header("FSM")]
+    [SerializeField] private EntityStatesSO _playerFSM;
+
+    [field: SerializeField] public InputSystem InputCompo { get; private set; }
+    public PlayerMovement MovementCompo { get; private set; }
+
+    public Rigidbody2D RbCompo { get; private set; }
+    public SwitchingPlayer SwitchingCompo { get; private set; }
+
+    public Interaction IntaractionCompo { get; private set; }
+
     [SerializeField] private LayerMask whatIsPushObj;
     [SerializeField] private LayerMask whatIsToadstoolObj;
     [SerializeField] private Vector2 _objCheckSize;
@@ -25,6 +37,7 @@ public class Player : Agent
     public bool isSwithOn { get; set; } = false;
 
     [SerializeField] public StateMachine stateMachine;
+    public EntityState CurrentState => stateMachine.currentState;
 
     public bool IsPushObj()
     {
@@ -38,33 +51,28 @@ public class Player : Agent
         return isToadstoolobj;
     }
 
-    private void AddState()
+    protected override void AfterInit()
     {
-        stateMachine = new StateMachine();
-
-        foreach (PlayerType stateEnum in Enum.GetValues(typeof(PlayerType)))
-        {
-            try
-            {
-                string enumName = stateEnum.ToString();
-                Type t = Type.GetType(enumName + "State");
-                State state = Activator.CreateInstance(t, this, stateMachine, enumName) as State;
-
-                stateMachine._stateDictionary.Add(stateEnum, state);
-
-            }
-            catch (Exception ex)
-            {
-                Debug.LogError($"<color=red>{stateEnum.ToString()}</color> loading error, Message : {ex.Message}");
-            }
-        }
+        base.AfterInit();
+        stateMachine = new StateMachine(_playerFSM, this);
+        MovementCompo = GetCompo<PlayerMovement>();
+        SwitchingCompo = GetCompo<SwitchingPlayer>();
+        InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
     }
-    [SerializeField] string currentState = null;
+
+    private void OnDestroy()
+    {
+        InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;
+    }
+
+     private void HandleAnimationEnd()
+    {
+        CurrentState.AnimationEndTrigger();
+    }
+
     private void Update()
     {
-        //Debug.Log(stateMachine.CurrentState);
-        currentState = stateMachine.CurrentState.ToString();
-        stateMachine.CurrentState.UpdateState();
+        stateMachine.currentState.Update();
     }
 
     private void OnDrawGizmos()
@@ -72,24 +80,5 @@ public class Player : Agent
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(_checkTrm.position, _objCheckSize);
        
-    }
-
-    public override void AnimationEndTrigger()
-    {
-        stateMachine.CurrentState.AnimationEndTrigger();
-    }
-
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-        AddState();
-        stateMachine.Initialized(PlayerType.Idle, this);
-        stateMachine.CurrentState.Enter();
-    }
-
-    protected override void OnDisable()
-    {
-        base.OnDisable();
-        stateMachine.CurrentState.Exit();
     }
 }
