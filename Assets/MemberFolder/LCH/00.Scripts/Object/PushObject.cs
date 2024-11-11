@@ -1,9 +1,0 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PushObject : MonoBehaviour
-{
-	private Rigidbody2D _rbCompo;
-
-}

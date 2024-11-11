@@ -29,6 +29,8 @@ public class IdleState : State
             _player.StartCoroutine(SwithOnOffCoroutine(1.6f));
         if (!_player.IsToadstoolObj())
             _player.StopAllCoroutines();
+        if (_player.RbCompo.velocity.y < 0)
+            _player.stateMachine.ChangeState(PlayerType.Fail);
         base.UpdateState();
     }
 
