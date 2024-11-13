@@ -1,24 +1,28 @@
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-//public class FailState : State
-//{
-//    public FailState(Player agent, StateMachine state, string animBoolName) : base(agent, state, animBoolName)
-//    {
-//    }
+public class FailState : EntityState
+{
 
-//    public override void Enter()
-//    {
-//        base.Enter();
-//    }
+    private PlayerMovement _mover;
+    public FailState(Entity entity, AnimParamSO animParam) : base(entity, animParam)
+    {
+        _mover = entity.GetCompo<PlayerMovement>();
 
-//    public override void UpdateState()
-//    {
-//        if (_player.MovementCompo.IsGrounded)
-//            _player.stateMachine.ChangeState(PlayerType.Idle);
-//        if (_player.IsPushObj())
-//            _player.stateMachine.ChangeState(PlayerType.Push);
-//        base.UpdateState();
-//    }
-//}
+    }
+
+    public override void Enter()
+    {
+        base.Enter();
+    }
+
+    public override void Update()
+    {
+        if (_player.MovementCompo.IsGrounded)
+            _player.ChangeState("Idle");
+        if (_player.IsPushObj())
+            _player.ChangeState("Push");
+        base.Update();
+    }
+}

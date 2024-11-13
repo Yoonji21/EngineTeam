@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcdb7bf35d3a43a44b988331e50c996b, type: 3}
   m_Name: PlayerPushState
   m_EditorClassIdentifier: 
-  stateName: PushState
+  stateName: Push
   className: PushState
   stateAnim: {fileID: 11400000, guid: a920028c88c297e4e88449368f3f6b8d, type: 2}
