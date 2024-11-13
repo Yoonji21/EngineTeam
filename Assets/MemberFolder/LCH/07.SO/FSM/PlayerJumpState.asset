@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcdb7bf35d3a43a44b988331e50c996b, type: 3}
   m_Name: PlayerJumpState
   m_EditorClassIdentifier: 
-  stateName: JumpState
+  stateName: Jump
   className: JumpState
   stateAnim: {fileID: 11400000, guid: a48feb026afadea4da8428a8e07bbb33, type: 2}

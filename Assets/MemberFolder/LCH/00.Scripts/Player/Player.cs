@@ -22,8 +22,6 @@ public class Player : Entity
 
     [field: SerializeField] public InputSystem InputCompo { get; private set; }
     public PlayerMovement MovementCompo { get; private set; }
-
-    public Rigidbody2D RbCompo { get; private set; }
     public SwitchingPlayer SwitchingCompo { get; private set; }
 
     public Interaction IntaractionCompo { get; private set; }
@@ -32,7 +30,7 @@ public class Player : Entity
     [SerializeField] private LayerMask whatIsToadstoolObj;
     [SerializeField] private Vector2 _objCheckSize;
     [SerializeField] private Transform _checkTrm;
-    public float _jumpPower { get; private set; } = 5f;
+    [field : SerializeField] public float _jumpPower { get; private set; } = 8f;
 
     public bool isSwithOn { get; set; } = false;
 
@@ -57,15 +55,44 @@ public class Player : Entity
         stateMachine = new StateMachine(_playerFSM, this);
         MovementCompo = GetCompo<PlayerMovement>();
         SwitchingCompo = GetCompo<SwitchingPlayer>();
-        InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
+        IntaractionCompo = GetCompo<Interaction>();
+       
     }
 
-    private void OnDestroy()
+    private void OnEnable()
+    {
+        InputCompo.OnJumpEvent += HandheldJump;
+        GetCompo<AnimationTrigger>().OnAnimationEnd += HandleAnimationEnd;
+        InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
+        InputCompo.OnInteractionEvent += SwithUp;
+    }
+
+    private void HandheldJump()
+    {
+        if (MovementCompo.IsGrounded)
+        {
+            stateMachine.ChangeState("Jump");
+        }
+    }
+
+    public void SwithUp()
+    {
+        stateMachine.ChangeState("SwithUp");
+    }
+
+    private void OnDisable()
     {
         InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;
+        InputCompo.OnInteractionEvent -= SwithUp;
+        GetCompo<AnimationTrigger>().OnAnimationEnd -= HandleAnimationEnd;
     }
 
-     private void HandleAnimationEnd()
+    private void Start()
+    {
+        stateMachine.Initialize("Idle");
+    }
+
+    private void HandleAnimationEnd()
     {
         CurrentState.AnimationEndTrigger();
     }
@@ -74,6 +101,10 @@ public class Player : Entity
     {
         stateMachine.currentState.Update();
     }
+
+    public EntityState GetState(string state) => stateMachine.GetState(state);
+
+    public void ChangeState(string newState) => stateMachine.ChangeState(newState);
 
     private void OnDrawGizmos()
     {

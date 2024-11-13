@@ -1,13 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationTrigger : MonoBehaviour
+public class AnimationTrigger : MonoBehaviour, IEntityComponent
 {
-	[SerializeField] private Player _palyer;
+    public event Action OnAnimationEnd;
+    private Entity _entity;
 
-    public void AnimationEnd()
+    public void Initialize(Entity entity)
     {
-        //_palyer.AnimationEndTrigger();
+        _entity = entity;
+    }
+
+    protected virtual void AnimationEnd()
+    {
+        OnAnimationEnd?.Invoke();
     }
 }

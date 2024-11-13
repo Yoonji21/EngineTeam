@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class PlayerMovement : MonoBehaviour,IEntityComponent
 {
     [field:SerializeField] public float _speed;
-     private Rigidbody2D _rbcompo;
+    public Rigidbody2D RbCompo { get; private set; }
     public Vector3 _xMove;
     [SerializeField] private LayerMask _whatIsGround;
     [SerializeField] private Transform _groundChecker;
@@ -18,18 +18,12 @@ public class PlayerMovement : MonoBehaviour,IEntityComponent
     private float _xMovement;
 
     private PlayerRenderer _renderer;
-
-    private void OnEnable()
-    {
-        
-    }
-
     public void StopIimmediately(bool isYAxIsTOO = false)
     {
         if (isYAxIsTOO)
-            _rbcompo.velocity = Vector2.zero;
+            RbCompo.velocity = Vector2.zero;
         else
-            _rbcompo.velocity = new Vector2(0, _rbcompo.velocity.y);
+            RbCompo.velocity = new Vector2(0, RbCompo.velocity.y);
         _xMovement = 0;
     }
 
@@ -48,7 +42,7 @@ public class PlayerMovement : MonoBehaviour,IEntityComponent
 
     private void MoveCharacter()
     {
-       _rbcompo.velocity = new Vector2(_xMovement * _speed,_rbcompo.velocity.y);
+        RbCompo.velocity = new Vector2(_xMovement * _speed, RbCompo.velocity.y);
         _renderer.FlipController(_xMovement);
     }
 
@@ -70,6 +64,6 @@ public class PlayerMovement : MonoBehaviour,IEntityComponent
     {
         _entity = entity;
         _renderer = GetComponentInChildren<PlayerRenderer>();
-        _rbcompo = GetComponent<Rigidbody2D>();
+        RbCompo = GetComponent<Rigidbody2D>();
     }
 }

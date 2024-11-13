@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcdb7bf35d3a43a44b988331e50c996b, type: 3}
   m_Name: PlayerMoveState
   m_EditorClassIdentifier: 
-  stateName: MoveState
+  stateName: Move
   className: MoveState
   stateAnim: {fileID: 11400000, guid: 5893599075b411047965b3ec73f3dc4b, type: 2}

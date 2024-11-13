@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcdb7bf35d3a43a44b988331e50c996b, type: 3}
   m_Name: PlayerSwithUpState
   m_EditorClassIdentifier: 
-  stateName: SwithUpState
+  stateName: SwithUp
   className: SwithUpState
   stateAnim: {fileID: 11400000, guid: 1c35e52f863b77a4d81d94d7833fec88, type: 2}

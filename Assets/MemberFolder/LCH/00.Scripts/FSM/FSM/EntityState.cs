@@ -3,6 +3,7 @@ using UnityEngine;
 public abstract class EntityState
 {
     protected Entity _entity;
+    protected Player _player;
     protected AnimParamSO _animParam;
     protected bool _isTriggerCall;
 
@@ -11,6 +12,7 @@ public abstract class EntityState
     public EntityState(Entity entity, AnimParamSO animParam)
     {
         _entity = entity;
+        _player = entity as Player;
         _animParam = animParam;
         _renderer = _entity.GetCompo<PlayerRenderer>();
     }
