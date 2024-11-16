@@ -9,11 +9,15 @@ public class SwitchingPlayer : MonoBehaviour,IEntityComponent
     [SerializeField] private GameObject _switchingUI;
     [SerializeField] private GameObject _player;
 
+    public bool isSwithing = true;
+
     private Entity _entity;
 
     public void SwitchingPlayerUI()
     {
-        StartCoroutine(UIclose(_switchingUI, _player, 0.5f));
+
+        if(isSwithing)
+            StartCoroutine(UIclose(_switchingUI, _player, 0.5f));
     }
 
     private IEnumerator UIclose(GameObject UI, GameObject player, float timer)

@@ -15,6 +15,7 @@ public class FailState : EntityState
     public override void Enter()
     {
         base.Enter();
+        _player.SwitchingCompo.isSwithing = false;
     }
 
     public override void Update()
@@ -24,5 +25,11 @@ public class FailState : EntityState
         if (_player.IsPushObj())
             _player.ChangeState("Push");
         base.Update();
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        _player.SwitchingCompo.isSwithing = true;
     }
 }

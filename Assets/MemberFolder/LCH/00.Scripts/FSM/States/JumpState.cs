@@ -14,6 +14,7 @@ public class JumpState : EntityState
     {
         base.Enter();
         _mover.RbCompo.AddForce(Vector2.up * _player._jumpPower, ForceMode2D.Impulse);
+        _player.SwitchingCompo.isSwithing = false;
     }
 
     public override void Update()
@@ -23,5 +24,11 @@ public class JumpState : EntityState
             _player.ChangeState("Idle");
         if (_mover.RbCompo.velocity.y < 0)
             _player.ChangeState("Fail");
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        _player.SwitchingCompo.isSwithing = true;
     }
 }
