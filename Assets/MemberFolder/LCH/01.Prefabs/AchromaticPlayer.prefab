@@ -112,7 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 6
-  _rbcompo: {fileID: 7215626182479790572}
   _xMove: {x: 0, y: 0, z: 0}
   _whatIsGround:
     serializedVersion: 2
@@ -160,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b928e2c57107dc2438579f2c54db75be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerFSM: {fileID: 11400000, guid: 12124b86f27350a4e8f8eee466ed1684, type: 2}
   <InputCompo>k__BackingField: {fileID: 11400000, guid: 81733159bc0a41c4f938fccd26baa4d4, type: 2}
   whatIsPushObj:
     serializedVersion: 2
@@ -169,7 +169,8 @@ MonoBehaviour:
     m_Bits: 256
   _objCheckSize: {x: 1.08, y: 0.82}
   _checkTrm: {fileID: 6840067959122457882}
-  currentState: 
+  <_jumpPower>k__BackingField: 8
+  stateMachine: {fileID: 0}
 --- !u!61 &7915810129697959477
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -378,7 +379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d69df895029a9543af2e51d89a5d2fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _palyer: {fileID: 4691485845959860606}
 --- !u!1001 &917299192800631164
 PrefabInstance:
   m_ObjectHideFlags: 0
