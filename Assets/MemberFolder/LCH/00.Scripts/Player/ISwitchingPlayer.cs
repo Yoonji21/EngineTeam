@@ -9,13 +9,13 @@ public class SwitchingPlayer : MonoBehaviour,IEntityComponent
     [SerializeField] private GameObject _switchingUI;
     [SerializeField] private GameObject _player;
 
-    public bool isSwithing = true;
+    public bool isSwithing = false;
 
     private Entity _entity;
+    private Player _players;
 
     public void SwitchingPlayerUI()
     {
-
         if(isSwithing)
             StartCoroutine(UIclose(_switchingUI, _player, 0.5f));
     }
@@ -33,7 +33,7 @@ public class SwitchingPlayer : MonoBehaviour,IEntityComponent
 
     public void Initialize(Entity entity)
     {
-        _entity = entity;
+        _players = entity as Player;
         vCam = FindObjectOfType<CinemachineVirtualCamera>();
     }
 }

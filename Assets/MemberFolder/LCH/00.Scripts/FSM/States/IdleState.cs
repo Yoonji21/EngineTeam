@@ -15,6 +15,14 @@ public class IdleState : EntityState
     {
         base.Enter();
         _player.MovementCompo.StopIimmediately(true);
+        _player.StartCoroutine(SwithingPlayer());
+
+    }
+
+    private IEnumerator SwithingPlayer()
+    {
+        yield return new WaitForSeconds(1f);
+        _player.SwitchingCompo.isSwithing = true;
     }
 
     public override void Update()
@@ -30,5 +38,11 @@ public class IdleState : EntityState
         if (_mover.RbCompo.velocity.y < 0)
             _player.ChangeState("Fail");
         base.Update();
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        _player.SwitchingCompo.isSwithing = false;
     }
 }
