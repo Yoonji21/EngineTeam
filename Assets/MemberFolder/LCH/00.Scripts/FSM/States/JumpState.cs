@@ -13,8 +13,8 @@ public class JumpState : EntityState
     public override void Enter()
     {
         base.Enter();
-        _mover.RbCompo.AddForce(Vector2.up * _player._jumpPower, ForceMode2D.Impulse);
-        _player.SwitchingCompo.isSwithing = false;
+        _mover.StopIimmediately(true);
+        _mover.AddForceToEntity(new Vector2(0, _player._jumpPower));
     }
 
     public override void Update()
@@ -29,6 +29,6 @@ public class JumpState : EntityState
     public override void Exit()
     {
         base.Exit();
-        _player.SwitchingCompo.isSwithing = true;
+        _player._jumpPower = 8f;
     }
 }

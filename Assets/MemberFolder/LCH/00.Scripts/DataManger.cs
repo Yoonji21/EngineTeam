@@ -41,7 +41,13 @@ public class DataManger : MonoBehaviour
 
     public void LoadData()
     {
-        SaveManager.Load<StageData>("StageJson");
+        stageData = SaveManager.Load<StageData>("StageJson");
+        if (stageData == null)
+        {
+            stageData = new StageData();
+            SaveData();
+            Debug.Log("새로운 세이브 파일을 생성했습니다.");
+        }
         OverwritingData(true);
     }
 

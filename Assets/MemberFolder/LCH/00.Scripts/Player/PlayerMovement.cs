@@ -27,6 +27,11 @@ public class PlayerMovement : MonoBehaviour,IEntityComponent
         _xMovement = 0;
     }
 
+    public void AddForceToEntity(Vector2 force, ForceMode2D mode = ForceMode2D.Impulse)
+    {
+       RbCompo.AddForce(force, mode);
+    }
+
     public void SetXMovement(float xMovement)
     {
         _xMovement = xMovement;
