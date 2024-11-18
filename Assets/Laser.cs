@@ -11,7 +11,6 @@ public class Laser : MonoBehaviour
     public LineRenderer linerenderer;
 
     public LayerMask target;
-    public LayerMask wall;
 
     private Transform m_transform;
 
@@ -31,10 +30,9 @@ public class Laser : MonoBehaviour
     private bool DrawwRaw(out RaycastHit2D hit)
     {
         // 플레이어와 벽 레이어마스크 설정 (레이어 이름은 Unity에서 설정된 이름을 사용하세요)
-        int layerMask = LayerMask.GetMask("Player", "Wall");
 
         // 플레이어와 벽을 감지하는 Raycast
-        hit = Physics2D.Raycast(m_transform.position, transform.right, 10, layerMask);
+        hit = Physics2D.Raycast(laserPoint.position, transform.right, Mathf.Infinity, target);
 
         // 레이저가 플레이어나 벽에 닿았는지 여부 반환
         return hit.collider != null;
@@ -54,7 +52,7 @@ public class Laser : MonoBehaviour
             }
 
             // 레이저를 닿은 지점까지 그리기
-            Draw2DRay(laserPoint.position, hit.point);
+            Draw2DRay(laserPoint.position, hit.transform.position);
         }
         else
         {
