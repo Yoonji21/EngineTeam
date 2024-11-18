@@ -1,29 +1,111 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public enum PlayerState
+
+public enum PlayerType
 {
-    Idle,
-    Jump,
-    Fail,
-    Move,
-    Push,
-    Swith,
-    Holde
+    Idle, 
+    Jump, 
+    Fail, 
+    Move, 
+    Push, 
+    SwithUp
 }
-
-public class Player : Agent
+public class Player : Entity
 {
-    public StateMachine stateMachine;
-    protected override void Awake()
+
+    [Header("FSM")]
+    [SerializeField] private EntityStatesSO _playerFSM;
+
+    [field: SerializeField] public InputSystem InputCompo { get; private set; }
+    public PlayerMovement MovementCompo { get; private set; }
+    public SwitchingPlayer SwitchingCompo { get; private set; }
+
+    public Interaction IntaractionCompo { get; private set; }
+
+    [SerializeField] private LayerMask whatIsPushObj;
+    [SerializeField] private LayerMask whatIsToadstoolObj;
+    [SerializeField] private Vector2 _objCheckSize;
+    [SerializeField] private Transform _checkTrm;
+    [field : SerializeField] public float _jumpPower { get;  set; } = 8f;
+
+    public bool isSwithOn { get; set; } = false;
+
+    [SerializeField] public StateMachine stateMachine;
+    public EntityState CurrentState => stateMachine.currentState;
+
+    public bool IsPushObj()
     {
-        base.Awake();
-        stateMachine = new StateMachine();
+        bool isPushObj = Physics2D.OverlapBox(_checkTrm.position,_objCheckSize ,0,whatIsPushObj);
+        return isPushObj;
+    }
+
+    public bool IsToadstoolObj()
+    {
+        bool isToadstoolobj = Physics2D.OverlapBox(_checkTrm.position, _objCheckSize, 0, whatIsToadstoolObj);
+        return isToadstoolobj;
+    }
+
+    protected override void AfterInit()
+    {
+        base.AfterInit();
+        stateMachine = new StateMachine(_playerFSM, this);
+        MovementCompo = GetCompo<PlayerMovement>();
+        SwitchingCompo = GetCompo<SwitchingPlayer>();
+        IntaractionCompo = GetCompo<Interaction>();
+       
+    }
+
+    private void OnEnable()
+    {
+        stateMachine.Initialize("Idle");
+        InputCompo.OnJumpEvent += HandheldJump;
+        GetCompo<AnimationTrigger>().OnAnimationEnd += HandleAnimationEnd;
+        InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
+        InputCompo.OnInteractionEvent += SwithUp;
+    }
+
+    private void HandheldJump()
+    {
+        if (MovementCompo.IsGrounded)
+        {
+            stateMachine.ChangeState("Jump");
+        }
+    }
+
+    public void SwithUp()
+    {
+        stateMachine.ChangeState("SwithUp");
+    }
+
+    private void OnDisable()
+    {
+        InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;
+        InputCompo.OnInteractionEvent -= SwithUp;
+        GetCompo<AnimationTrigger>().OnAnimationEnd -= HandleAnimationEnd;
+    }
+
+    private void HandleAnimationEnd()
+    {
+        CurrentState.AnimationEndTrigger();
     }
 
     private void Update()
     {
-        stateMachine.CurrentState.UpdateState();
+        stateMachine.currentState.Update();
+    }
+
+    public EntityState GetState(string state) => stateMachine.GetState(state);
+
+    public void ChangeState(string newState) => stateMachine.ChangeState(newState);
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(_checkTrm.position, _objCheckSize);
+       
     }
 }

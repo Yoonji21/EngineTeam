@@ -6,7 +6,7 @@ public class ToadstoolAnim : MonoBehaviour
 {
     [SerializeField] private GameObject Element;
     [SerializeField] private GameObject[] Elements;
-    private bool isOff  = false;
+    public bool isON { get; set; } = false;
 
 
     private Animator _animator;
@@ -21,27 +21,50 @@ public class ToadstoolAnim : MonoBehaviour
             return;
     }
 
+    private void Update()
+    {
+        OffDicPlayer();
+    }
+    
+
     public void OffDicPlayer()
     {
 
-        if (!isOff)
+        if (isON)
         {
-            _animator.SetBool("OFF", !isOff);
-            isOff = true;
+            _animator.SetBool("ON", true);
         }
         else 
         {
-            _animator.SetBool("OFF", !isOff);
-            isOff = false;
+            _animator.SetBool("ON", false);
         }
     }
 
     public void EndAnimCall()
     {
-         Element.SetActive(!isOff);
-         for(int i = 0; i< Elements.Length; i++)
+        if (isON)
         {
-            Elements[i].SetActive(!isOff);
+            if (Element == null)
+                return;
+            if (Elements == null)
+                return;
+            Element.SetActive(false);
+            for (int i = 0; i < Elements.Length; i++)
+            {
+                Elements[i].SetActive(false);
+            }
+        }
+        else
+        {
+            if (Element == null)
+                return;
+            if (Elements == null)
+                return;
+            Element.SetActive(true);
+            for (int i = 0; i < Elements.Length; i++)
+            {
+                Elements[i].SetActive(true);
+            }
         }
     }
 }

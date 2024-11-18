@@ -1,49 +1,74 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour,IEntityComponent
 {
-    [SerializeField] private float _speed;
-    [SerializeField] private float _jumpPower;
+    [field:SerializeField] public float _speed;
+    public Rigidbody2D RbCompo { get; private set; }
+    public Vector3 _xMove;
     [SerializeField] private LayerMask _whatIsGround;
     [SerializeField] private Transform _groundChecker;
     [SerializeField] private Vector2 _checkerSize;
-    private Rigidbody2D _rbcompo;
-    private Vector3 _xMove;
 
-    private void Awake()
+    private Entity _entity;
+    public bool IsGrounded { get; private set; }
+    private float _xMovement;
+
+    private PlayerRenderer _renderer;
+    public void StopIimmediately(bool isYAxIsTOO = false)
     {
-        _rbcompo = GetComponent<Rigidbody2D>();
+        if (isYAxIsTOO)
+            RbCompo.velocity = Vector2.zero;
+        else
+            RbCompo.velocity = new Vector2(0, RbCompo.velocity.y);
+        _xMovement = 0;
     }
 
-    private bool GroundChecker()
+    public void AddForceToEntity(Vector2 force, ForceMode2D mode = ForceMode2D.Impulse)
     {
-        bool isGround = Physics2D.OverlapBox(_groundChecker.position, _checkerSize, 0, _whatIsGround);
-        return isGround;
+       RbCompo.AddForce(force, mode);
     }
 
-    public void GetJump()
+    public void SetXMovement(float xMovement)
     {
-        if (GroundChecker())
-        {
-            _rbcompo.AddForce(Vector2.up * _jumpPower, ForceMode2D.Impulse);
-        }
+        _xMovement = xMovement;
     }
 
-    public void GetMove(Vector2 value)
+    private void GroundChecker()
     {
-        _xMove.x = value.x;
+        bool before = IsGrounded;
+        IsGrounded = Physics2D.OverlapBox(
+            _groundChecker.position, _checkerSize, 0, _whatIsGround);
     }
+
+
+    private void MoveCharacter()
+    {
+        RbCompo.velocity = new Vector2(_xMovement * _speed, RbCompo.velocity.y);
+        _renderer.FlipController(_xMovement);
+    }
+
+
 
     private void FixedUpdate()
     {
-        _rbcompo.velocity = new Vector2(_xMove.x * _speed, _rbcompo.velocity.y);
+        MoveCharacter();
+        GroundChecker();
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(_groundChecker.position, _checkerSize);
+    }
+
+    public void Initialize(Entity entity)
+    {
+        _entity = entity;
+        _renderer = GetComponentInChildren<PlayerRenderer>();
+        RbCompo = GetComponent<Rigidbody2D>();
     }
 }

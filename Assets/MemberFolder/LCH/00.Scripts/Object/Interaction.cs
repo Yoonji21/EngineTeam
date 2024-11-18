@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Interaction : MonoBehaviour
+public class Interaction : MonoBehaviour,IEntityComponent
 {
-    public UnityEvent OnoffPlayerDictctionEvent;
-    public void InteractionPress()
+    public UnityEvent OnInteractionEvnets;
+
+    private Entity _entity;
+    public void Initialize(Entity entity)
     {
-        offPlayerDic();
+        _entity = entity;
     }
 
-	private void offPlayerDic()
+    public void InteractionPress()
     {
-        OnoffPlayerDictctionEvent?.Invoke();
+        InteractionObj();
+    }
+
+	private void InteractionObj()
+    {
+        OnInteractionEvnets?.Invoke();
     }
 }
