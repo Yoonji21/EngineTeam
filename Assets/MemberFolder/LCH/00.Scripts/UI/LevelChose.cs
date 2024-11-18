@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class LevelChose : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class LevelChose : MonoBehaviour
 
     public void StageSecne(int sceneCount)
     {
+        SceneManagers.Inatnce.CurrentSceneNum = sceneCount;
         SceneManager.LoadScene(sceneCount);
     }
 

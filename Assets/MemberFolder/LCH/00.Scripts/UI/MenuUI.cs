@@ -15,6 +15,7 @@ public class MenuUI : MonoBehaviour
 
     public void ExitGame()
     {
+        DataManger.Intance.SaveData();
         Application.Quit();
     }
 
