@@ -27,6 +27,7 @@ public class WedgePush : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(PlayerChecker());
         if (PlayerChecker())
         {
             _rbcompo.mass = 1f;
