@@ -55,12 +55,21 @@ public class DataManger : MonoBehaviour
     {
         if (isLoad)
         {
+            if(stageData.StageLavelNum >= 9)
+            {
+                stageData.StageLavelNum = 9;
+            }
             _dataSO.StageClear = stageData.StageLavelNum;
         }
         else
         {
             stageData.StageLavelNum = _dataSO.StageClear;
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+       SaveData();
     }
 }
 

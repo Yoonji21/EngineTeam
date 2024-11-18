@@ -6,6 +6,7 @@ public class SettingUI : MonoBehaviour
 {
 
     [SerializeField] private GameObject _mainUI;
+    [SerializeField] private StageDataSO _dataSO;
 
     private void Awake()
     {
@@ -16,5 +17,21 @@ public class SettingUI : MonoBehaviour
     {
         gameObject.SetActive(false);
         _mainUI.SetActive(true);
+    }
+
+    public void GameReSet()
+    {
+        _dataSO.StageClear = 0;
+    }
+
+    public void LevelAllUnLock()
+    {
+        _dataSO.StageClear = 9;
+    }
+
+    public void ExitGame()
+    {
+        DataManger.Intance.SaveData();
+        Application.Quit();
     }
 }
