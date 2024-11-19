@@ -14,7 +14,7 @@ public enum PlayerType
     Push, 
     SwithUp
 }
-public class Player : Entity
+public abstract class Player : Entity
 {
 
     [Header("FSM")]
@@ -30,7 +30,7 @@ public class Player : Entity
     [SerializeField] private LayerMask whatIsToadstoolObj;
     [SerializeField] private Vector2 _objCheckSize;
     [SerializeField] private Transform _checkTrm;
-    [field : SerializeField] public float _jumpPower { get;  set; } = 8f;
+    [field : SerializeField] public float _jumpPower { get;  set; } = 12f;
 
     public bool isSwithOn { get; set; } = false;
 
@@ -59,13 +59,13 @@ public class Player : Entity
        
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         stateMachine.Initialize("Idle");
         InputCompo.OnJumpEvent += HandheldJump;
         GetCompo<AnimationTrigger>().OnAnimationEnd += HandleAnimationEnd;
         InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
-        InputCompo.OnInteractionEvent += SwithUp;
+        
     }
 
     private void HandheldJump()
@@ -81,7 +81,7 @@ public class Player : Entity
         stateMachine.ChangeState("SwithUp");
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;
         InputCompo.OnInteractionEvent -= SwithUp;
@@ -93,9 +93,17 @@ public class Player : Entity
         CurrentState.AnimationEndTrigger();
     }
 
-    private void Update()
+   protected virtual void Update()
     {
         stateMachine.currentState.Update();
+        if (IsToadstoolObj())
+        {
+            InputCompo.OnInteractionEvent += SwithUp;
+        }
+        else
+        {
+            InputCompo.OnInteractionEvent -= SwithUp;
+        }
     }
 
     public EntityState GetState(string state) => stateMachine.GetState(state);

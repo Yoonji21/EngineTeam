@@ -29,6 +29,7 @@ public class LevelChose : MonoBehaviour
 
     public void StageSecne(int sceneCount)
     {
+        SceneManagers.Inatnce.CurrentSceneLevel = sceneCount -1;
         SceneManagers.Inatnce.CurrentSceneNum = sceneCount;
         SceneManager.LoadScene(sceneCount);
     }
