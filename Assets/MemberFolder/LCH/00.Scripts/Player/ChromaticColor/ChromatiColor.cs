@@ -20,7 +20,8 @@ public class ChromatiColor : Player
 
     protected override  void OnEnable()
     {
-
+        base.OnEnable();
+        InputCompo.OnInteractionEvent -= SwithUp;
         if (_invisibleObjs == null)
         {
             return;
@@ -32,12 +33,19 @@ public class ChromatiColor : Player
 
     protected override void OnDisable()
     {
-        if(_invisibleObjs == null)
+        base.OnDisable();
+        InputCompo.OnInteractionEvent += SwithUp;
+        if (_invisibleObjs == null)
         {
             return;
         }
 
         for (int i = 0; i < _invisibleObjs.Length; i++)
             _invisibleObjs[i].SetActive(true);
+    }
+
+    protected override void SwithUp()
+    {
+        base.SwithUp();
     }
 }
