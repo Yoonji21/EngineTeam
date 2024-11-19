@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpenDoorColor : MonoBehaviour
+public class OpenNoColor : MonoBehaviour 
 {
-
     private Animator _animator;
 
     private void Awake()
@@ -14,9 +13,9 @@ public class OpenDoorColor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out Achromatic achromatic))
+        if (collision.gameObject.TryGetComponent(out ChromatiColor chromatiColor))
         {
-            if (achromatic != null)
+            if (chromatiColor != null)
             {
                 _animator.SetBool("Open", true);
             }

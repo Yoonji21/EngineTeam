@@ -11,6 +11,7 @@ public class SwithOnOff : MonoBehaviour
     private BoxCollider2D _playerTrigger;
     [SerializeField] private Vector2 _checkerSize;
     [SerializeField] private LayerMask _whatIsPlayer;
+    [SerializeField] private GameObject _fkey;
 
     private void Awake()
     {
@@ -28,14 +29,19 @@ public class SwithOnOff : MonoBehaviour
     {
         if (IsPlayerCheck())
         {
+            _fkey.SetActive(true);
             _player = GameObject.FindWithTag("Player").GetComponent<Player>();
             _player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
         }
 
-        if (!IsPlayerCheck()&&_swithAnim.isON)
+        if (!IsPlayerCheck())
         {
-             _player = GameObject.FindWithTag("Player").GetComponent<Player>();
-           StartCoroutine(SwithOffCoroutine());
+            _fkey.SetActive(false);
+            if (_swithAnim.isON)
+            {
+                 _player = GameObject.FindWithTag("Player").GetComponent<Player>();
+                StartCoroutine(SwithOffCoroutine());
+            }
         }
 
     }
@@ -44,6 +50,7 @@ public class SwithOnOff : MonoBehaviour
     {
         _swithAnim.isON = true;
         _playerTrigger.enabled = false;
+        _fkey.SetActive(false);
     }
 
     private IEnumerator SwithOffCoroutine()
