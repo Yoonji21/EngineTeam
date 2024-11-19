@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour,IEntityComponent
 
     private Entity _entity;
     public bool IsGrounded { get; private set; }
-    private float _xMovement;
+    public float xMovement { get; private set; }
 
     private PlayerRenderer _renderer;
     public void StopIimmediately(bool isYAxIsTOO = false)
@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour,IEntityComponent
             RbCompo.velocity = Vector2.zero;
         else
             RbCompo.velocity = new Vector2(0, RbCompo.velocity.y);
-        _xMovement = 0;
+        xMovement = 0;
     }
 
     public void AddForceToEntity(Vector2 force, ForceMode2D mode = ForceMode2D.Impulse)
@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour,IEntityComponent
 
     public void SetXMovement(float xMovement)
     {
-        _xMovement = xMovement;
+        this.xMovement = xMovement;
     }
 
     private void GroundChecker()
@@ -47,8 +47,8 @@ public class PlayerMovement : MonoBehaviour,IEntityComponent
 
     private void MoveCharacter()
     {
-        RbCompo.velocity = new Vector2(_xMovement * _speed, RbCompo.velocity.y);
-        _renderer.FlipController(_xMovement);
+        RbCompo.velocity = new Vector2(xMovement * _speed, RbCompo.velocity.y);
+        _renderer.FlipController(xMovement);
     }
 
 

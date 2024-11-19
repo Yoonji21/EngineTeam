@@ -2,18 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChromatiColor : MonoBehaviour
+public class ChromatiColor : Player
 {
-
     private GameObject[] _invisibleObjs;
+    [field:SerializeField] public GameObject Artifact;
 
-    private void Awake()
+    protected override void AfterInit()
     {
+        base.AfterInit();
         _invisibleObjs = GameObject.FindGameObjectsWithTag("InvisibleObj");
-
     }
 
-    private void OnEnable()
+    protected override void Update()
+    {
+        base.Update();
+    }
+
+    protected override  void OnEnable()
     {
 
         if (_invisibleObjs == null)
@@ -25,7 +30,7 @@ public class ChromatiColor : MonoBehaviour
             _invisibleObjs[i].SetActive(false);
     }
 
-    private void OnDisable()
+    protected override void OnDisable()
     {
         if(_invisibleObjs == null)
         {
