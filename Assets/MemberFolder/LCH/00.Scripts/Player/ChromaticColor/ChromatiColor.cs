@@ -44,8 +44,9 @@ public class ChromatiColor : Player
             _invisibleObjs[i].SetActive(true);
     }
 
-    protected override void SwithUp()
+    public void SwithUp()
     {
-        base.SwithUp();
+        stateMachine.ChangeState("SwithUp");
+         Artifact.SetActive(false);
     }
 }

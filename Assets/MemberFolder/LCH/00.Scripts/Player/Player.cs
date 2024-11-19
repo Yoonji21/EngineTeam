@@ -76,10 +76,6 @@ public abstract class Player : Entity
         }
     }
 
-    protected virtual void SwithUp()
-    {
-        stateMachine.ChangeState("SwithUp");
-    }
 
     protected virtual void OnDisable()
     {
