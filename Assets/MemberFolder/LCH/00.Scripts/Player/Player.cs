@@ -76,7 +76,7 @@ public abstract class Player : Entity
         }
     }
 
-    public void SwithUp()
+    protected virtual void SwithUp()
     {
         stateMachine.ChangeState("SwithUp");
     }
@@ -84,7 +84,6 @@ public abstract class Player : Entity
     protected virtual void OnDisable()
     {
         InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;
-        InputCompo.OnInteractionEvent -= SwithUp;
         GetCompo<AnimationTrigger>().OnAnimationEnd -= HandleAnimationEnd;
     }
 
@@ -96,14 +95,7 @@ public abstract class Player : Entity
    protected virtual void Update()
     {
         stateMachine.currentState.Update();
-        if (IsToadstoolObj())
-        {
-            InputCompo.OnInteractionEvent += SwithUp;
-        }
-        else
-        {
-            InputCompo.OnInteractionEvent -= SwithUp;
-        }
+       
     }
 
     public EntityState GetState(string state) => stateMachine.GetState(state);
