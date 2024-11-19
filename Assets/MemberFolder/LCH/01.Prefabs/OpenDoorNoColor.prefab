@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 3260917710384534012}
   - component: {fileID: 4074082845715836685}
   - component: {fileID: 3086303961185794564}
+  - component: {fileID: 7523250929390122888}
   m_Layer: 0
   m_Name: OpenDoorNoColor
   m_TagString: Untagged
@@ -212,3 +213,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7523250929390122888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2411747918269613960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4082599297c2b3c4ead1e6b1f67f8cf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
