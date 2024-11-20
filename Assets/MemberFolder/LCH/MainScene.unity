@@ -522,6 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentSceneNum: 0
+  CurrentSceneLevel: 0
 --- !u!4 &822678977
 Transform:
   m_ObjectHideFlags: 0
