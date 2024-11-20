@@ -6,6 +6,7 @@ public class ChromatiColor : Player
 {
     private GameObject[] _invisibleObjs;
     [field:SerializeField] public GameObject Artifact;
+    public bool isExitDoor = false;
 
     protected override void AfterInit()
     {
@@ -46,7 +47,7 @@ public class ChromatiColor : Player
 
     public void SwithUp()
     {
-        //Artifact.SetActive(false);
+        Artifact.SetActive(false);
         stateMachine.ChangeState("SwithUp");
     }
 }

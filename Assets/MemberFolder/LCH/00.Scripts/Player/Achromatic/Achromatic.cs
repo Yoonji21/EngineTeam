@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Achromatic : Player
 {
+
+    public bool isExitDoor = false;
+
     protected override void OnEnable()
     {
         base.OnEnable();
