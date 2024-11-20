@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 8884991465332079895}
   - component: {fileID: 7215626182479790572}
   - component: {fileID: 8883974852949632052}
-  - component: {fileID: 5413857004991898346}
   - component: {fileID: 3885950398643329153}
   - component: {fileID: 7915810129697959477}
   - component: {fileID: 6928001758404294149}
@@ -118,21 +117,6 @@ MonoBehaviour:
     m_Bits: 64
   _groundChecker: {fileID: 3783620017728469695}
   _checkerSize: {x: 0.81, y: 0.2}
---- !u!114 &5413857004991898346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119028655432220398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7874a0382a41d9f4b9f325a9e2e370d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _switchingUI: {fileID: 2792303775172376180}
-  _player: {fileID: 0}
-  isSwithing: 1
 --- !u!114 &3885950398643329153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +201,7 @@ MonoBehaviour:
   _checkTrm: {fileID: 6840067959122457882}
   <_jumpPower>k__BackingField: 12
   stateMachine: {fileID: 0}
+  isExitDoor: 0
 --- !u!1 &2259027953426565055
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,10 +550,5 @@ PrefabInstance:
 --- !u!224 &752828605296932327 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 488767423254342811, guid: 406abd154cf251e448463da8a8b38f35, type: 3}
-  m_PrefabInstance: {fileID: 917299192800631164}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2792303775172376180 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3060943323645865736, guid: 406abd154cf251e448463da8a8b38f35, type: 3}
   m_PrefabInstance: {fileID: 917299192800631164}
   m_PrefabAsset: {fileID: 0}

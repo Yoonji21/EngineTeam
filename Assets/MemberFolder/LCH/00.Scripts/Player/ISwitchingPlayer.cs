@@ -3,35 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class SwitchingPlayer : MonoBehaviour,IEntityComponent
+public interface ISwitchingPlayer
 {
-    private CinemachineVirtualCamera vCam;
-    [SerializeField] private GameObject _switchingUI;
-    [SerializeField] private GameObject _player;
+    public void MyPlayer(GameObject UI, SpriteRenderer player, GameObject mybackGround,
+        Rigidbody2D rbcompo, CinemachineVirtualCamera vCam, BoxCollider2D boxCollider, PlayerMovement myMove,
+        GameObject Artifact);
 
-    public bool isSwithing = false;
-    private Player _players;
-
-    public void SwitchingPlayerUI()
-    {
-        if(isSwithing)
-            StartCoroutine(UIclose(_switchingUI, _player, 0.5f));
-    }
-
-    private IEnumerator UIclose(GameObject UI, GameObject player, float timer)
-    {
-        UI.SetActive(true);
-        vCam.Follow = null;
-        yield return new WaitForSeconds(timer);
-        UI.SetActive(false);
-        gameObject.SetActive(false);
-        player.SetActive(true);
-        vCam.Follow = player.transform;
-    }
-
-    public void Initialize(Entity entity)
-    {
-        _players = entity as Player;
-        vCam = FindObjectOfType<CinemachineVirtualCamera>();
-    }
+    public void SwithinPlayer(Player swithingPlayer, SpriteRenderer player, GameObject mybackGround,
+        Rigidbody2D rbcompo, CinemachineVirtualCamera vCam, BoxCollider2D boxCollider, PlayerMovement myMove,
+        GameObject Artifact);
 }

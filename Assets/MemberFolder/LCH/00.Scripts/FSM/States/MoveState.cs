@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MoveState : EntityState
 {
-
     public MoveState(Entity entity, AnimParamSO animParam) : base(entity, animParam)
     {
     }

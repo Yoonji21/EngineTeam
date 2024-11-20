@@ -16,6 +16,7 @@ public class OpenDoorColor : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out Achromatic achromatic))
         {
+          
             if (achromatic != null)
             {
                 achromatic.isExitDoor = true;

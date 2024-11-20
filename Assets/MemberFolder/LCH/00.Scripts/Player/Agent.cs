@@ -8,7 +8,7 @@ public abstract class Agent : MonoBehaviour
     public PlayerMovement MovementCompo { get; private set; }
 
     public Rigidbody2D RbCompo { get; private set; }
-    public SwitchingPlayer SwitchingCompo { get; private set; }
+    public ISwitchingPlayer SwitchingCompo { get; private set; }
     
     public Interaction IntaractionCompo { get; private set; }
 
@@ -19,7 +19,7 @@ public abstract class Agent : MonoBehaviour
         AnimatorCompo = GetComponentInChildren<Animator>();
         IntaractionCompo = GetComponent<Interaction>();
         MovementCompo = GetComponent<PlayerMovement>();
-        SwitchingCompo = GetComponent<SwitchingPlayer>();
+        SwitchingCompo = GetComponent<ISwitchingPlayer>();
         InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
         InputCompo.OnInteractionEvent += IntaractionCompo.InteractionPress;
     }

@@ -22,9 +22,10 @@ public abstract class Player : Entity
 
     [field: SerializeField] public InputSystem InputCompo { get; set; }
     public PlayerMovement MovementCompo { get; private set; }
-    public SwitchingPlayer SwitchingCompo { get; private set; }
 
     public Interaction IntaractionCompo { get; private set; }
+
+    protected bool isSwithing = false;
 
     [SerializeField] private LayerMask whatIsPushObj;
     [SerializeField] private LayerMask whatIsToadstoolObj;
@@ -54,7 +55,7 @@ public abstract class Player : Entity
         base.AfterInit();
         stateMachine = new StateMachine(_playerFSM, this);
         MovementCompo = GetCompo<PlayerMovement>();
-        SwitchingCompo = GetCompo<SwitchingPlayer>();
+        //SwitchingCompo = GetCompo<SwitchingPlayer>();
         IntaractionCompo = GetCompo<Interaction>();
        
     }
@@ -64,7 +65,7 @@ public abstract class Player : Entity
         stateMachine.Initialize("Idle");
         InputCompo.OnJumpEvent += HandheldJump;
         GetCompo<AnimationTrigger>().OnAnimationEnd += HandleAnimationEnd;
-        InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
+        //InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
         
     }
 
@@ -79,7 +80,7 @@ public abstract class Player : Entity
 
     protected virtual void OnDisable()
     {
-        InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;
+        //InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;
         GetCompo<AnimationTrigger>().OnAnimationEnd -= HandleAnimationEnd;
     }
 

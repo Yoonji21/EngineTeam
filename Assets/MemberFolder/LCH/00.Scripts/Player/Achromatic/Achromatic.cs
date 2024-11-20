@@ -35,4 +35,9 @@ public class Achromatic : Player
             InputCompo.OnInteractionEvent -= SwithUp;
         }
     }
+
+    public void SwitchingPlayerUI()
+    {
+        
+    }
 }

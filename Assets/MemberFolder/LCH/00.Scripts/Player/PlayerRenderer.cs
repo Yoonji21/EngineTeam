@@ -12,7 +12,7 @@ public class PlayerRenderer : MonoBehaviour,IEntityComponent
     public void Initialize(Entity entity)
     {
         _entity = entity;
-        _animator = GetComponent<Animator>();
+        _animator = GetComponentInChildren<Animator>();
     }
 
     public void SetParam(AnimParamSO param, bool value)

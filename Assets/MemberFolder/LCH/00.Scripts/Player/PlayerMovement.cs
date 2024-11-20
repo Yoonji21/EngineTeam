@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour,IEntityComponent
     private void MoveCharacter()
     {
         RbCompo.velocity = new Vector2(xMovement * _speed, RbCompo.velocity.y);
-        _renderer.FlipController(xMovement);
+       _renderer.FlipController(xMovement);
     }
 
 

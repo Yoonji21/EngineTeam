@@ -201,17 +201,6 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 8004705444312782609, guid: befd42b42814a8c46bec0281d4f62c5e, type: 3}
   m_PrefabInstance: {fileID: 2502578131230055529}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1619075437 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2307856232782869222, guid: 80bf6c96e138aa24cb9423cada617d76, type: 3}
-  m_PrefabInstance: {fileID: 471732499814291059}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1680211463 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5872302184666654213, guid: eac048ce67177004c9062b97161a59fc, type: 3}
@@ -366,18 +355,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClearUI
       objectReference: {fileID: 0}
-    - target: {fileID: 1458047439066165891, guid: 80bf6c96e138aa24cb9423cada617d76, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3244050775149020854, guid: 80bf6c96e138aa24cb9423cada617d76, type: 3}
       propertyPath: _settingUI
       value: 
       objectReference: {fileID: 1680211463}
-    - target: {fileID: 3244050775149020854, guid: 80bf6c96e138aa24cb9423cada617d76, type: 3}
-      propertyPath: _stageText
-      value: 
-      objectReference: {fileID: 1619075437}
     - target: {fileID: 7932906122275723305, guid: 80bf6c96e138aa24cb9423cada617d76, type: 3}
       propertyPath: m_Pivot.x
       value: 0
