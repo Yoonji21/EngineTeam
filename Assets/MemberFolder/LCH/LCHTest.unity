@@ -701,6 +701,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AchromaticPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 2119028655432220398, guid: 26331ccd76e8b1c44a376212b9332992, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5413857004991898346, guid: 26331ccd76e8b1c44a376212b9332992, type: 3}
       propertyPath: _player
       value: 
@@ -1793,7 +1797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8088116111159976440, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

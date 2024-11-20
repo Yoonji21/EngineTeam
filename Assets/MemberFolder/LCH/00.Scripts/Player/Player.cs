@@ -20,7 +20,7 @@ public abstract class Player : Entity
     [Header("FSM")]
     [SerializeField] private EntityStatesSO _playerFSM;
 
-    [field: SerializeField] public InputSystem InputCompo { get; private set; }
+    [field: SerializeField] public InputSystem InputCompo { get; set; }
     public PlayerMovement MovementCompo { get; private set; }
     public SwitchingPlayer SwitchingCompo { get; private set; }
 

@@ -21,7 +21,7 @@ public class ChromatiColor : Player
     protected override  void OnEnable()
     {
         base.OnEnable();
-        InputCompo.OnInteractionEvent -= SwithUp;
+        InputCompo.OnInteractionEvent += SwithUp;
         if (_invisibleObjs == null)
         {
             return;
@@ -34,7 +34,7 @@ public class ChromatiColor : Player
     protected override void OnDisable()
     {
         base.OnDisable();
-        InputCompo.OnInteractionEvent += SwithUp;
+        InputCompo.OnInteractionEvent -= SwithUp;
         if (_invisibleObjs == null)
         {
             return;
@@ -46,7 +46,7 @@ public class ChromatiColor : Player
 
     public void SwithUp()
     {
+        //Artifact.SetActive(false);
         stateMachine.ChangeState("SwithUp");
-         Artifact.SetActive(false);
     }
 }

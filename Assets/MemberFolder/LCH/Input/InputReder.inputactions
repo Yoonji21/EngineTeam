@@ -33,15 +33,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Hold",
-                    "type": "Button",
-                    "id": "ec947448-0cb6-40f6-b783-1081be16416a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Interactions",
                     "type": "Button",
                     "id": "e216e1dd-f01e-4df2-9573-aea34f0c5d27",
@@ -115,17 +106,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "SwitchingPlayer",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "dd491e12-8a8c-436a-8d0b-f89383f32f85",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Hold",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
