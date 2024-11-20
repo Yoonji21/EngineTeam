@@ -57,14 +57,23 @@ public class Laser : MonoBehaviour
         else
         {
             // 아무것도 맞지 않았을 경우 기본 방향으로 레이저 그리기
-            Draw2DRay(laserPoint.position, laserPoint.transform.right * def);
+            Draw2DRay(laserPoint.position, transform.right * def);
         }
     }
 
     private void Draw2DRay(Vector2 startPos, Vector2 endPos)
     {
+        //if (transform.rotation.z == -90)
+        //{
+        //    linerenderer.SetPosition(0, new Vector2(startPos.x, startPos.y));
+        //    linerenderer.SetPosition(1, new Vector2(startPos.x, endPos.y));
+        //    print("90");
+        //}
+
         linerenderer.SetPosition(0, startPos);
         linerenderer.SetPosition(1, endPos);
+
+        print("d");
     }
 
     #endregion

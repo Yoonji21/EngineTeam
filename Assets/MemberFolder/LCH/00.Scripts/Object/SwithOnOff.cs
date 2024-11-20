@@ -11,6 +11,7 @@ public class SwithOnOff : MonoBehaviour
     private BoxCollider2D _playerTrigger;
     [SerializeField] private Vector2 _checkerSize;
     [SerializeField] private LayerMask _whatIsPlayer;
+    [SerializeField] private GameObject _fkey;
 
     private void Awake()
     {
@@ -28,14 +29,34 @@ public class SwithOnOff : MonoBehaviour
     {
         if (IsPlayerCheck())
         {
-            _player = GameObject.FindWithTag("Player").GetComponent<Player>();
-            _player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
+            _fkey.SetActive(true);
+            var p = GameObject.FindWithTag("Player").GetComponents<Player>();
+            foreach(var player in p)
+            {
+                if (player.gameObject.activeSelf)
+                {
+                    Debug.Log(player.name);
+                    player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
+                    break;
+                }
+            }
         }
 
-        if (!IsPlayerCheck()&&_swithAnim.isON)
+        if (!IsPlayerCheck())
         {
-             _player = GameObject.FindWithTag("Player").GetComponent<Player>();
-           StartCoroutine(SwithOffCoroutine());
+            _fkey.SetActive(false);
+            if (_swithAnim.isON)
+            {
+                var p = GameObject.FindWithTag("Player").GetComponents<Player>();
+                foreach(var player in p)
+                {
+                    if (!player.gameObject.activeSelf)
+                    {
+                        player.IntaractionCompo.OnInteractionEvnets.RemoveAllListeners();
+                    }
+                }
+                StartCoroutine(SwithOffCoroutine());
+            }
         }
 
     }
@@ -44,12 +65,12 @@ public class SwithOnOff : MonoBehaviour
     {
         _swithAnim.isON = true;
         _playerTrigger.enabled = false;
+        _fkey.SetActive(false);
     }
 
     private IEnumerator SwithOffCoroutine()
     {
         yield return new WaitForSeconds(2f);
-        _player.IntaractionCompo.OnInteractionEvnets.RemoveAllListeners();
         _swithAnim.isON = false;
         _playerTrigger.enabled = true;
     }

@@ -7,7 +7,7 @@ public class SceneManagers : MonoBehaviour
 {
 	public static SceneManagers Inatnce;
     public int CurrentSceneNum;
-
+    public int CurrentSceneLevel;
     private void Awake()
     {
         if (Inatnce == null)

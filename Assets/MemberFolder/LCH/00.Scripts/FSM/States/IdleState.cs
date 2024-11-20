@@ -28,15 +28,11 @@ public class IdleState : EntityState
     public override void Update()
     {
         float xMove = _player.InputCompo.InputDriection.x;
-        if (Mathf.Approximately(xMove, 0))
-        {
-            _mover.RbCompo.velocity = Vector2.zero;
-        }
+        if (_mover.RbCompo.velocity.y < 0)
+            _player.ChangeState("Fail");
 
         if (Mathf.Abs(xMove) > 0)
             _player.ChangeState("Move");
-        if (_mover.RbCompo.velocity.y < 0)
-            _player.ChangeState("Fail");
         base.Update();
     }
 

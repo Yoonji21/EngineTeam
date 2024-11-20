@@ -55,15 +55,6 @@ public partial class @InputReder: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Hold"",
-                    ""type"": ""Button"",
-                    ""id"": ""ec947448-0cb6-40f6-b783-1081be16416a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Interactions"",
                     ""type"": ""Button"",
                     ""id"": ""e216e1dd-f01e-4df2-9573-aea34f0c5d27"",
@@ -142,17 +133,6 @@ public partial class @InputReder: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""dd491e12-8a8c-436a-8d0b-f89383f32f85"",
-                    ""path"": ""<Keyboard>/f"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Hold"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""d33a1add-0bc1-4b57-a410-00c53056fbaf"",
                     ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
@@ -172,7 +152,6 @@ public partial class @InputReder: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Junmp = m_Player.FindAction("Junmp", throwIfNotFound: true);
         m_Player_SwitchingPlayer = m_Player.FindAction("SwitchingPlayer", throwIfNotFound: true);
-        m_Player_Hold = m_Player.FindAction("Hold", throwIfNotFound: true);
         m_Player_Interactions = m_Player.FindAction("Interactions", throwIfNotFound: true);
     }
 
@@ -238,7 +217,6 @@ public partial class @InputReder: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Junmp;
     private readonly InputAction m_Player_SwitchingPlayer;
-    private readonly InputAction m_Player_Hold;
     private readonly InputAction m_Player_Interactions;
     public struct PlayerActions
     {
@@ -247,7 +225,6 @@ public partial class @InputReder: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Junmp => m_Wrapper.m_Player_Junmp;
         public InputAction @SwitchingPlayer => m_Wrapper.m_Player_SwitchingPlayer;
-        public InputAction @Hold => m_Wrapper.m_Player_Hold;
         public InputAction @Interactions => m_Wrapper.m_Player_Interactions;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -267,9 +244,6 @@ public partial class @InputReder: IInputActionCollection2, IDisposable
             @SwitchingPlayer.started += instance.OnSwitchingPlayer;
             @SwitchingPlayer.performed += instance.OnSwitchingPlayer;
             @SwitchingPlayer.canceled += instance.OnSwitchingPlayer;
-            @Hold.started += instance.OnHold;
-            @Hold.performed += instance.OnHold;
-            @Hold.canceled += instance.OnHold;
             @Interactions.started += instance.OnInteractions;
             @Interactions.performed += instance.OnInteractions;
             @Interactions.canceled += instance.OnInteractions;
@@ -286,9 +260,6 @@ public partial class @InputReder: IInputActionCollection2, IDisposable
             @SwitchingPlayer.started -= instance.OnSwitchingPlayer;
             @SwitchingPlayer.performed -= instance.OnSwitchingPlayer;
             @SwitchingPlayer.canceled -= instance.OnSwitchingPlayer;
-            @Hold.started -= instance.OnHold;
-            @Hold.performed -= instance.OnHold;
-            @Hold.canceled -= instance.OnHold;
             @Interactions.started -= instance.OnInteractions;
             @Interactions.performed -= instance.OnInteractions;
             @Interactions.canceled -= instance.OnInteractions;
@@ -314,7 +285,6 @@ public partial class @InputReder: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJunmp(InputAction.CallbackContext context);
         void OnSwitchingPlayer(InputAction.CallbackContext context);
-        void OnHold(InputAction.CallbackContext context);
         void OnInteractions(InputAction.CallbackContext context);
     }
 }

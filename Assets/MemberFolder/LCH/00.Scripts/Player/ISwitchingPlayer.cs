@@ -10,8 +10,6 @@ public class SwitchingPlayer : MonoBehaviour,IEntityComponent
     [SerializeField] private GameObject _player;
 
     public bool isSwithing = false;
-
-    private Entity _entity;
     private Player _players;
 
     public void SwitchingPlayerUI()

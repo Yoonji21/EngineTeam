@@ -14,13 +14,13 @@ public enum PlayerType
     Push, 
     SwithUp
 }
-public class Player : Entity
+public abstract class Player : Entity
 {
 
     [Header("FSM")]
     [SerializeField] private EntityStatesSO _playerFSM;
 
-    [field: SerializeField] public InputSystem InputCompo { get; private set; }
+    [field: SerializeField] public InputSystem InputCompo { get; set; }
     public PlayerMovement MovementCompo { get; private set; }
     public SwitchingPlayer SwitchingCompo { get; private set; }
 
@@ -30,7 +30,7 @@ public class Player : Entity
     [SerializeField] private LayerMask whatIsToadstoolObj;
     [SerializeField] private Vector2 _objCheckSize;
     [SerializeField] private Transform _checkTrm;
-    [field : SerializeField] public float _jumpPower { get;  set; } = 8f;
+    [field : SerializeField] public float _jumpPower { get;  set; } = 12f;
 
     public bool isSwithOn { get; set; } = false;
 
@@ -59,13 +59,13 @@ public class Player : Entity
        
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         stateMachine.Initialize("Idle");
         InputCompo.OnJumpEvent += HandheldJump;
         GetCompo<AnimationTrigger>().OnAnimationEnd += HandleAnimationEnd;
         InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
-        InputCompo.OnInteractionEvent += SwithUp;
+        
     }
 
     private void HandheldJump()
@@ -76,15 +76,10 @@ public class Player : Entity
         }
     }
 
-    public void SwithUp()
-    {
-        stateMachine.ChangeState("SwithUp");
-    }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;
-        InputCompo.OnInteractionEvent -= SwithUp;
         GetCompo<AnimationTrigger>().OnAnimationEnd -= HandleAnimationEnd;
     }
 
@@ -93,9 +88,10 @@ public class Player : Entity
         CurrentState.AnimationEndTrigger();
     }
 
-    private void Update()
+   protected virtual void Update()
     {
         stateMachine.currentState.Update();
+       
     }
 
     public EntityState GetState(string state) => stateMachine.GetState(state);
