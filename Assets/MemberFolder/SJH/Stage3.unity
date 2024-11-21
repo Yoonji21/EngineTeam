@@ -20262,7 +20262,6 @@ MonoBehaviour:
     MyRigidbody: {fileID: 6409001550180577254}
     Vcame: {fileID: 138510434}
     MyBoxCollider: {fileID: 5839143845774901311}
-    MyMove: {fileID: 5158993440076679742}
     MyArtifact: {fileID: 6550195989190427815}
   <ChromatiTypes>k__BackingField:
     SwithingUI: {fileID: 3509647222944664308}
@@ -20272,7 +20271,6 @@ MonoBehaviour:
     MyRigidbody: {fileID: 7343795875768252395}
     Vcame: {fileID: 138510434}
     MyBoxCollider: {fileID: 3259433803264719932}
-    MyMove: {fileID: 4474656380655711265}
     MyArtifact: {fileID: 2340087186656891484}
   isSwithing: 0
   whatIsPushObj:
@@ -20597,7 +20595,6 @@ MonoBehaviour:
     MyRigidbody: {fileID: 6409001550180577254}
     Vcame: {fileID: 138510434}
     MyBoxCollider: {fileID: 5839143845774901311}
-    MyMove: {fileID: 5158993440076679742}
     MyArtifact: {fileID: 6550195989190427815}
   <ChromatiTypes>k__BackingField:
     SwithingUI: {fileID: 1410985374127405072, guid: 7ffe24c146fffc14d9a3dbd975f3d2a7, type: 3}
@@ -20607,7 +20604,6 @@ MonoBehaviour:
     MyRigidbody: {fileID: 7343795875768252395}
     Vcame: {fileID: 138510434}
     MyBoxCollider: {fileID: 3259433803264719932}
-    MyMove: {fileID: 4474656380655711265}
     MyArtifact: {fileID: 2340087186656891484}
   isSwithing: 0
   whatIsPushObj:
