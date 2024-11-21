@@ -139,6 +139,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8413659348582363660}
+  - {fileID: 199149639066526671}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &4074082845715836685
@@ -225,3 +226,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4082599297c2b3c4ead1e6b1f67f8cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _whatIsNoColorPlayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  _chekerSize: {x: 1.58, y: 2.54}
+  _chekerTrm: {fileID: 199149639066526671}
+--- !u!1 &5804706432185575561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 199149639066526671}
+  m_Layer: 0
+  m_Name: PlayerChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &199149639066526671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5804706432185575561}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.149, y: 0.011, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3260917710384534012}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

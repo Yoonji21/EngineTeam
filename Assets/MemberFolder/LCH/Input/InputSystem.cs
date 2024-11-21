@@ -8,10 +8,12 @@ using static InputReder;
 [CreateAssetMenu(menuName = "SO/InputSo")]
 public class InputSystem : ScriptableObject, IPlayerActions
 {
-
+    public bool isChromatlEablbe = false;
+    public bool isAchromatlcEnable = true;
     public Vector2 InputDriection { get; private set; }
     public Action OnJumpEvent;
-    public Action OnswithingPlayerEvent;
+    public Action OnswithingPlayerColorEvent;
+    public Action OnswithingPlayerNoColorEvent;
     public Action OnHoldObjEvent;
     public Action OnInteractionEvent;
 
@@ -60,6 +62,16 @@ public class InputSystem : ScriptableObject, IPlayerActions
 
     public void OnSwitchingPlayer(InputAction.CallbackContext context)
     {
-        OnswithingPlayerEvent?.Invoke();
+        if (context.performed)
+        {
+            if (isAchromatlcEnable)
+            {
+                OnswithingPlayerColorEvent?.Invoke();
+            }
+            else if (isChromatlEablbe)
+            {
+                OnswithingPlayerNoColorEvent?.Invoke();
+            }
+        }
     }
 }

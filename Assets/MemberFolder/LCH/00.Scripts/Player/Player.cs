@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Cinemachine;
 
 
 public enum PlayerType
@@ -21,10 +22,14 @@ public abstract class Player : Entity
     [SerializeField] private EntityStatesSO _playerFSM;
 
     [field: SerializeField] public InputSystem InputCompo { get; set; }
-    public PlayerMovement MovementCompo { get; private set; }
-    public SwitchingPlayer SwitchingCompo { get; private set; }
+    [field : SerializeField]public PlayerMovement MovementCompo { get; protected set; }
 
-    public Interaction IntaractionCompo { get; private set; }
+    [field: SerializeField] public Interaction IntaractionCompo { get; protected set; }
+
+    [field : SerializeField] public AchromaticType AchromaticTypes { get; protected set; }
+    [field: SerializeField] public ChromatiType ChromatiTypes { get; protected set; }
+
+    public bool isSwithing = false;
 
     [SerializeField] private LayerMask whatIsPushObj;
     [SerializeField] private LayerMask whatIsToadstoolObj;
@@ -53,22 +58,11 @@ public abstract class Player : Entity
     {
         base.AfterInit();
         stateMachine = new StateMachine(_playerFSM, this);
-        MovementCompo = GetCompo<PlayerMovement>();
-        SwitchingCompo = GetCompo<SwitchingPlayer>();
-        IntaractionCompo = GetCompo<Interaction>();
-       
-    }
-
-    protected virtual void OnEnable()
-    {
         stateMachine.Initialize("Idle");
-        InputCompo.OnJumpEvent += HandheldJump;
-        GetCompo<AnimationTrigger>().OnAnimationEnd += HandleAnimationEnd;
-        InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
-        
+        IntaractionCompo.GetComponent<Interaction>();
     }
 
-    private void HandheldJump()
+    protected void HandheldJump()
     {
         if (MovementCompo.IsGrounded)
         {
@@ -77,13 +71,7 @@ public abstract class Player : Entity
     }
 
 
-    protected virtual void OnDisable()
-    {
-        InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;
-        GetCompo<AnimationTrigger>().OnAnimationEnd -= HandleAnimationEnd;
-    }
-
-    private void HandleAnimationEnd()
+    protected void HandleAnimationEnd()
     {
         CurrentState.AnimationEndTrigger();
     }
@@ -91,7 +79,6 @@ public abstract class Player : Entity
    protected virtual void Update()
     {
         stateMachine.currentState.Update();
-       
     }
 
     public EntityState GetState(string state) => stateMachine.GetState(state);
@@ -104,4 +91,33 @@ public abstract class Player : Entity
         Gizmos.DrawWireCube(_checkTrm.position, _objCheckSize);
        
     }
+}
+
+
+[Serializable]
+public struct AchromaticType
+{
+    public GameObject SwithingUI;
+    public Player SwithingPlayer;
+    public SpriteRenderer PlayerVisual;
+    public GameObject MyBackGround;
+    public Rigidbody2D MyRigidbody;
+    public CinemachineVirtualCamera Vcame;
+    public BoxCollider2D MyBoxCollider;
+    public PlayerMovement MyMove;
+    public GameObject MyArtifact;
+}
+
+[Serializable]
+public struct ChromatiType
+{
+    public GameObject SwithingUI;
+    public Player SwithingPlayer;
+    public SpriteRenderer PlayerVisual;
+    public GameObject MyBackGround;
+    public Rigidbody2D MyRigidbody;
+    public CinemachineVirtualCamera Vcame;
+    public BoxCollider2D MyBoxCollider;
+    public PlayerMovement MyMove;
+    public GameObject MyArtifact;
 }
