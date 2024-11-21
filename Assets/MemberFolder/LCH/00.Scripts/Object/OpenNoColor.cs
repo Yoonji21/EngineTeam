@@ -17,7 +17,7 @@ public class OpenNoColor : MonoBehaviour
         {
             if (chromatiColor != null)
             {
-                chromatiColor.isExitDoor = true;
+                UIManager.Intance.isClearNoColor = true;
                 _animator.SetBool("Open", true);
             }
         }
@@ -27,7 +27,7 @@ public class OpenNoColor : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out ChromatiColor chromatiColor))
         {
-            chromatiColor.isExitDoor = false;
+            UIManager.Intance.isClearNoColor = false;
             _animator.SetBool("Open", false);
         }
     }

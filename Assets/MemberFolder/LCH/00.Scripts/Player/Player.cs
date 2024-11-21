@@ -29,9 +29,6 @@ public abstract class Player : Entity
     [field : SerializeField] public AchromaticType AchromaticTypes { get; protected set; }
     [field: SerializeField] public ChromatiType ChromatiTypes { get; protected set; }
 
-    protected bool isChromatlEablbe = false;
-    protected bool isAchromatlcEnable = true;
-
     public bool isSwithing = false;
 
     [SerializeField] private LayerMask whatIsPushObj;
@@ -62,6 +59,7 @@ public abstract class Player : Entity
         base.AfterInit();
         stateMachine = new StateMachine(_playerFSM, this);
         stateMachine.Initialize("Idle");
+        IntaractionCompo.GetComponent<Interaction>();
     }
 
     protected void HandheldJump()

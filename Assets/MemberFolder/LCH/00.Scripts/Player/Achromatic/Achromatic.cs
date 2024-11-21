@@ -12,12 +12,14 @@ public class Achromatic : Player,ISwitchingPlayer
 
     private void OnEnable()
     {
-        InputCompo.OnswithingPlayerEvent += SwitchingPlayer;
+        InputCompo.OnswithingPlayerColorEvent += SwitchingPlayer;
+        InputCompo.OnJumpEvent += HandheldJump;
         InputCompo.OnInteractionEvent -= SwithUp;
     }
      private void OnDisable()
     {
-        InputCompo.OnswithingPlayerEvent -= SwitchingPlayer;
+        InputCompo.OnswithingPlayerColorEvent -= SwitchingPlayer;
+        InputCompo.OnJumpEvent -= HandheldJump;
         InputCompo.OnInteractionEvent += SwithUp;
     }
 
@@ -30,15 +32,6 @@ public class Achromatic : Player,ISwitchingPlayer
     protected override void Update()
     {
         base.Update();
-        if (isAchromatlcEnable)
-        {
-            InputCompo.OnswithingPlayerEvent += SwitchingPlayer;
-           
-        }
-        else
-        {
-            InputCompo.OnJumpEvent -= HandheldJump;
-        }
         if (IsToadstoolObj())
         {
             InputCompo.OnInteractionEvent += SwithUp;
@@ -61,8 +54,8 @@ public class Achromatic : Player,ISwitchingPlayer
         SwithinPlayerType(ChromatiTypes.SwithingPlayer, ChromatiTypes.PlayerVisual, ChromatiTypes.MyBackGround, ChromatiTypes.MyRigidbody
         , ChromatiTypes.Vcame, ChromatiTypes.MyBoxCollider, ChromatiTypes.MyMove, ChromatiTypes.MyArtifact);
         yield return new WaitForSeconds(0.5f);
-        isChromatlEablbe = true;
-        isAchromatlcEnable = false;
+        InputCompo.isChromatlEablbe = true;
+        InputCompo.isAchromatlcEnable = false;
         AchromaticTypes.SwithingUI.SetActive(false);
     }
 
@@ -73,7 +66,7 @@ public class Achromatic : Player,ISwitchingPlayer
         mybackGround.SetActive(false);
         rbcompo.bodyType = RigidbodyType2D.Static;
         vCam.Follow = null;
-        boxCollider.enabled = false;
+        boxCollider.isTrigger = true;
         myMove.enabled = false;
         myArtifact.SetActive(false);
 
@@ -85,7 +78,7 @@ public class Achromatic : Player,ISwitchingPlayer
         mybackGround.SetActive(true);
         rbcompo.bodyType = RigidbodyType2D.Dynamic;
         vCam.Follow = swithingPlayer.transform;
-        boxCollider.enabled = true;
+        boxCollider.isTrigger = false;
         myMove.enabled = true;
         myArtifact.SetActive(true);
     }

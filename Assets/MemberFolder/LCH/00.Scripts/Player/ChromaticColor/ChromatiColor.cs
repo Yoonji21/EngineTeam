@@ -22,16 +22,14 @@ public class ChromatiColor : Player,ISwitchingPlayer
     protected override void Update()
     {
         base.Update();
-        if (isChromatlEablbe)
+        if (InputCompo.isChromatlEablbe)
         {
-            InputCompo.OnswithingPlayerEvent += SwitchingPlayer;
             for (int i = 0; i < _invisibleObjs.Length; i++)
                 _invisibleObjs[i].SetActive(false);
            
         }
         else
         {
-            InputCompo.OnswithingPlayerEvent -= SwitchingPlayer;
             for (int i = 0; i < _invisibleObjs.Length; i++)
                 _invisibleObjs[i].SetActive(true);
         }
@@ -41,8 +39,10 @@ public class ChromatiColor : Player,ISwitchingPlayer
 
     private  void OnEnable()
     {
+        InputCompo.OnJumpEvent += HandheldJump;
+        InputCompo.OnInteractionEvent += IntaractionCompo.InteractionPress;
         InputCompo.OnInteractionEvent += SwithUp;
-        InputCompo.OnswithingPlayerEvent += SwitchingPlayer;
+        InputCompo.OnswithingPlayerNoColorEvent += SwitchingPlayer;
         if (_invisibleObjs == null)
         {
             return;
@@ -53,7 +53,9 @@ public class ChromatiColor : Player,ISwitchingPlayer
 
     private void OnDisable()
     {
-        InputCompo.OnswithingPlayerEvent -= SwitchingPlayer;
+        InputCompo.OnInteractionEvent -= IntaractionCompo.InteractionPress;
+        InputCompo.OnJumpEvent -= HandheldJump;
+        InputCompo.OnswithingPlayerNoColorEvent -= SwitchingPlayer;
         InputCompo.OnInteractionEvent -= SwithUp;
         if (_invisibleObjs == null)
         {
@@ -74,13 +76,13 @@ public class ChromatiColor : Player,ISwitchingPlayer
 
     private IEnumerator SwithingPlayer()
     {
-             MyPlayer(ChromatiTypes.SwithingUI, ChromatiTypes.PlayerVisual, ChromatiTypes.MyBackGround, ChromatiTypes.MyRigidbody,
-            ChromatiTypes.Vcame, ChromatiTypes.MyBoxCollider, ChromatiTypes.MyMove, ChromatiTypes.MyArtifact);
-            SwithinPlayerType(AchromaticTypes.SwithingPlayer, AchromaticTypes.PlayerVisual, AchromaticTypes.MyBackGround, AchromaticTypes.MyRigidbody
-            , AchromaticTypes.Vcame, AchromaticTypes.MyBoxCollider, AchromaticTypes.MyMove, AchromaticTypes.MyArtifact);
+        MyPlayer(ChromatiTypes.SwithingUI, ChromatiTypes.PlayerVisual, ChromatiTypes.MyBackGround, ChromatiTypes.MyRigidbody,
+        ChromatiTypes.Vcame, ChromatiTypes.MyBoxCollider, ChromatiTypes.MyMove, ChromatiTypes.MyArtifact);
+       SwithinPlayerType(AchromaticTypes.SwithingPlayer, AchromaticTypes.PlayerVisual, AchromaticTypes.MyBackGround, AchromaticTypes.MyRigidbody
+       , AchromaticTypes.Vcame, AchromaticTypes.MyBoxCollider, AchromaticTypes.MyMove, AchromaticTypes.MyArtifact);
         yield return new WaitForSeconds(0.5f);
-        isChromatlEablbe = false;
-        isAchromatlcEnable = true;
+       InputCompo.isChromatlEablbe = false;
+       InputCompo.isAchromatlcEnable = true;
         ChromatiTypes.SwithingUI.SetActive(false);
        }
 
@@ -91,7 +93,7 @@ public class ChromatiColor : Player,ISwitchingPlayer
         mybackGround.SetActive(false);
         rbcompo.bodyType = RigidbodyType2D.Static;
         vCam.Follow = null;
-        boxCollider.enabled = false;
+        boxCollider.isTrigger = true;
         myMove.enabled = false;
         myArtifact.SetActive(false);
         
@@ -103,7 +105,7 @@ public class ChromatiColor : Player,ISwitchingPlayer
         mybackGround.SetActive(true);
         rbcompo.bodyType = RigidbodyType2D.Dynamic;
         vCam.Follow = swithingPlayer.transform;
-        boxCollider.enabled = true;
+        boxCollider.isTrigger = false;
         myMove.enabled = true;
         myArtifact.SetActive(true);
     }

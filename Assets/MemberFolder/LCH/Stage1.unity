@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 1124697719}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -394,7 +394,7 @@ Transform:
   m_GameObject: {fileID: 155622447}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.47, y: -3.24, z: -10}
+  m_LocalPosition: {x: -3.41, y: -3.32, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -502,7 +502,7 @@ Transform:
   m_GameObject: {fileID: 175120629}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.47, y: -3.24, z: -10}
+  m_LocalPosition: {x: -3.41, y: -3.32, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13974,7 +13974,7 @@ PrefabInstance:
     - target: {fileID: 6928001758404294149, guid: 26331ccd76e8b1c44a376212b9332992, type: 3}
       propertyPath: <ChromatiTypes>k__BackingField.SwithingUI
       value: 
-      objectReference: {fileID: 1124697712}
+      objectReference: {fileID: 1144572697}
     - target: {fileID: 6928001758404294149, guid: 26331ccd76e8b1c44a376212b9332992, type: 3}
       propertyPath: <ChromatiTypes>k__BackingField.MyRigidbody
       value: 
@@ -13982,11 +13982,11 @@ PrefabInstance:
     - target: {fileID: 6928001758404294149, guid: 26331ccd76e8b1c44a376212b9332992, type: 3}
       propertyPath: <AchromaticTypes>k__BackingField.SwithingUI
       value: 
-      objectReference: {fileID: 1144572697}
+      objectReference: {fileID: 1124697712}
     - target: {fileID: 6928001758404294149, guid: 26331ccd76e8b1c44a376212b9332992, type: 3}
       propertyPath: <ChromatiTypes>k__BackingField.MyBackGround
       value: 
-      objectReference: {fileID: 155622447}
+      objectReference: {fileID: 623276709}
     - target: {fileID: 6928001758404294149, guid: 26331ccd76e8b1c44a376212b9332992, type: 3}
       propertyPath: <ChromatiTypes>k__BackingField.PlayerVisual
       value: 
@@ -14106,6 +14106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6ed4baec51b51e49a34af4d67238c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1124697719 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8884991465332079895, guid: 26331ccd76e8b1c44a376212b9332992, type: 3}
+  m_PrefabInstance: {fileID: 1124697705}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1144572697 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6107196615922148095, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
@@ -14557,7 +14562,7 @@ PrefabInstance:
     - target: {fileID: 3609912221256440015, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
       propertyPath: <ChromatiTypes>k__BackingField.SwithingUI
       value: 
-      objectReference: {fileID: 1124697712}
+      objectReference: {fileID: 1144572697}
     - target: {fileID: 3609912221256440015, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
       propertyPath: <AchromaticTypes>k__BackingField.MyArtifact
       value: 
@@ -14565,7 +14570,7 @@ PrefabInstance:
     - target: {fileID: 3609912221256440015, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
       propertyPath: <AchromaticTypes>k__BackingField.SwithingUI
       value: 
-      objectReference: {fileID: 1144572697}
+      objectReference: {fileID: 1124697712}
     - target: {fileID: 3609912221256440015, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
       propertyPath: <ChromatiTypes>k__BackingField.MyBackGround
       value: 
@@ -14596,7 +14601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5282175616646517815, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6093225942110525182, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
       propertyPath: m_LocalPosition.x
