@@ -211,7 +211,7 @@ Transform:
   m_GameObject: {fileID: 93280766}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.41, y: -3.32, z: -10}
+  m_LocalPosition: {x: -4.39, y: 3.27, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -418,7 +418,7 @@ Transform:
   m_GameObject: {fileID: 477392417}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.41, y: -3.32, z: -10}
+  m_LocalPosition: {x: -4.39, y: 3.27, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -441,11 +441,6 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8088116111159976440, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
   m_PrefabInstance: {fileID: 5372991873952640404}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &572353846 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2119028655432220398, guid: 26331ccd76e8b1c44a376212b9332992, type: 3}
-  m_PrefabInstance: {fileID: 944732147}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &672623722
 GameObject:
@@ -711,11 +706,11 @@ PrefabInstance:
       objectReference: {fileID: 558310584}
     - target: {fileID: 8884991465332079895, guid: 26331ccd76e8b1c44a376212b9332992, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.41
+      value: -4.39
       objectReference: {fileID: 0}
     - target: {fileID: 8884991465332079895, guid: 26331ccd76e8b1c44a376212b9332992, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.32
+      value: 3.27
       objectReference: {fileID: 0}
     - target: {fileID: 8884991465332079895, guid: 26331ccd76e8b1c44a376212b9332992, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1747,10 +1742,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3126858443781921251, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
-      propertyPath: _player
-      value: 
-      objectReference: {fileID: 572353846}
     - target: {fileID: 6093225942110525182, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.3855486
@@ -1794,10 +1785,6 @@ PrefabInstance:
     - target: {fileID: 8088116111159976440, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
       propertyPath: m_Name
       value: ChromaticColorPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 8088116111159976440, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
