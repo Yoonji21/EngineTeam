@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class OpenNoColor : MonoBehaviour 
 {
+    [SerializeField] private LayerMask _whatIsNoColorPlayer;
+    [SerializeField] private Vector2 _chekerSize;
+    [SerializeField] private Transform _chekerTrm;
+
     private Animator _animator;
 
     private void Awake()
@@ -11,24 +15,29 @@ public class OpenNoColor : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private bool PlayerCheck()
     {
-        if (collision.gameObject.TryGetComponent(out ChromatiColor chromatiColor))
-        {
-            if (chromatiColor != null)
-            {
-                UIManager.Intance.isClearNoColor = true;
-                _animator.SetBool("Open", true);
-            }
-        }
+        bool isPlayer = Physics2D.OverlapBox(_chekerTrm.position, _chekerSize, 0, _whatIsNoColorPlayer);
+        return isPlayer;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.gameObject.TryGetComponent(out ChromatiColor chromatiColor))
+        if (PlayerCheck())
+        {
+            UIManager.Intance.isClearNoColor = true;
+            _animator.SetBool("Open", true);
+        }
+        else
         {
             UIManager.Intance.isClearNoColor = false;
             _animator.SetBool("Open", false);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(_chekerTrm.position, _chekerSize);
     }
 }

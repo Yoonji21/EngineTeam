@@ -166,13 +166,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: OpenDoorNoColor
       objectReference: {fileID: 0}
-    - target: {fileID: 3260917710384534012, guid: 78997e366687b7e4285cb247fca7240c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3260917710384534012, guid: 78997e366687b7e4285cb247fca7240c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
+    - target: {fileID: 3086303961185794564, guid: 78997e366687b7e4285cb247fca7240c, type: 3}
+      propertyPath: m_BodyType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3260917710384534012, guid: 78997e366687b7e4285cb247fca7240c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -283,7 +279,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2272540546700622924, guid: dfaab8c45a7fc7846a1014baef5d349d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -531,7 +528,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -610,6 +607,55 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!1 &191363757
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 191363759}
+  - component: {fileID: 191363758}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &191363758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191363757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 60cd62bee3a77e042a0ab0f3d31b1ed9, type: 2}
+--- !u!4 &191363759
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191363757}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.8016677, y: -8.30665, z: -0.033816382}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &195032315
 GameObject:
   m_ObjectHideFlags: 0
@@ -14125,14 +14171,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2678701416113688931, guid: a81f3265f56202a48aa51018858615a8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2678701416113688931, guid: a81f3265f56202a48aa51018858615a8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2678701416113688931, guid: a81f3265f56202a48aa51018858615a8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.4829617
       objectReference: {fileID: 0}
@@ -14175,6 +14213,10 @@ PrefabInstance:
     - target: {fileID: 6273663222967996601, guid: a81f3265f56202a48aa51018858615a8, type: 3}
       propertyPath: m_Name
       value: OpenDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 7297332784264276051, guid: a81f3265f56202a48aa51018858615a8, type: 3}
+      propertyPath: m_BodyType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14285,7 +14327,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: e1995fc26c97e834c903c61290f4fcc2, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9003797, g: 0.85736316, b: 0.9433962, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14451,6 +14493,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -15.43
       objectReference: {fileID: 0}
+    - target: {fileID: 8515319585391440203, guid: 1bf27a363d9769240b4fe1b01e47d98b, type: 3}
+      propertyPath: _whatIsPlayer.m_Bits
+      value: 2688
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14514,6 +14560,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4916654798739181358, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: _whatIsPlayer.m_Bits
+      value: 2176
+      objectReference: {fileID: 0}
     - target: {fileID: 5367369477814413393, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
       propertyPath: m_Name
       value: Toadstool
@@ -14531,6 +14581,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 117018868436262880, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3609912221256440015, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
       propertyPath: <MovementCompo>k__BackingField
       value: 
@@ -14650,6 +14704,10 @@ PrefabInstance:
     - target: {fileID: 8088116111159976440, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
       propertyPath: m_Name
       value: ChromaticColorPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088116111159976440, guid: 8475c1df2d215594cb1dc3a083488d19, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15302,3 +15360,4 @@ SceneRoots:
   - {fileID: 1685111701}
   - {fileID: 1312617194}
   - {fileID: 623276711}
+  - {fileID: 191363759}
