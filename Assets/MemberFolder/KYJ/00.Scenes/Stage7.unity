@@ -10347,18 +10347,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerFSM: {fileID: 11400000, guid: 12124b86f27350a4e8f8eee466ed1684, type: 2}
   <InputCompo>k__BackingField: {fileID: 11400000, guid: 81733159bc0a41c4f938fccd26baa4d4, type: 2}
-  <MovementCompo>k__BackingField: {fileID: 0}
-  <IntaractionCompo>k__BackingField: {fileID: 0}
+  <MovementCompo>k__BackingField: {fileID: 6515854614295350552}
+  <IntaractionCompo>k__BackingField: {fileID: 2982932452399636346}
   <AchromaticTypes>k__BackingField:
     SwithingUI: {fileID: 1637865399}
     SwithingPlayer: {fileID: 3609912221630040573}
-    PlayerVisual: {fileID: 5370528165077122597}
+    PlayerVisual: {fileID: 2577863916732277724}
     MyBackGround: {fileID: 1258925807}
     MyRigidbody: {fileID: 7215626181073655729}
     Vcame: {fileID: 219255266}
     MyBoxCollider: {fileID: 7915810131647264872}
     MyMove: {fileID: 8883974853154108009}
-    MyArtifact: {fileID: 4903421221336623973}
+    MyArtifact: {fileID: 7364702263047486704}
   <ChromatiTypes>k__BackingField:
     SwithingUI: {fileID: 6107196616354870221}
     SwithingPlayer: {fileID: 3609912221630040573}
@@ -11808,8 +11808,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerFSM: {fileID: 11400000, guid: 12124b86f27350a4e8f8eee466ed1684, type: 2}
   <InputCompo>k__BackingField: {fileID: 11400000, guid: 81733159bc0a41c4f938fccd26baa4d4, type: 2}
-  <MovementCompo>k__BackingField: {fileID: 0}
-  <IntaractionCompo>k__BackingField: {fileID: 0}
+  <MovementCompo>k__BackingField: {fileID: 8883974853154108009}
+  <IntaractionCompo>k__BackingField: {fileID: 3885950400452120284}
   <AchromaticTypes>k__BackingField:
     SwithingUI: {fileID: 1637865399}
     SwithingPlayer: {fileID: 6928001759137243224}
@@ -11823,13 +11823,13 @@ MonoBehaviour:
   <ChromatiTypes>k__BackingField:
     SwithingUI: {fileID: 6107196616354870221}
     SwithingPlayer: {fileID: 3609912221630040573}
-    PlayerVisual: {fileID: 2577863916732277724}
+    PlayerVisual: {fileID: 5370528165077122597}
     MyBackGround: {fileID: 1421146529}
     MyRigidbody: {fileID: 117018868347834066}
     Vcame: {fileID: 219255266}
     MyBoxCollider: {fileID: 5282175616483804421}
     MyMove: {fileID: 6515854614295350552}
-    MyArtifact: {fileID: 7364702263047486704}
+    MyArtifact: {fileID: 4903421221336623973}
   isSwithing: 1
   whatIsPushObj:
     serializedVersion: 2
