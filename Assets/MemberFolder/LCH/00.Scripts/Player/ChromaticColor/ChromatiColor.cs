@@ -6,6 +6,7 @@ public class ChromatiColor : Player
 {
     private GameObject[] _invisibleObjs;
     [field:SerializeField] public GameObject Artifact;
+    public bool isExitDoor = false;
 
     protected override void AfterInit()
     {
@@ -21,7 +22,7 @@ public class ChromatiColor : Player
     protected override  void OnEnable()
     {
         base.OnEnable();
-        InputCompo.OnInteractionEvent -= SwithUp;
+        InputCompo.OnInteractionEvent += SwithUp;
         if (_invisibleObjs == null)
         {
             return;
@@ -34,7 +35,7 @@ public class ChromatiColor : Player
     protected override void OnDisable()
     {
         base.OnDisable();
-        InputCompo.OnInteractionEvent += SwithUp;
+        InputCompo.OnInteractionEvent -= SwithUp;
         if (_invisibleObjs == null)
         {
             return;
@@ -44,8 +45,9 @@ public class ChromatiColor : Player
             _invisibleObjs[i].SetActive(true);
     }
 
-    protected override void SwithUp()
+    public void SwithUp()
     {
-        base.SwithUp();
+        Artifact.SetActive(false);
+        stateMachine.ChangeState("SwithUp");
     }
 }

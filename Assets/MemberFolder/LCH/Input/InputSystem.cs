@@ -15,7 +15,7 @@ public class InputSystem : ScriptableObject, IPlayerActions
     public Action OnHoldObjEvent;
     public Action OnInteractionEvent;
 
-    private InputReder _playerInputAction;
+    public InputReder _playerInputAction;
 
     private void OnEnable()
     {
@@ -27,6 +27,11 @@ public class InputSystem : ScriptableObject, IPlayerActions
         _playerInputAction.Player.Enable(); //활성화
     }
 
+    private void OnDisable()
+    {
+        
+    }
+
 
     public void OnHold(InputAction.CallbackContext context)
     {
@@ -35,6 +40,8 @@ public class InputSystem : ScriptableObject, IPlayerActions
 
     public void OnInteractions(InputAction.CallbackContext context)
     {
+
+        Debug.Log("인터렉트");
         OnInteractionEvent?.Invoke();
     }
 

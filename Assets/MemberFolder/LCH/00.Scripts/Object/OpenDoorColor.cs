@@ -18,6 +18,7 @@ public class OpenDoorColor : MonoBehaviour
         {
             if (achromatic != null)
             {
+                achromatic.isExitDoor = true;
                 _animator.SetBool("Open", true);
             }
         }
@@ -25,6 +26,10 @@ public class OpenDoorColor : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _animator.SetBool("Open", false);
+        if (collision.gameObject.TryGetComponent(out Achromatic achromatic))
+        {
+            achromatic.isExitDoor = false;
+            _animator.SetBool("Open", false);
+        }
     }
 }
