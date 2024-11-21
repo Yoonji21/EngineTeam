@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class MoveState : EntityState
 {
-
+    private PlayerMovement _mover;
     public MoveState(Entity entity, AnimParamSO animParam) : base(entity, animParam)
     {
+        _mover = entity.GetCompo<PlayerMovement>();
+    }
+
+    public override void Enter()
+    {
+        base.Enter();
+        _mover.StopIimmediately(false);
     }
 
     public override void Update()
