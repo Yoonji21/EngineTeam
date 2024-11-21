@@ -17,6 +17,8 @@ public class UIManager : MonoBehaviour
             Intance = this;
         else
             Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
