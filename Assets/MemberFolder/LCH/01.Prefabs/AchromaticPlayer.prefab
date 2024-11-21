@@ -191,6 +191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerFSM: {fileID: 11400000, guid: 12124b86f27350a4e8f8eee466ed1684, type: 2}
   <InputCompo>k__BackingField: {fileID: 11400000, guid: 81733159bc0a41c4f938fccd26baa4d4, type: 2}
+  <MovementCompo>k__BackingField: {fileID: 0}
+  <IntaractionCompo>k__BackingField: {fileID: 0}
   <AchromaticTypes>k__BackingField:
     SwithingUI: {fileID: 2792303775172376180}
     SwithingPlayer: {fileID: 6928001758404294149}
@@ -199,7 +201,7 @@ MonoBehaviour:
     MyRigidbody: {fileID: 7215626182479790572}
     Vcame: {fileID: 0}
     MyBoxCollider: {fileID: 7915810129697959477}
-    myMove: {fileID: 8883974852949632052}
+    MyMove: {fileID: 0}
     MyArtifact: {fileID: 7364702263377783469}
   <ChromatiTypes>k__BackingField:
     SwithingUI: {fileID: 0}
@@ -209,7 +211,7 @@ MonoBehaviour:
     MyRigidbody: {fileID: 0}
     Vcame: {fileID: 0}
     MyBoxCollider: {fileID: 0}
-    myMove: {fileID: 0}
+    MyMove: {fileID: 0}
     MyArtifact: {fileID: 0}
   isSwithing: 0
   whatIsPushObj:
@@ -220,7 +222,7 @@ MonoBehaviour:
     m_Bits: 256
   _objCheckSize: {x: 1.09, y: 0.9}
   _checkTrm: {fileID: 6840067959122457882}
-  <_jumpPower>k__BackingField: 12
+  <_jumpPower>k__BackingField: 36
   stateMachine: {fileID: 0}
   isExitDoor: 0
 --- !u!1 &2259027953426565055
