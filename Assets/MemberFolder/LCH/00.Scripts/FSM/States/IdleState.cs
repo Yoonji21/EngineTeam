@@ -14,7 +14,6 @@ public class IdleState : EntityState
     public override void Enter()
     {
         base.Enter();
-        
         _player.MovementCompo.StopIimmediately(true);
         _player.StartCoroutine(SwithingPlayer());
 
