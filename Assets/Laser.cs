@@ -24,7 +24,7 @@ public class Laser : MonoBehaviour
 
     private void Update()
     {
-        ShootLaser();   
+        ShootLaser();
     }
 
     private bool DrawwRaw(out RaycastHit2D hit)
