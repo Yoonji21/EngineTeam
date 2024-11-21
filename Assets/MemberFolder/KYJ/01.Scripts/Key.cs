@@ -22,7 +22,7 @@ public class Key : MonoBehaviour
     {
         if (hasKey)
         {
-            //FollowPlayer();
+            FollowPlayer();
         }
     }
 
