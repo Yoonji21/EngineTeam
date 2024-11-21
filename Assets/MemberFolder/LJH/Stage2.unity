@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 139893133}
   - component: {fileID: 139893132}
   - component: {fileID: 139893131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14072,7 +14072,6 @@ MonoBehaviour:
     MyRigidbody: {fileID: 7215626181926004813}
     Vcame: {fileID: 1935863262}
     MyBoxCollider: {fileID: 7915810130218157972}
-    MyMove: {fileID: 8883974852362538389}
     MyArtifact: {fileID: 7364702263931536140}
   <ChromatiTypes>k__BackingField:
     SwithingUI: {fileID: 6107196616243507961}
@@ -14082,7 +14081,6 @@ MonoBehaviour:
     MyRigidbody: {fileID: 117018868081348582}
     Vcame: {fileID: 1935863262}
     MyBoxCollider: {fileID: 5282175616292652081}
-    MyMove: {fileID: 6515854614121663532}
     MyArtifact: {fileID: 4903421221540227665}
   isSwithing: 0
   whatIsPushObj:
@@ -15173,7 +15171,6 @@ MonoBehaviour:
     MyRigidbody: {fileID: 7215626181926004813}
     Vcame: {fileID: 1935863262}
     MyBoxCollider: {fileID: 7915810130218157972}
-    MyMove: {fileID: 8883974852362538389}
     MyArtifact: {fileID: 7364702263931536140}
   <ChromatiTypes>k__BackingField:
     SwithingUI: {fileID: 6107196616243507961}
@@ -15183,7 +15180,6 @@ MonoBehaviour:
     MyRigidbody: {fileID: 117018868081348582}
     Vcame: {fileID: 1935863262}
     MyBoxCollider: {fileID: 5282175616292652081}
-    MyMove: {fileID: 6515854614121663532}
     MyArtifact: {fileID: 4903421221540227665}
   isSwithing: 0
   whatIsPushObj:
