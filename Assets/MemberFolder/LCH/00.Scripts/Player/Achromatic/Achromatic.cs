@@ -50,16 +50,16 @@ public class Achromatic : Player,ISwitchingPlayer
     private IEnumerator SwithingPlayer()
     {
         MyPlayer(AchromaticTypes.SwithingUI, AchromaticTypes.PlayerVisual, AchromaticTypes.MyBackGround, AchromaticTypes.MyRigidbody,
-       AchromaticTypes.Vcame, AchromaticTypes.MyBoxCollider, AchromaticTypes.MyMove, AchromaticTypes.MyArtifact);
+       AchromaticTypes.Vcame, AchromaticTypes.MyBoxCollider, AchromaticTypes.MyArtifact);
         SwithinPlayerType(ChromatiTypes.SwithingPlayer, ChromatiTypes.PlayerVisual, ChromatiTypes.MyBackGround, ChromatiTypes.MyRigidbody
-        , ChromatiTypes.Vcame, ChromatiTypes.MyBoxCollider, ChromatiTypes.MyMove, ChromatiTypes.MyArtifact);
+        , ChromatiTypes.Vcame, ChromatiTypes.MyBoxCollider, ChromatiTypes.MyArtifact);
         yield return new WaitForSeconds(0.5f);
         InputCompo.isChromatlEablbe = true;
         InputCompo.isAchromatlcEnable = false;
         AchromaticTypes.SwithingUI.SetActive(false);
     }
 
-    public void MyPlayer(GameObject UI, SpriteRenderer playerVisual, GameObject mybackGround, Rigidbody2D rbcompo, CinemachineVirtualCamera vCam, BoxCollider2D boxCollider, PlayerMovement myMove, GameObject myArtifact)
+    public void MyPlayer(GameObject UI, SpriteRenderer playerVisual, GameObject mybackGround, Rigidbody2D rbcompo, CinemachineVirtualCamera vCam, BoxCollider2D boxCollider,  GameObject myArtifact)
     {
         UI.SetActive(true);
         playerVisual.enabled = false;
@@ -67,19 +67,17 @@ public class Achromatic : Player,ISwitchingPlayer
         rbcompo.bodyType = RigidbodyType2D.Static;
         vCam.Follow = null;
         boxCollider.isTrigger = true;
-        myMove.enabled = false;
         myArtifact.SetActive(false);
 
     }
 
-    public void SwithinPlayerType(Player swithingPlayer, SpriteRenderer playerVisual, GameObject mybackGround, Rigidbody2D rbcompo, CinemachineVirtualCamera vCam, BoxCollider2D boxCollider, PlayerMovement myMove, GameObject myArtifact)
+    public void SwithinPlayerType(Player swithingPlayer, SpriteRenderer playerVisual, GameObject mybackGround, Rigidbody2D rbcompo, CinemachineVirtualCamera vCam, BoxCollider2D boxCollider, GameObject myArtifact)
     {
         playerVisual.enabled = true;
         mybackGround.SetActive(true);
         rbcompo.bodyType = RigidbodyType2D.Dynamic;
         vCam.Follow = swithingPlayer.transform;
         boxCollider.isTrigger = false;
-        myMove.enabled = true;
         myArtifact.SetActive(true);
     }
 }

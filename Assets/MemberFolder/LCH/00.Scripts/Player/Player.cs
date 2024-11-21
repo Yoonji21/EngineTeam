@@ -104,7 +104,6 @@ public struct AchromaticType
     public Rigidbody2D MyRigidbody;
     public CinemachineVirtualCamera Vcame;
     public BoxCollider2D MyBoxCollider;
-    public PlayerMovement MyMove;
     public GameObject MyArtifact;
 }
 
@@ -118,6 +117,5 @@ public struct ChromatiType
     public Rigidbody2D MyRigidbody;
     public CinemachineVirtualCamera Vcame;
     public BoxCollider2D MyBoxCollider;
-    public PlayerMovement MyMove;
     public GameObject MyArtifact;
 }
