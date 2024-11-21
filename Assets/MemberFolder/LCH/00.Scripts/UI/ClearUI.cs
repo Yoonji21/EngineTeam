@@ -13,6 +13,7 @@ public class ClearUI : MonoBehaviour
     private void Awake()
     {
         gameObject.SetActive(false);
+        DontDestroyOnLoad(gameObject);
     }
 
     private void OnEnable()
