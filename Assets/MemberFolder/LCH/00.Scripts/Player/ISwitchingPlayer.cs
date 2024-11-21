@@ -9,7 +9,7 @@ public interface ISwitchingPlayer
         Rigidbody2D rbcompo, CinemachineVirtualCamera vCam, BoxCollider2D boxCollider, PlayerMovement myMove,
         GameObject Artifact);
 
-    public void SwithinPlayer(Player swithingPlayer, SpriteRenderer player, GameObject mybackGround,
+    public void SwithinPlayerType(Player swithingPlayer, SpriteRenderer player, GameObject mybackGround,
         Rigidbody2D rbcompo, CinemachineVirtualCamera vCam, BoxCollider2D boxCollider, PlayerMovement myMove,
         GameObject Artifact);
 }

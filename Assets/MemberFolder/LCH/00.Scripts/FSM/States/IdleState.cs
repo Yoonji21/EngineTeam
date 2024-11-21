@@ -14,6 +14,7 @@ public class IdleState : EntityState
     public override void Enter()
     {
         base.Enter();
+        
         _player.MovementCompo.StopIimmediately(true);
         _player.StartCoroutine(SwithingPlayer());
 
@@ -22,7 +23,7 @@ public class IdleState : EntityState
     private IEnumerator SwithingPlayer()
     {
         yield return new WaitForSeconds(1f);
-        _player.SwitchingCompo.isSwithing = true;
+        _player.isSwithing = true;
     }
 
     public override void Update()
@@ -39,6 +40,6 @@ public class IdleState : EntityState
     public override void Exit()
     {
         base.Exit();
-        _player.SwitchingCompo.isSwithing = false;
+        _player.isSwithing = false;
     }
 }
