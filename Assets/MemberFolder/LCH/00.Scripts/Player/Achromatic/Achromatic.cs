@@ -23,6 +23,14 @@ public class Achromatic : Player,ISwitchingPlayer
         InputCompo.OnInteractionEvent -= SwithUp;
     }
 
+    private void Start()
+    {
+        MyPlayer(null, ChromatiTypes.PlayerVisual, ChromatiTypes.MyBackGround, ChromatiTypes.MyRigidbody,
+       ChromatiTypes.Vcame, ChromatiTypes.MyBoxCollider, ChromatiTypes.MyArtifact);
+        SwithinPlayerType(AchromaticTypes.SwithingPlayer, AchromaticTypes.PlayerVisual, AchromaticTypes.MyBackGround, AchromaticTypes.MyRigidbody
+        , AchromaticTypes.Vcame, AchromaticTypes.MyBoxCollider, AchromaticTypes.MyArtifact);
+    }
+
 
     public void SwithUp()
     { 
@@ -66,7 +74,7 @@ public class Achromatic : Player,ISwitchingPlayer
         mybackGround.SetActive(false);
         rbcompo.bodyType = RigidbodyType2D.Static;
         vCam.Follow = null;
-        boxCollider.enabled = false;
+        boxCollider.isTrigger = true;
         myArtifact.SetActive(false);
     }
 
@@ -76,7 +84,7 @@ public class Achromatic : Player,ISwitchingPlayer
         mybackGround.SetActive(true);
         rbcompo.bodyType = RigidbodyType2D.Dynamic;
         vCam.Follow = swithingPlayer.transform;
-        boxCollider.enabled = true;
+        boxCollider.isTrigger = false;
         myArtifact.SetActive(true);
         
     }
