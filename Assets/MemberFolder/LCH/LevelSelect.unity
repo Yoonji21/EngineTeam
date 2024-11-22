@@ -715,7 +715,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stage3
+  m_text: 'Stage4
 
 '
   m_isRightToLeft: 0
@@ -851,7 +851,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Level1
+  m_text: 'Level6
 
 '
   m_isRightToLeft: 0
@@ -1253,9 +1253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stage3
-
-'
+  m_text: Stage10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1ed15a9d5e179a43baa674e62214604, type: 2}
   m_sharedMaterial: {fileID: -9218278403578161957, guid: c1ed15a9d5e179a43baa674e62214604, type: 2}
@@ -1389,7 +1387,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stage3
+  m_text: 'Stage8
 
 '
   m_isRightToLeft: 0
@@ -2670,7 +2668,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stage3
+  m_text: 'Stage9
 
 '
   m_isRightToLeft: 0
@@ -2806,7 +2804,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Stage3
+  m_text: 'Stage5
 
 '
   m_isRightToLeft: 0
@@ -3477,9 +3475,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Level2
-
-'
+  m_text: Level7
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1ed15a9d5e179a43baa674e62214604, type: 2}
   m_sharedMaterial: {fileID: -9218278403578161957, guid: c1ed15a9d5e179a43baa674e62214604, type: 2}

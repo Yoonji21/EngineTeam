@@ -7,7 +7,6 @@ using UnityEngine;
 public class ChromatiColor : Player,ISwitchingPlayer
 {
     private GameObject[] _invisibleObjs;
-    [field:SerializeField] public GameObject Artifact;
     public bool isExitDoor = false;
 
 
