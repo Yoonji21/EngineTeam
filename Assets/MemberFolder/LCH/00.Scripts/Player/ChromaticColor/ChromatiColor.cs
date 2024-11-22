@@ -100,7 +100,7 @@ public class ChromatiColor : Player,ISwitchingPlayer
         mybackGround.SetActive(false);
         rbcompo.bodyType = RigidbodyType2D.Static;
         vCam.Follow = null;
-        boxCollider.enabled = false;
+        boxCollider.isTrigger = true;
         myArtifact.SetActive(false);
     }
 
@@ -110,7 +110,7 @@ public class ChromatiColor : Player,ISwitchingPlayer
         mybackGround.SetActive(true);
         rbcompo.bodyType = RigidbodyType2D.Dynamic;
         vCam.Follow = swithingPlayer.transform;
-        boxCollider.enabled = true;
+        boxCollider.isTrigger = false;
         myArtifact.SetActive(true);
     }
 }
