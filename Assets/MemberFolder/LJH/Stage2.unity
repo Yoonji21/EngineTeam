@@ -13045,18 +13045,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4916654798739181358, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
-      propertyPath: _whatIsPlayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 4916654798739181358, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
-      propertyPath: _whatIsColorPlayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 4916654798739181358, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
-      propertyPath: _whatIsNoColorPlayer.m_Bits
-      value: 2048
-      objectReference: {fileID: 0}
     - target: {fileID: 5367369477814413393, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
       propertyPath: m_Name
       value: Toadstool
