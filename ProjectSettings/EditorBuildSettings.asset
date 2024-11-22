@@ -12,10 +12,10 @@ EditorBuildSettings:
     path: Assets/MemberFolder/LCH/LevelSelect.unity
     guid: dfc45ccd955ded946bd58f6f1931eed2
   - enabled: 1
-    path: Assets/MemberFolder/LCH/Stage1.unity
+    path: Assets/MemberFolder/SJH/Stage1.unity
     guid: 39bec1fe45f9e1840b3e205f00adff86
   - enabled: 1
-    path: Assets/MemberFolder/LJH/Stage2.unity
+    path: Assets/MemberFolder/SJH/Stage2.unity
     guid: 182149536d99333439738833559bbfb1
   - enabled: 1
     path: Assets/MemberFolder/SJH/Stage3.unity
