@@ -8,6 +8,8 @@ TagManager:
   - Box
   - InvisibleObj
   - Key
+  - ColorPlayer
+  - NoColorPlayer
   layers:
   - Default
   - TransparentFX
