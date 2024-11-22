@@ -35,18 +35,16 @@ public class OpenDoor : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Key key = collision.gameObject.GetComponentInChildren<Key>();
+        Key key = collision.gameObject.GetComponent<Key>();
 
-        if (key != null)
-        {
-            if (key.hasKey)
+            if (collision.gameObject.CompareTag("Key"))
             {
-                key.hasKey = false;
                 key.DestroyKey();
 
                 _animator.SetBool("Open", true);
+                print("open");
             }
-        }
+
     }
 
     private void AnimEndTrigger()
