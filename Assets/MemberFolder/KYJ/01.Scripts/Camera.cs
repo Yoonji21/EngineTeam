@@ -14,6 +14,7 @@ public class Camera : MonoBehaviour
 
     [SerializeField] private List<Transform> respawnPoint;
     [SerializeField] private Respawn respawn;
+    [SerializeField] private LayerMask _whatIsPlayers;
 
 
 
@@ -29,28 +30,26 @@ public class Camera : MonoBehaviour
 
     private void CheckAlert()
     {
-        // 물체의 방향을 구한다.
-        Vector2 targetDir = asteroid.position - transform.position;
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, radius, _whatIsPlayers);
 
-        if (targetDir.magnitude <= radius) // 오브젝트가 플레이어의 탐지 범위에 들어올 때 
+        foreach (var hit in hits)
         {
-            // 내적
+            Transform player = hit.transform;
+            Vector2 targetDir = player.position - transform.position;
+
+            // 시야각 내에 있는지 확인
             float dot = Vector2.Dot(transform.up, targetDir.normalized);
 
-            // 내적한 값이 각도 / 2 코사인 값보다 크다면 => 플레이어가 바라보는 방향에 더 가깝다면
             if (dot >= alertThreshold)
             {
-                respawn.RespawnObject(true, hit.transform);
+                RaycastHit2D playerHit = Physics2D.Raycast(transform.position, targetDir, targetDir.magnitude, _whatIsPlayers);
+                if (playerHit.collider != null && playerHit.collider.transform == player)
+                {
+                    // 플레이어가 감지됨
 
+                    respawn.RespawnObject(true, player.transform);
+                }
             }
-            else
-            {
-                //print("범위 감지 x");
-            }
-        }
-        else
-        {
-            //print("범위 감지 x");
         }
     }
 
