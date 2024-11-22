@@ -18183,7 +18183,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917742673580541}
   target:
     serializedVersion: 2
-    m_Bits: 1664
+    m_Bits: 3712
   respawn: {fileID: 2019514099}
 --- !u!114 &7008155509141437092
 MonoBehaviour:
@@ -18202,7 +18202,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917742626137491}
   target:
     serializedVersion: 2
-    m_Bits: 1664
+    m_Bits: 3712
   respawn: {fileID: 2019514099}
 --- !u!50 &7297332784371020873
 Rigidbody2D:

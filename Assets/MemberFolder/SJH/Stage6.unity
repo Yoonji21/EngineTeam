@@ -18041,7 +18041,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917742626137491}
   target:
     serializedVersion: 2
-    m_Bits: 1664
+    m_Bits: 3712
   respawn: {fileID: 2035318740}
 --- !u!114 &7008155509954470812
 MonoBehaviour:
@@ -18060,7 +18060,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917743439445163}
   target:
     serializedVersion: 2
-    m_Bits: 1664
+    m_Bits: 3712
   respawn: {fileID: 2035318740}
 --- !u!114 &7008155510248732618
 MonoBehaviour:
@@ -18079,7 +18079,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917743733434621}
   target:
     serializedVersion: 2
-    m_Bits: 1664
+    m_Bits: 3712
   respawn: {fileID: 2035318740}
 --- !u!114 &7008155510947455488
 MonoBehaviour:
@@ -18098,7 +18098,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917744562453815}
   target:
     serializedVersion: 2
-    m_Bits: 1664
+    m_Bits: 3712
   respawn: {fileID: 2035318740}
 --- !u!50 &7297332784371020873
 Rigidbody2D:
