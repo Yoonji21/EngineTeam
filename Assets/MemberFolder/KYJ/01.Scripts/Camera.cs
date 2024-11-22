@@ -10,8 +10,6 @@ public class Camera : MonoBehaviour
     [SerializeField] private float radius = 10f;
     private float alertThreshold;
 
-    public Transform asteroid;
-
     [SerializeField] private List<Transform> respawnPoint;
     [SerializeField] private Respawn respawn;
     [SerializeField] private LayerMask _whatIsPlayers;

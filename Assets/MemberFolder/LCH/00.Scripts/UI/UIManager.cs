@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public bool isClearNoColor;
 
     [SerializeField] private ClearUI _clearUiOpen;
+    [SerializeField] private ClearUI _lastStageClear;
 
     private void Awake()
     {
@@ -25,7 +26,14 @@ public class UIManager : MonoBehaviour
     {
         if(isClearColor && isClearNoColor)
         {
-            _clearUiOpen.gameObject.SetActive(true);
+            if(SceneManagers.Inatnce.CurrentSceneLevel < 9)
+            {
+                _clearUiOpen.gameObject.SetActive(true);
+            }
+            else
+            {
+                _lastStageClear.gameObject.SetActive(true);
+            }
         }
     }
 

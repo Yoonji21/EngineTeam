@@ -41,6 +41,8 @@ public abstract class Player : Entity
 
     public bool isSwithOn { get; set; } = false;
 
+    public bool isSwithingPlayer = true;
+
     [SerializeField] public StateMachine stateMachine;
     public EntityState CurrentState => stateMachine.currentState;
 

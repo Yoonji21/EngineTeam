@@ -8616,6 +8616,7 @@ MonoBehaviour:
   isClearColor: 0
   isClearNoColor: 0
   _clearUiOpen: {fileID: 358422167}
+  _lastStageClear: {fileID: 0}
 --- !u!4 &168963110
 Transform:
   m_ObjectHideFlags: 0
@@ -10292,7 +10293,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.52156866, g: 0.52156866, b: 0.52156866, a: 1}
   m_Origin: {x: -6, y: -11, z: 0}
   m_Size: {x: 17, y: 11, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -11630,6 +11631,7 @@ MonoBehaviour:
   _objCheckSize: {x: 1.09, y: 0.93}
   _checkTrm: {fileID: 2333082056107896706}
   <_jumpPower>k__BackingField: 12
+  isSwithingPlayer: 1
   stateMachine: {fileID: 0}
   isExitDoor: 0
   _artifact: {fileID: 0}
@@ -12828,6 +12830,7 @@ MonoBehaviour:
   _objCheckSize: {x: 1.09, y: 0.9}
   _checkTrm: {fileID: 6840067960939635527}
   <_jumpPower>k__BackingField: 12
+  isSwithingPlayer: 1
   stateMachine: {fileID: 0}
   isExitDoor: 0
 --- !u!114 &7008155509066617419
