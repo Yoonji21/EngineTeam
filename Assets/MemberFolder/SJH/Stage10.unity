@@ -249,6 +249,7 @@ MonoBehaviour:
   asteroid: {fileID: 0}
   respawnPoint:
   - {fileID: 2068097203}
+  respawn: {fileID: 0}
 --- !u!1 &51884493
 GameObject:
   m_ObjectHideFlags: 0
@@ -12508,7 +12509,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0cd4da85367995f4eb40d3c970641ee4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7438222, g: 0.41320753, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -12654,6 +12655,18 @@ PrefabInstance:
     - target: {fileID: 5367369477814413393, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
       propertyPath: m_Name
       value: Toadstool (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491894393793610582, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491894393793610582, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491894393793610582, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: m_Color.r
+      value: 0.69411767
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13379,6 +13392,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Toadstool (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6491894393793610582, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: m_Color.b
+      value: 0.654902
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491894393793610582, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: m_Color.r
+      value: 0.03529412
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13957,6 +13978,7 @@ MonoBehaviour:
   asteroid: {fileID: 0}
   respawnPoint:
   - {fileID: 2068097203}
+  respawn: {fileID: 0}
 --- !u!1 &922204178
 GameObject:
   m_ObjectHideFlags: 0
@@ -14063,7 +14085,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f104496b19f3ab14db027007722b18cf, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.03529412, g: 1, b: 0.654902, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14147,7 +14169,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f104496b19f3ab14db027007722b18cf, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.03529412, g: 1, b: 0.654902, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -15331,7 +15353,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0cd4da85367995f4eb40d3c970641ee4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7438222, g: 0.41320753, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -15392,6 +15414,7 @@ MonoBehaviour:
   asteroid: {fileID: 0}
   respawnPoint:
   - {fileID: 2068097203}
+  respawn: {fileID: 0}
 --- !u!1 &1432307667
 GameObject:
   m_ObjectHideFlags: 0
@@ -15758,7 +15781,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0cd4da85367995f4eb40d3c970641ee4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7438222, g: 0.41320753, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16265,6 +16288,7 @@ MonoBehaviour:
   asteroid: {fileID: 0}
   respawnPoint:
   - {fileID: 2068097203}
+  respawn: {fileID: 0}
 --- !u!1 &1837595340
 GameObject:
   m_ObjectHideFlags: 0
@@ -16339,7 +16363,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f104496b19f3ab14db027007722b18cf, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.03529412, g: 1, b: 0.654902, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16423,7 +16447,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0cd4da85367995f4eb40d3c970641ee4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7438222, g: 0.41320753, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16484,6 +16508,18 @@ PrefabInstance:
     - target: {fileID: 5367369477814413393, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
       propertyPath: m_Name
       value: Toadstool (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491894393793610582, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491894393793610582, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491894393793610582, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: m_Color.r
+      value: 0.40784314
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16564,7 +16600,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f104496b19f3ab14db027007722b18cf, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.03529412, g: 1, b: 0.654902, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16866,7 +16902,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0cd4da85367995f4eb40d3c970641ee4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.69411767, g: 0.9490196, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -17034,7 +17070,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0cd4da85367995f4eb40d3c970641ee4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.40784314, g: 0.4862745, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -18277,6 +18313,7 @@ MonoBehaviour:
   asteroid: {fileID: 0}
   respawnPoint:
   - {fileID: 0}
+  respawn: {fileID: 0}
 --- !u!114 &3735146763421472286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18294,6 +18331,7 @@ MonoBehaviour:
   asteroid: {fileID: 0}
   respawnPoint:
   - {fileID: 0}
+  respawn: {fileID: 0}
 --- !u!114 &3735146764123460745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18311,6 +18349,7 @@ MonoBehaviour:
   asteroid: {fileID: 0}
   respawnPoint:
   - {fileID: 0}
+  respawn: {fileID: 0}
 --- !u!114 &3735146764219639947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18328,6 +18367,7 @@ MonoBehaviour:
   asteroid: {fileID: 0}
   respawnPoint:
   - {fileID: 0}
+  respawn: {fileID: 0}
 --- !u!61 &4074082845908210050
 BoxCollider2D:
   m_ObjectHideFlags: 0

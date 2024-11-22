@@ -12,15 +12,9 @@ public class Laser : MonoBehaviour
 
     public LayerMask target;
 
-    private Transform m_transform;
-
     [SerializeField] private Respawn respawn;
 
 
-    private void Awake()
-    {
-        m_transform = GetComponent<Transform>();
-    }
 
     private void Update()
     {
