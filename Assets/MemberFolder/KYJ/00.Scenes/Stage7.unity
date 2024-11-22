@@ -12553,7 +12553,7 @@ MonoBehaviour:
   _xMove: {x: 0, y: 0, z: 0}
   _whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   _groundChecker: {fileID: 7615342965666634876}
   _checkerSize: {x: 0.81, y: 0.2}
 --- !u!4 &6532306283109473510
@@ -13842,7 +13842,7 @@ MonoBehaviour:
   _xMove: {x: 0, y: 0, z: 0}
   _whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   _groundChecker: {fileID: 3783620019134606562}
   _checkerSize: {x: 0.81, y: 0.2}
 --- !u!4 &8884991465662376778

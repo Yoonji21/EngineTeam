@@ -9134,11 +9134,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3030981108863039595, guid: c95b527aedf6e854894e9522973fb8f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.45
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 3030981108863039595, guid: c95b527aedf6e854894e9522973fb8f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.78
+      value: -6.05
       objectReference: {fileID: 0}
     - target: {fileID: 3030981108863039595, guid: c95b527aedf6e854894e9522973fb8f9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10341,7 +10341,7 @@ MonoBehaviour:
   _xMove: {x: 0, y: 0, z: 0}
   _whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   _groundChecker: {fileID: 3783179653442946317}
   _checkerSize: {x: 0.81, y: 0.2}
 --- !u!4 &560878082291392007
@@ -11841,7 +11841,7 @@ MonoBehaviour:
   _xMove: {x: 0, y: 0, z: 0}
   _whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   _groundChecker: {fileID: 178332868371318577}
   _checkerSize: {x: 0.81, y: 0.2}
 --- !u!4 &5599762388308017305
@@ -11853,7 +11853,7 @@ Transform:
   m_GameObject: {fileID: 3140068617511928672}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.21, y: -17.45, z: 0}
+  m_LocalPosition: {x: -3.2, y: -1.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
