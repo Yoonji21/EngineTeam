@@ -48,7 +48,7 @@ public class Laser : MonoBehaviour
             if (hit.collider.CompareTag("Player"))
             {
                 // 플레이어를 맞췄을 때 리스폰 처리
-                respawn.RespawnObject(true);
+                respawn.RespawnObject(true, hit.transform);
             }
 
             // 레이저를 닿은 지점까지 그리기
