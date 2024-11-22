@@ -11,6 +11,7 @@ public class Respawn : MonoBehaviour
         if (canRespawn)
         {
             target.position = respawnPoint[0].transform.position;
+            print("re");
         }
     }
 }

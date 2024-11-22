@@ -45,10 +45,11 @@ public class Laser : MonoBehaviour
         // 레이저가 플레이어나 벽에 닿았을 때
         if (DrawwRaw(out hit))
         {
-            if (hit.collider.CompareTag("Player"))
+            if (hit.collider.CompareTag("ColorPlayer") || hit.collider.CompareTag("NoColorPlayer"))
             {
                 // 플레이어를 맞췄을 때 리스폰 처리
                 respawn.RespawnObject(true, hit.transform);
+                print(hit);    
             }
 
             // 레이저를 닿은 지점까지 그리기
