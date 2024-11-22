@@ -5,6 +5,12 @@ using UnityEngine;
 public class OpenDoor : MonoBehaviour
 {
     [SerializeField] private BoxCollider2D _boxCollider;
+    private Animator _animator;
+
+    private void Awake()
+    {
+        _animator = GetComponentInChildren<Animator>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -17,6 +23,8 @@ public class OpenDoor : MonoBehaviour
                 key.hasKey = false;
                 _boxCollider.enabled = false;
                 key.DestroyKey();
+
+                _animator.SetBool("Open", true);
             }
         }
 
