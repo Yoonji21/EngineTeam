@@ -23,13 +23,6 @@ public class Achromatic : Player,ISwitchingPlayer
         InputCompo.OnInteractionEvent -= SwithUp;
     }
 
-    private void Start()
-    {
-        MyPlayer(null, ChromatiTypes.PlayerVisual, ChromatiTypes.MyBackGround, ChromatiTypes.MyRigidbody,
-       ChromatiTypes.Vcame, ChromatiTypes.MyBoxCollider, ChromatiTypes.MyArtifact);
-        SwithinPlayerType(AchromaticTypes.SwithingPlayer, AchromaticTypes.PlayerVisual, AchromaticTypes.MyBackGround, AchromaticTypes.MyRigidbody
-        , AchromaticTypes.Vcame, AchromaticTypes.MyBoxCollider, AchromaticTypes.MyArtifact);
-    }
 
 
     public void SwithUp()
