@@ -31,8 +31,6 @@ public abstract class Player : Entity
 
     public GameObject Artifact;
 
-    public bool isSwithing = false;
-
     [SerializeField] private LayerMask whatIsPushObj;
     [SerializeField] private LayerMask whatIsToadstoolObj;
     [SerializeField] private Vector2 _objCheckSize;

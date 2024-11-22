@@ -120,10 +120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db5de26714a65940b9b2aa9e56588d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _checkerSize: {x: 0.53, y: 0.64}
+  _checkerSize: {x: 0.72, y: 0.97}
   _whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 2176
   _fkey: {fileID: 656893998027022159}
 --- !u!1 &5650784112479118542
 GameObject:
@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 6491894393793610582}
   - component: {fileID: 5724897704900492312}
   - component: {fileID: 1785113960812461645}
+  - component: {fileID: 5672904475046337299}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -246,6 +247,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Element: {fileID: 0}
   Elements: []
+--- !u!114 &5672904475046337299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5650784112479118542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d69df895029a9543af2e51d89a5d2fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7631542410139464986
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -42,8 +42,6 @@ public class InputSystem : ScriptableObject, IPlayerActions
 
     public void OnInteractions(InputAction.CallbackContext context)
     {
-
-        Debug.Log("인터렉트");
         OnInteractionEvent?.Invoke();
     }
 
