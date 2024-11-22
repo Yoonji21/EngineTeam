@@ -40,7 +40,7 @@ public class Camera : MonoBehaviour
             // 내적한 값이 각도 / 2 코사인 값보다 크다면 => 플레이어가 바라보는 방향에 더 가깝다면
             if (dot >= alertThreshold)
             {
-                respawn.RespawnObject(true, hit.transform);
+                //respawn.RespawnObject(true, hit.transform);
 
             }
             else
