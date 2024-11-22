@@ -43,12 +43,12 @@ public class Camera : MonoBehaviour
             }
             else
             {
-                print("범위 감지 x");
+                //print("범위 감지 x");
             }
         }
         else
         {
-            print("범위 감지 x");
+            //print("범위 감지 x");
         }
     }
 

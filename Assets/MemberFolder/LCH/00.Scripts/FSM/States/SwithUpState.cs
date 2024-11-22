@@ -21,19 +21,11 @@ public class SwithUpState : EntityState
 
     public override void Update()
     {
-        if (_isTriggerCall)
+
+        if (!_player.IsToadstoolObj())
         {
-            Debug.Log("³¡³µ´Ù");
             _player.Artifact.SetActive(true);
-            float xMove = _player.InputCompo.InputDriection.x;
-            if (Mathf.Abs(xMove) > 0)
-            {
-                _player.ChangeState("Move");
-            }
-            else
-            {
-                _player.stateMachine.ChangeState("Idle");
-            }
+            _player.ChangeState("Idle");
         }
         base.Update();
     }
