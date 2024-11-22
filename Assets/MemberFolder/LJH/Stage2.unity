@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 139893133}
   - component: {fileID: 139893132}
   - component: {fileID: 139893131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12947,6 +12947,10 @@ PrefabInstance:
       propertyPath: respawn
       value: 
       objectReference: {fileID: 958418046}
+    - target: {fileID: 7008155509172476375, guid: fdd6d92c3152c5f468f276ce0db91cc5, type: 3}
+      propertyPath: target.m_Bits
+      value: 1664
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14731,7 +14735,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dcee3a271d0fcb488cb462f090f4a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _boxCollider: {fileID: 2750878359380093148}
 --- !u!212 &3230945584213464955
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14899,6 +14902,7 @@ MonoBehaviour:
     Vcame: {fileID: 1935863262}
     MyBoxCollider: {fileID: 5282175616292652081}
     MyArtifact: {fileID: 4903421221540227665}
+  Artifact: {fileID: 4903421221540227665}
   isSwithing: 0
   whatIsPushObj:
     serializedVersion: 2
@@ -14910,7 +14914,6 @@ MonoBehaviour:
   _checkTrm: {fileID: 2333082056302784182}
   <_jumpPower>k__BackingField: 12
   stateMachine: {fileID: 0}
-  Artifact: {fileID: 4903421221540227665}
   isExitDoor: 0
 --- !u!212 &3706428208954844182
 SpriteRenderer:
@@ -15997,6 +16000,7 @@ MonoBehaviour:
     Vcame: {fileID: 1935863262}
     MyBoxCollider: {fileID: 5282175616292652081}
     MyArtifact: {fileID: 4903421221540227665}
+  Artifact: {fileID: 0}
   isSwithing: 0
   whatIsPushObj:
     serializedVersion: 2

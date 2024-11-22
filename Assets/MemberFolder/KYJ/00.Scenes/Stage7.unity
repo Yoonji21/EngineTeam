@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 81271451}
   - component: {fileID: 81271450}
   - component: {fileID: 81271449}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9109,7 +9109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 847526520}
   - component: {fileID: 847526521}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9436,7 +9436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1673266401}
   - component: {fileID: 1673266402}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9984,7 +9984,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2035300584}
   - component: {fileID: 2035300585}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11353,7 +11353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dcee3a271d0fcb488cb462f090f4a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _boxCollider: {fileID: 2750878360580278108}
 --- !u!212 &3230945583805154762
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11487,6 +11486,7 @@ MonoBehaviour:
     Vcame: {fileID: 219255266}
     MyBoxCollider: {fileID: 5282175616483804421}
     MyArtifact: {fileID: 4903421221336623973}
+  Artifact: {fileID: 4903421221336623973}
   isSwithing: 0
   whatIsPushObj:
     serializedVersion: 2
@@ -11498,7 +11498,6 @@ MonoBehaviour:
   _checkTrm: {fileID: 2333082056107896706}
   <_jumpPower>k__BackingField: 12
   stateMachine: {fileID: 0}
-  Artifact: {fileID: 4903421221336623973}
   isExitDoor: 0
 --- !u!212 &3706428209309907893
 SpriteRenderer:
@@ -12945,6 +12944,7 @@ MonoBehaviour:
     Vcame: {fileID: 219255266}
     MyBoxCollider: {fileID: 5282175616483804421}
     MyArtifact: {fileID: 4903421221336623973}
+  Artifact: {fileID: 0}
   isSwithing: 1
   whatIsPushObj:
     serializedVersion: 2
@@ -12974,7 +12974,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917742685277564}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 1359191394}
 --- !u!114 &7008155509327787908
 MonoBehaviour:
@@ -12993,7 +12993,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917742942120115}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 1359191394}
 --- !u!114 &7008155510264157353
 MonoBehaviour:
@@ -13012,7 +13012,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917743744273310}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 1359191394}
 --- !u!114 &7008155510651796473
 MonoBehaviour:
@@ -13031,7 +13031,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917743868323022}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 1359191394}
 --- !u!114 &7008155510859065965
 MonoBehaviour:
@@ -13050,7 +13050,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917744205231450}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 1359191394}
 --- !u!1 &7012100234563002388
 GameObject:

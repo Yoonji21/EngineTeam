@@ -288,6 +288,7 @@ MonoBehaviour:
     Vcame: {fileID: 1404240703}
     MyBoxCollider: {fileID: 1066473229}
     MyArtifact: {fileID: 2121960375}
+  Artifact: {fileID: 0}
   isSwithing: 0
   whatIsPushObj:
     serializedVersion: 2
@@ -1104,7 +1105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 897362810}
   - component: {fileID: 897362811}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1405,6 +1406,7 @@ MonoBehaviour:
     Vcame: {fileID: 1404240703}
     MyBoxCollider: {fileID: 1066473229}
     MyArtifact: {fileID: 2121960375}
+  Artifact: {fileID: 2121960375}
   isSwithing: 0
   whatIsPushObj:
     serializedVersion: 2
@@ -1416,7 +1418,6 @@ MonoBehaviour:
   _checkTrm: {fileID: 8867401}
   <_jumpPower>k__BackingField: 12
   stateMachine: {fileID: 0}
-  Artifact: {fileID: 2121960375}
   isExitDoor: 0
 --- !u!61 &1066473229
 BoxCollider2D:
@@ -1584,7 +1585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1247188732}
   - component: {fileID: 1247188733}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2329,7 +2330,7 @@ GameObject:
   - component: {fileID: 1536053527}
   - component: {fileID: 1536053529}
   - component: {fileID: 1536053528}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15678,7 +15679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1541203091}
   - component: {fileID: 1541203092}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15791,7 +15792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1585872156}
   - component: {fileID: 1585872157}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15970,7 +15971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1656941990}
   - component: {fileID: 1656941991}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18441,7 +18442,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917742673580541}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 2019514099}
 --- !u!114 &7008155509141437092
 MonoBehaviour:
@@ -18460,7 +18461,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917742626137491}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 2019514099}
 --- !u!50 &7297332784371020873
 Rigidbody2D:

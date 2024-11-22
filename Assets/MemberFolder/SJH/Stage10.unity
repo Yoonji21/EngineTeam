@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 76410884}
   - component: {fileID: 76410886}
   - component: {fileID: 76410885}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12284,7 +12284,7 @@ MonoBehaviour:
   linerenderer: {fileID: 107888314}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 2068097202}
 --- !u!4 &207121867
 Transform:
@@ -12414,7 +12414,7 @@ MonoBehaviour:
   linerenderer: {fileID: 512235607}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 2068097202}
 --- !u!4 &422492190
 Transform:
@@ -12588,7 +12588,7 @@ GameObject:
   m_Component:
   - component: {fileID: 546288635}
   - component: {fileID: 546288636}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12977,7 +12977,7 @@ MonoBehaviour:
   linerenderer: {fileID: 2023635558}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 2068097202}
 --- !u!4 &792220307
 Transform:
@@ -13030,7 +13030,7 @@ MonoBehaviour:
   linerenderer: {fileID: 2132275422}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 2068097202}
 --- !u!4 &812578110
 Transform:
@@ -13083,7 +13083,7 @@ MonoBehaviour:
   linerenderer: {fileID: 1496779305}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 2068097202}
 --- !u!4 &888568575
 Transform:
@@ -13363,7 +13363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 973836010}
   - component: {fileID: 973836011}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13749,7 +13749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1216894598}
   - component: {fileID: 1216894599}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14045,7 +14045,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1432307668}
   - component: {fileID: 1432307669}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14549,7 +14549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1726616049}
   - component: {fileID: 1726616050}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14626,7 +14626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1732698521}
   - component: {fileID: 1732698522}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15332,7 +15332,7 @@ MonoBehaviour:
   linerenderer: {fileID: 995473725}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 2068097202}
 --- !u!4 &2085975201
 Transform:
@@ -16418,7 +16418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dcee3a271d0fcb488cb462f090f4a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _boxCollider: {fileID: 2750878361395772353}
 --- !u!212 &3230945582418437971
 SpriteRenderer:
   m_ObjectHideFlags: 0
