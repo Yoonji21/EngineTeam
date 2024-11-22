@@ -14,13 +14,13 @@ public class Achromatic : Player,ISwitchingPlayer
     {
         InputCompo.OnswithingPlayerColorEvent += SwitchingPlayer;
         InputCompo.OnJumpEvent += HandheldJump;
-        InputCompo.OnInteractionEvent -= SwithUp;
+        InputCompo.OnInteractionEvent += SwithUp;
     }
      private void OnDisable()
     {
         InputCompo.OnswithingPlayerColorEvent -= SwitchingPlayer;
         InputCompo.OnJumpEvent -= HandheldJump;
-        InputCompo.OnInteractionEvent += SwithUp;
+        InputCompo.OnInteractionEvent -= SwithUp;
     }
 
 

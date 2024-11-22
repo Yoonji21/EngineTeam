@@ -12,11 +12,24 @@ public class SwithOnOff : MonoBehaviour
     [SerializeField] private Vector2 _checkerSize;
     [SerializeField] private LayerMask _whatIsPlayer;
     [SerializeField] private GameObject _fkey;
+    private AnimationTrigger _animTrigger;
+    private bool _isTrggerEnd;
 
     private void Awake()
     {
+        _animTrigger = GetComponentInChildren<AnimationTrigger>();
         _swithAnim = GetComponentInChildren<ToadstoolAnim>();
         _playerTrigger = GetComponent<BoxCollider2D>();
+    }
+
+    private void OnEnable()
+    {
+        _animTrigger.OnAnimationEnd += OnSwithAnimEnd;
+    }
+
+    private void OnDestroy()
+    {
+        _animTrigger.OnAnimationEnd -= OnSwithAnimEnd;
     }
 
     public bool IsPlayerCheck()
@@ -27,6 +40,14 @@ public class SwithOnOff : MonoBehaviour
 
     private void Update()
     {
+
+        if (_isTrggerEnd)
+        {
+            Debug.Log("²ôÀ¸À¿");
+            _playerTrigger.enabled = false;
+            _fkey.SetActive(false);
+        }
+
         if (IsPlayerCheck())
         {
             _fkey.SetActive(true);
@@ -35,7 +56,6 @@ public class SwithOnOff : MonoBehaviour
             {
                 if (player.gameObject.activeSelf)
                 {
-                    Debug.Log(player.name);
                     player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
                     break;
                 }
@@ -64,8 +84,11 @@ public class SwithOnOff : MonoBehaviour
     private void SwithOn()
     {
         _swithAnim.isON = true;
-        _playerTrigger.enabled = false;
-        _fkey.SetActive(false);
+    }
+
+    private void OnSwithAnimEnd()
+    {
+        _isTrggerEnd = true;
     }
 
     private IEnumerator SwithOffCoroutine()
@@ -73,6 +96,7 @@ public class SwithOnOff : MonoBehaviour
         yield return new WaitForSeconds(2f);
         _swithAnim.isON = false;
         _playerTrigger.enabled = true;
+        _isTrggerEnd = false;
     }
 
     private void OnDrawGizmos()

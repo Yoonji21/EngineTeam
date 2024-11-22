@@ -73,7 +73,7 @@ public class Laser : MonoBehaviour
         linerenderer.SetPosition(0, startPos);
         linerenderer.SetPosition(1, endPos);
 
-        print("d");
+        //print("d");
     }
 
     #endregion
