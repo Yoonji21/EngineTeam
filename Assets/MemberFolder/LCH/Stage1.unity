@@ -15945,7 +15945,7 @@ Transform:
   m_GameObject: {fileID: 5367369478278884292}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.16, y: -8.04, z: 0}
+  m_LocalPosition: {x: 17.16, y: -9.28, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16294,7 +16294,7 @@ GameObject:
   - component: {fileID: 6928001759527940204}
   m_Layer: 7
   m_Name: AchromaticPlayer
-  m_TagString: Player
+  m_TagString: ColorPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16961,7 +16961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0790ced3528a9941bcf0a1b5c5836eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerFSM: {fileID: 11400000, guid: 12124b86f27350a4e8f8eee466ed1684, type: 2}
+  _playerFSM: {fileID: 11400000, guid: 0032b5c5213993047a49515f00b4e877, type: 2}
   <InputCompo>k__BackingField: {fileID: 11400000, guid: 81733159bc0a41c4f938fccd26baa4d4, type: 2}
   <MovementCompo>k__BackingField: {fileID: 6515854613847991452}
   <IntaractionCompo>k__BackingField: {fileID: 2982932451373233918}
@@ -16984,6 +16984,7 @@ MonoBehaviour:
     MyBoxCollider: {fileID: 5282175617107405953}
     MyArtifact: {fileID: 4903421222893929185}
   Artifact: {fileID: 4903421222893929185}
+  isChromatilColorArtifact: 0
   whatIsPushObj:
     serializedVersion: 2
     m_Bits: 512
@@ -16995,6 +16996,7 @@ MonoBehaviour:
   <_jumpPower>k__BackingField: 12
   stateMachine: {fileID: 0}
   isExitDoor: 0
+  _artifact: {fileID: 4903421222893929185}
 --- !u!114 &3616230927025352734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17594,9 +17596,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _checkerSize: {x: 0.53, y: 0.64}
-  _whatIsPlayer:
+  _whatIsColorPlayer:
     serializedVersion: 2
-    m_Bits: 2176
+    m_Bits: 0
+  _whatIsNoColorPlayer:
+    serializedVersion: 2
+    m_Bits: 0
   _fkey: {fileID: 7631542408462743184}
 --- !u!61 &4960793141453309995
 BoxCollider2D:
@@ -18642,6 +18647,7 @@ MonoBehaviour:
     MyBoxCollider: {fileID: 5282175617107405953}
     MyArtifact: {fileID: 4903421222893929185}
   Artifact: {fileID: 0}
+  isChromatilColorArtifact: 0
   whatIsPushObj:
     serializedVersion: 2
     m_Bits: 512
@@ -19161,7 +19167,7 @@ GameObject:
   - component: {fileID: 3609912222958772345}
   m_Layer: 11
   m_Name: ChromaticColorPlayer
-  m_TagString: Player
+  m_TagString: NoColorPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
