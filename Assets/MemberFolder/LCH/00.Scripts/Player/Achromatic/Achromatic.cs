@@ -25,8 +25,8 @@ public class Achromatic : Player,ISwitchingPlayer
 
 
     public void SwithUp()
-    {
-        stateMachine.ChangeState("SwithUp");
+    { 
+         stateMachine.ChangeState("SwithUp");       
     }
 
     protected override void Update()
@@ -66,9 +66,8 @@ public class Achromatic : Player,ISwitchingPlayer
         mybackGround.SetActive(false);
         rbcompo.bodyType = RigidbodyType2D.Static;
         vCam.Follow = null;
-        boxCollider.isTrigger = true;
+        boxCollider.enabled = false;
         myArtifact.SetActive(false);
-
     }
 
     public void SwithinPlayerType(Player swithingPlayer, SpriteRenderer playerVisual, GameObject mybackGround, Rigidbody2D rbcompo, CinemachineVirtualCamera vCam, BoxCollider2D boxCollider, GameObject myArtifact)
@@ -77,7 +76,8 @@ public class Achromatic : Player,ISwitchingPlayer
         mybackGround.SetActive(true);
         rbcompo.bodyType = RigidbodyType2D.Dynamic;
         vCam.Follow = swithingPlayer.transform;
-        boxCollider.isTrigger = false;
+        boxCollider.enabled = true;
         myArtifact.SetActive(true);
+        
     }
 }

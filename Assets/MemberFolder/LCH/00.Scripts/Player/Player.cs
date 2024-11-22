@@ -31,11 +31,13 @@ public abstract class Player : Entity
 
     public GameObject Artifact;
 
+    public bool isChromatilColorArtifact = false;
+
     [SerializeField] private LayerMask whatIsPushObj;
     [SerializeField] private LayerMask whatIsToadstoolObj;
     [SerializeField] private Vector2 _objCheckSize;
     [SerializeField] private Transform _checkTrm;
-    [field : SerializeField] public float _jumpPower { get;  set; } = 12f;
+    [field : SerializeField] public float _jumpPower { get;  set; } = 40f;
 
     public bool isSwithOn { get; set; } = false;
 
@@ -60,6 +62,7 @@ public abstract class Player : Entity
         stateMachine = new StateMachine(_playerFSM, this);
         stateMachine.Initialize("Idle");
         IntaractionCompo.GetComponent<Interaction>();
+        GetCompo<AnimationTrigger>().OnAnimationEnd += HandleAnimationEnd;
     }
 
     protected void HandheldJump()
@@ -68,6 +71,11 @@ public abstract class Player : Entity
         {
             stateMachine.ChangeState("Jump");
         }
+    }
+
+    private void OnDestroy()
+    {
+        GetCompo<AnimationTrigger>().OnAnimationEnd += HandleAnimationEnd;
     }
 
 
