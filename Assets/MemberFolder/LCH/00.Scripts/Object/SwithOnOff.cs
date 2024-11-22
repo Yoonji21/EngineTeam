@@ -53,18 +53,23 @@ public class SwithOnOff : MonoBehaviour
             _player.isSwithOn = true;
             _playerTrigger.enabled = false;
             _fkey.SetActive(false);
+            _swithAnim.EndAnimCall();
         }
 
         if (IsColorPlayerCheck())
         {
             _fkey.SetActive(true);
             _player = GameObject.FindWithTag("ColorPlayer").GetComponent<Player>();
-            _player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
+            _player.isSwithingPlayer = false;
+              _player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
         }
 
         if (IsNoColorPlayerCheck())
         {
+            
+            _fkey.SetActive(true);
             _player = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
+            _player.isSwithingPlayer = false;
             _player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
         }
 
@@ -73,6 +78,7 @@ public class SwithOnOff : MonoBehaviour
             _fkey.SetActive(false);
             if (_swithAnim.isON)
             {
+                _player.isSwithingPlayer = true;
                   _player.IntaractionCompo.OnInteractionEvnets.RemoveAllListeners();   
                 StartCoroutine(SwithOffCoroutine());
             }
