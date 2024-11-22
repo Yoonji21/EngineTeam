@@ -837,6 +837,78 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &746997585
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4375846876381520593, guid: 4425082a9f8cea546b2018ba14dee65d, type: 3}
+      propertyPath: m_Name
+      value: Respawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954433607161801470, guid: 4425082a9f8cea546b2018ba14dee65d, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1466719915}
+    - target: {fileID: 6866227512666068467, guid: 4425082a9f8cea546b2018ba14dee65d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 6866227512666068467, guid: 4425082a9f8cea546b2018ba14dee65d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6866227512666068467, guid: 4425082a9f8cea546b2018ba14dee65d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6866227512666068467, guid: 4425082a9f8cea546b2018ba14dee65d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6866227512666068467, guid: 4425082a9f8cea546b2018ba14dee65d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6866227512666068467, guid: 4425082a9f8cea546b2018ba14dee65d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6866227512666068467, guid: 4425082a9f8cea546b2018ba14dee65d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6866227512666068467, guid: 4425082a9f8cea546b2018ba14dee65d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6866227512666068467, guid: 4425082a9f8cea546b2018ba14dee65d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6866227512666068467, guid: 4425082a9f8cea546b2018ba14dee65d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4425082a9f8cea546b2018ba14dee65d, type: 3}
+--- !u!114 &746997586 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5954433607161801470, guid: 4425082a9f8cea546b2018ba14dee65d, type: 3}
+  m_PrefabInstance: {fileID: 746997585}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024cdd1f014b7444c8ca6d7759613619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &748503563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,7 +1261,6 @@ MonoBehaviour:
     MyRigidbody: {fileID: 1466719919}
     Vcame: {fileID: 1602359100}
     MyBoxCollider: {fileID: 1466719918}
-    MyMove: {fileID: 1466719917}
     MyArtifact: {fileID: 1666548911}
   <ChromatiTypes>k__BackingField:
     SwithingUI: {fileID: 142476238}
@@ -1199,7 +1270,6 @@ MonoBehaviour:
     MyRigidbody: {fileID: 1291194018}
     Vcame: {fileID: 1602359100}
     MyBoxCollider: {fileID: 1291194015}
-    MyMove: {fileID: 1291194017}
     MyArtifact: {fileID: 573093884}
   isSwithing: 0
   whatIsPushObj:
@@ -1602,7 +1672,6 @@ MonoBehaviour:
     MyRigidbody: {fileID: 1466719919}
     Vcame: {fileID: 1602359100}
     MyBoxCollider: {fileID: 1466719918}
-    MyMove: {fileID: 1466719917}
     MyArtifact: {fileID: 1666548911}
   <ChromatiTypes>k__BackingField:
     SwithingUI: {fileID: 1410985374127405072, guid: 7ffe24c146fffc14d9a3dbd975f3d2a7, type: 3}
@@ -1612,7 +1681,6 @@ MonoBehaviour:
     MyRigidbody: {fileID: 1291194018}
     Vcame: {fileID: 1602359100}
     MyBoxCollider: {fileID: 1291194015}
-    MyMove: {fileID: 1291194017}
     MyArtifact: {fileID: 573093884}
   isSwithing: 0
   whatIsPushObj:
@@ -17267,7 +17335,7 @@ MonoBehaviour:
   target:
     serializedVersion: 2
     m_Bits: 1728
-  respawn: {fileID: 0}
+  respawn: {fileID: 746997586}
 --- !u!114 &7008155510262102910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17286,7 +17354,7 @@ MonoBehaviour:
   target:
     serializedVersion: 2
     m_Bits: 1728
-  respawn: {fileID: 0}
+  respawn: {fileID: 746997586}
 --- !u!114 &7008155510265055851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17305,7 +17373,7 @@ MonoBehaviour:
   target:
     serializedVersion: 2
     m_Bits: 1728
-  respawn: {fileID: 0}
+  respawn: {fileID: 746997586}
 --- !u!114 &7008155510947455488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17324,7 +17392,7 @@ MonoBehaviour:
   target:
     serializedVersion: 2
     m_Bits: 1728
-  respawn: {fileID: 0}
+  respawn: {fileID: 746997586}
 --- !u!50 &7297332784371020873
 Rigidbody2D:
   serializedVersion: 4
@@ -17956,3 +18024,4 @@ SceneRoots:
   - {fileID: 1523119623}
   - {fileID: 1309129777}
   - {fileID: 637911966}
+  - {fileID: 746997585}
