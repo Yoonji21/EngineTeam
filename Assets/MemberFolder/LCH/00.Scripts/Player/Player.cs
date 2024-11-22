@@ -29,6 +29,8 @@ public abstract class Player : Entity
     [field : SerializeField] public AchromaticType AchromaticTypes { get; protected set; }
     [field: SerializeField] public ChromatiType ChromatiTypes { get; protected set; }
 
+    public GameObject Artifact;
+
     public bool isSwithing = false;
 
     [SerializeField] private LayerMask whatIsPushObj;

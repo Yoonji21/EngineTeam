@@ -24,6 +24,7 @@ public class SwithUpState : EntityState
         if (_isTriggerCall)
         {
             Debug.Log("³¡³µ´Ù");
+            _player.Artifact.SetActive(true);
             float xMove = _player.InputCompo.InputDriection.x;
             if (Mathf.Abs(xMove) > 0)
             {

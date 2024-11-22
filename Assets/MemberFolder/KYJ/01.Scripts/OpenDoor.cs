@@ -4,12 +4,33 @@ using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
-    [SerializeField] private BoxCollider2D _boxCollider;
     private Animator _animator;
+    private AnimationTrigger _animTrigger;
+    private bool _isEndTrigger = false;
 
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
+        _animTrigger = GetComponentInChildren<AnimationTrigger>();
+    }
+
+    private void OnEnable()
+    {
+        _animTrigger.OnAnimationEnd += AnimEndTrigger;
+    }
+
+    private void OnDestroy()
+    {
+        _animTrigger.OnAnimationEnd -= AnimEndTrigger;
+    }
+
+    private void Update()
+    {
+        if (_isEndTrigger)
+        {
+            _isEndTrigger = false;
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -21,16 +42,15 @@ public class OpenDoor : MonoBehaviour
             if (key.hasKey)
             {
                 key.hasKey = false;
-                _boxCollider.enabled = false;
                 key.DestroyKey();
 
                 _animator.SetBool("Open", true);
             }
         }
+    }
 
-        else
-        {
-            _boxCollider.enabled = true;
-        }
+    private void AnimEndTrigger()
+    {
+        _isEndTrigger = true;
     }
 }
