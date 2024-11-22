@@ -11288,7 +11288,7 @@ GameObject:
   - component: {fileID: 6259645540313041803}
   m_Layer: 7
   m_Name: AchromaticPlayer
-  m_TagString: Player
+  m_TagString: ColorPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11359,9 +11359,9 @@ GameObject:
   - component: {fileID: 8379561249698235915}
   - component: {fileID: 1468632461244685428}
   - component: {fileID: 8013966178428784780}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: ChromaticColorPlayer
-  m_TagString: Player
+  m_TagString: NoColorPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12171,7 +12171,7 @@ MonoBehaviour:
     MyBoxCollider: {fileID: 1468632461244685428}
     MyArtifact: {fileID: 1811533722064138772}
   Artifact: {fileID: 0}
-  isSwithing: 0
+  isChromatilColorArtifact: 0
   whatIsPushObj:
     serializedVersion: 2
     m_Bits: 512
@@ -12518,8 +12518,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffada3292b4987a489d587523fec80d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerTrm: {fileID: 5599762388308017305}
-  hasKey: 0
 --- !u!4 &7500537376415533204
 Transform:
   m_ObjectHideFlags: 0
@@ -12707,7 +12705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0790ced3528a9941bcf0a1b5c5836eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerFSM: {fileID: 11400000, guid: 12124b86f27350a4e8f8eee466ed1684, type: 2}
+  _playerFSM: {fileID: 11400000, guid: 0032b5c5213993047a49515f00b4e877, type: 2}
   <InputCompo>k__BackingField: {fileID: 11400000, guid: 81733159bc0a41c4f938fccd26baa4d4, type: 2}
   <MovementCompo>k__BackingField: {fileID: 523359779696776297}
   <IntaractionCompo>k__BackingField: {fileID: 8379561249698235915}
@@ -12730,7 +12728,7 @@ MonoBehaviour:
     MyBoxCollider: {fileID: 1468632461244685428}
     MyArtifact: {fileID: 1811533722064138772}
   Artifact: {fileID: 1811533722064138772}
-  isSwithing: 1
+  isChromatilColorArtifact: 0
   whatIsPushObj:
     serializedVersion: 2
     m_Bits: 512
@@ -12742,6 +12740,7 @@ MonoBehaviour:
   <_jumpPower>k__BackingField: 12
   stateMachine: {fileID: 0}
   isExitDoor: 0
+  _artifact: {fileID: 0}
 --- !u!61 &8315781010703082107
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12946,7 +12945,7 @@ Animator:
   m_GameObject: {fileID: 1947145286111729658}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b8e96968d8808ee41a11a5dda589adc4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 45e20ae4dd04b9a4bb2a16ec27e9a9ff, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
