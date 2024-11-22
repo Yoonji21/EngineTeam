@@ -204,7 +204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 24043296}
   - component: {fileID: 24043297}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 250084373}
   - component: {fileID: 250084374}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1460,6 +1460,7 @@ MonoBehaviour:
     Vcame: {fileID: 1602359100}
     MyBoxCollider: {fileID: 1291194015}
     MyArtifact: {fileID: 573093884}
+  Artifact: {fileID: 573093884}
   isSwithing: 0
   whatIsPushObj:
     serializedVersion: 2
@@ -1471,7 +1472,6 @@ MonoBehaviour:
   _checkTrm: {fileID: 63544145}
   <_jumpPower>k__BackingField: 12
   stateMachine: {fileID: 0}
-  Artifact: {fileID: 573093884}
   isExitDoor: 0
 --- !u!61 &1291194015
 BoxCollider2D:
@@ -1871,6 +1871,7 @@ MonoBehaviour:
     Vcame: {fileID: 1602359100}
     MyBoxCollider: {fileID: 1291194015}
     MyArtifact: {fileID: 573093884}
+  Artifact: {fileID: 0}
   isSwithing: 0
   whatIsPushObj:
     serializedVersion: 2
@@ -2146,7 +2147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1566635063}
   - component: {fileID: 1566635064}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2299,7 +2300,7 @@ GameObject:
   - component: {fileID: 1651664679}
   - component: {fileID: 1651664681}
   - component: {fileID: 1651664680}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15751,7 +15752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1873476029}
   - component: {fileID: 1873476030}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17677,7 +17678,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917742626137491}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 746997586}
 --- !u!114 &7008155510262102910
 MonoBehaviour:
@@ -17696,7 +17697,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917743746278473}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 746997586}
 --- !u!114 &7008155510265055851
 MonoBehaviour:
@@ -17715,7 +17716,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917743615415644}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 746997586}
 --- !u!114 &7008155510947455488
 MonoBehaviour:
@@ -17734,7 +17735,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917744562453815}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 746997586}
 --- !u!50 &7297332784371020873
 Rigidbody2D:

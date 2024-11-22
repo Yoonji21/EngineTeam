@@ -123,37 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &59226363
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 59226364}
-  m_Layer: 0
-  m_Name: Laser
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &59226364
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59226363}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.34, y: -5.3363, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &92084160
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 101690546}
   - component: {fileID: 101690547}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +442,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.625
+  orthographic size: 5.875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -616,7 +585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 291718818}
   - component: {fileID: 291718819}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1079,7 +1048,7 @@ MonoBehaviour:
   linerenderer: {fileID: 998039207}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 119759878}
 --- !u!4 &454321426
 Transform:
@@ -1189,7 +1158,7 @@ GameObject:
   - component: {fileID: 823562446}
   - component: {fileID: 823562445}
   - component: {fileID: 823562444}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12799,7 +12768,7 @@ MonoBehaviour:
   linerenderer: {fileID: 1620092686}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 119759878}
 --- !u!4 &1486124524
 Transform:
@@ -12973,7 +12942,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1647081364}
   - component: {fileID: 1647081365}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13148,7 +13117,7 @@ MonoBehaviour:
   linerenderer: {fileID: 299369449}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 119759878}
 --- !u!4 &1783185462
 Transform:
@@ -14452,6 +14421,7 @@ MonoBehaviour:
     Vcame: {fileID: 0}
     MyBoxCollider: {fileID: 5282175617107405953}
     MyArtifact: {fileID: 4903421222893929185}
+  Artifact: {fileID: 4903421222893929185}
   isSwithing: 0
   whatIsPushObj:
     serializedVersion: 2
@@ -14463,7 +14433,6 @@ MonoBehaviour:
   _checkTrm: {fileID: 2333082055492224518}
   <_jumpPower>k__BackingField: 12
   stateMachine: {fileID: 0}
-  Artifact: {fileID: 4903421222893929185}
   isExitDoor: 0
 --- !u!212 &3706428210637456738
 SpriteRenderer:
@@ -14639,7 +14608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67bd13a0d48e96443987100dc79074b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Element: {fileID: 59226363}
+  Element: {fileID: 0}
   Elements: []
 --- !u!114 &4292030012259790465
 MonoBehaviour:
@@ -15553,6 +15522,7 @@ MonoBehaviour:
     Vcame: {fileID: 0}
     MyBoxCollider: {fileID: 0}
     MyArtifact: {fileID: 0}
+  Artifact: {fileID: 0}
   isSwithing: 0
   whatIsPushObj:
     serializedVersion: 2
@@ -16310,7 +16280,6 @@ SceneRoots:
   - {fileID: 5943772985688926216}
   - {fileID: 6568936295626193777}
   - {fileID: 3708586425781298150}
-  - {fileID: 59226364}
   - {fileID: 8884991464861987398}
   - {fileID: 6093225943628377672}
   - {fileID: 155622449}

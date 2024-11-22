@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 81271451}
   - component: {fileID: 81271450}
   - component: {fileID: 81271449}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8771,7 +8771,7 @@ MonoBehaviour:
   linerenderer: {fileID: 1626670942}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 997520066}
 --- !u!4 &612257162
 Transform:
@@ -8884,7 +8884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 854205224}
   - component: {fileID: 854205225}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9150,7 +9150,7 @@ MonoBehaviour:
   linerenderer: {fileID: 1918169965}
   target:
     serializedVersion: 2
-    m_Bits: 1728
+    m_Bits: 1664
   respawn: {fileID: 997520066}
 --- !u!4 &1250019789
 Transform:
@@ -10079,7 +10079,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2053965257}
   - component: {fileID: 2053965258}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11272,7 +11272,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dcee3a271d0fcb488cb462f090f4a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _boxCollider: {fileID: 2750878360580278108}
 --- !u!1 &3140068617511928672
 GameObject:
   m_ObjectHideFlags: 0
@@ -12171,6 +12170,7 @@ MonoBehaviour:
     Vcame: {fileID: 1925428056}
     MyBoxCollider: {fileID: 1468632461244685428}
     MyArtifact: {fileID: 1811533722064138772}
+  Artifact: {fileID: 0}
   isSwithing: 0
   whatIsPushObj:
     serializedVersion: 2
@@ -12729,6 +12729,7 @@ MonoBehaviour:
     Vcame: {fileID: 1925428056}
     MyBoxCollider: {fileID: 1468632461244685428}
     MyArtifact: {fileID: 1811533722064138772}
+  Artifact: {fileID: 1811533722064138772}
   isSwithing: 1
   whatIsPushObj:
     serializedVersion: 2
@@ -12740,7 +12741,6 @@ MonoBehaviour:
   _checkTrm: {fileID: 9029552365887403763}
   <_jumpPower>k__BackingField: 12
   stateMachine: {fileID: 0}
-  Artifact: {fileID: 1811533722064138772}
   isExitDoor: 0
 --- !u!61 &8315781010703082107
 BoxCollider2D:
