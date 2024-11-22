@@ -21,10 +21,13 @@ public class SwithUpState : EntityState
 
     public override void Update()
     {
-
-        if (!_player.IsToadstoolObj())
+        if (_player.isSwithOn || _isTriggerCall)
         {
-            _player.Artifact.SetActive(true);
+            if (_player.isChromatilColorArtifact)
+            {
+                _player.Artifact.SetActive(true);
+                _player.isChromatilColorArtifact = false;
+            }
             _player.ChangeState("Idle");
         }
         base.Update();

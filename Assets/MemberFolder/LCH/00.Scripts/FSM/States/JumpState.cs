@@ -32,6 +32,5 @@ public class JumpState : EntityState
     public override void Exit()
     {
         base.Exit();
-        _player._jumpPower = 8f;
     }
 }

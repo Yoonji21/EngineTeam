@@ -42,7 +42,15 @@ public class InputSystem : ScriptableObject, IPlayerActions
 
     public void OnInteractions(InputAction.CallbackContext context)
     {
-        OnInteractionEvent?.Invoke();
+        if (isChromatlEablbe)
+        {
+            OnInteractionEvent?.Invoke();
+        }
+
+        if (isAchromatlcEnable)
+        {
+            OnInteractionEvent?.Invoke();
+        }
     }
 
     public void OnJunmp(InputAction.CallbackContext context)

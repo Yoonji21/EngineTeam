@@ -8,7 +8,7 @@ public class ChromatiColor : Player,ISwitchingPlayer
 {
     private GameObject[] _invisibleObjs;
     public bool isExitDoor = false;
-
+    [SerializeField] private GameObject _artifact;
 
     private Entity _entity;
 
@@ -21,8 +21,17 @@ public class ChromatiColor : Player,ISwitchingPlayer
     protected override void Update()
     {
         base.Update();
+        if (IsToadstoolObj())
+        {
+            InputCompo.OnInteractionEvent += SwithUp;
+        }
+        else
+        {
+            InputCompo.OnInteractionEvent -= SwithUp;
+        }
         if (InputCompo.isChromatlEablbe)
         {
+           
             for (int i = 0; i < _invisibleObjs.Length; i++)
                 _invisibleObjs[i].SetActive(false);
            
@@ -40,7 +49,6 @@ public class ChromatiColor : Player,ISwitchingPlayer
     {
         InputCompo.OnJumpEvent += HandheldJump;
         InputCompo.OnInteractionEvent += IntaractionCompo.InteractionPress;
-        InputCompo.OnInteractionEvent += SwithUp;
         InputCompo.OnswithingPlayerNoColorEvent += SwitchingPlayer;
         if (_invisibleObjs == null)
         {
@@ -55,7 +63,6 @@ public class ChromatiColor : Player,ISwitchingPlayer
         InputCompo.OnInteractionEvent -= IntaractionCompo.InteractionPress;
         InputCompo.OnJumpEvent -= HandheldJump;
         InputCompo.OnswithingPlayerNoColorEvent -= SwitchingPlayer;
-        InputCompo.OnInteractionEvent -= SwithUp;
         if (_invisibleObjs == null)
         {
             return;
@@ -64,8 +71,9 @@ public class ChromatiColor : Player,ISwitchingPlayer
 
     public void SwithUp()
     {
-        Artifact.SetActive(false);
-        stateMachine.ChangeState("SwithUp");
+            Artifact.SetActive(false);
+            isChromatilColorArtifact = true;
+            stateMachine.ChangeState("SwithUp");
     }
 
     public void SwitchingPlayer()
@@ -80,10 +88,10 @@ public class ChromatiColor : Player,ISwitchingPlayer
        SwithinPlayerType(AchromaticTypes.SwithingPlayer, AchromaticTypes.PlayerVisual, AchromaticTypes.MyBackGround, AchromaticTypes.MyRigidbody
        , AchromaticTypes.Vcame, AchromaticTypes.MyBoxCollider, AchromaticTypes.MyArtifact);
         yield return new WaitForSeconds(0.5f);
-       InputCompo.isChromatlEablbe = false;
-       InputCompo.isAchromatlcEnable = true;
+        InputCompo.isChromatlEablbe = false;
+        InputCompo.isAchromatlcEnable = true;
         ChromatiTypes.SwithingUI.SetActive(false);
-       }
+    }
 
     public void MyPlayer(GameObject UI, SpriteRenderer playerVisual, GameObject mybackGround, Rigidbody2D rbcompo, CinemachineVirtualCamera vCam, BoxCollider2D boxCollider,  GameObject myArtifact)
     {
@@ -92,9 +100,8 @@ public class ChromatiColor : Player,ISwitchingPlayer
         mybackGround.SetActive(false);
         rbcompo.bodyType = RigidbodyType2D.Static;
         vCam.Follow = null;
-        boxCollider.isTrigger = true;
+        boxCollider.enabled = false;
         myArtifact.SetActive(false);
-        
     }
 
     public void SwithinPlayerType(Player swithingPlayer, SpriteRenderer playerVisual, GameObject mybackGround, Rigidbody2D rbcompo, CinemachineVirtualCamera vCam, BoxCollider2D boxCollider, GameObject myArtifact)
@@ -103,7 +110,7 @@ public class ChromatiColor : Player,ISwitchingPlayer
         mybackGround.SetActive(true);
         rbcompo.bodyType = RigidbodyType2D.Dynamic;
         vCam.Follow = swithingPlayer.transform;
-        boxCollider.isTrigger = false;
+        boxCollider.enabled = true;
         myArtifact.SetActive(true);
     }
 }

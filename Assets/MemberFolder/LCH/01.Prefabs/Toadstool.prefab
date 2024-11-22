@@ -121,9 +121,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _checkerSize: {x: 0.72, y: 0.97}
-  _whatIsPlayer:
+  _whatIsColorPlayer:
     serializedVersion: 2
-    m_Bits: 2176
+    m_Bits: 128
+  _whatIsNoColorPlayer:
+    serializedVersion: 2
+    m_Bits: 2048
   _fkey: {fileID: 656893998027022159}
 --- !u!1 &5650784112479118542
 GameObject:
