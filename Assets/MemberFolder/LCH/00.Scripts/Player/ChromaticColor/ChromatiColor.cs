@@ -43,7 +43,10 @@ public class ChromatiColor : Player,ISwitchingPlayer
         }
     }
 
-
+    private void Start()
+    {
+        SwitchingPlayer();
+    }
 
     private  void OnEnable()
     {
