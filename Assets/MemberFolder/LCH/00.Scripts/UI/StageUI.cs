@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StageUI : MonoBehaviour
 {
+    [SerializeField] private GameObject _stageUI;
     [SerializeField] private GameObject _pauseUI;
 
     private void Awake()
@@ -18,7 +19,7 @@ public class StageUI : MonoBehaviour
 
     public void PauseButtonClik()
     {
-        gameObject.SetActive(false);
+        _stageUI.SetActive(false);
         _pauseUI.SetActive(true);
         Time.timeScale = 0;
     }

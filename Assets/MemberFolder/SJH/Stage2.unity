@@ -15978,7 +15978,7 @@ MonoBehaviour:
   _xMove: {x: 0, y: 0, z: 0}
   _whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   _groundChecker: {fileID: 7615342965689523528}
   _checkerSize: {x: 0.81, y: 0.2}
 --- !u!4 &6675571909545970935
@@ -16748,10 +16748,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2839882327151881547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000038981, y: -1.5}
-  m_SizeDelta: {x: 1920, y: 1077}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.000022054155, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &8385751591162205855
 Rigidbody2D:
@@ -16877,7 +16877,7 @@ MonoBehaviour:
   _xMove: {x: 0, y: 0, z: 0}
   _whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   _groundChecker: {fileID: 3783620018281992990}
   _checkerSize: {x: 0.81, y: 0.2}
 --- !u!4 &8884991464744719542

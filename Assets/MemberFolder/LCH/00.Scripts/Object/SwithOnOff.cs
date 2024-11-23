@@ -100,6 +100,11 @@ public class SwithOnOff : MonoBehaviour
             }
 
         }
+
+        if(!IsNoColorPlayerCheck() && !IsColorPlayerCheck())
+        {
+            _fkey.SetActive(false);
+        }
     }
 
     private void SwithOn()
