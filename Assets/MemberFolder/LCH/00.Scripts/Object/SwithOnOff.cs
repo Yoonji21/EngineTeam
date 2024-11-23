@@ -6,7 +6,7 @@ using UnityEngine;
 public class SwithOnOff : MonoBehaviour
 {
 
-    public Player  _Player;
+    public Player _Player;
     private ToadstoolAnim _swithAnim;
     [SerializeField] private Vector2 _checkerSize;
     [SerializeField] private LayerMask _whatIsColorPlayer;
@@ -14,7 +14,6 @@ public class SwithOnOff : MonoBehaviour
     [SerializeField] private GameObject _fkey;
     private AnimationTrigger _animTrigger;
     public bool IsTrggerEnd;
-    public bool isOn = false;
 
     private void Awake()
     {
@@ -51,7 +50,6 @@ public class SwithOnOff : MonoBehaviour
         {
             _swithAnim.EndAnimCall();
             IsTrggerEnd = false;
-            Debug.Log(_Player.isSwithOn);
         }
 
         if (IsColorPlayerCheck())
@@ -59,66 +57,78 @@ public class SwithOnOff : MonoBehaviour
             _fkey.SetActive(true);
             _Player = GameObject.FindWithTag("ColorPlayer").GetComponent<Player>();
             _Player.isSwithingPlayer = false;
-            if (_Player.InputCompo.isAchromatlcEnable&&!_swithAnim.isON && !_Player.isSwithOn )
+            if (_Player.InputCompo.isAchromatlcEnable)
             {
-              _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
-            }
-            if (_swithAnim.isON && _Player.InputCompo.isAchromatlcEnable && _Player.isSwithOn )
-            {
-                _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOff());
+                _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
             }
 
         }
 
         if (IsNoColorPlayerCheck())
         {
-            
+
             _fkey.SetActive(true);
             _Player = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
             _Player.isSwithingPlayer = false;
-            if (_Player.InputCompo.isChromatlEablbe && !_swithAnim.isON && !_Player.isSwithOn)
+            if (_Player.InputCompo.isChromatlEablbe)
             {
                 _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
             }
-            if (_swithAnim.isON && _Player.InputCompo.isChromatlEablbe && _Player.isSwithOn)
-            {
-                _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOff());
-            }
-
         }
 
-        if(!IsNoColorPlayerCheck() && !IsColorPlayerCheck())
+        if (!IsNoColorPlayerCheck())
         {
             _fkey.SetActive(false);
             _Player = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
             if (_Player.InputCompo.isChromatlEablbe)
             {
                 _Player.isSwithingPlayer = true;
+                _Player.IntaractionCompo.OnInteractionEvnets.RemoveListener(() => SwithOn());
             }
-            else 
+            else
             {
-                _Player = GameObject.FindWithTag("ColorPlayer").GetComponent<Player>();
-                if (_Player.InputCompo.isAchromatlcEnable)
-                {
-                    _Player.isSwithingPlayer = true;
-                }
+                _Player.IntaractionCompo.OnInteractionEvnets.RemoveListener(() => SwithOn());
+            }
+        }
+        if (!IsColorPlayerCheck())
+        {
+            _fkey.SetActive(false);
+            _Player = GameObject.FindWithTag("ColorPlayer").GetComponent<Player>();
+            if (_Player.InputCompo.isAchromatlcEnable)
+            {
+                _Player.isSwithingPlayer = true;
+                _Player.IntaractionCompo.OnInteractionEvnets.RemoveListener(() => SwithOn());
+            }
+            else
+            {
+                _Player.IntaractionCompo.OnInteractionEvnets.RemoveListener(() => SwithOn());
             }
         }
     }
 
     private void SwithOn()
     {
-        _swithAnim.isON = true;
+        if(!_swithAnim.isON && !_Player.isSwithOn)
+        {
+            _swithAnim.isON = true;
+        }
+        if (_swithAnim.isON&&_Player.isSwithOn)
+        {
+            _swithAnim.isON = false;
+        }
+        if (!_Player.isSwithOn && _swithAnim.isON)
+        {
+            _Player.isSwithOn = true;         
+        }
+        if (_Player.isSwithOn && !_swithAnim.isON)
+        {
+            _Player.isSwithOn = false;
+        }
     }
 
     private void OnSwithAnimEnd()
     {
         IsTrggerEnd = true;
-    }
-
-    private void SwithOff()
-    {
-        _swithAnim.isON = false;
     }
 
     private void OnDrawGizmos()

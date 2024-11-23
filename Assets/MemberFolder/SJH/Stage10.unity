@@ -318,6 +318,7 @@ MonoBehaviour:
   _objCheckSize: {x: 1.09, y: 0.9}
   _checkTrm: {fileID: 980188569}
   <_jumpPower>k__BackingField: 12
+  isOn: 0
   isSwithingPlayer: 1
   stateMachine: {fileID: 0}
   isExitDoor: 0
@@ -13271,6 +13272,7 @@ MonoBehaviour:
   _objCheckSize: {x: 1.09, y: 0.93}
   _checkTrm: {fileID: 1721886912}
   <_jumpPower>k__BackingField: 12
+  isOn: 0
   isSwithingPlayer: 1
   stateMachine: {fileID: 0}
   isExitDoor: 0
@@ -14782,10 +14784,10 @@ MonoBehaviour:
   radius: 6
   respawnPoint:
   - {fileID: 2068097203}
-  respawn: {fileID: 0}
+  respawn: {fileID: 2068097202}
   _whatIsPlayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2176
 --- !u!1 &1432307667
 GameObject:
   m_ObjectHideFlags: 0
@@ -19813,6 +19815,7 @@ GameObject:
   - component: {fileID: 5753979453441424911}
   - component: {fileID: 8397954721776843266}
   - component: {fileID: 2272540545919400090}
+  - component: {fileID: 8397954721776843267}
   m_Layer: 6
   m_Name: Box
   m_TagString: Untagged
@@ -19892,6 +19895,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8397954721776843267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8071454107086785024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24b331d468dcba04ba62b894c1cea72c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _checkerSize: {x: 1.55, y: 1.36}
+  _whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 2176
 --- !u!4 &8413659348472810627
 Transform:
   m_ObjectHideFlags: 0

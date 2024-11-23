@@ -37,15 +37,8 @@ public class ToadstoolAnim : MonoBehaviour
 
     public void OffDicPlayer()
     {
-
-        if (isON)
-        {
-            _animator.SetBool("ON", true);
-        }
-        else 
-        {
-            _animator.SetBool("ON", false);
-        }
+        Debug.Log(isON);
+        _animator.SetBool("ON", isON);
     }
 
     public void EndAnimCall()
@@ -92,7 +85,8 @@ public class ToadstoolAnim : MonoBehaviour
             _colorPlayer.isSwithOn = false;
             _noColorPlayer.isSwithOn = false;
             _colorPlayer.isOn = false;
-            _colorPlayer.isOn = true;
+            _colorPlayer.isOn = false;
+
         }
     }
 }
