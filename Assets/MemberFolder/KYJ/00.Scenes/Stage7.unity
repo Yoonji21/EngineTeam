@@ -10557,7 +10557,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0cd4da85367995f4eb40d3c970641ee4, type: 3}
-  m_Color: {r: 0.03529412, g: 1, b: 0.654902, a: 1}
+  m_Color: {r: 0, g: 0.3207547, b: 0.20676748, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11091,7 +11091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Element: {fileID: 4142171815454283298}
   Elements:
-  - {fileID: 0}
+  - {fileID: 1614874354}
   OffElement: {fileID: 1614874354}
   OffElements:
   - {fileID: 1614874354}
