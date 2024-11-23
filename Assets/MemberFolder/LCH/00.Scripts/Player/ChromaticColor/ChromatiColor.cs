@@ -66,7 +66,6 @@ public class ChromatiColor : Player,ISwitchingPlayer
 
     public void SwithUp()
     {
-        Debug.Log(isSwithOn);
         if (!isSwithOn&&InputCompo.isChromatlEablbe && IsToadstoolObj())
         {
             Artifact.SetActive(false);

@@ -14665,6 +14665,7 @@ MonoBehaviour:
   _objCheckSize: {x: 1.09, y: 0.93}
   _checkTrm: {fileID: 2058147224}
   <_jumpPower>k__BackingField: 12
+  isOn: 0
   isSwithingPlayer: 1
   stateMachine: {fileID: 0}
   isExitDoor: 0
@@ -15831,6 +15832,7 @@ MonoBehaviour:
   _objCheckSize: {x: 1.09, y: 0.9}
   _checkTrm: {fileID: 584641914}
   <_jumpPower>k__BackingField: 12
+  isOn: 0
   isSwithingPlayer: 1
   stateMachine: {fileID: 0}
   isExitDoor: 0
@@ -17913,7 +17915,7 @@ GameObject:
   - component: {fileID: 8397954721776843267}
   m_Layer: 6
   m_Name: Box
-  m_TagString: InvisibleObj
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

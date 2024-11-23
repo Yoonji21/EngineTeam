@@ -18,13 +18,15 @@ public class ClearUI : MonoBehaviour
 
     public void NextSceneBtn()
     {
+        _clearUI.SetActive(false);
         if (_dataSO.StageClear < 9)
         {
-            _dataSO.StageClear++;
+            _dataSO.StageClear = SceneManagers.Inatnce.CurrentSceneLevel +1;
         }
         DataManger.Intance.SaveData();
-        _clearUI.SetActive(false);
         SceneManagers.Inatnce.CurrentSceneLevel++;
+        UIManager.Intance.isClearColor = false;
+        UIManager.Intance.isClearNoColor = false;
         SceneManager.LoadScene(SceneManagers.Inatnce.NextScene());
     }
 
@@ -32,9 +34,12 @@ public class ClearUI : MonoBehaviour
     {
         if(_dataSO.StageClear < 9)
         {
-            _dataSO.StageClear++;
+            _dataSO.StageClear = SceneManagers.Inatnce.CurrentSceneLevel + 1;
         }
+        _clearUI.SetActive(false);
         UIManager.Intance.StageUI.SetActive(false);
+        UIManager.Intance.isClearColor = false;
+        UIManager.Intance.isClearNoColor = false;
         SceneManager.LoadScene(1);
     }
 

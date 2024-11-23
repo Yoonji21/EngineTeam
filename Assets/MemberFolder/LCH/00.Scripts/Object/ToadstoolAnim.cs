@@ -14,12 +14,14 @@ public class ToadstoolAnim : MonoBehaviour
     private Animator _animator;
     private Player _colorPlayer;
     private Player _noColorPlayer;
+    private SwithOnOff _swith;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
         _colorPlayer = GameObject.FindWithTag("ColorPlayer").GetComponent<Player>();
         _noColorPlayer = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
+        _swith = GetComponentInParent<SwithOnOff>();
 
         if (Element == null)
             return;
@@ -67,6 +69,9 @@ public class ToadstoolAnim : MonoBehaviour
             }
             _colorPlayer.isSwithOn = true;
             _noColorPlayer.isSwithOn = true;
+            _colorPlayer.isOn = true;
+            _noColorPlayer.isOn = true;
+
         }
         else
         {
@@ -86,6 +91,8 @@ public class ToadstoolAnim : MonoBehaviour
             }
             _colorPlayer.isSwithOn = false;
             _noColorPlayer.isSwithOn = false;
+            _colorPlayer.isOn = false;
+            _colorPlayer.isOn = true;
         }
     }
 }

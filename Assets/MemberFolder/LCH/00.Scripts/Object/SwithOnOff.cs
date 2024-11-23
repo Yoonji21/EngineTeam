@@ -14,6 +14,7 @@ public class SwithOnOff : MonoBehaviour
     [SerializeField] private GameObject _fkey;
     private AnimationTrigger _animTrigger;
     public bool IsTrggerEnd;
+    public bool isOn = false;
 
     private void Awake()
     {
@@ -58,11 +59,11 @@ public class SwithOnOff : MonoBehaviour
             _fkey.SetActive(true);
             _Player = GameObject.FindWithTag("ColorPlayer").GetComponent<Player>();
             _Player.isSwithingPlayer = false;
-            if (_Player.InputCompo.isAchromatlcEnable&&!_swithAnim.isON && !_Player.isSwithOn)
+            if (_Player.InputCompo.isAchromatlcEnable&&!_swithAnim.isON && !_Player.isSwithOn )
             {
               _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
             }
-            if (_swithAnim.isON && _Player.InputCompo.isAchromatlcEnable && _Player.isSwithOn)
+            if (_swithAnim.isON && _Player.InputCompo.isAchromatlcEnable && _Player.isSwithOn )
             {
                 _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOff());
             }
