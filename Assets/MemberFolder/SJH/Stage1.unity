@@ -19542,7 +19542,7 @@ MonoBehaviour:
   _whatIsPlayer:
     serializedVersion: 2
     m_Bits: 2176
-  _size: 0.78
+  _size: 0.6
 --- !u!114 &6928001759527940204
 MonoBehaviour:
   m_ObjectHideFlags: 0

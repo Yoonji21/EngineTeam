@@ -1203,6 +1203,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1401397153}
     - target: {fileID: 1785113960812461645, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: OffElement
+      value: 
+      objectReference: {fileID: 1401397153}
+    - target: {fileID: 1785113960812461645, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
       propertyPath: Elements.Array.data[0]
       value: 
       objectReference: {fileID: 743778280}
@@ -1210,6 +1214,14 @@ PrefabInstance:
       propertyPath: Elements.Array.data[1]
       value: 
       objectReference: {fileID: 2049440888}
+    - target: {fileID: 1785113960812461645, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: OffElements.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785113960812461645, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: OffElements.Array.data[0]
+      value: 
+      objectReference: {fileID: 1401397153}
     - target: {fileID: 5367369477814413393, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
       propertyPath: m_Name
       value: Toadstool (2)
@@ -16226,6 +16238,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1401397153}
     - target: {fileID: 1785113960812461645, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: OffElement
+      value: 
+      objectReference: {fileID: 1401397153}
+    - target: {fileID: 1785113960812461645, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
       propertyPath: Elements.Array.data[0]
       value: 
       objectReference: {fileID: 4142171814336280623}
@@ -16233,6 +16249,14 @@ PrefabInstance:
       propertyPath: Elements.Array.data[1]
       value: 
       objectReference: {fileID: 4142171815443576129}
+    - target: {fileID: 1785113960812461645, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: OffElements.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785113960812461645, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: OffElements.Array.data[0]
+      value: 
+      objectReference: {fileID: 1401397153}
     - target: {fileID: 5367369477814413393, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
       propertyPath: m_Name
       value: Toadstool (3)

@@ -20,9 +20,9 @@ public class ClearUI : MonoBehaviour
     {
        _dataSO.StageClear += 1;
         DataManger.Intance.SaveData();
+        _clearUI.SetActive(false);
         SceneManagers.Inatnce.CurrentSceneLevel++;
         SceneManager.LoadScene(SceneManagers.Inatnce.NextScene());
-        _clearUI.SetActive(false);
     }
 
     public void SelectLevel()
@@ -33,8 +33,8 @@ public class ClearUI : MonoBehaviour
 
     public void SettingBtn()
     {
-        _settingUI.SetActive(true);
         _clearUI.SetActive(false);
+        _settingUI.SetActive(true);
     }
 }
 
