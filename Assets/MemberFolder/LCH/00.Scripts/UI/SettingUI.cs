@@ -8,13 +8,13 @@ public class SettingUI : MonoBehaviour
     [SerializeField] private GameObject _settingUI;
     [SerializeField] private StageDataSO _dataSO;
 
-
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
     }
     public void BackBtn()
     {
+
         _settingUI.SetActive(false);
     }
 
