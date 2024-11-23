@@ -26,28 +26,27 @@ public class Achromatic : Player,ISwitchingPlayer
 
 
     public void SwithUp()
-    { 
-         stateMachine.ChangeState("SwithUp");       
+    {
+        if (!isSwithOn && InputCompo.isAchromatlcEnable&&IsToadstoolObj())
+        {
+            stateMachine.ChangeState("SwithUp");       
+        }
+        else if(isSwithOn && InputCompo.isAchromatlcEnable && IsToadstoolObj())
+        {
+            stateMachine.ChangeState("SwithDown");
+        }
     }
 
     protected override void Update()
     {
         base.Update();
-        if (IsToadstoolObj())
-        {
-            InputCompo.OnInteractionEvent += SwithUp;
-        }
-        else
-        {
-            InputCompo.OnInteractionEvent -= SwithUp;
-        }
     }
 
     public void SwitchingPlayer()
     {
         if (isSwithingPlayer)
         {
-         StartCoroutine(SwithingPlayer());
+            StartCoroutine(SwithingPlayer());
         }
     }
 
