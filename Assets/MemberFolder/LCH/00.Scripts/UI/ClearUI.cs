@@ -23,12 +23,11 @@ public class ClearUI : MonoBehaviour
 
     public void NextSceneBtn()
     {
-        if (_dataSO.StageClear >= 9)
-            return;
        _dataSO.StageClear += 1;
         DataManger.Intance.SaveData();
         SceneManagers.Inatnce.CurrentSceneLevel++;
         SceneManager.LoadScene(SceneManagers.Inatnce.NextScene());
+        gameObject.SetActive(false);
     }
 
     public void SelectLevel()

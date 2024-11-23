@@ -81,7 +81,10 @@ public class ChromatiColor : Player,ISwitchingPlayer
 
     public void SwitchingPlayer()
     {
-        StartCoroutine(SwithingPlayer());
+        if (isSwithingPlayer)
+        {
+            StartCoroutine(SwithingPlayer());
+        }
     }
 
     private IEnumerator SwithingPlayer()

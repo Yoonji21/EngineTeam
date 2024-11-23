@@ -45,7 +45,10 @@ public class Achromatic : Player,ISwitchingPlayer
 
     public void SwitchingPlayer()
     {
-        StartCoroutine(SwithingPlayer());
+        if (isSwithingPlayer)
+        {
+         StartCoroutine(SwithingPlayer());
+        }
     }
 
     private IEnumerator SwithingPlayer()

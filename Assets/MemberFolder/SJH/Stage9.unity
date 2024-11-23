@@ -179,7 +179,7 @@ MonoBehaviour:
   _xMove: {x: 0, y: 0, z: 0}
   _whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   _groundChecker: {fileID: 1902845341}
   _checkerSize: {x: 0.81, y: 0.2}
 --- !u!61 &6088213
@@ -1002,6 +1002,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Toadstool (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6491894393793610582, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4862745
+      objectReference: {fileID: 0}
+    - target: {fileID: 6491894393793610582, guid: 905013ecf349ccd4eaddbf6c9cfd46fc, type: 3}
+      propertyPath: m_Color.r
+      value: 0.40784314
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1081,7 +1089,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f104496b19f3ab14db027007722b18cf, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.40566033, g: 0.48376116, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1236,7 +1244,7 @@ MonoBehaviour:
   _xMove: {x: 0, y: 0, z: 0}
   _whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   _groundChecker: {fileID: 1887988269}
   _checkerSize: {x: 0.81, y: 0.2}
 --- !u!50 &1066473232
@@ -1444,6 +1452,7 @@ MonoBehaviour:
   asteroid: {fileID: 6088211}
   respawnPoint:
   - {fileID: 2019514100}
+  respawn: {fileID: 0}
 --- !u!1 &1278818935
 GameObject:
   m_ObjectHideFlags: 0
@@ -16821,7 +16830,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0cd4da85367995f4eb40d3c970641ee4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.69411767, g: 0.9490196, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16873,7 +16882,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0cd4da85367995f4eb40d3c970641ee4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.69411767, g: 0.9490196, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -17456,6 +17465,7 @@ MonoBehaviour:
   asteroid: {fileID: 0}
   respawnPoint:
   - {fileID: 0}
+  respawn: {fileID: 0}
 --- !u!61 &4074082845908210050
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18183,7 +18193,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917742673580541}
   target:
     serializedVersion: 2
-    m_Bits: 1664
+    m_Bits: 3712
   respawn: {fileID: 2019514099}
 --- !u!114 &7008155509141437092
 MonoBehaviour:
@@ -18202,7 +18212,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917742626137491}
   target:
     serializedVersion: 2
-    m_Bits: 1664
+    m_Bits: 3712
   respawn: {fileID: 2019514099}
 --- !u!50 &7297332784371020873
 Rigidbody2D:
