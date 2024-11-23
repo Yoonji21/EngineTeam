@@ -21,14 +21,6 @@ public class ChromatiColor : Player,ISwitchingPlayer
     protected override void Update()
     {
         base.Update();
-        if (IsToadstoolObj())
-        {
-            InputCompo.OnInteractionEvent += SwithUp;
-        }
-        else
-        {
-            InputCompo.OnInteractionEvent -= SwithUp;
-        }
         if (InputCompo.isChromatlEablbe)
         {
            
@@ -51,7 +43,7 @@ public class ChromatiColor : Player,ISwitchingPlayer
     private  void OnEnable()
     {
         InputCompo.OnJumpEvent += HandheldJump;
-        InputCompo.OnInteractionEvent += IntaractionCompo.InteractionPress;
+        InputCompo.OnInteractionEvent += SwithUp;
         InputCompo.OnswithingPlayerNoColorEvent += SwitchingPlayer;
         if (_invisibleObjs == null)
         {
@@ -63,7 +55,7 @@ public class ChromatiColor : Player,ISwitchingPlayer
 
     private void OnDisable()
     {
-        InputCompo.OnInteractionEvent -= IntaractionCompo.InteractionPress;
+        InputCompo.OnInteractionEvent -= SwithUp;
         InputCompo.OnJumpEvent -= HandheldJump;
         InputCompo.OnswithingPlayerNoColorEvent -= SwitchingPlayer;
         if (_invisibleObjs == null)
@@ -74,9 +66,18 @@ public class ChromatiColor : Player,ISwitchingPlayer
 
     public void SwithUp()
     {
+        if (!isSwithOn&&InputCompo.isChromatlEablbe && IsToadstoolObj())
+        {
             Artifact.SetActive(false);
             isChromatilColorArtifact = true;
             stateMachine.ChangeState("SwithUp");
+        }
+        else if(isSwithOn && InputCompo.isChromatlEablbe && IsToadstoolObj())
+        {
+            Artifact.SetActive(false);
+            isChromatilColorArtifact = true;
+            stateMachine.ChangeState("SwithDown");
+        }
     }
 
     public void SwitchingPlayer()

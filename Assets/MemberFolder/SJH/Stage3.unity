@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 138510435}
   - component: {fileID: 138510434}
+  - component: {fileID: 138510436}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -162,7 +163,7 @@ MonoBehaviour:
   m_Follow: {fileID: 5160986178408239901}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 11.283525
+    OrthographicSize: 6
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -195,6 +196,18 @@ Transform:
   - {fileID: 1400526224}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &138510436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138510433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &330894653
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,7 +692,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11.283525
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -20687,6 +20700,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   _fkey: {fileID: 7631542410224218211}
+  IsTrggerEnd: 0
 --- !u!114 &4916654798986487908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20707,6 +20721,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   _fkey: {fileID: 7631542410437087825}
+  IsTrggerEnd: 0
 --- !u!4 &4931371488358192725
 Transform:
   m_ObjectHideFlags: 0

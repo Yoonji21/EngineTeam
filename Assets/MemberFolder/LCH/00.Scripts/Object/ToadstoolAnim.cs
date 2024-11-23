@@ -12,10 +12,12 @@ public class ToadstoolAnim : MonoBehaviour
 
 
     private Animator _animator;
+    private SwithOnOff _animTrigger;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _animTrigger = GetComponentInParent<SwithOnOff>();
 
         if (Element == null)
             return;
