@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _clearUiOpen;
     [SerializeField] private GameObject _lastStageClear;
     [SerializeField] public GameObject StageUI;
+    [SerializeField] private TextMeshProUGUI _stageText;
+    [SerializeField] private TextMeshProUGUI _lastStageText;
 
     private void Awake()
     {
@@ -29,10 +32,12 @@ public class UIManager : MonoBehaviour
         {
             if(SceneManagers.Inatnce.CurrentSceneLevel < 9)
             {
+                _stageText.text = $"Stage {SceneManagers.Inatnce.CurrentSceneLevel} Clear";
                 _clearUiOpen.SetActive(true);
             }
             else
             {
+                _lastStageText.text = $"Stage {SceneManagers.Inatnce.CurrentSceneLevel} Clear";
                 _lastStageClear.SetActive(true);
             }
         }

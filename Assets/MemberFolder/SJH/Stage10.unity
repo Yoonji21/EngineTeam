@@ -248,10 +248,10 @@ MonoBehaviour:
   radius: 6
   respawnPoint:
   - {fileID: 2068097203}
-  respawn: {fileID: 0}
+  respawn: {fileID: 2068097202}
   _whatIsPlayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2176
 --- !u!1 &51884493
 GameObject:
   m_ObjectHideFlags: 0
@@ -13344,10 +13344,10 @@ MonoBehaviour:
   radius: 6
   respawnPoint:
   - {fileID: 2068097203}
-  respawn: {fileID: 0}
+  respawn: {fileID: 2068097202}
   _whatIsPlayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2176
 --- !u!1 &922204178
 GameObject:
   m_ObjectHideFlags: 0
@@ -13711,7 +13711,7 @@ Transform:
   m_GameObject: {fileID: 995473724}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.466, y: 0, z: 0}
+  m_LocalPosition: {x: 0.466, y: -0.014, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16137,7 +16137,7 @@ Transform:
   m_GameObject: {fileID: 2085975199}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 38.410007, y: -11.06, z: 0}
+  m_LocalPosition: {x: 38.410007, y: -11.22, z: 0}
   m_LocalScale: {x: 1.6000011, y: 1.6000011, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16343,7 +16343,7 @@ Transform:
   m_GameObject: {fileID: 5804706432261559814}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.149, y: 0.011, z: 0}
+  m_LocalPosition: {x: -0.128, y: -0.008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16503,7 +16503,7 @@ SpriteRenderer:
   m_SortingLayerID: -1910738073
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e294c4d6de3aaa04ea80bbf1497a635d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -17107,7 +17107,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2411747918458861831}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -17199,7 +17199,7 @@ Transform:
   m_GameObject: {fileID: 2411747918458861831}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3, y: -18.4, z: 0}
+  m_LocalPosition: {x: -2.46, y: -18.17, z: 0}
   m_LocalScale: {x: 2.9205465, y: 2.9205465, z: 2.9205465}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17902,6 +17902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db5de26714a65940b9b2aa9e56588d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Player: {fileID: 0}
   _checkerSize: {x: 0.72, y: 0.97}
   _whatIsColorPlayer:
     serializedVersion: 2
@@ -17923,6 +17924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db5de26714a65940b9b2aa9e56588d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Player: {fileID: 0}
   _checkerSize: {x: 0.72, y: 0.97}
   _whatIsColorPlayer:
     serializedVersion: 2
@@ -17944,6 +17946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db5de26714a65940b9b2aa9e56588d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Player: {fileID: 0}
   _checkerSize: {x: 0.72, y: 0.97}
   _whatIsColorPlayer:
     serializedVersion: 2
@@ -17965,6 +17968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db5de26714a65940b9b2aa9e56588d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Player: {fileID: 0}
   _checkerSize: {x: 0.72, y: 0.97}
   _whatIsColorPlayer:
     serializedVersion: 2
@@ -19108,8 +19112,8 @@ Transform:
   m_GameObject: {fileID: 8071454107086785024}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.89, y: -11.06, z: 0}
-  m_LocalScale: {x: 2.51167, y: 2.51167, z: 2.51167}
+  m_LocalPosition: {x: 27.89, y: -11.25, z: 0}
+  m_LocalScale: {x: 1.9999999, y: 1.9999999, z: 1.9999999}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1941227534542459225}
@@ -19219,7 +19223,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6273663223894756515}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -19320,7 +19324,7 @@ MonoBehaviour:
   _whatIsNoColorPlayer:
     serializedVersion: 2
     m_Bits: 2048
-  _chekerSize: {x: 1.58, y: 2.54}
+  _chekerSize: {x: 2.15, y: 3.95}
   _chekerTrm: {fileID: 199149639206542656}
 --- !u!1001 &7631542408833536153
 PrefabInstance:
@@ -19829,7 +19833,7 @@ Transform:
   m_GameObject: {fileID: 659501090332766043}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.16, y: 0.08000027, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19868,11 +19872,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db262b71d1706434c854e1fc99cbaa96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _raydirect: 0.18
+  _raydirect: -0.12
   _cherkerTrm: {fileID: 6532306283031756358}
   _whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 640
+    m_Bits: 128
 --- !u!4 &8660786407171006214
 Transform:
   m_ObjectHideFlags: 0
@@ -20024,7 +20028,7 @@ MonoBehaviour:
   _whatIsColorPlayer:
     serializedVersion: 2
     m_Bits: 128
-  _chekerSize: {x: 1.61, y: 2.66}
+  _chekerSize: {x: 2.29, y: 3.91}
   _chekerTrm: {fileID: 2363007676883490775}
 --- !u!1 &9199283244412626440
 GameObject:

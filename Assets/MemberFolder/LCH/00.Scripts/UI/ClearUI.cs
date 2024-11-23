@@ -9,18 +9,11 @@ public class ClearUI : MonoBehaviour
     [SerializeField] private StageDataSO _dataSO;
     [SerializeField] private GameObject _settingUI;
     [SerializeField] private GameObject _clearUI;
-    [SerializeField] private TextMeshProUGUI _stageText;
 
     private void Awake()
     {
         _clearUI.SetActive(false);
         DontDestroyOnLoad(gameObject);
-    }
-
-    private void OnEnable()
-    {
-        UIManager.Intance.StageUI.SetActive(false);
-        _stageText.text = $"Stage {SceneManagers.Inatnce.CurrentSceneLevel} Clear";
     }
 
     public void NextSceneBtn()

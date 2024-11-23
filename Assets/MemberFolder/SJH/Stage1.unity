@@ -14644,6 +14644,8 @@ MonoBehaviour:
   _clearUiOpen: {fileID: 0}
   _lastStageClear: {fileID: 0}
   StageUI: {fileID: 0}
+  _stageText: {fileID: 0}
+  _lastStageText: {fileID: 0}
 --- !u!4 &1123053209
 Transform:
   m_ObjectHideFlags: 0
@@ -17759,7 +17761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dataSO: {fileID: 11400000, guid: 1549d5ccdcec4e7468f82d235ca1a4cd, type: 2}
   _settingUI: {fileID: 0}
-  _stageText: {fileID: 2307856233074647187}
+  _clearUI: {fileID: 0}
 --- !u!4 &3260917710489380457
 Transform:
   m_ObjectHideFlags: 0
@@ -18494,6 +18496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db5de26714a65940b9b2aa9e56588d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Player: {fileID: 0}
   _checkerSize: {x: 0.72, y: 0.97}
   _whatIsColorPlayer:
     serializedVersion: 2
@@ -19539,6 +19542,7 @@ MonoBehaviour:
   _whatIsPlayer:
     serializedVersion: 2
     m_Bits: 2176
+  _size: 0.78
 --- !u!114 &6928001759527940204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20227,7 +20231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b331d468dcba04ba62b894c1cea72c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _checkerSize: {x: 1.62, y: 1.53}
+  _checkerSize: {x: 1.5, y: 1.53}
   _whatIsPlayer:
     serializedVersion: 2
     m_Bits: 2176
@@ -20403,7 +20407,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 576
   _groundChecker: {fileID: 3783620018819480790}
-  _checkerSize: {x: 1.08, y: 0.2}
+  _checkerSize: {x: 0.78, y: 0.2}
 --- !u!4 &8884991466354998142
 Transform:
   m_ObjectHideFlags: 0

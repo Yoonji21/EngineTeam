@@ -6,7 +6,7 @@ using UnityEngine;
 public class SwithOnOff : MonoBehaviour
 {
 
-    private Player  _player;
+    public Player  _Player;
     private ToadstoolAnim _swithAnim;
     [SerializeField] private Vector2 _checkerSize;
     [SerializeField] private LayerMask _whatIsColorPlayer;
@@ -50,32 +50,21 @@ public class SwithOnOff : MonoBehaviour
         {
             _swithAnim.EndAnimCall();
             IsTrggerEnd = false;
-            if(!_player.isSwithOn)
-            {
-                _player.isSwithOn = true;
-            }
-            else
-            {
-                _player.isSwithOn = false;
-            }
+            Debug.Log(_Player.isSwithOn);
         }
 
         if (IsColorPlayerCheck())
         {
             _fkey.SetActive(true);
-            _player = GameObject.FindWithTag("ColorPlayer").GetComponent<Player>();
-            if (!_player.InputCompo.isAchromatlcEnable || !IsColorPlayerCheck())
+            _Player = GameObject.FindWithTag("ColorPlayer").GetComponent<Player>();
+            _Player.isSwithingPlayer = false;
+            if (_Player.InputCompo.isAchromatlcEnable&&!_swithAnim.isON && !_Player.isSwithOn)
             {
-                _fkey.SetActive(false);
-                _player.IntaractionCompo.OnInteractionEvnets.RemoveAllListeners();
+              _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
             }
-            if (_player.InputCompo.isAchromatlcEnable&&!_swithAnim.isON && !_player.isSwithOn)
+            if (_swithAnim.isON && _Player.InputCompo.isAchromatlcEnable && _Player.isSwithOn)
             {
-              _player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
-            }
-            if (_swithAnim.isON && _player.InputCompo.isAchromatlcEnable && _player.isSwithOn)
-            {
-                _player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOff());
+                _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOff());
             }
 
         }
@@ -84,19 +73,15 @@ public class SwithOnOff : MonoBehaviour
         {
             
             _fkey.SetActive(true);
-            _player = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
-            if (!_player.InputCompo.isChromatlEablbe || !IsNoColorPlayerCheck())
+            _Player = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
+            _Player.isSwithingPlayer = false;
+            if (_Player.InputCompo.isChromatlEablbe && !_swithAnim.isON && !_Player.isSwithOn)
             {
-                _fkey.SetActive(false);
-                _player.IntaractionCompo.OnInteractionEvnets.RemoveAllListeners();
+                _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
             }
-            if (_player.InputCompo.isChromatlEablbe && !_swithAnim.isON && !_player.isSwithOn)
+            if (_swithAnim.isON && _Player.InputCompo.isChromatlEablbe && _Player.isSwithOn)
             {
-                _player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
-            }
-            if (_swithAnim.isON && _player.InputCompo.isChromatlEablbe && _player.isSwithOn)
-            {
-                _player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOff());
+                _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOff());
             }
 
         }
@@ -104,6 +89,19 @@ public class SwithOnOff : MonoBehaviour
         if(!IsNoColorPlayerCheck() && !IsColorPlayerCheck())
         {
             _fkey.SetActive(false);
+            _Player = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
+            if (_Player.InputCompo.isChromatlEablbe)
+            {
+                _Player.isSwithingPlayer = true;
+            }
+            else 
+            {
+                _Player = GameObject.FindWithTag("ColorPlayer").GetComponent<Player>();
+                if (_Player.InputCompo.isAchromatlcEnable)
+                {
+                    _Player.isSwithingPlayer = true;
+                }
+            }
         }
     }
 
@@ -120,7 +118,6 @@ public class SwithOnOff : MonoBehaviour
     private void SwithOff()
     {
         _swithAnim.isON = false;
-        
     }
 
     private void OnDrawGizmos()

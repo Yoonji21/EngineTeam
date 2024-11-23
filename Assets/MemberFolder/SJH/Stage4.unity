@@ -912,6 +912,8 @@ MonoBehaviour:
   _clearUiOpen: {fileID: 0}
   _lastStageClear: {fileID: 0}
   StageUI: {fileID: 0}
+  _stageText: {fileID: 0}
+  _lastStageText: {fileID: 0}
 --- !u!4 &328877196
 Transform:
   m_ObjectHideFlags: 0
@@ -16748,7 +16750,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2411747919791374354}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -17086,6 +17088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db5de26714a65940b9b2aa9e56588d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Player: {fileID: 0}
   _checkerSize: {x: 0.72, y: 0.97}
   _whatIsColorPlayer:
     serializedVersion: 2
@@ -17107,6 +17110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db5de26714a65940b9b2aa9e56588d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Player: {fileID: 0}
   _checkerSize: {x: 0.72, y: 0.97}
   _whatIsColorPlayer:
     serializedVersion: 2
@@ -17581,7 +17585,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6273663223145101676}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
