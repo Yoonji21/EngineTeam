@@ -6,6 +6,8 @@ public class ToadstoolAnim : MonoBehaviour
 {
     [SerializeField] private GameObject Element;
     [SerializeField] private GameObject[] Elements;
+    [SerializeField] private GameObject OffElement;
+    [SerializeField] private GameObject[] OffElements;
     public bool isON { get; set; } = false;
 
 
@@ -49,9 +51,15 @@ public class ToadstoolAnim : MonoBehaviour
             if (Elements == null)
                 return;
             Element.SetActive(false);
+            OffElement.SetActive(true);
             for (int i = 0; i < Elements.Length; i++)
             {
+                
                 Elements[i].SetActive(false);
+            }
+            for (int i = 0; i < OffElements.Length; i++)
+            {
+                OffElements[i].SetActive(true);
             }
         }
         else
@@ -61,9 +69,14 @@ public class ToadstoolAnim : MonoBehaviour
             if (Elements == null)
                 return;
             Element.SetActive(true);
+            OffElement.SetActive(false);
             for (int i = 0; i < Elements.Length; i++)
             {
                 Elements[i].SetActive(true);
+            }
+            for (int i = 0; i < OffElements.Length; i++)
+            {
+                OffElements[i].SetActive(false);
             }
         }
     }

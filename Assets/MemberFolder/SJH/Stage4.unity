@@ -358,7 +358,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0cd4da85367995f4eb40d3c970641ee4, type: 3}
-  m_Color: {r: 0.52156866, g: 0.52156866, b: 0.52156866, a: 1}
+  m_Color: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -15344,7 +15344,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0cd4da85367995f4eb40d3c970641ee4, type: 3}
-  m_Color: {r: 0.52156866, g: 0.52156866, b: 0.52156866, a: 1}
+  m_Color: {r: 0.69411767, g: 0.9490197, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -15499,7 +15499,7 @@ GameObject:
   - component: {fileID: 1633179379}
   m_Layer: 0
   m_Name: LaserGun
-  m_TagString: InvisibleObj
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15834,6 +15834,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.6686592, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1793171566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1793171567}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1793171567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793171566}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 47.937447, y: -20.469658, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1834612542
 GameObject:
   m_ObjectHideFlags: 0
@@ -16385,6 +16416,9 @@ MonoBehaviour:
   Element: {fileID: 1633179378}
   Elements:
   - {fileID: 1942039563}
+  OffElement: {fileID: 1793171566}
+  OffElements:
+  - {fileID: 1793171566}
 --- !u!114 &1785113960048719663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16400,6 +16434,9 @@ MonoBehaviour:
   Element: {fileID: 1633179378}
   Elements:
   - {fileID: 1942039563}
+  OffElement: {fileID: 1793171566}
+  OffElements:
+  - {fileID: 1793171566}
 --- !u!1 &2002012531425967572
 GameObject:
   m_ObjectHideFlags: 0
@@ -17711,3 +17748,4 @@ SceneRoots:
   - {fileID: 1354326115758421479}
   - {fileID: 1354326115874882925}
   - {fileID: 1942039564}
+  - {fileID: 1793171567}

@@ -12052,7 +12052,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &246402870
 Transform:
   m_ObjectHideFlags: 0
@@ -12284,6 +12284,7 @@ MonoBehaviour:
   isClearColor: 0
   isClearNoColor: 0
   _clearUiOpen: {fileID: 1833716514}
+  _lastStageClear: {fileID: 0}
 --- !u!4 &816250914
 Transform:
   m_ObjectHideFlags: 0
@@ -14087,8 +14088,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Element: {fileID: 1288084937}
   Elements:
-  - {fileID: 246402869}
   - {fileID: 645272167}
+  OffElement: {fileID: 246402869}
+  OffElements:
+  - {fileID: 1288084937}
 --- !u!114 &1785113960094445942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14104,6 +14107,8 @@ MonoBehaviour:
   Element: {fileID: 4142171815343094273}
   Elements:
   - {fileID: 1288084937}
+  OffElement: {fileID: 0}
+  OffElements: []
 --- !u!1 &2002012530337216522
 GameObject:
   m_ObjectHideFlags: 0
