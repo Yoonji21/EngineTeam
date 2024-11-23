@@ -19741,7 +19741,7 @@ GameObject:
   - component: {fileID: 5753979453441424911}
   - component: {fileID: 8397954721776843266}
   - component: {fileID: 2272540545919400090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box
   m_TagString: InvisibleObj
   m_Icon: {fileID: 0}
