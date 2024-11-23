@@ -449,22 +449,62 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3604028215016651297, guid: eac048ce67177004c9062b97161a59fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1877574283}
+    - target: {fileID: 3604028215016651297, guid: eac048ce67177004c9062b97161a59fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGame
+      objectReference: {fileID: 0}
     - target: {fileID: 4480889580071177447, guid: eac048ce67177004c9062b97161a59fc, type: 3}
       propertyPath: m_Name
       value: SettingUI
       objectReference: {fileID: 0}
     - target: {fileID: 4480889580071177447, guid: eac048ce67177004c9062b97161a59fc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5475595164729049698, guid: eac048ce67177004c9062b97161a59fc, type: 3}
       propertyPath: _mainUI
       value: 
       objectReference: {fileID: 713299958}
-    m_RemovedComponents: []
+    - target: {fileID: 5872302184666654213, guid: eac048ce67177004c9062b97161a59fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112815758121729309, guid: eac048ce67177004c9062b97161a59fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1877574283}
+    - target: {fileID: 8112815758121729309, guid: eac048ce67177004c9062b97161a59fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LevelAllUnLock
+      objectReference: {fileID: 0}
+    - target: {fileID: 8447635379423336055, guid: eac048ce67177004c9062b97161a59fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1877574283}
+    - target: {fileID: 8447635379423336055, guid: eac048ce67177004c9062b97161a59fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 8488151637243108289, guid: eac048ce67177004c9062b97161a59fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1877574283}
+    - target: {fileID: 8488151637243108289, guid: eac048ce67177004c9062b97161a59fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GameReSet
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5475595164729049698, guid: eac048ce67177004c9062b97161a59fc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4480889580071177447, guid: eac048ce67177004c9062b97161a59fc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1877574283}
   m_SourcePrefab: {fileID: 100100000, guid: eac048ce67177004c9062b97161a59fc, type: 3}
 --- !u!1 &509991332 stripped
 GameObject:
@@ -892,17 +932,9 @@ PrefabInstance:
       propertyPath: _pauseUI
       value: 
       objectReference: {fileID: 859452287}
-    - target: {fileID: 195730101140112755, guid: 1be6113bea80844408c9e56b654d3323, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2289789251098477848, guid: 1be6113bea80844408c9e56b654d3323, type: 3}
       propertyPath: m_Name
       value: StageUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 2289789251098477848, guid: 1be6113bea80844408c9e56b654d3323, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7957618812287629437, guid: 1be6113bea80844408c9e56b654d3323, type: 3}
       propertyPath: m_Pivot.x
@@ -1004,6 +1036,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4480889580071177447, guid: eac048ce67177004c9062b97161a59fc, type: 3}
   m_PrefabInstance: {fileID: 416358844}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1877574283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877574281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1564202d220b1ab488241ba3c870a1a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _settingUI: {fileID: 666133946}
+  _dataSO: {fileID: 11400000, guid: 1549d5ccdcec4e7468f82d235ca1a4cd, type: 2}
 --- !u!1 &1937761015
 GameObject:
   m_ObjectHideFlags: 0
