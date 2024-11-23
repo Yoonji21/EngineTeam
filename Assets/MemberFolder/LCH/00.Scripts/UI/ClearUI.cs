@@ -18,6 +18,7 @@ public class ClearUI : MonoBehaviour
 
     private void OnEnable()
     {
+        UIManager.Intance.StageUI.SetActive(false);
         _stageText.text = $"Stage {SceneManagers.Inatnce.CurrentSceneLevel} Clear";
     }
 
@@ -32,6 +33,7 @@ public class ClearUI : MonoBehaviour
 
     public void SelectLevel()
     {
+        UIManager.Intance.StageUI.SetActive(false);
         SceneManager.LoadScene(1);
     }
 

@@ -1777,6 +1777,7 @@ MonoBehaviour:
   - {fileID: 487751250}
   - {fileID: 182677074}
   _stageData: {fileID: 11400000, guid: 1549d5ccdcec4e7468f82d235ca1a4cd, type: 2}
+  _stageUI: {fileID: 0}
 --- !u!114 &902270667
 MonoBehaviour:
   m_ObjectHideFlags: 0

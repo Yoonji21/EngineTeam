@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class PauseUI : MonoBehaviour
 {
+
+    [SerializeField] private Canvas _stageUI;
+
     private void Awake()
     {
-        gameObject.SetActive(false);
+        DontDestroyOnLoad(gameObject);
     }
 
     public void ContinuationButtonClik()
@@ -18,14 +21,16 @@ public class PauseUI : MonoBehaviour
 
     public void LevelSelectButtonClik()
     {
-        gameObject.SetActive(false);
+        _stageUI.gameObject.SetActive(false);
         Time.timeScale = 1;
         SceneManager.LoadScene(1);
+        gameObject.SetActive(false);
     }
 
     public void MainMenuButtonClik()
     {
         gameObject.SetActive(false);
+        _stageUI.gameObject.SetActive(false);
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }

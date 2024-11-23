@@ -482,17 +482,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80bf6c96e138aa24cb9423cada617d76, type: 3}
---- !u!114 &237379580 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3244050775149020854, guid: 80bf6c96e138aa24cb9423cada617d76, type: 3}
-  m_PrefabInstance: {fileID: 237379579}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47757fb82b6ce2746b85e91b3e0178e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &297115396
 GameObject:
   m_ObjectHideFlags: 0
@@ -15663,8 +15652,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isClearColor: 0
   isClearNoColor: 0
-  _clearUiOpen: {fileID: 237379580}
+  _clearUiOpen: {fileID: 0}
   _lastStageClear: {fileID: 0}
+  StageUI: {fileID: 0}
 --- !u!4 &1707526634
 Transform:
   m_ObjectHideFlags: 0
@@ -17079,7 +17069,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 893194760, guid: acd34ecbcdb1fdf4c9546b04b5f68b09, type: 3}
-  m_Color: {r: 0.5939489, g: 0.9433962, b: 0.18096577, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -5,15 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class StageUI : MonoBehaviour
 {
-    [SerializeField] private Canvas _pauseUI;
-	public void ResetButtonClik()
+    [SerializeField] private GameObject _pauseUI;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+    public void ResetButtonClik()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void PauseButtonClik()
     {
-        _pauseUI.gameObject.SetActive(true);
+        gameObject.SetActive(false);
+        _pauseUI.SetActive(true);
         Time.timeScale = 0;
     }
 }
