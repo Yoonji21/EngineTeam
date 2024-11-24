@@ -11759,7 +11759,6 @@ MonoBehaviour:
   _objCheckSize: {x: 1.09, y: 0.93}
   _checkTrm: {fileID: 2333082056107896706}
   <_jumpPower>k__BackingField: 12
-  isOn: 0
   isSwithingPlayer: 1
   stateMachine: {fileID: 0}
   isExitDoor: 0
@@ -12035,7 +12034,7 @@ GameObject:
   - component: {fileID: 7008155510264157353}
   m_Layer: 0
   m_Name: LaserGun (3)
-  m_TagString: Untagged
+  m_TagString: InvisibleObj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14570,7 +14569,6 @@ MonoBehaviour:
   _objCheckSize: {x: 1.09, y: 0.9}
   _checkTrm: {fileID: 3567533147430284894}
   <_jumpPower>k__BackingField: 12
-  isOn: 0
   isSwithingPlayer: 1
   stateMachine: {fileID: 0}
   isExitDoor: 0

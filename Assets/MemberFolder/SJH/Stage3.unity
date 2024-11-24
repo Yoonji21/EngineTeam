@@ -19166,7 +19166,6 @@ MonoBehaviour:
   Elements:
   - {fileID: 1664405976}
   - {fileID: 2023500795}
-  - {fileID: 5367369477517758235}
   OffElement: {fileID: 330894653}
   OffElements:
   - {fileID: 330894653}
@@ -19186,7 +19185,6 @@ MonoBehaviour:
   Elements:
   - {fileID: 1664405976}
   - {fileID: 2023500795}
-  - {fileID: 5367369477327957289}
   OffElement: {fileID: 330894653}
   OffElements:
   - {fileID: 330894653}
@@ -21518,7 +21516,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1103401910, guid: f54655b509e62374ea46a4cc749e0c87, type: 3}
-  m_Color: {r: 0.53130364, g: 0.7264151, b: 0, a: 1}
+  m_Color: {r: 0.69411767, g: 0.9490197, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

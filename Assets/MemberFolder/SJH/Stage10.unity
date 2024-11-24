@@ -318,7 +318,6 @@ MonoBehaviour:
   _objCheckSize: {x: 1.09, y: 0.9}
   _checkTrm: {fileID: 980188569}
   <_jumpPower>k__BackingField: 12
-  isOn: 0
   isSwithingPlayer: 1
   stateMachine: {fileID: 0}
   isExitDoor: 0
@@ -13272,7 +13271,6 @@ MonoBehaviour:
   _objCheckSize: {x: 1.09, y: 0.93}
   _checkTrm: {fileID: 1721886912}
   <_jumpPower>k__BackingField: 12
-  isOn: 0
   isSwithingPlayer: 1
   stateMachine: {fileID: 0}
   isExitDoor: 0
