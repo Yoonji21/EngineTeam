@@ -48,6 +48,7 @@ public class SwithOnOff : MonoBehaviour
     private void Update()
     {
 
+        Debug.Log(_swithAnim.isON);
         if (IsTrggerEnd)
         {
             _swithAnim.EndAnimCall();
@@ -74,11 +75,10 @@ public class SwithOnOff : MonoBehaviour
 
         if (IsNoColorPlayerCheck())
         {
-
             _fkey.SetActive(true);
             _Player = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
             _Player.isSwithingPlayer = false;
-            if (_Player.InputCompo.isChromatlEablbe && !_swithAnim.isON)
+            if (_Player.InputCompo.isChromatlEablbe && !_swithAnim.isON )
             {
                 _Player.IntaractionCompo.OnInteractionEvnets.RemoveAllListeners();
                 _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
@@ -94,12 +94,13 @@ public class SwithOnOff : MonoBehaviour
         {
             _fkey.SetActive(false);
             _Player = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
-            if (_Player.InputCompo.isChromatlEablbe && _swithAnim)
+           
+            if (_Player.InputCompo.isChromatlEablbe && _swithAnim )
             {
                 _Player.isSwithingPlayer = true;
                 _Player.IntaractionCompo.OnInteractionEvnets.RemoveListener(() => SwithOn());
             }
-            else
+            else if(_Player.InputCompo.isChromatlEablbe && !_swithAnim )
             {
                 _Player.IntaractionCompo.OnInteractionEvnets.RemoveListener(() => SwithOn());
             }
@@ -111,11 +112,11 @@ public class SwithOnOff : MonoBehaviour
             if (_Player.InputCompo.isAchromatlcEnable)
             {
                 _Player.isSwithingPlayer = true;
-                if (_swithAnim.isON)
+                if (_Player.InputCompo.isAchromatlcEnable && _swithAnim)
                 {
                     _Player.IntaractionCompo.OnInteractionEvnets.RemoveListener(() => SwithOn());
                 }
-                else
+                else if(_Player.InputCompo.isAchromatlcEnable && !_swithAnim)
                 {
                     _Player.IntaractionCompo.OnInteractionEvnets.RemoveListener(() => SwithOff());
                 }
@@ -125,6 +126,7 @@ public class SwithOnOff : MonoBehaviour
 
     private void SwithOn()
     {
+        _swithAnim.isON = true;
         _animator.SetBool("ON",true);
     }
 
