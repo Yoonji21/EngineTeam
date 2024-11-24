@@ -126,13 +126,11 @@ public class SwithOnOff : MonoBehaviour
 
     private void SwithOn()
     {
-        _swithAnim.isON = true;
         _animator.SetBool("ON",true);
     }
 
     private void SwithOff()
     {
-        _swithAnim.isON = false;
         _animator.SetBool("ON", false);
     }
 

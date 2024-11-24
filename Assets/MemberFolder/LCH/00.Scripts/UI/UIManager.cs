@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
     {
         if(isClearColor && isClearNoColor)
         {
-            if(SceneManagers.Inatnce.CurrentSceneLevel < 9)
+            if(SceneManagers.Inatnce.CurrentSceneLevel < 10)
             {
                 _stageText.text = $"Stage {SceneManagers.Inatnce.CurrentSceneLevel} Clear";
                 _clearUiOpen.SetActive(true);

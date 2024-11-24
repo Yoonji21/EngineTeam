@@ -9,6 +9,7 @@ public class ToadstoolAnim : MonoBehaviour
     [SerializeField] private GameObject OffElement;
     [SerializeField] private GameObject[] OffElements;
     public bool isON { get; set; } = false;
+    private bool _isFristOn = true;
 
     private Player _colorPlayer;
     private Player _noColorPlayer;
@@ -26,13 +27,25 @@ public class ToadstoolAnim : MonoBehaviour
 
     public void EndAnimCall()
     {
+
+
+        if (_isFristOn)
+        {
+            isON = true;
+            _isFristOn = false;
+        }
+        else
+        {
+            isON = false;
+            _isFristOn = true;
+        }
         if (isON)
         {
             Element.SetActive(false);
             OffElement.SetActive(true);
             for (int i = 0; i < Elements.Length; i++)
             {
-                
+
                 Elements[i].SetActive(false);
             }
             for (int i = 0; i < OffElements.Length; i++)
