@@ -51,6 +51,14 @@ public class SwithOnOff : MonoBehaviour
         if (IsTrggerEnd)
         {
             _swithAnim.EndAnimCall();
+            if (!_swithAnim.isON)
+            {
+                _swithAnim.isON = true;
+            }
+            else
+            {
+                _swithAnim.isON = false;
+            }
             IsTrggerEnd = false;
         }
 
@@ -74,7 +82,6 @@ public class SwithOnOff : MonoBehaviour
 
         if (IsNoColorPlayerCheck())
         {
-
             _fkey.SetActive(true);
             _Player = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
             _Player.isSwithingPlayer = false;
@@ -130,7 +137,6 @@ public class SwithOnOff : MonoBehaviour
 
     private void SwithOff()
     {
-        _swithAnim.isON = false;
         _animator.SetBool("ON", false);
     }
 

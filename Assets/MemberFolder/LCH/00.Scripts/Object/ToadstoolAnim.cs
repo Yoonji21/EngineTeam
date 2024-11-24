@@ -9,16 +9,15 @@ public class ToadstoolAnim : MonoBehaviour
     [SerializeField] private GameObject OffElement;
     [SerializeField] private GameObject[] OffElements;
     public bool isON { get; set; } = false;
+    private bool isFirstSwithOn { get; set; } = true;
 
     private Player _colorPlayer;
     private Player _noColorPlayer;
-    private SwithOnOff _swith;
 
     private void Awake()
     {
         _colorPlayer = GameObject.FindWithTag("ColorPlayer").GetComponent<Player>();
         _noColorPlayer = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
-        _swith = GetComponentInParent<SwithOnOff>();
 
         if (Element == null)
             return;
@@ -28,12 +27,28 @@ public class ToadstoolAnim : MonoBehaviour
 
     public void EndAnimCall()
     {
-        if (isON)
+
+        if (isFirstSwithOn)
         {
-            if (Element == null)
-                return;
-            if (Elements == null)
-                return;
+            Debug.Log("첫 스위치");
+            Element.SetActive(false);
+            OffElement.SetActive(true);
+            for (int i = 0; i < Elements.Length; i++)
+            {
+
+                Elements[i].SetActive(false);
+            }
+            for (int i = 0; i < OffElements.Length; i++)
+            {
+                OffElements[i].SetActive(true);
+            }
+            _colorPlayer.isSwithOn = true;
+            _noColorPlayer.isSwithOn = true;
+            isFirstSwithOn = false;
+        }
+
+        if (isON && !isFirstSwithOn)
+        {
             Element.SetActive(false);
             OffElement.SetActive(true);
             for (int i = 0; i < Elements.Length; i++)
@@ -49,12 +64,8 @@ public class ToadstoolAnim : MonoBehaviour
             _noColorPlayer.isSwithOn = true;
 
         }
-        else
+        if(!isON && !isFirstSwithOn)
         {
-            if (Element == null)
-                return;
-            if (Elements == null)
-                return;
             Element.SetActive(true);
             OffElement.SetActive(false);
             for (int i = 0; i < Elements.Length; i++)
