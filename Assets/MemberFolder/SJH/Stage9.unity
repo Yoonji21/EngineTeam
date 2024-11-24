@@ -17588,7 +17588,6 @@ MonoBehaviour:
     m_Bits: 2048
   _fkey: {fileID: 7631542409775316781}
   IsTrggerEnd: 0
-  isOn: 0
 --- !u!61 &4960793142765322632
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18539,7 +18538,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: bb8974ab643e57847af9be45a14489c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18652,7 +18651,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: bb8974ab643e57847af9be45a14489c0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
