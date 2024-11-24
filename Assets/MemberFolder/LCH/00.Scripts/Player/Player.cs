@@ -40,7 +40,6 @@ public abstract class Player : Entity
     [field : SerializeField] public float _jumpPower { get;  set; } = 40f;
 
     public bool isSwithOn { get; set; } = false;
-    public bool isOn;
 
     public bool isSwithingPlayer = true;
 

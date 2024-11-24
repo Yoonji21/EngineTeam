@@ -13,10 +13,12 @@ public class SwithOnOff : MonoBehaviour
     [SerializeField] private LayerMask _whatIsNoColorPlayer;
     [SerializeField] private GameObject _fkey;
     private AnimationTrigger _animTrigger;
+    private Animator _animator;
     public bool IsTrggerEnd;
 
     private void Awake()
     {
+        _animator = GetComponentInChildren<Animator>();
         _animTrigger = GetComponentInChildren<AnimationTrigger>();
         _swithAnim = GetComponentInChildren<ToadstoolAnim>();
     }
@@ -57,9 +59,15 @@ public class SwithOnOff : MonoBehaviour
             _fkey.SetActive(true);
             _Player = GameObject.FindWithTag("ColorPlayer").GetComponent<Player>();
             _Player.isSwithingPlayer = false;
-            if (_Player.InputCompo.isAchromatlcEnable)
+            if (_Player.InputCompo.isAchromatlcEnable && !_swithAnim.isON)
             {
+                _Player.IntaractionCompo.OnInteractionEvnets.RemoveAllListeners();
                 _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
+            }
+            if(_Player.InputCompo.isAchromatlcEnable && _swithAnim.isON)
+            {
+                _Player.IntaractionCompo.OnInteractionEvnets.RemoveAllListeners();
+                _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOff());
             }
 
         }
@@ -70,9 +78,15 @@ public class SwithOnOff : MonoBehaviour
             _fkey.SetActive(true);
             _Player = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
             _Player.isSwithingPlayer = false;
-            if (_Player.InputCompo.isChromatlEablbe)
+            if (_Player.InputCompo.isChromatlEablbe && !_swithAnim.isON)
             {
+                _Player.IntaractionCompo.OnInteractionEvnets.RemoveAllListeners();
                 _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
+            }
+            if(_Player.InputCompo.isChromatlEablbe && _swithAnim.isON)
+            {
+                _Player.IntaractionCompo.OnInteractionEvnets.RemoveAllListeners();
+                _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOff());
             }
         }
 
@@ -80,7 +94,7 @@ public class SwithOnOff : MonoBehaviour
         {
             _fkey.SetActive(false);
             _Player = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
-            if (_Player.InputCompo.isChromatlEablbe)
+            if (_Player.InputCompo.isChromatlEablbe && _swithAnim)
             {
                 _Player.isSwithingPlayer = true;
                 _Player.IntaractionCompo.OnInteractionEvnets.RemoveListener(() => SwithOn());
@@ -97,33 +111,27 @@ public class SwithOnOff : MonoBehaviour
             if (_Player.InputCompo.isAchromatlcEnable)
             {
                 _Player.isSwithingPlayer = true;
-                _Player.IntaractionCompo.OnInteractionEvnets.RemoveListener(() => SwithOn());
-            }
-            else
-            {
-                _Player.IntaractionCompo.OnInteractionEvnets.RemoveListener(() => SwithOn());
+                if (_swithAnim.isON)
+                {
+                    _Player.IntaractionCompo.OnInteractionEvnets.RemoveListener(() => SwithOn());
+                }
+                else
+                {
+                    _Player.IntaractionCompo.OnInteractionEvnets.RemoveListener(() => SwithOff());
+                }
             }
         }
     }
 
     private void SwithOn()
     {
-        if(!_swithAnim.isON && !_Player.isSwithOn)
-        {
-            _swithAnim.isON = true;
-        }
-        if (_swithAnim.isON&&_Player.isSwithOn)
-        {
-            _swithAnim.isON = false;
-        }
-        if (!_Player.isSwithOn && _swithAnim.isON)
-        {
-            _Player.isSwithOn = true;         
-        }
-        if (_Player.isSwithOn && !_swithAnim.isON)
-        {
-            _Player.isSwithOn = false;
-        }
+        _animator.SetBool("ON",true);
+    }
+
+    private void SwithOff()
+    {
+        _swithAnim.isON = false;
+        _animator.SetBool("ON", false);
     }
 
     private void OnSwithAnimEnd()

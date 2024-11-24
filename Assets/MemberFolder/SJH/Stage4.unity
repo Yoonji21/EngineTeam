@@ -15101,7 +15101,6 @@ MonoBehaviour:
   _objCheckSize: {x: 1.09, y: 0.93}
   _checkTrm: {fileID: 2035678651}
   <_jumpPower>k__BackingField: 12
-  isOn: 0
   isSwithingPlayer: 1
   stateMachine: {fileID: 0}
   isExitDoor: 0
@@ -15407,7 +15406,6 @@ MonoBehaviour:
   _objCheckSize: {x: 1.09, y: 0.9}
   _checkTrm: {fileID: 1595857130}
   <_jumpPower>k__BackingField: 12
-  isOn: 0
   isSwithingPlayer: 1
   stateMachine: {fileID: 0}
   isExitDoor: 0
@@ -17005,7 +17003,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Element: {fileID: 1633179378}
   Elements:
-  - {fileID: 1942039563}
+  - {fileID: 147165088}
+  - {fileID: 167307683}
   OffElement: {fileID: 1793171566}
   OffElements:
   - {fileID: 1793171566}
@@ -17023,7 +17022,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Element: {fileID: 1633179378}
   Elements:
-  - {fileID: 1942039563}
+  - {fileID: 147165088}
+  - {fileID: 167307683}
   OffElement: {fileID: 1793171566}
   OffElements:
   - {fileID: 1793171566}
@@ -17551,7 +17551,6 @@ MonoBehaviour:
     m_Bits: 2048
   _fkey: {fileID: 7631542409259371763}
   IsTrggerEnd: 0
-  isOn: 0
 --- !u!114 &4916654798159988300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17574,7 +17573,6 @@ MonoBehaviour:
     m_Bits: 2048
   _fkey: {fileID: 7631542409409248377}
   IsTrggerEnd: 0
-  isOn: 0
 --- !u!61 &4960793141184508502
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -10,15 +10,12 @@ public class ToadstoolAnim : MonoBehaviour
     [SerializeField] private GameObject[] OffElements;
     public bool isON { get; set; } = false;
 
-
-    private Animator _animator;
     private Player _colorPlayer;
     private Player _noColorPlayer;
     private SwithOnOff _swith;
 
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
         _colorPlayer = GameObject.FindWithTag("ColorPlayer").GetComponent<Player>();
         _noColorPlayer = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
         _swith = GetComponentInParent<SwithOnOff>();
@@ -27,18 +24,6 @@ public class ToadstoolAnim : MonoBehaviour
             return;
         if (Elements == null)
             return;
-    }
-
-    private void Update()
-    {
-        OffDicPlayer();
-    }
-    
-
-    public void OffDicPlayer()
-    {
-        Debug.Log(isON);
-        _animator.SetBool("ON", isON);
     }
 
     public void EndAnimCall()
@@ -62,8 +47,6 @@ public class ToadstoolAnim : MonoBehaviour
             }
             _colorPlayer.isSwithOn = true;
             _noColorPlayer.isSwithOn = true;
-            _colorPlayer.isOn = true;
-            _noColorPlayer.isOn = true;
 
         }
         else
@@ -84,8 +67,6 @@ public class ToadstoolAnim : MonoBehaviour
             }
             _colorPlayer.isSwithOn = false;
             _noColorPlayer.isSwithOn = false;
-            _colorPlayer.isOn = false;
-            _colorPlayer.isOn = false;
 
         }
     }
