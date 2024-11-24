@@ -28,7 +28,6 @@ public class ToadstoolAnim : MonoBehaviour
     public void EndAnimCall()
     {
 
-
         if (_isFristOn)
         {
             isON = true;

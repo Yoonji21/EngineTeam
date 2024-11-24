@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioMixer _audioMixer;
 
     public AudioSource _audioSource;
-    public Slider _slider;
+    //public Slider _slider;
 
     public bool isOn = false;
 
@@ -21,6 +21,10 @@ public class AudioManager : MonoBehaviour
         if(Intacne == null)
         {
             Intacne = this;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
         
         DontDestroyOnLoad(gameObject);

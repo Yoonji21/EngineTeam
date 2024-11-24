@@ -21353,7 +21353,6 @@ MonoBehaviour:
   _objCheckSize: {x: 1.09, y: 0.93}
   _checkTrm: {fileID: 4905861171084990139}
   <_jumpPower>k__BackingField: 12
-  isOn: 0
   isSwithingPlayer: 1
   stateMachine: {fileID: 0}
   isExitDoor: 0
@@ -21682,7 +21681,6 @@ MonoBehaviour:
   _objCheckSize: {x: 1.09, y: 0.9}
   _checkTrm: {fileID: 7079263537276771088}
   <_jumpPower>k__BackingField: 12
-  isOn: 0
   isSwithingPlayer: 1
   stateMachine: {fileID: 0}
   isExitDoor: 0
@@ -21750,7 +21748,7 @@ MonoBehaviour:
   linerenderer: {fileID: 8339917743475403308}
   target:
     serializedVersion: 2
-    m_Bits: 1664
+    m_Bits: 3712
   respawn: {fileID: 1846803268}
 --- !u!1 &7012100233437015857
 GameObject:

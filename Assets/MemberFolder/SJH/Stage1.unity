@@ -810,7 +810,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.625
+  orthographic size: 3.296875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -16925,7 +16925,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.035975523, y: -0.029526055}
+  m_Offset: {x: 0.02451681, y: -0.016147375}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -16936,7 +16936,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.089338824, y: 0.65755427}
+  m_Size: {x: 0.066421404, y: 0.6843116}
   m_EdgeRadius: 0
 --- !u!114 &1613538137370992405
 MonoBehaviour:
@@ -19928,10 +19928,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.3656884, y: -0.36830387}
+    - - {x: 0.3753138, y: 0.28483036}
+      - {x: 0.3656884, y: -0.36830387}
       - {x: -0.35094896, y: -0.3701407}
-      - {x: 0.33027938, y: 0.33651504}
-      - {x: 0.3626091, y: 0.36682406}
+      - {x: 0.34370774, y: 0.34562707}
+      - {x: 0.35050076, y: 0.3521248}
+      - {x: 0.37555775, y: 0.3749767}
   m_UseDelaunayMesh: 0
 --- !u!61 &7915810130755348572
 BoxCollider2D:

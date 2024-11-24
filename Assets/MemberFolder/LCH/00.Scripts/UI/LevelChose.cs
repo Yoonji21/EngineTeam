@@ -37,6 +37,7 @@ public class LevelChose : MonoBehaviour
 
     public void BackButtonClik()
     {
+        DataManger.Intance.SaveData();
         SceneManager.LoadScene(0);
     }
 }
