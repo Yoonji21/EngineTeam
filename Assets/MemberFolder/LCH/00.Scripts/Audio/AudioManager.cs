@@ -13,7 +13,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource _audioSource;
     public Slider _slider;
 
-    public      bool isOn = false;
+    public bool isOn = false;
 
 
     private void Awake()
@@ -21,10 +21,6 @@ public class AudioManager : MonoBehaviour
         if(Intacne == null)
         {
             Intacne = this;
-        }
-        else
-        {
-            Destroy(gameObject);
         }
         
         DontDestroyOnLoad(gameObject);
