@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
 
     public static AudioManager Intacne;
+    public AudioMixer _audioMixer;
 
     private void Awake()
     {
@@ -19,5 +21,10 @@ public class AudioManager : MonoBehaviour
         }
         
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void MuteSound()
+    {
+        _audioMixer.SetFloat("Master", -80f);
     }
 }

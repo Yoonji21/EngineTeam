@@ -673,6 +673,26 @@ PrefabInstance:
       propertyPath: _mainUI
       value: 
       objectReference: {fileID: 231138944}
+    - target: {fileID: 6094141780205107558, guid: eac048ce67177004c9062b97161a59fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6094141780205107558, guid: eac048ce67177004c9062b97161a59fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1142832904}
+    - target: {fileID: 6094141780205107558, guid: eac048ce67177004c9062b97161a59fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MuteSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6094141780205107558, guid: eac048ce67177004c9062b97161a59fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6094141780205107558, guid: eac048ce67177004c9062b97161a59fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -875,6 +895,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1142832904 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5301824522640821819, guid: eac048ce67177004c9062b97161a59fc, type: 3}
+  m_PrefabInstance: {fileID: 416358844}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf1afcd5db44c04438d95f6bf200d508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1265117207
@@ -1196,6 +1227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf1afcd5db44c04438d95f6bf200d508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioMixer: {fileID: 0}
 --- !u!1 &2058037251
 GameObject:
   m_ObjectHideFlags: 0

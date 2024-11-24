@@ -791,7 +791,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6678812919468794040}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5301824522640821819}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: MuteSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4480889580071177447
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,6 +814,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2117013610610808246}
   - component: {fileID: 5922078055732141289}
+  - component: {fileID: 5301824522640821819}
   m_Layer: 0
   m_Name: SettingUI
   m_TagString: Untagged
@@ -839,6 +852,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _settingUI: {fileID: 5872302184666654213}
   _dataSO: {fileID: 11400000, guid: 1549d5ccdcec4e7468f82d235ca1a4cd, type: 2}
+--- !u!114 &5301824522640821819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4480889580071177447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf1afcd5db44c04438d95f6bf200d508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioMixer: {fileID: 24100000, guid: 7f7abaa1171b93645927b73e86836cd0, type: 2}
 --- !u!1 &4801871101271004604
 GameObject:
   m_ObjectHideFlags: 0
