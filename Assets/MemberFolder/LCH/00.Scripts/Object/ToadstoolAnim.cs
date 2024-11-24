@@ -9,7 +9,6 @@ public class ToadstoolAnim : MonoBehaviour
     [SerializeField] private GameObject OffElement;
     [SerializeField] private GameObject[] OffElements;
     public bool isON { get; set; } = false;
-    private bool isFirstSwithOn { get; set; } = true;
 
     private Player _colorPlayer;
     private Player _noColorPlayer;
@@ -27,27 +26,7 @@ public class ToadstoolAnim : MonoBehaviour
 
     public void EndAnimCall()
     {
-
-        if (isFirstSwithOn)
-        {
-            Debug.Log("첫 스위치");
-            Element.SetActive(false);
-            OffElement.SetActive(true);
-            for (int i = 0; i < Elements.Length; i++)
-            {
-
-                Elements[i].SetActive(false);
-            }
-            for (int i = 0; i < OffElements.Length; i++)
-            {
-                OffElements[i].SetActive(true);
-            }
-            _colorPlayer.isSwithOn = true;
-            _noColorPlayer.isSwithOn = true;
-            isFirstSwithOn = false;
-        }
-
-        if (isON && !isFirstSwithOn)
+        if (isON)
         {
             Element.SetActive(false);
             OffElement.SetActive(true);
@@ -62,9 +41,10 @@ public class ToadstoolAnim : MonoBehaviour
             }
             _colorPlayer.isSwithOn = true;
             _noColorPlayer.isSwithOn = true;
+            isON = false;
 
         }
-        if(!isON && !isFirstSwithOn)
+        else
         {
             Element.SetActive(true);
             OffElement.SetActive(false);
@@ -78,6 +58,7 @@ public class ToadstoolAnim : MonoBehaviour
             }
             _colorPlayer.isSwithOn = false;
             _noColorPlayer.isSwithOn = false;
+            isON = true;
 
         }
     }
