@@ -54,7 +54,7 @@ public class ToadstoolAnim : MonoBehaviour
             }
             _colorPlayer.isSwithOn = true;
             _noColorPlayer.isSwithOn = true;
-            isON = false;
+            isON = true;
 
         }
         else
@@ -71,7 +71,7 @@ public class ToadstoolAnim : MonoBehaviour
             }
             _colorPlayer.isSwithOn = false;
             _noColorPlayer.isSwithOn = false;
-            isON = true;
+            isON = false;
 
         }
     }
