@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
@@ -13,6 +14,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource _BGMSource;
     public AudioSource _SFXSource;
     //public Slider _slider;
+    private Animator _currentAnimator;
+    private BtnAnim _animTrigger;
 
     public bool isOn = false;
 
@@ -45,7 +48,10 @@ public class AudioManager : MonoBehaviour
 
     public void MuteSound()
     {
-
+        _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponent<Animator>();
+        _animTrigger = EventSystem.current.currentSelectedGameObject.GetComponent<BtnAnim>();
+        _currentAnimator.SetBool("IsClik", true);
+        _animTrigger.Anim = _currentAnimator;
         if (!isOn)
         {
             _BGMSource.mute = true;
