@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PushState : EntityState
 {
-
+    private PlayerMovement _mover;
     public PushState(Entity entity, AnimParamSO animParam) : base(entity, animParam)
     {
+        _mover = entity.GetCompo<PlayerMovement>();
     }
 
     public override void Enter()
