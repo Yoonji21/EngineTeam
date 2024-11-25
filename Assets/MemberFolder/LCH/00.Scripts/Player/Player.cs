@@ -1,35 +1,132 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using Cinemachine;
 
-public class Player : MonoBehaviour
+
+public enum PlayerType
 {
-	[field : SerializeField]public InputSystem InputCompo { get; private set; }
-    public PlayerMovement MovementCompo { get; private set; }
-    public SwitchingPlayer SwitchingCompo { get; private set; }
-    
-    public Interaction IntaractionCompo { get; private set; }
+    Idle, 
+    Jump, 
+    Fail, 
+    Move, 
+    Push, 
+    SwithUp
+}
+public abstract class Player : Entity
+{
 
-    private void Awake()
+    [Header("FSM")]
+    [SerializeField] private EntityStatesSO _playerFSM;
+
+    [field: SerializeField] public InputSystem InputCompo { get; set; }
+    [field : SerializeField]public PlayerMovement MovementCompo { get; protected set; }
+
+    [field: SerializeField] public Interaction IntaractionCompo { get; protected set; }
+
+    [field : SerializeField] public AchromaticType AchromaticTypes { get; protected set; }
+    [field: SerializeField] public ChromatiType ChromatiTypes { get; protected set; }
+
+    public GameObject Artifact;
+
+    public bool isChromatilColorArtifact = false;
+
+    [SerializeField] private LayerMask whatIsPushObj;
+    [SerializeField] private LayerMask whatIsToadstoolObj;
+    [SerializeField] private Vector2 _objCheckSize;
+    [SerializeField] private Transform _checkTrm;
+    [field : SerializeField] public float _jumpPower { get;  set; } = 40f;
+
+    public bool isSwithOn { get; set; } = false;
+
+    public bool isSwithingPlayer = true;
+
+    [SerializeField] public StateMachine stateMachine;
+
+    public EntityState CurrentState => stateMachine.currentState;
+
+    public bool IsPushObj()
     {
-        IntaractionCompo = GetComponent<Interaction>();
-        MovementCompo = GetComponent<PlayerMovement>();
-        SwitchingCompo = GetComponent<SwitchingPlayer>();
+        bool isPushObj = Physics2D.OverlapBox(_checkTrm.position,_objCheckSize ,0,whatIsPushObj);
+        return isPushObj;
     }
 
-    private void OnEnable()
+    public bool IsToadstoolObj()
     {
-        InputCompo.OnMovementEvent += MovementCompo.GetMove;
-        InputCompo.OnJumpEvent += MovementCompo.GetJump;
-        InputCompo.OnswithingPlayerEvent += SwitchingCompo.SwitchingPlayerUI;
-        InputCompo.OnInteractionEvent += IntaractionCompo.InteractionPress;
+        bool isToadstoolobj = Physics2D.OverlapBox(_checkTrm.position, _objCheckSize, 0, whatIsToadstoolObj);
+        return isToadstoolobj;
     }
 
-    private void OnDisable()
+    protected override void AfterInit()
     {
-        InputCompo.OnInteractionEvent -= IntaractionCompo.InteractionPress;
-        InputCompo.OnswithingPlayerEvent -= SwitchingCompo.SwitchingPlayerUI;
-        InputCompo.OnMovementEvent -= MovementCompo.GetMove;
-        InputCompo.OnJumpEvent -= MovementCompo.GetJump;
+        base.AfterInit();
+        stateMachine = new StateMachine(_playerFSM, this);
+        stateMachine.Initialize("Idle");
+        IntaractionCompo.GetComponent<Interaction>();
+        GetCompo<AnimationTrigger>().OnAnimationEnd += HandleAnimationEnd;
     }
+
+    protected void HandheldJump()
+    {
+        if (MovementCompo.IsGrounded)
+        {
+            stateMachine.ChangeState("Jump");
+        }
+    }
+
+    private void OnDestroy()
+    {
+        GetCompo<AnimationTrigger>().OnAnimationEnd += HandleAnimationEnd;
+    }
+
+
+    protected void HandleAnimationEnd()
+    {
+        CurrentState.AnimationEndTrigger();
+    }
+
+   protected virtual void Update()
+    {
+        stateMachine.currentState.Update();
+    }
+
+    public EntityState GetState(string state) => stateMachine.GetState(state);
+
+    public void ChangeState(string newState) => stateMachine.ChangeState(newState);
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(_checkTrm.position, _objCheckSize);
+       
+    }
+}
+
+
+[Serializable]
+public struct AchromaticType
+{
+    public GameObject SwithingUI;
+    public Player SwithingPlayer;
+    public SpriteRenderer PlayerVisual;
+    public GameObject MyBackGround;
+    public Rigidbody2D MyRigidbody;
+    public CinemachineVirtualCamera Vcame;
+    public BoxCollider2D MyBoxCollider;
+    public GameObject MyArtifact;
+}
+
+[Serializable]
+public struct ChromatiType
+{
+    public GameObject SwithingUI;
+    public Player SwithingPlayer;
+    public SpriteRenderer PlayerVisual;
+    public GameObject MyBackGround;
+    public Rigidbody2D MyRigidbody;
+    public CinemachineVirtualCamera Vcame;
+    public BoxCollider2D MyBoxCollider;
+    public GameObject MyArtifact;
 }

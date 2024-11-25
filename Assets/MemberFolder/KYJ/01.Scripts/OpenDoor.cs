@@ -4,25 +4,51 @@ using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
-    [SerializeField] private BoxCollider2D _boxCollider;
+    private Animator _animator;
+    private AnimationTrigger _animTrigger;
+    private bool _isEndTrigger = false;
+
+    private void Awake()
+    {
+        _animator = GetComponentInChildren<Animator>();
+        _animTrigger = GetComponentInChildren<AnimationTrigger>();
+    }
+
+    private void OnEnable()
+    {
+        _animTrigger.OnAnimationEnd += AnimEndTrigger;
+    }
+
+    private void OnDestroy()
+    {
+        _animTrigger.OnAnimationEnd -= AnimEndTrigger;
+    }
+
+    private void Update()
+    {
+        if (_isEndTrigger)
+        {
+            _isEndTrigger = false;
+            Destroy(gameObject);
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Key key = collision.gameObject.GetComponentInChildren<Key>();
+        Key key = collision.gameObject.GetComponent<Key>();
 
-        if (key != null)
-        {
-            if (key.hasKey)
+            if (collision.gameObject.CompareTag("Key"))
             {
-                key.hasKey = false;
-                _boxCollider.enabled = false;
                 key.DestroyKey();
-            }
-        }
 
-        else
-        {
-            _boxCollider.enabled = true;
-        }
+                _animator.SetBool("Open", true);
+                print("open");
+            }
+
+    }
+
+    private void AnimEndTrigger()
+    {
+        _isEndTrigger = true;
     }
 }

@@ -1,24 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
-public class SwitchingPlayer : MonoBehaviour
+public interface ISwitchingPlayer
 {
+    public void MyPlayer(GameObject UI, SpriteRenderer player, GameObject mybackGround,
+        Rigidbody2D rbcompo, CinemachineVirtualCamera vCam, BoxCollider2D boxCollider,
+        GameObject Artifact);
 
-    [SerializeField] private GameObject _switchingUI;
-    [SerializeField] private GameObject _player;
-
-    public void SwitchingPlayerUI()
-    {
-        StartCoroutine(UIclose(_switchingUI, _player, 0.5f));
-    }
-
-    private IEnumerator UIclose(GameObject UI, GameObject player, float timer)
-    {
-        UI.SetActive(true);
-        yield return new WaitForSeconds(timer);
-        UI.SetActive(false);
-        gameObject.SetActive(false);
-        player.SetActive(true);
-    }
+    public void SwithinPlayerType(Player swithingPlayer, SpriteRenderer player, GameObject mybackGround,
+        Rigidbody2D rbcompo, CinemachineVirtualCamera vCam, BoxCollider2D boxCollider,
+        GameObject Artifact);
 }

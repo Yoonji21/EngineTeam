@@ -6,6 +6,39 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/MemberFolder/LCH/MainScene.unity
+    guid: e0f1c90f16da7c24f98d630d79f9dca9
+  - enabled: 1
+    path: Assets/MemberFolder/LCH/LevelSelect.unity
+    guid: dfc45ccd955ded946bd58f6f1931eed2
+  - enabled: 1
+    path: Assets/MemberFolder/SJH/Stage1.unity
+    guid: 39bec1fe45f9e1840b3e205f00adff86
+  - enabled: 1
+    path: Assets/MemberFolder/SJH/Stage2.unity
+    guid: 182149536d99333439738833559bbfb1
+  - enabled: 1
+    path: Assets/MemberFolder/SJH/Stage3.unity
+    guid: e881ab7acb9bedd408066937676178d7
+  - enabled: 1
+    path: Assets/MemberFolder/SJH/Stage4.unity
+    guid: 948e8c1f065da3b469760bdb974dd81b
+  - enabled: 1
+    path: Assets/MemberFolder/SJH/Stage6.unity
+    guid: 7b283d891d2c3774da72cb0542ecc15f
+  - enabled: 1
+    path: Assets/MemberFolder/SJH/Stage5.unity
+    guid: 5b9f658c570271e41a654adf11f5d025
+  - enabled: 1
+    path: Assets/MemberFolder/KYJ/00.Scenes/Stage7.unity
+    guid: a1f5c5df2428f6d459580747517ea6f3
+  - enabled: 1
+    path: Assets/MemberFolder/KYJ/00.Scenes/Stage8.unity
+    guid: 27d59814fae53af40a23313f075dbf70
+  - enabled: 1
+    path: Assets/MemberFolder/SJH/Stage9.unity
+    guid: 46e0d01213d1e994f8eea023fe46b70a
+  - enabled: 1
+    path: Assets/MemberFolder/SJH/Stage10.unity
+    guid: a44c2301493425948b57b5e800f80538
   m_configObjects: {}

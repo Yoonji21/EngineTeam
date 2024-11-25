@@ -8,14 +8,16 @@ using static InputReder;
 [CreateAssetMenu(menuName = "SO/InputSo")]
 public class InputSystem : ScriptableObject, IPlayerActions
 {
-
-    public Action<Vector2> OnMovementEvent;
+    public bool isChromatlEablbe = false;
+    public bool isAchromatlcEnable = true;
+    public Vector2 InputDriection { get; private set; }
     public Action OnJumpEvent;
-    public Action OnswithingPlayerEvent;
+    public Action OnswithingPlayerColorEvent;
+    public Action OnswithingPlayerNoColorEvent;
     public Action OnHoldObjEvent;
     public Action OnInteractionEvent;
 
-    private InputReder _playerInputAction;
+    public InputReder _playerInputAction;
 
     private void OnEnable()
     {
@@ -27,6 +29,11 @@ public class InputSystem : ScriptableObject, IPlayerActions
         _playerInputAction.Player.Enable(); //È°¼ºÈ­
     }
 
+    private void OnDisable()
+    {
+        
+    }
+
 
     public void OnHold(InputAction.CallbackContext context)
     {
@@ -35,7 +42,15 @@ public class InputSystem : ScriptableObject, IPlayerActions
 
     public void OnInteractions(InputAction.CallbackContext context)
     {
-        OnInteractionEvent?.Invoke();
+        if (isChromatlEablbe)
+        {
+            OnInteractionEvent?.Invoke();
+        }
+
+        if (isAchromatlcEnable)
+        {
+            OnInteractionEvent?.Invoke();
+        }
     }
 
     public void OnJunmp(InputAction.CallbackContext context)
@@ -48,12 +63,21 @@ public class InputSystem : ScriptableObject, IPlayerActions
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        Vector2 value = context.ReadValue<Vector2>();
-        OnMovementEvent?.Invoke(value);
+        InputDriection = context.ReadValue<Vector2>();
     }
 
     public void OnSwitchingPlayer(InputAction.CallbackContext context)
     {
-        OnswithingPlayerEvent?.Invoke();
+        if (context.performed)
+        {
+            if (isAchromatlcEnable)
+            {
+                OnswithingPlayerColorEvent?.Invoke();
+            }
+            else if (isChromatlEablbe)
+            {
+                OnswithingPlayerNoColorEvent?.Invoke();
+            }
+        }
     }
 }
