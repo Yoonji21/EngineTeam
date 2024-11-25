@@ -90,13 +90,13 @@ public class ChromatiColor : Player,ISwitchingPlayer
 
     private IEnumerator SwithingPlayer()
     {
+        InputCompo.isChromatlEablbe = false;
+        InputCompo.isAchromatlcEnable = true;
         MyPlayer(ChromatiTypes.SwithingUI, ChromatiTypes.PlayerVisual, ChromatiTypes.MyBackGround, ChromatiTypes.MyRigidbody,
         ChromatiTypes.Vcame, ChromatiTypes.MyBoxCollider, ChromatiTypes.MyArtifact);
        SwithinPlayerType(AchromaticTypes.SwithingPlayer, AchromaticTypes.PlayerVisual, AchromaticTypes.MyBackGround, AchromaticTypes.MyRigidbody
        , AchromaticTypes.Vcame, AchromaticTypes.MyBoxCollider, AchromaticTypes.MyArtifact);
         yield return new WaitForSeconds(0.5f);
-        InputCompo.isChromatlEablbe = false;
-        InputCompo.isAchromatlcEnable = true;
         ChromatiTypes.SwithingUI.SetActive(false);
     }
 

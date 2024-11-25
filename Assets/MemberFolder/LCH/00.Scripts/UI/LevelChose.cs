@@ -32,11 +32,12 @@ public class LevelChose : MonoBehaviour
         SceneManagers.Inatnce.CurrentSceneLevel = sceneCount -1;
         SceneManagers.Inatnce.CurrentSceneNum = sceneCount;
         SceneManager.LoadScene(sceneCount);
-        UIManager.Intance.StageUI.gameObject.SetActive(true);
+        UIManager.Intance.StageUI.SetActive(true);
     }
 
     public void BackButtonClik()
     {
+        DataManger.Intance.SaveData();
         SceneManager.LoadScene(0);
     }
 }

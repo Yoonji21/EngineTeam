@@ -44,7 +44,16 @@ public class Camera : MonoBehaviour
                 if (playerHit.collider != null && playerHit.collider.transform == player)
                 {
                     // 플레이어가 감지됨
-
+                    if (player.TryGetComponent(out ChromatiColor chromatiPlayer))
+                    {
+                        if (!chromatiPlayer.InputCompo.isChromatlEablbe)
+                            return;
+                    }
+                    if(player.TryGetComponent(out Achromatic achromaticPlayer))
+                    {
+                        if (!achromaticPlayer.InputCompo.isAchromatlcEnable)
+                            return;
+                    }
                     respawn.RespawnObject(true, player.transform);
                 }
             }

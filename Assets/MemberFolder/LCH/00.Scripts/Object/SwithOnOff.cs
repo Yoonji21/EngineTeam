@@ -6,17 +6,20 @@ using UnityEngine;
 public class SwithOnOff : MonoBehaviour
 {
 
-    private Player  _player;
+    public Player _Player;
     private ToadstoolAnim _swithAnim;
     [SerializeField] private Vector2 _checkerSize;
     [SerializeField] private LayerMask _whatIsColorPlayer;
     [SerializeField] private LayerMask _whatIsNoColorPlayer;
     [SerializeField] private GameObject _fkey;
     private AnimationTrigger _animTrigger;
+    private Animator _animator;
     public bool IsTrggerEnd;
+    public bool isAnim;
 
     private void Awake()
     {
+        _animator = GetComponentInChildren<Animator>();
         _animTrigger = GetComponentInChildren<AnimationTrigger>();
         _swithAnim = GetComponentInChildren<ToadstoolAnim>();
     }
@@ -45,77 +48,94 @@ public class SwithOnOff : MonoBehaviour
 
     private void Update()
     {
-
         if (IsTrggerEnd)
         {
             _swithAnim.EndAnimCall();
             IsTrggerEnd = false;
-            if(!_player.isSwithOn)
-            {
-                _player.isSwithOn = true;
-            }
-            else
-            {
-                _player.isSwithOn = false;
-            }
         }
 
         if (IsColorPlayerCheck())
         {
             _fkey.SetActive(true);
-            _player = GameObject.FindWithTag("ColorPlayer").GetComponent<Player>();
-            if (!_player.InputCompo.isAchromatlcEnable || !IsColorPlayerCheck())
+            _Player = GameObject.FindWithTag("ColorPlayer").GetComponent<Player>();
+            _Player.isSwithingPlayer = false;
+            if (_Player.InputCompo.isAchromatlcEnable && !_swithAnim.isON)
             {
-                _fkey.SetActive(false);
-                _player.IntaractionCompo.OnInteractionEvnets.RemoveAllListeners();
+                _Player.IntaractionCompo.OnInteractionEvnets.RemoveAllListeners();
+                _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
             }
-            if (_player.InputCompo.isAchromatlcEnable&&!_swithAnim.isON && !_player.isSwithOn)
+            if(_Player.InputCompo.isAchromatlcEnable && _swithAnim.isON)
             {
-              _player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
-            }
-            if (_swithAnim.isON && _player.InputCompo.isAchromatlcEnable && _player.isSwithOn)
-            {
-                _player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOff());
+                _Player.IntaractionCompo.OnInteractionEvnets.RemoveAllListeners();
+                _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOff());
             }
 
         }
 
         if (IsNoColorPlayerCheck())
         {
-            
             _fkey.SetActive(true);
-            _player = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
-            if (!_player.InputCompo.isChromatlEablbe || !IsNoColorPlayerCheck())
+            _Player = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
+            _Player.isSwithingPlayer = false;
+            if (_Player.InputCompo.isChromatlEablbe && !_swithAnim.isON )
             {
-                _fkey.SetActive(false);
-                _player.IntaractionCompo.OnInteractionEvnets.RemoveAllListeners();
+                _Player.IntaractionCompo.OnInteractionEvnets.RemoveAllListeners();
+                _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
             }
-            if (_player.InputCompo.isChromatlEablbe && !_swithAnim.isON && !_player.isSwithOn)
+            if(_Player.InputCompo.isChromatlEablbe && _swithAnim.isON)
             {
-                _player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOn());
+                _Player.IntaractionCompo.OnInteractionEvnets.RemoveAllListeners();
+                _Player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOff());
             }
-            if (_swithAnim.isON && _player.InputCompo.isChromatlEablbe && _player.isSwithOn)
-            {
-                _player.IntaractionCompo.OnInteractionEvnets.AddListener(() => SwithOff());
-            }
+        }
 
+        if (!IsNoColorPlayerCheck())
+        {
+            _fkey.SetActive(false);
+            _Player = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
+           
+            if (_Player.InputCompo.isChromatlEablbe && _swithAnim )
+            {
+                _Player.isSwithingPlayer = true;
+                _Player.IntaractionCompo.OnInteractionEvnets.RemoveListener(() => SwithOn());
+            }
+            else if(_Player.InputCompo.isChromatlEablbe && !_swithAnim )
+            {
+                _Player.IntaractionCompo.OnInteractionEvnets.RemoveListener(() => SwithOn());
+            }
+        }
+        if (!IsColorPlayerCheck())
+        {
+            _fkey.SetActive(false);
+            _Player = GameObject.FindWithTag("ColorPlayer").GetComponent<Player>();
+            if (_Player.InputCompo.isAchromatlcEnable)
+            {
+                _Player.isSwithingPlayer = true;
+                if (_Player.InputCompo.isAchromatlcEnable && _swithAnim)
+                {
+                    _Player.IntaractionCompo.OnInteractionEvnets.RemoveListener(() => SwithOn());
+                }
+                else if(_Player.InputCompo.isAchromatlcEnable && !_swithAnim)
+                {
+                    _Player.IntaractionCompo.OnInteractionEvnets.RemoveListener(() => SwithOff());
+                }
+            }
         }
     }
 
     private void SwithOn()
     {
-        _swithAnim.isON = true;
+        _animator.SetBool("ON",true);
+    }
+
+    private void SwithOff()
+    {
+        _animator.SetBool("ON", false);
     }
 
     private void OnSwithAnimEnd()
     {
         IsTrggerEnd = true;
-    }
-
-    private void SwithOff()
-    {
-        _swithAnim.isON = false;
-        
     }
 
     private void OnDrawGizmos()

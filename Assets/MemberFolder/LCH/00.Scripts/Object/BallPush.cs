@@ -7,6 +7,7 @@ public class BallPush : MonoBehaviour
     private Rigidbody2D _rbCompo;
 
     [SerializeField] private LayerMask _whatIsPlayer;
+    [SerializeField] private float _size;
 
     private void Awake()
     {
@@ -15,7 +16,7 @@ public class BallPush : MonoBehaviour
 
     public bool PlayerChecker()
     {
-        bool isbool = Physics2D.OverlapCircle(transform.position,0.5F, _whatIsPlayer);
+        bool isbool = Physics2D.OverlapCircle(transform.position, _size, _whatIsPlayer);
         return isbool;
     }
 
@@ -30,7 +31,7 @@ public class BallPush : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position,0.5F);
+        Gizmos.DrawWireSphere(transform.position,_size);
     }
 
 }

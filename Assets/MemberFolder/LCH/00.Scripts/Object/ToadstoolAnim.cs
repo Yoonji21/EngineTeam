@@ -8,16 +8,18 @@ public class ToadstoolAnim : MonoBehaviour
     [SerializeField] private GameObject[] Elements;
     [SerializeField] private GameObject OffElement;
     [SerializeField] private GameObject[] OffElements;
+    private SwithOnOff _swith;
     public bool isON { get; set; } = false;
+    private bool _isFristOn = true;
 
-
-    private Animator _animator;
-    private SwithOnOff _animTrigger;
+    private Player _colorPlayer;
+    private Player _noColorPlayer;
 
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
-        _animTrigger = GetComponentInParent<SwithOnOff>();
+        _colorPlayer = GameObject.FindWithTag("ColorPlayer").GetComponent<Player>();
+        _noColorPlayer = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
+        _swith = GetComponentInParent<SwithOnOff>();
 
         if (Element == null)
             return;
@@ -25,51 +27,39 @@ public class ToadstoolAnim : MonoBehaviour
             return;
     }
 
-    private void Update()
-    {
-        OffDicPlayer();
-    }
-    
-
-    public void OffDicPlayer()
-    {
-
-        if (isON)
-        {
-            _animator.SetBool("ON", true);
-        }
-        else 
-        {
-            _animator.SetBool("ON", false);
-        }
-    }
-
     public void EndAnimCall()
     {
+
+        if (_isFristOn)
+        {
+            isON = true;
+            _isFristOn = false;
+        }
+        else
+        {
+            isON = false;
+            _isFristOn = true;
+        }
         if (isON)
         {
-            if (Element == null)
-                return;
-            if (Elements == null)
-                return;
+
             Element.SetActive(false);
             OffElement.SetActive(true);
             for (int i = 0; i < Elements.Length; i++)
             {
-                
+
                 Elements[i].SetActive(false);
             }
             for (int i = 0; i < OffElements.Length; i++)
             {
                 OffElements[i].SetActive(true);
             }
+            _colorPlayer.isSwithOn = true;
+            _noColorPlayer.isSwithOn = true;
+
         }
         else
         {
-            if (Element == null)
-                return;
-            if (Elements == null)
-                return;
             Element.SetActive(true);
             OffElement.SetActive(false);
             for (int i = 0; i < Elements.Length; i++)
@@ -80,6 +70,9 @@ public class ToadstoolAnim : MonoBehaviour
             {
                 OffElements[i].SetActive(false);
             }
+            _colorPlayer.isSwithOn = false;
+            _noColorPlayer.isSwithOn = false;
+
         }
     }
 }
