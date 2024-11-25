@@ -10,7 +10,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Intacne;
     public AudioMixer _audioMixer;
 
-    public AudioSource _audioSource;
+    public AudioSource _BGMSource;
+    public AudioSource _SFXSource;
     //public Slider _slider;
 
     public bool isOn = false;
@@ -28,13 +29,18 @@ public class AudioManager : MonoBehaviour
         }
         
         DontDestroyOnLoad(gameObject);
-        _audioSource.Play();
+        _BGMSource.Play();
+        _SFXSource.Play();
     }
 
-
-    public void AudioControl(float sound)
+    public void BGMControl(float sound)
     {
-        _audioSource.volume = sound;
+        _BGMSource.volume = sound;
+    }
+    
+    public void SFXControl(float sound)
+    {
+        _SFXSource.volume = sound;
     }
 
     public void MuteSound()
@@ -42,13 +48,15 @@ public class AudioManager : MonoBehaviour
 
         if (!isOn)
         {
-            _audioSource.mute = true;
+            _BGMSource.mute = true;
+            _SFXSource.mute = true;
             isOn = true;
         }
 
         else if (isOn)
         {
-            _audioSource.mute = false;
+            _BGMSource.mute = false;
+            _SFXSource.mute = false;
             isOn = false;
         }
 
