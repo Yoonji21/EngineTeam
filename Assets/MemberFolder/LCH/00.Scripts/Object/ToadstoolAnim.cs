@@ -8,6 +8,7 @@ public class ToadstoolAnim : MonoBehaviour
     [SerializeField] private GameObject[] Elements;
     [SerializeField] private GameObject OffElement;
     [SerializeField] private GameObject[] OffElements;
+    private SwithOnOff _swith;
     public bool isON { get; set; } = false;
     private bool _isFristOn = true;
 
@@ -18,6 +19,7 @@ public class ToadstoolAnim : MonoBehaviour
     {
         _colorPlayer = GameObject.FindWithTag("ColorPlayer").GetComponent<Player>();
         _noColorPlayer = GameObject.FindWithTag("NoColorPlayer").GetComponent<Player>();
+        _swith = GetComponentInParent<SwithOnOff>();
 
         if (Element == null)
             return;
@@ -40,6 +42,7 @@ public class ToadstoolAnim : MonoBehaviour
         }
         if (isON)
         {
+
             Element.SetActive(false);
             OffElement.SetActive(true);
             for (int i = 0; i < Elements.Length; i++)
@@ -53,7 +56,6 @@ public class ToadstoolAnim : MonoBehaviour
             }
             _colorPlayer.isSwithOn = true;
             _noColorPlayer.isSwithOn = true;
-            isON = true;
 
         }
         else
@@ -70,7 +72,6 @@ public class ToadstoolAnim : MonoBehaviour
             }
             _colorPlayer.isSwithOn = false;
             _noColorPlayer.isSwithOn = false;
-            isON = false;
 
         }
     }

@@ -15,6 +15,7 @@ public class SwithOnOff : MonoBehaviour
     private AnimationTrigger _animTrigger;
     private Animator _animator;
     public bool IsTrggerEnd;
+    public bool isAnim;
 
     private void Awake()
     {
@@ -47,8 +48,6 @@ public class SwithOnOff : MonoBehaviour
 
     private void Update()
     {
-
-        Debug.Log(_swithAnim.isON);
         if (IsTrggerEnd)
         {
             _swithAnim.EndAnimCall();

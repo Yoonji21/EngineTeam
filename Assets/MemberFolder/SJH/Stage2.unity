@@ -12283,57 +12283,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4656065262633969443, guid: 011d730c7ac3adb419550f48e14186c3, type: 3}
   m_PrefabInstance: {fileID: 7631542409286636070}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &816250912
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 816250914}
-  - component: {fileID: 816250913}
-  m_Layer: 0
-  m_Name: UIManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &816250913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816250912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31f540770449e1646805a19087dacbd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isClearColor: 0
-  isClearNoColor: 0
-  _clearUiOpen: {fileID: 0}
-  _lastStageClear: {fileID: 0}
-  StageUI: {fileID: 0}
-  _stageText: {fileID: 0}
-  _lastStageText: {fileID: 0}
---- !u!4 &816250914
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816250912}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.598093, y: -7.496493, z: -0.16838568}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1114823496
 GameObject:
   m_ObjectHideFlags: 0
@@ -15125,6 +15074,7 @@ MonoBehaviour:
     m_Bits: 2048
   _fkey: {fileID: 722521079}
   IsTrggerEnd: 0
+  isAnim: 0
 --- !u!114 &4916654798113439765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15147,6 +15097,7 @@ MonoBehaviour:
     m_Bits: 2048
   _fkey: {fileID: 1377807402}
   IsTrggerEnd: 0
+  isAnim: 0
 --- !u!4 &4931371488501370966
 Transform:
   m_ObjectHideFlags: 0
@@ -16876,7 +16827,6 @@ SceneRoots:
   - {fileID: 1935863263}
   - {fileID: 6093225942293530360}
   - {fileID: 8884991464744719542}
-  - {fileID: 816250914}
   - {fileID: 4931371488501370966}
   - {fileID: 6218738173330470603}
   - {fileID: 6866227511707687310}
