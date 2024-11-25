@@ -7,6 +7,7 @@ public class MenuUI : MonoBehaviour
 {
 
     [SerializeField] private GameObject _settingUI;
+    [SerializeField] private GameObject _main;
 
 	public void LevelButtonClik()
     {
@@ -22,6 +23,5 @@ public class MenuUI : MonoBehaviour
     public void SettingBtn()
     {
         _settingUI.SetActive(true);
-        gameObject.SetActive(false);
     }
 }

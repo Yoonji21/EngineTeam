@@ -44,6 +44,7 @@ public abstract class Player : Entity
     public bool isSwithingPlayer = true;
 
     [SerializeField] public StateMachine stateMachine;
+
     public EntityState CurrentState => stateMachine.currentState;
 
     public bool IsPushObj()
@@ -69,7 +70,7 @@ public abstract class Player : Entity
 
     protected void HandheldJump()
     {
-        if (MovementCompo.IsGrounded)
+        if (MovementCompo.IsGrounded || IsPushObj())
         {
             stateMachine.ChangeState("Jump");
         }

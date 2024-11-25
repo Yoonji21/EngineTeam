@@ -1,22 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SettingUI : MonoBehaviour
 {
 
-    [SerializeField] private GameObject _mainUI;
+    [SerializeField] private GameObject _settingUI;
     [SerializeField] private StageDataSO _dataSO;
+
+    private void Update()
+    {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            _settingUI.SetActive(true);
+        }
+    }
 
     private void Awake()
     {
-        gameObject.SetActive(false);
+        DontDestroyOnLoad(gameObject);
     }
-
     public void BackBtn()
     {
-        gameObject.SetActive(false);
-        _mainUI.SetActive(true);
+
+        _settingUI.SetActive(false);
     }
 
     public void GameReSet()
