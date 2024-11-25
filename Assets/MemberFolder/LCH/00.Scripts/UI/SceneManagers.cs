@@ -20,6 +20,6 @@ public class SceneManagers : MonoBehaviour
 
     public int NextScene()
     {
-        return CurrentSceneNum + 1;
+        return CurrentSceneNum += 1;
     }
 }
