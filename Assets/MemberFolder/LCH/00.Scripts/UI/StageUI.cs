@@ -26,8 +26,7 @@ public class StageUI : MonoBehaviour
     public void PauseButtonClik()
     {
         _stageUI.SetActive(false);
-        rectTransform.transform.DOMoveX(400f, 0.5f);
-        Time.timeScale = 0;
+        rectTransform.transform.DOMoveX(400f, 0.5f).OnComplete(() => Time.timeScale = 0);
     }
 
     public void InGameBtnClik()
