@@ -6,10 +6,6 @@ using UnityEngine.InputSystem;
 public class InGameTip : MonoBehaviour
 {
     [SerializeField] private GameObject _inGameView;
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
 
     public void XBtnClick()
     {

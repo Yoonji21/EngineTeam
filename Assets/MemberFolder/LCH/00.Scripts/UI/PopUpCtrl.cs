@@ -7,9 +7,8 @@ using UnityEngine.UI;
 
 public class PopUpCtrl : MonoBehaviour
 {
-    private void OnEnable()
+    private void Start()
     {
-        Debug.Log(UIManager.Intance);
-       // UIManager.Intance.PopUpOn = false; 
+       UIManager.Intance.PopUpOn = false; 
     }
 }

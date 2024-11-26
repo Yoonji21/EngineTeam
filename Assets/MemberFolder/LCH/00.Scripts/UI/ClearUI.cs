@@ -30,7 +30,7 @@ public class ClearUI : MonoBehaviour
         seq.Append(_clearShowUI.transform.DOMoveX(950f, 0.5f));
         for (int i = 0; i < _btn.Count; i++)
         {
-        seq.Append(_btn[i].transform.DOMoveX(950f, 0.5f));
+            seq.Append(_btn[i].transform.DOMoveX(950f, 0.5f));
 
         }
         seq.Play();
@@ -53,7 +53,6 @@ public class ClearUI : MonoBehaviour
         SceneManagers.Inatnce.CurrentSceneLevel++;
         UIManager.Intance.isClearColor = false;
         UIManager.Intance.isClearNoColor = false;
-
     }
 
     public void SelectLevel()
@@ -67,11 +66,11 @@ public class ClearUI : MonoBehaviour
         {
             _dataSO.StageClear = SceneManagers.Inatnce.CurrentSceneLevel;
         }
-        _clearUI.SetActive(false);
         UIManager.Intance.StageUI.SetActive(false);
         UIManager.Intance.isClearColor = false;
         UIManager.Intance.isClearNoColor = false;
         UIManager.Intance.PopUpOn = true;
+        _clearUI.SetActive(false);
     }
 
     public void SettingBtn()

@@ -30,11 +30,6 @@ public class SettingUI : MonoBehaviour
             _isOn = true;
         }
     }
-
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
     public void BackBtn()
     {
         _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponent<Animator>();

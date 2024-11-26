@@ -28,7 +28,7 @@ public class ChromatiColor : Player,ISwitchingPlayer
                 _invisibleObjs[i].SetActive(false);
            
         }
-        else if(InputCompo.isChromatlEablbe)
+        else
         {
             for (int i = 0; i < _invisibleObjs.Length; i++)
                 _invisibleObjs[i].SetActive(true);

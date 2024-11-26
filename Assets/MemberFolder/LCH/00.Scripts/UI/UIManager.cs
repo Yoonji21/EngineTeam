@@ -26,7 +26,6 @@ public class UIManager : MonoBehaviour
         }
         else
             Destroy(gameObject);
-
     }
 
     private void Update()
