@@ -7,21 +7,26 @@ using DG.Tweening;
 public class AudioUI : MonoBehaviour
 {
     [SerializeField] private GameObject settingUi;
+
+    private RectTransform rectTransform;
     public bool isOnUI;
 
+    private void Awake()
+    {
+        rectTransform = settingUi.GetComponent<RectTransform>();
+    }
 
-   
 
     public void OnClickContinue()
     {
         if (!isOnUI)
         {
-            settingUi.transform.DOMoveX(950f, 0.5f);
+            rectTransform.DOMoveX(950f, 0.5f);
             isOnUI = true;
         }
         else if (isOnUI)
         {
-            settingUi.transform.DOMoveX(-950f, 0.5f);
+            rectTransform.transform.DOMoveX(-950f, 0.5f);
             isOnUI = false;
         }
     }
