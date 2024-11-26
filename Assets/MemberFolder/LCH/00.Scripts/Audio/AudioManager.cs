@@ -7,13 +7,11 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-
     public static AudioManager Intacne;
     public AudioMixer _audioMixer;
 
     public AudioSource _BGMSource;
     public AudioSource _SFXSource;
-    //public Slider _slider;
     private Animator _currentAnimator;
     private BtnAnim _animTrigger;
 
@@ -32,7 +30,6 @@ public class AudioManager : MonoBehaviour
         }
         
         _BGMSource.Play();
-        _SFXSource.Play();
     }
 
     public void BGMControl(float sound)
