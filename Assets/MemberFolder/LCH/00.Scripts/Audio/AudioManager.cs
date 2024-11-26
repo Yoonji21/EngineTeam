@@ -31,7 +31,6 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
         
-        DontDestroyOnLoad(gameObject);
         _BGMSource.Play();
         _SFXSource.Play();
     }

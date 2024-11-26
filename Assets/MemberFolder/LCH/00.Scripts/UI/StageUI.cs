@@ -15,7 +15,6 @@ public class StageUI : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
         rectTransform = _pauseUI.GetComponent<RectTransform>();
     }
 

@@ -11,7 +11,6 @@ public class PopUp : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()

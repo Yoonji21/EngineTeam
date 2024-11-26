@@ -19,8 +19,6 @@ public class DataManger : MonoBehaviour
             Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(gameObject);
-
         stageData = new StageData();
 
         LoadData();

@@ -21,7 +21,6 @@ public class PauseUI : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
         rectTransform = _pauseUIRect.GetComponent<RectTransform>();
 
     }
