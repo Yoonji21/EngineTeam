@@ -12,6 +12,5 @@ public class BtnGameObjeAnim : MonoBehaviour
         OnUI.SetActive(true);
         Anim.SetBool("IsClik", false);
         OffUI.SetActive(false);
-        
     }
 }

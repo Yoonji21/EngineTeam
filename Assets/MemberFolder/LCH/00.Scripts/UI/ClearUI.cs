@@ -57,7 +57,6 @@ public class ClearUI : MonoBehaviour
         SceneManagers.Inatnce.CurrentSceneLevel++;
         UIManager.Intance.isClearColor = false;
         UIManager.Intance.isClearNoColor = false;
-        UIManager.Intance.PopUpOn = true;
 
     }
 
@@ -68,7 +67,6 @@ public class ClearUI : MonoBehaviour
         _currentAnimator.SetBool("IsClik", true);
         _loadTrigger.Anim = _currentAnimator;
         _loadTrigger.LoadNum = 1;
-        _popUpAniamtor.SetBool("PopUp", true);
         if (_dataSO.StageClear < 9)
         {
             _dataSO.StageClear = SceneManagers.Inatnce.CurrentSceneLevel;

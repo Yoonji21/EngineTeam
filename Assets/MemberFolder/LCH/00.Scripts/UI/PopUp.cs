@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PopUp : MonoBehaviour
 {
@@ -11,6 +12,18 @@ public class PopUp : MonoBehaviour
     {
         _animator = GetComponentInChildren<Animator>();
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Update()
+    {
+        if (UIManager.Intance.PopUpOn)
+        {
+            _animator.SetBool("PopUp", true);
+        }
+        else
+        {
+            _animator.SetBool("PopUp", false);
+        }
     }
 
 }

@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject StageUI;
     [SerializeField] private TextMeshProUGUI _stageText;
     [SerializeField] private TextMeshProUGUI _lastStageText;
+    [field:SerializeField] public BtnLoadAnim loadTrigger;
 
     private void Awake()
     {

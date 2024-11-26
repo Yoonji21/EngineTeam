@@ -12,8 +12,11 @@ public class LevelChose : MonoBehaviour
     [SerializeField] private Button[] _LevelBtn;
     [SerializeField] private StageDataSO _stageData;
     private Animator _currentAnimator;
-    [SerializeField] private BtnLoadAnim _loadTrigger;
-    [SerializeField] private Animator _popUpAnimator;
+
+    private void OnEnable()
+    {
+        UIManager.Intance.PopUpOn = false;
+    }
 
     private void Awake()
     {
@@ -35,20 +38,21 @@ public class LevelChose : MonoBehaviour
     {
         _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponent<Animator>();
         _currentAnimator.SetBool("IsClik", true);
-        _loadTrigger.Anim = _currentAnimator;
-        _popUpAnimator.SetBool("PopUp", true);
-        _loadTrigger.LoadNum = sceneCount;
+       UIManager.Intance.loadTrigger.Anim = _currentAnimator;
+        UIManager.Intance.loadTrigger.LoadNum = sceneCount;
         SceneManagers.Inatnce.CurrentSceneLevel = sceneCount -1;
         SceneManagers.Inatnce.CurrentSceneNum = sceneCount;
         UIManager.Intance.StageUI.SetActive(true);
+        UIManager.Intance.PopUpOn = true;
     }
 
     public void BackButtonClik()
     {
         _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponent<Animator>();
         _currentAnimator.SetBool("IsClik", true);
-        _loadTrigger.Anim = _currentAnimator; _popUpAnimator.SetBool("PopUp", true);
-        _loadTrigger.LoadNum = 0;
+        UIManager.Intance.loadTrigger.Anim = _currentAnimator;
+        UIManager.Intance.loadTrigger.LoadNum = 0;
         DataManger.Intance.SaveData();
+        UIManager.Intance.PopUpOn = true;
     }
 }

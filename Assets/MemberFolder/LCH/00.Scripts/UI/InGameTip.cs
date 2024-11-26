@@ -14,12 +14,14 @@ public class InGameTip : MonoBehaviour
     public void XBtnClick()
     {
         _inGameView.SetActive(false);
+        Time.timeScale = 1;
     }
 
     private void Update()
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
+            Time.timeScale = 1;
             _inGameView.SetActive(false);
         }
     }
