@@ -36,7 +36,8 @@ public class ClearUI : MonoBehaviour
         SceneManagers.Inatnce.CurrentSceneLevel++;
         UIManager.Intance.isClearColor = false;
         UIManager.Intance.isClearNoColor = false;
-       
+        UIManager.Intance.PopUpOn = true;
+
     }
 
     public void SelectLevel()
@@ -55,6 +56,7 @@ public class ClearUI : MonoBehaviour
         UIManager.Intance.StageUI.SetActive(false);
         UIManager.Intance.isClearColor = false;
         UIManager.Intance.isClearNoColor = false;
+        UIManager.Intance.PopUpOn = true;
     }
 
     public void SettingBtn()

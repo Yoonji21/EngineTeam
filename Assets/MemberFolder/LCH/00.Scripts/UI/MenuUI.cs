@@ -10,20 +10,16 @@ public class MenuUI : MonoBehaviour
 
     [SerializeField] private GameObject _settingUI;
     [SerializeField] private GameObject _main;
+    [SerializeField] private Animator _animator;
     private Animator _currentAnimator;
-    private BtnLoadAnim _loadTrigger;
-    private BtnGameObjeAnim _gameObjTrigger;
-
-
-    private void Update()
-    {
-    }
+    [SerializeField] private BtnLoadAnim _loadTrigger;
+   private BtnGameObjeAnim _gameObjTrigger;
     public void LevelButtonClik()
     {
         _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponent<Animator>();
-        _loadTrigger = EventSystem.current.currentSelectedGameObject.GetComponent<BtnLoadAnim>();
         _currentAnimator.SetBool("IsClik", true);
         _loadTrigger.Anim = _currentAnimator;
+        _animator.SetBool("PopUp", true);
         _loadTrigger.LoadNum = 1;
     }
 

@@ -39,6 +39,7 @@ public class PauseUI : MonoBehaviour
         _stageUI.SetActive(false);
         _pauseUI.SetActive(false);
         Time.timeScale = 1;
+        UIManager.Intance.PopUpOn = true;
     }
 
     public void MainMenuButtonClik()
@@ -52,5 +53,6 @@ public class PauseUI : MonoBehaviour
         _pauseUI.SetActive(false);
         _stageUI.SetActive(false);
         Time.timeScale = 1;
+        UIManager.Intance.PopUpOn = true;
     }
 }

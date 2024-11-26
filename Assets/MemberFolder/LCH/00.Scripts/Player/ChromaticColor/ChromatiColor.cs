@@ -7,7 +7,6 @@ using UnityEngine;
 public class ChromatiColor : Player,ISwitchingPlayer
 {
     private GameObject[] _invisibleObjs;
-    public bool isExitDoor = false;
     [SerializeField] private GameObject _artifact;
 
     private Entity _entity;
@@ -28,7 +27,7 @@ public class ChromatiColor : Player,ISwitchingPlayer
                 _invisibleObjs[i].SetActive(false);
            
         }
-        else
+        else if(InputCompo.isChromatlEablbe)
         {
             for (int i = 0; i < _invisibleObjs.Length; i++)
                 _invisibleObjs[i].SetActive(true);

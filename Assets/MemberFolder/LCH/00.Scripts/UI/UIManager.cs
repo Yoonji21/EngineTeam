@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 
     public bool isClearColor;
     public bool isClearNoColor;
+    public bool PopUpOn;
 
     [SerializeField] private GameObject _clearUiOpen;
     [SerializeField] private GameObject _lastStageClear;
