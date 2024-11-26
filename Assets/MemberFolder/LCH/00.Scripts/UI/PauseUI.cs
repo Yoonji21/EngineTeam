@@ -34,7 +34,7 @@ public class PauseUI : MonoBehaviour
         _gameObjTrigger.Anim = _currentAnimator;
         _gameObjTrigger.OnUI = _stageUI;
         _gameObjTrigger.OffUI = _pauseUI;
-        rectTransform.transform.DOMoveX(-400f, 0.5f);
+        rectTransform.transform.DOMoveX(-450f, 0.5f);
 
         Time.timeScale = 1;
     }
@@ -47,7 +47,7 @@ public class PauseUI : MonoBehaviour
         UIManager.Intance.loadTrigger.LoadNum = 1;
         UIManager.Intance.PopUpOn = true;
         _stageUI.SetActive(false);
-        rectTransform.transform.DOMoveX(-400f, 0.5f);
+        rectTransform.transform.DOMoveX(-450f, 0.5f);
 
         Time.timeScale = 1;
     }
@@ -60,7 +60,7 @@ public class PauseUI : MonoBehaviour
         UIManager.Intance.loadTrigger.LoadNum = 0;
         UIManager.Intance.PopUpOn = true;
         _stageUI.SetActive(false);
-        rectTransform.transform.DOMoveX(-400f, 0.5f);
+        rectTransform.transform.DOMoveX(-450f, 0.5f);
 
         Time.timeScale = 1;
     }
