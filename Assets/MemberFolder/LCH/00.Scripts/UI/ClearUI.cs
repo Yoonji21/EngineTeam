@@ -37,10 +37,10 @@ public class ClearUI : MonoBehaviour
         var seq = DOTween.Sequence();
 
         seq.Append(_clearBackground.transform.DOMoveX(960f, 0.3f)).
-        Append(_clearShowUI.transform.DOMoveX(950f, 0.5f)).
-         Append(_btn[0].transform.DOMoveX(950f, 0.5f))
-         .Append(_btn[1].transform.DOMoveX(950f, 0.5f))
-         .Append(_btn[2].transform.DOMoveX(950f, 0.5f))
+        Append(_clearShowUI.GetComponent<RectTransform>().transform.DOMoveX(950f, 0.5f)).
+         Append(_btn[0].GetComponent<RectTransform>().transform.DOMoveX(950f, 0.5f))
+         .Append(_btn[1].GetComponent<RectTransform>().transform.DOMoveX(950f, 0.5f))
+         .Append(_btn[2].GetComponent<RectTransform>().transform.DOMoveX(950f, 0.5f))
          .AppendCallback(() => Time.timeScale = 0);
     }
 
@@ -60,17 +60,18 @@ public class ClearUI : MonoBehaviour
         }
         DataManger.Intance.SaveData();
         SceneManagers.Inatnce.CurrentSceneLevel++;
-        Time.timeScale = 1;
+
+        HideBtn3();
     }
 
     internal void ShowLast()
     {
         var seq = DOTween.Sequence();
 
-        seq.Append(_clearShowUI.transform.DOMoveX(950f, 0.3f)).
-         Append(_btn[0].transform.DOMoveX(950f, 0.3f))
-         .Append(_btn[1].transform.DOMoveX(950f, 0.3f)).
-         Append(_clearBackground.transform.DOMoveX(960f, 0.2f))
+        seq.Append(_clearShowUI.GetComponent<RectTransform>().transform.DOMoveX(950f, 0.3f)).
+         Append(_btn[0].GetComponent<RectTransform>().transform.DOMoveX(950f, 0.3f))
+         .Append(_btn[1].GetComponent<RectTransform>().transform.DOMoveX(950f, 0.3f)).
+         Append(_clearBackground.GetComponent<RectTransform>().transform.DOMoveX(960f, 0.2f))
          .AppendCallback(() => Time.timeScale = 0);
     }
 
@@ -89,15 +90,6 @@ public class ClearUI : MonoBehaviour
         UIManager.Intance.PopUpOn = true;
         UIManager.Intance.StageUI.SetActive(false);
 
-        var seq = DOTween.Sequence();
-
-        Time.timeScale = 1;
-
-        seq.Append(_clearShowUI.transform.DOMoveX(-950f, 0.3f)).
-         Append(_btn[0].transform.DOMoveX(-950f, 0.3f))
-         .Append(_btn[1].transform.DOMoveX(-950f, 0.3f)).
-         Append(_clearBackground.transform.DOMoveX(-960f, 0.2f))
-         ;
 
         HideBtn3();
     }
@@ -108,10 +100,10 @@ public class ClearUI : MonoBehaviour
 
         var seq = DOTween.Sequence();
 
-        seq.Append(_clearShowUI.transform.DOMoveX(-950f, 0.1f)).
-         Append(_btn[0].transform.DOMoveX(-950f, 0.1f))
-         .Append(_btn[1].transform.DOMoveX(-950f, 0.1f)).
-         Append(_clearBackground.transform.DOMoveX(-960f, 0.1f));
+        seq.Append(_clearShowUI.GetComponent<RectTransform>().transform.DOMoveX(-1200f, 0.3f)).
+         Append(_btn[0].GetComponent<RectTransform>().transform.DOMoveX(-1200f, 0.3f))
+         .Append(_btn[1].GetComponent<RectTransform>().transform.DOMoveX(-1200f, 0.3f)).
+         Append(_clearBackground.GetComponent<RectTransform>().transform.DOMoveX(-1200f, 0.2f));
     }
 
     public void HideBtn3()
@@ -120,10 +112,11 @@ public class ClearUI : MonoBehaviour
 
         var seq = DOTween.Sequence();
 
-        seq.Append(_clearShowUI.transform.DOMoveX(-950f, 0.1f)).
-         Append(_btn[0].transform.DOMoveX(-950f, 0.1f))
-         .Append(_btn[1].transform.DOMoveX(-950f, 0.1f)).
-         Append(_clearBackground.transform.DOMoveX(-960f, 0.1f));
+        seq.Append(_clearShowUI.GetComponent<RectTransform>().transform.DOMoveX(-1200f, 0.3f)).
+         Append(_btn[0].GetComponent<RectTransform>().transform.DOMoveX(-1200f, 0.3f))
+         .Append(_btn[1].GetComponent<RectTransform>().transform.DOMoveX(-1200f, 0.3f))
+         .Append(_btn[2].GetComponent<RectTransform>().transform.DOMoveX(-1200f, 0.3f)).
+         Append(_clearBackground.GetComponent<RectTransform>().transform.DOMoveX(-1200f, 0.2f));
     }
 
 
