@@ -13,7 +13,6 @@ public class PauseUI : MonoBehaviour
     [SerializeField] private GameObject _pauseUIRect;
     private Animator _currentAnimator;
     private BtnGameObjeAnim _gameObjTrigger;
-    [SerializeField] private Animator _popUpAniamtor;
 
 
     private RectTransform rectTransform;

@@ -36,11 +36,15 @@ public class UIManager : MonoBehaviour
             {
                 _stageText.text = $"Level {SceneManagers.Inatnce.CurrentSceneLevel} Clear";
                 _clearUi.Show();
+                isClearColor = false;
+                isClearNoColor = false;
             }
             else
             {
                 _stageText.text = $"Level {SceneManagers.Inatnce.CurrentSceneLevel} Clear";
                 _lastStageClear.ShowLast();
+                isClearColor = false;
+                isClearNoColor = false;
             }
         }
     }

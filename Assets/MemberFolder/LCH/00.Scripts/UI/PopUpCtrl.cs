@@ -9,6 +9,8 @@ public class PopUpCtrl : MonoBehaviour
 {
     private void Start()
     {
-       UIManager.Intance.PopUpOn = false; 
+       UIManager.Intance.PopUpOn = false;
+        UIManager.Intance.isClearNoColor = false;
+        UIManager.Intance.isClearColor = false;
     }
 }

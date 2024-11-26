@@ -10,7 +10,7 @@ public class SettingUI : MonoBehaviour
     [SerializeField] private GameObject _settingUI;
     [SerializeField] private GameObject _main;
     [SerializeField] private StageDataSO _dataSO;
-    private bool _isOn;
+    private bool _isOn = true;
     private Animator _currentAnimator;
     private BtnLoadAnim _loadTrigger;
     private BtnGameObjeAnim _gameObjTrigger;

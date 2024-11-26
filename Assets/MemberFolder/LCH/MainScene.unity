@@ -5505,7 +5505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &73107174581523262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5666,7 +5666,6 @@ MonoBehaviour:
   _stageUI: {fileID: 195730100148121675}
   _pauseUI: {fileID: 428247085}
   _pauseUIRect: {fileID: 3842278570041881332}
-  _popUpAniamtor: {fileID: 898693730}
 --- !u!1 &188829361129192292
 GameObject:
   m_ObjectHideFlags: 0

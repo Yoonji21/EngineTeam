@@ -32,7 +32,7 @@ public class ClearUI : MonoBehaviour
          Append(_btn[0].transform.DOMoveX(950f, 0.5f))
          .Append(_btn[1].transform.DOMoveX(950f, 0.5f))
          .Append(_btn[2].transform.DOMoveX(950f, 0.5f))
-         .OnComplete(() => Time.timeScale = 0);
+         .AppendCallback(() => Time.timeScale = 0);
 
 
     }
@@ -40,7 +40,8 @@ public class ClearUI : MonoBehaviour
 
     public void NextSceneBtn()
     {
-        _clearUI.SetActive(false);
+        UIManager.Intance.isClearColor = false;
+        UIManager.Intance.isClearNoColor = false;
         _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponentInParent<Animator>();
         _currentAnimator.SetBool("IsClik", true);
         UIManager.Intance.loadTrigger.Anim = _currentAnimator;
@@ -52,8 +53,6 @@ public class ClearUI : MonoBehaviour
         }
         DataManger.Intance.SaveData();
         SceneManagers.Inatnce.CurrentSceneLevel++;
-        UIManager.Intance.isClearColor = false;
-        UIManager.Intance.isClearNoColor = false;
         Time.timeScale = 1;
     }
 
@@ -65,12 +64,13 @@ public class ClearUI : MonoBehaviour
         Append(_clearShowUI.transform.DOMoveX(950f, 0.5f)).
          Append(_btn[0].transform.DOMoveX(950f, 0.5f))
          .Append(_btn[1].transform.DOMoveX(950f, 0.5f))
-         .OnComplete(() => Time.timeScale = 0);
+         .AppendCallback(() => Time.timeScale = 0);
     }
 
     public void SelectLevel()
     {
-        _clearUI.SetActive(false);
+        UIManager.Intance.isClearColor = false;
+        UIManager.Intance.isClearNoColor = false;
         _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponentInParent<Animator>();
         _currentAnimator.SetBool("IsClik", true);
         UIManager.Intance.loadTrigger.Anim = _currentAnimator;
@@ -81,9 +81,6 @@ public class ClearUI : MonoBehaviour
         }
         UIManager.Intance.PopUpOn = true;
         UIManager.Intance.StageUI.SetActive(false);
-        UIManager.Intance.isClearColor = false;
-        UIManager.Intance.isClearNoColor = false;
-        _clearUI.SetActive(false);
         Time.timeScale = 1;
     }
 

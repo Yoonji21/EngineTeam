@@ -27,6 +27,7 @@ public class StageUI : MonoBehaviour
     {
         _stageUI.SetActive(false);
         rectTransform.transform.DOMoveX(400f, 0.5f);
+        Time.timeScale = 0;
     }
 
     public void InGameBtnClik()
