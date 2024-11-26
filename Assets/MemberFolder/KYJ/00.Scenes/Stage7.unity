@@ -22588,6 +22588,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3712
   respawn: {fileID: 1359191394}
+  isToadstoolContorrl: 0
 --- !u!4 &215222603
 Transform:
   m_ObjectHideFlags: 0
@@ -23523,7 +23524,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &1434045660
 RectTransform:
@@ -23744,6 +23745,50 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.496719, y: -7.7404976, z: -0.10899914}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1645536246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1645536248}
+  - component: {fileID: 1645536247}
+  m_Layer: 0
+  m_Name: PopUpCtrl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1645536247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645536246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645d97423b3061f4a934c8bfd403cfbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1645536248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645536246}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 806.6802, y: 602.433, z: 1.6524153}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25787,7 +25832,6 @@ MonoBehaviour:
   <_jumpPower>k__BackingField: 12
   isSwithingPlayer: 1
   stateMachine: {fileID: 0}
-  isExitDoor: 0
   _artifact: {fileID: 0}
 --- !u!212 &3706428209309907893
 SpriteRenderer:
@@ -27605,6 +27649,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3712
   respawn: {fileID: 1359191394}
+  isToadstoolContorrl: 0
 --- !u!114 &7008155510264157353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27624,6 +27669,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3712
   respawn: {fileID: 1359191394}
+  isToadstoolContorrl: 0
 --- !u!114 &7008155510651796473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27643,6 +27689,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3712
   respawn: {fileID: 1359191394}
+  isToadstoolContorrl: 0
 --- !u!114 &7008155510859065965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27662,6 +27709,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3712
   respawn: {fileID: 1359191394}
+  isToadstoolContorrl: 0
 --- !u!4 &7028456947334473552
 Transform:
   m_ObjectHideFlags: 0
@@ -29180,3 +29228,4 @@ SceneRoots:
   - {fileID: 84273762}
   - {fileID: 2008708304}
   - {fileID: 1434045660}
+  - {fileID: 1645536248}
