@@ -21,11 +21,12 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         if (Intance == null)
+        {
             Intance = this;
+        }
         else
             Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()

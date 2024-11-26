@@ -21,8 +21,6 @@ public class ClearUI : MonoBehaviour
     private void Awake()
     {
         DOTween.Init();
-
-        DontDestroyOnLoad(gameObject);
     }
     public void Show()
     {
