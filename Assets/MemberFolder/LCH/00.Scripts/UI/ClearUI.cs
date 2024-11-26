@@ -23,6 +23,15 @@ public class ClearUI : MonoBehaviour
     {
         DOTween.Init();
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Show();
+        }
+    }
+
     public void Show()
     {
         var seq = DOTween.Sequence();
@@ -60,10 +69,10 @@ public class ClearUI : MonoBehaviour
     {
         var seq = DOTween.Sequence();
 
-        seq.Append(_clearBackground.transform.DOMoveX(960f, 0.3f)).
-        Append(_clearShowUI.transform.DOMoveX(950f, 0.5f)).
-         Append(_btn[0].transform.DOMoveX(950f, 0.5f))
-         .Append(_btn[1].transform.DOMoveX(950f, 0.5f))
+        seq.Append(_clearShowUI.transform.DOMoveX(950f, 0.3f)).
+         Append(_btn[0].transform.DOMoveX(950f, 0.3f))
+         .Append(_btn[1].transform.DOMoveX(950f, 0.3f)).
+         Append(_clearBackground.transform.DOMoveX(960f, 0.2f))
          .AppendCallback(() => Time.timeScale = 0);
     }
 
@@ -81,8 +90,45 @@ public class ClearUI : MonoBehaviour
         }
         UIManager.Intance.PopUpOn = true;
         UIManager.Intance.StageUI.SetActive(false);
+
+        var seq = DOTween.Sequence();
+
         Time.timeScale = 1;
+
+        seq.Append(_clearShowUI.transform.DOMoveX(-950f, 0.3f)).
+         Append(_btn[0].transform.DOMoveX(-950f, 0.3f))
+         .Append(_btn[1].transform.DOMoveX(-950f, 0.3f)).
+         Append(_clearBackground.transform.DOMoveX(-960f, 0.2f))
+         ;
+
+        HideBtn3();
     }
+
+    public void HideBtn2()
+    {
+        Time.timeScale = 1;
+
+        var seq = DOTween.Sequence();
+
+        seq.Append(_clearShowUI.transform.DOMoveX(-950f, 0.1f)).
+         Append(_btn[0].transform.DOMoveX(-950f, 0.1f))
+         .Append(_btn[1].transform.DOMoveX(-950f, 0.1f)).
+         Append(_clearBackground.transform.DOMoveX(-960f, 0.1f));
+    }
+
+    public void HideBtn3()
+    {
+        Time.timeScale = 1;
+
+        var seq = DOTween.Sequence();
+
+        seq.Append(_clearShowUI.transform.DOMoveX(-950f, 0.1f)).
+         Append(_btn[0].transform.DOMoveX(-950f, 0.1f))
+         .Append(_btn[1].transform.DOMoveX(-950f, 0.1f))
+         .Append(_btn[2].transform.DOMoveX(-950f, 0.1f)).
+         Append(_clearBackground.transform.DOMoveX(-960f, 0.1f));
+    }
+
 
     public void SettingBtn()
     {
