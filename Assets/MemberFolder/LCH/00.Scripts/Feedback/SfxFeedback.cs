@@ -8,14 +8,6 @@ public class SfxFeedback : Feedback
     private AudioSource _sfxSource;
     [SerializeField] private AudioClip CurrentClip;
     private AudioManager _audioManager;
-
-    private void Awake()
-    {
-        _sfxSource = GameObject.Find("AudioManager").GetComponent<AudioSource>();
-        _audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
-
-    }
-
     private void OnEnable()
     {
         if (_audioManager == null)
@@ -26,7 +18,7 @@ public class SfxFeedback : Feedback
 
     public override void PlayFeedback()
     {
-        //_audioManager.SFXControl(CurrentClip);
+        
     }
 
     public override void StopFeedback()
