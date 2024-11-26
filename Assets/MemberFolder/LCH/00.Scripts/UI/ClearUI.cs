@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using System;
 
 public class ClearUI : MonoBehaviour
 {
@@ -26,14 +27,14 @@ public class ClearUI : MonoBehaviour
     {
         var seq = DOTween.Sequence();
 
-        seq.Append(_clearBackground.transform.DOMoveX(960f, 0.3f));
-        seq.Append(_clearShowUI.transform.DOMoveX(950f, 0.5f));
-        for (int i = 0; i < _btn.Count; i++)
-        {
-            seq.Append(_btn[i].transform.DOMoveX(950f, 0.5f));
+        seq.Append(_clearBackground.transform.DOMoveX(960f, 0.3f)).
+        Append(_clearShowUI.transform.DOMoveX(950f, 0.5f)).
+         Append(_btn[0].transform.DOMoveX(950f, 0.5f))
+         .Append(_btn[1].transform.DOMoveX(950f, 0.5f))
+         .Append(_btn[2].transform.DOMoveX(950f, 0.5f))
+         .OnComplete(() => Time.timeScale = 0);
 
-        }
-        seq.Play();
+
     }
 
 
@@ -53,6 +54,18 @@ public class ClearUI : MonoBehaviour
         SceneManagers.Inatnce.CurrentSceneLevel++;
         UIManager.Intance.isClearColor = false;
         UIManager.Intance.isClearNoColor = false;
+        Time.timeScale = 1;
+    }
+
+    internal void ShowLast()
+    {
+        var seq = DOTween.Sequence();
+
+        seq.Append(_clearBackground.transform.DOMoveX(960f, 0.3f)).
+        Append(_clearShowUI.transform.DOMoveX(950f, 0.5f)).
+         Append(_btn[0].transform.DOMoveX(950f, 0.5f))
+         .Append(_btn[1].transform.DOMoveX(950f, 0.5f))
+         .OnComplete(() => Time.timeScale = 0);
     }
 
     public void SelectLevel()
@@ -61,16 +74,17 @@ public class ClearUI : MonoBehaviour
         _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponentInParent<Animator>();
         _currentAnimator.SetBool("IsClik", true);
         UIManager.Intance.loadTrigger.Anim = _currentAnimator;
-        UIManager.Intance.loadTrigger.LoadNum = SceneManagers.Inatnce.NextScene();
+        UIManager.Intance.loadTrigger.LoadNum = 1;
         if (_dataSO.StageClear < 9)
         {
             _dataSO.StageClear = SceneManagers.Inatnce.CurrentSceneLevel;
         }
+        UIManager.Intance.PopUpOn = true;
         UIManager.Intance.StageUI.SetActive(false);
         UIManager.Intance.isClearColor = false;
         UIManager.Intance.isClearNoColor = false;
-        UIManager.Intance.PopUpOn = true;
         _clearUI.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void SettingBtn()

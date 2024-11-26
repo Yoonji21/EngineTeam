@@ -11,11 +11,11 @@ public class UIManager : MonoBehaviour
     public bool isClearNoColor;
     public bool PopUpOn;
 
+    [field: SerializeField] public GameObject settingUI;
     [SerializeField] private ClearUI _clearUi;
-    [SerializeField] private GameObject _lastStageClear;
+    [SerializeField] private ClearUI _lastStageClear;
     [SerializeField] public GameObject StageUI;
     [SerializeField] private TextMeshProUGUI _stageText;
-    [SerializeField] private TextMeshProUGUI _lastStageText;
     [field:SerializeField] public BtnLoadAnim loadTrigger;
 
     private void Awake()
@@ -34,13 +34,13 @@ public class UIManager : MonoBehaviour
         {
             if(SceneManagers.Inatnce.CurrentSceneLevel < 10)
             {
-                _stageText.text = $"Stage {SceneManagers.Inatnce.CurrentSceneLevel} Clear";
+                _stageText.text = $"Level {SceneManagers.Inatnce.CurrentSceneLevel} Clear";
                 _clearUi.Show();
             }
             else
             {
-                _lastStageText.text = $"Stage {SceneManagers.Inatnce.CurrentSceneLevel} Clear";
-                _lastStageClear.SetActive(true);
+                _stageText.text = $"Level {SceneManagers.Inatnce.CurrentSceneLevel} Clear";
+                _lastStageClear.ShowLast();
             }
         }
     }

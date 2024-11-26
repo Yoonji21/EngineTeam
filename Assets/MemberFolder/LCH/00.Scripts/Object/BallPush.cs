@@ -25,6 +25,11 @@ public class BallPush : MonoBehaviour
         if (!PlayerChecker())
         {
             _rbCompo.velocity = new Vector2(0, _rbCompo.velocity.y);
+            _rbCompo.mass = 10000f;
+        }
+        if (PlayerChecker())
+        {
+            _rbCompo.mass = 1;
         }
     }
 

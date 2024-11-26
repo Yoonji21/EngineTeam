@@ -16,6 +16,10 @@ public class LevelChose : MonoBehaviour
     private void OnEnable()
     {
         UIManager.Intance.PopUpOn = false;
+        for (int i = 0; i < _stageData.StageClear; i++)
+        {
+            _LevelBtn[i].gameObject.SetActive(true);
+        }
     }
 
     private void Awake()
@@ -26,13 +30,6 @@ public class LevelChose : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        for(int i = 0; i < _stageData.StageClear; i++)
-        {
-            _LevelBtn[i].gameObject.SetActive(true);
-        }
-    }
 
     public void StageSecne(int sceneCount)
     {

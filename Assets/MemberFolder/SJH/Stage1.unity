@@ -33398,7 +33398,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
@@ -33998,7 +33998,7 @@ MonoBehaviour:
   _whatIsPlayer:
     serializedVersion: 2
     m_Bits: 2176
-  _size: 0.6
+  _size: 0.79
 --- !u!114 &6928001759527940204
 MonoBehaviour:
   m_ObjectHideFlags: 0

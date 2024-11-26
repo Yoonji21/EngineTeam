@@ -25045,7 +25045,7 @@ MonoBehaviour:
   _xMove: {x: 0, y: 0, z: 0}
   _whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   _groundChecker: {fileID: 6623879929216246267}
   _checkerSize: {x: 0.81, y: 0.2}
 --- !u!95 &1593057139654266181

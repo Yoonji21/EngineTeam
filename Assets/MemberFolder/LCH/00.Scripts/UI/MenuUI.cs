@@ -7,8 +7,6 @@ using System;
 
 public class MenuUI : MonoBehaviour
 {
-
-    [SerializeField] private GameObject _settingUI;
     [SerializeField] private GameObject _main;
     private Animator _currentAnimator;
    private BtnGameObjeAnim _gameObjTrigger;
@@ -29,11 +27,12 @@ public class MenuUI : MonoBehaviour
 
     public void SettingBtn()
     {
+
         _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponent<Animator>();
         _gameObjTrigger = EventSystem.current.currentSelectedGameObject.GetComponent<BtnGameObjeAnim>();
         _currentAnimator.SetBool("IsClik", true);
         _gameObjTrigger.Anim = _currentAnimator;
-        _gameObjTrigger.OnUI = _settingUI;
+        _gameObjTrigger.OnUI = UIManager.Intance.settingUI;
         _gameObjTrigger.OffUI = _main;
     }
 }
