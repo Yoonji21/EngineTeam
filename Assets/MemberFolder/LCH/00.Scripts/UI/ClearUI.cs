@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class ClearUI : MonoBehaviour
 {
@@ -14,11 +15,30 @@ public class ClearUI : MonoBehaviour
     private BtnLoadAnim _loadTrigger;
     private BtnGameObjeAnim _gameObjTrigger;
 
+    public GameObject _clearShowUI;
+    public List<GameObject> _btn;
+
     private void Awake()
     {
-        _clearUI.SetActive(false);
+        DOTween.Init();
+
         DontDestroyOnLoad(gameObject);
     }
+
+
+    public void Show()
+    {
+        var seq = DOTween.Sequence();
+
+        seq.Append(_clearShowUI.transform.DOMoveX(950f, 0.5f));
+        for (int i = 0; i < _btn.Count; i++)
+        {
+        seq.Append(_btn[i].transform.DOMoveX(950f, 0.5f));
+
+        }
+        seq.Play();
+    }
+
 
     public void NextSceneBtn()
     {

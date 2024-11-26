@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     public bool isClearColor;
     public bool isClearNoColor;
 
-    [SerializeField] private GameObject _clearUiOpen;
+    [SerializeField] private ClearUI _clearUi;
     [SerializeField] private GameObject _lastStageClear;
     [SerializeField] public GameObject StageUI;
     [SerializeField] private TextMeshProUGUI _stageText;
@@ -33,7 +33,7 @@ public class UIManager : MonoBehaviour
             if(SceneManagers.Inatnce.CurrentSceneLevel < 10)
             {
                 _stageText.text = $"Stage {SceneManagers.Inatnce.CurrentSceneLevel} Clear";
-                _clearUiOpen.SetActive(true);
+                _clearUi.Show();
             }
             else
             {
