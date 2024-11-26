@@ -42,8 +42,6 @@ public class ClearUI : MonoBehaviour
          .Append(_btn[1].transform.DOMoveX(950f, 0.5f))
          .Append(_btn[2].transform.DOMoveX(950f, 0.5f))
          .AppendCallback(() => Time.timeScale = 0);
-
-
     }
 
 
@@ -124,8 +122,7 @@ public class ClearUI : MonoBehaviour
 
         seq.Append(_clearShowUI.transform.DOMoveX(-950f, 0.1f)).
          Append(_btn[0].transform.DOMoveX(-950f, 0.1f))
-         .Append(_btn[1].transform.DOMoveX(-950f, 0.1f))
-         .Append(_btn[2].transform.DOMoveX(-950f, 0.1f)).
+         .Append(_btn[1].transform.DOMoveX(-950f, 0.1f)).
          Append(_clearBackground.transform.DOMoveX(-960f, 0.1f));
     }
 
