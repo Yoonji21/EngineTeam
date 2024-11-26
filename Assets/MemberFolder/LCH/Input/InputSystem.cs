@@ -29,12 +29,6 @@ public class InputSystem : ScriptableObject, IPlayerActions
         _playerInputAction.Player.Enable(); //È°¼ºÈ­
     }
 
-    private void OnDisable()
-    {
-        
-    }
-
-
     public void OnHold(InputAction.CallbackContext context)
     {
         OnHoldObjEvent?.Invoke();

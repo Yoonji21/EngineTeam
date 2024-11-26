@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public bool isClearColor;
     public bool isClearNoColor;
     public bool PopUpOn;
+    public bool PlayerInput = true;
 
     [field: SerializeField] public GameObject settingUI;
     [SerializeField] private ClearUI _clearUi;
@@ -46,6 +47,11 @@ public class UIManager : MonoBehaviour
                 isClearColor = false;
                 isClearNoColor = false;
             }
+            PlayerInput = false;
+        }
+        else
+        {
+            PlayerInput = true;
         }
     }
 
