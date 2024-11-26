@@ -16,6 +16,7 @@ public class ClearUI : MonoBehaviour
     private BtnGameObjeAnim _gameObjTrigger;
 
     public GameObject _clearShowUI;
+    public GameObject _clearBackground;
     public List<GameObject> _btn;
 
     private void Awake()
@@ -25,11 +26,19 @@ public class ClearUI : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Show();
+        }
+    }
 
     public void Show()
     {
         var seq = DOTween.Sequence();
 
+        seq.Append(_clearBackground.transform.DOMoveX(960f, 0.3f));
         seq.Append(_clearShowUI.transform.DOMoveX(950f, 0.5f));
         for (int i = 0; i < _btn.Count; i++)
         {

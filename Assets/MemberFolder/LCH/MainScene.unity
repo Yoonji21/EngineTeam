@@ -621,6 +621,7 @@ MonoBehaviour:
   _settingUI: {fileID: 0}
   _clearUI: {fileID: 1774067223}
   _clearShowUI: {fileID: 1582592383}
+  _clearBackground: {fileID: 576121607}
   _btn:
   - {fileID: 2031481042}
   - {fileID: 1723069236}
@@ -841,7 +842,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1834, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &576121609
@@ -2077,7 +2078,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -132, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1825553877
@@ -2898,6 +2899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stageUI: {fileID: 195730101358370986}
   _pauseUI: {fileID: 3842278570041881332}
+  _InGameTip: {fileID: 0}
 --- !u!1 &43772105460203233
 GameObject:
   m_ObjectHideFlags: 0
@@ -3414,8 +3416,12 @@ MonoBehaviour:
   _dataSO: {fileID: 11400000, guid: 1549d5ccdcec4e7468f82d235ca1a4cd, type: 2}
   _settingUI: {fileID: 5872302185057830841}
   _clearUI: {fileID: 428247085}
-  _clearShowUI: {fileID: 0}
-  _btn: []
+  _clearShowUI: {fileID: 1582592383}
+  _clearBackground: {fileID: 576121607}
+  _btn:
+  - {fileID: 2031481042}
+  - {fileID: 1723069236}
+  - {fileID: 673253885}
 --- !u!1 &631757283862401414
 GameObject:
   m_ObjectHideFlags: 0
