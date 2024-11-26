@@ -2901,6 +2901,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4644585401551980668, guid: e7f6038dcfb61d54baa560ed386ad5b0, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644585401551980668, guid: e7f6038dcfb61d54baa560ed386ad5b0, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1937761018}
+    - target: {fileID: 4644585401551980668, guid: e7f6038dcfb61d54baa560ed386ad5b0, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BGMControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 6046153384272740944, guid: e7f6038dcfb61d54baa560ed386ad5b0, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6046153384272740944, guid: e7f6038dcfb61d54baa560ed386ad5b0, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1937761018}
+    - target: {fileID: 6046153384272740944, guid: e7f6038dcfb61d54baa560ed386ad5b0, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SFXControl
+      objectReference: {fileID: 0}
     - target: {fileID: 7603193655675032107, guid: e7f6038dcfb61d54baa560ed386ad5b0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
