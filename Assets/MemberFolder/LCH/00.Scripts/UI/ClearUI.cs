@@ -18,6 +18,7 @@ public class ClearUI : MonoBehaviour
     public GameObject _clearShowUI;
     public GameObject _clearBackground;
     public List<GameObject> _btn;
+    private bool isEnd;
 
     private void Awake()
     {
@@ -41,27 +42,36 @@ public class ClearUI : MonoBehaviour
          Append(_btn[0].GetComponent<RectTransform>().transform.DOMoveX(950f, 0.5f))
          .Append(_btn[1].GetComponent<RectTransform>().transform.DOMoveX(950f, 0.5f))
          .Append(_btn[2].GetComponent<RectTransform>().transform.DOMoveX(950f, 0.5f))
-         .AppendCallback(() => Time.timeScale = 0);
+         .AppendCallback(() => ClearUIEnd());
     }
 
+    private void ClearUIEnd()
+    {
+        Time.timeScale = 1f;
+        isEnd = true;
+    }
 
     public void NextSceneBtn()
     {
-        UIManager.Intance.isClearColor = false;
-        UIManager.Intance.isClearNoColor = false;
-        _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponentInParent<Animator>();
-        _currentAnimator.SetBool("IsClik", true);
-        UIManager.Intance.loadTrigger.Anim = _currentAnimator;
-        UIManager.Intance.loadTrigger.LoadNum = SceneManagers.Inatnce.NextScene();
-        UIManager.Intance.PopUpOn = true;
-        if (_dataSO.StageClear < 9)
+        if (isEnd)
         {
-            _dataSO.StageClear = SceneManagers.Inatnce.CurrentSceneLevel;
-        }
-        DataManger.Intance.SaveData();
-        SceneManagers.Inatnce.CurrentSceneLevel++;
+            UIManager.Intance.isClearColor = false;
+            UIManager.Intance.isClearNoColor = false;
+            _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponentInParent<Animator>();
+            _currentAnimator.SetBool("IsClik", true);
+            UIManager.Intance.loadTrigger.Anim = _currentAnimator;
+            UIManager.Intance.loadTrigger.LoadNum = SceneManagers.Inatnce.NextScene();
+            UIManager.Intance.PopUpOn = true;
+            if (_dataSO.StageClear < 9)
+            {
+                _dataSO.StageClear = SceneManagers.Inatnce.CurrentSceneLevel;
+            }
+            DataManger.Intance.SaveData();
+            SceneManagers.Inatnce.CurrentSceneLevel++;
 
-        HideBtn3();
+            HideBtn3();
+            isEnd = false;  
+        }
     }
 
     internal void ShowLast()
@@ -72,26 +82,31 @@ public class ClearUI : MonoBehaviour
          Append(_btn[0].GetComponent<RectTransform>().transform.DOMoveX(950f, 0.3f))
          .Append(_btn[1].GetComponent<RectTransform>().transform.DOMoveX(950f, 0.3f)).
          Append(_clearBackground.GetComponent<RectTransform>().transform.DOMoveX(960f, 0.2f))
-         .AppendCallback(() => Time.timeScale = 0);
+         .AppendCallback(() => ClearUIEnd());
     }
 
     public void SelectLevel()
     {
-        UIManager.Intance.isClearColor = false;
-        UIManager.Intance.isClearNoColor = false;
-        _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponentInParent<Animator>();
-        _currentAnimator.SetBool("IsClik", true);
-        UIManager.Intance.loadTrigger.Anim = _currentAnimator;
-        UIManager.Intance.loadTrigger.LoadNum = 1;
-        if (_dataSO.StageClear < 9)
+        if (isEnd)
         {
-            _dataSO.StageClear = SceneManagers.Inatnce.CurrentSceneLevel;
+
+            UIManager.Intance.isClearColor = false;
+            UIManager.Intance.isClearNoColor = false;
+            _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponentInParent<Animator>();
+            _currentAnimator.SetBool("IsClik", true);
+            UIManager.Intance.loadTrigger.Anim = _currentAnimator;
+            UIManager.Intance.loadTrigger.LoadNum = 1;
+            if (_dataSO.StageClear < 9)
+            {
+                _dataSO.StageClear = SceneManagers.Inatnce.CurrentSceneLevel;
+            }
+            UIManager.Intance.PopUpOn = true;
+            UIManager.Intance.StageUI.SetActive(false);
+
+
+            HideBtn3();
+            isEnd = false;
         }
-        UIManager.Intance.PopUpOn = true;
-        UIManager.Intance.StageUI.SetActive(false);
-
-
-        HideBtn3();
     }
 
     public void HideBtn2()
