@@ -10,8 +10,9 @@ public class PauseUI : MonoBehaviour
     [SerializeField] private GameObject _stageUI;
     [SerializeField] private GameObject _pauseUI;
     private Animator _currentAnimator;
-    private BtnLoadAnim _loadTrigger;
+    [SerializeField] private BtnLoadAnim _loadTrigger;
     private BtnGameObjeAnim _gameObjTrigger;
+    [SerializeField] private Animator _popUpAniamtor;
 
     private void Awake()
     {
@@ -32,10 +33,10 @@ public class PauseUI : MonoBehaviour
     public void LevelSelectButtonClik()
     {
         _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponentInParent<Animator>();
-        _loadTrigger = EventSystem.current.currentSelectedGameObject.GetComponentInParent<BtnLoadAnim>();
         _currentAnimator.SetBool("IsClik", true);
         _loadTrigger.Anim = _currentAnimator;
         _loadTrigger.LoadNum = 1;
+        _popUpAniamtor.SetBool("PopUp", true);
         _stageUI.SetActive(false);
         _pauseUI.SetActive(false);
         Time.timeScale = 1;
@@ -46,10 +47,10 @@ public class PauseUI : MonoBehaviour
     {
 
         _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponentInParent<Animator>();
-        _loadTrigger = EventSystem.current.currentSelectedGameObject.GetComponentInParent<BtnLoadAnim>();
         _currentAnimator.SetBool("IsClik", true);
         _loadTrigger.Anim = _currentAnimator;
         _loadTrigger.LoadNum = 0;
+        _popUpAniamtor.SetBool("PopUp", true);
         _pauseUI.SetActive(false);
         _stageUI.SetActive(false);
         Time.timeScale = 1;
