@@ -10,7 +10,6 @@ public class MenuUI : MonoBehaviour
 
     [SerializeField] private GameObject _settingUI;
     [SerializeField] private GameObject _main;
-    [SerializeField] private Animator _animator;
     private Animator _currentAnimator;
    private BtnGameObjeAnim _gameObjTrigger;
     public void LevelButtonClik()

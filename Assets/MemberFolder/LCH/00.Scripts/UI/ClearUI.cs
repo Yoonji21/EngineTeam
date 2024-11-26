@@ -12,9 +12,7 @@ public class ClearUI : MonoBehaviour
     [SerializeField] private GameObject _settingUI;
     [SerializeField] private GameObject _clearUI;
     private Animator _currentAnimator;
-    [SerializeField] private BtnLoadAnim _loadTrigger;
     private BtnGameObjeAnim _gameObjTrigger;
-    [SerializeField] private Animator _popUpAniamtor;
 
     public GameObject _clearShowUI;
     public GameObject _clearBackground;
@@ -46,9 +44,9 @@ public class ClearUI : MonoBehaviour
         _clearUI.SetActive(false);
         _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponentInParent<Animator>();
         _currentAnimator.SetBool("IsClik", true);
-        _loadTrigger.Anim = _currentAnimator;
-        _loadTrigger.LoadNum = SceneManagers.Inatnce.NextScene();
-        _popUpAniamtor.SetBool("PopUp", true);
+        UIManager.Intance.loadTrigger.Anim = _currentAnimator;
+        UIManager.Intance.loadTrigger.LoadNum = SceneManagers.Inatnce.NextScene();
+        UIManager.Intance.PopUpOn = true;
         if (_dataSO.StageClear < 9)
         {
             _dataSO.StageClear = SceneManagers.Inatnce.CurrentSceneLevel;
@@ -65,8 +63,8 @@ public class ClearUI : MonoBehaviour
         _clearUI.SetActive(false);
         _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponentInParent<Animator>();
         _currentAnimator.SetBool("IsClik", true);
-        _loadTrigger.Anim = _currentAnimator;
-        _loadTrigger.LoadNum = 1;
+        UIManager.Intance.loadTrigger.Anim = _currentAnimator;
+        UIManager.Intance.loadTrigger.LoadNum = SceneManagers.Inatnce.NextScene();
         if (_dataSO.StageClear < 9)
         {
             _dataSO.StageClear = SceneManagers.Inatnce.CurrentSceneLevel;
