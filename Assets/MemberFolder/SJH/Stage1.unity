@@ -696,6 +696,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3712
   respawn: {fileID: 261810303}
+  isToadstoolContorrl: 0
 --- !u!4 &80117358
 Transform:
   m_ObjectHideFlags: 0
@@ -1239,6 +1240,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3712
   respawn: {fileID: 261810303}
+  isToadstoolContorrl: 0
 --- !u!4 &246399996
 Transform:
   m_ObjectHideFlags: 0
@@ -30918,6 +30920,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3712
   respawn: {fileID: 261810303}
+  isToadstoolContorrl: 0
 --- !u!4 &1850992059
 Transform:
   m_ObjectHideFlags: 0
@@ -33051,6 +33054,8 @@ MonoBehaviour:
   _dataSO: {fileID: 11400000, guid: 1549d5ccdcec4e7468f82d235ca1a4cd, type: 2}
   _settingUI: {fileID: 0}
   _clearUI: {fileID: 0}
+  _clearShowUI: {fileID: 0}
+  _btn: []
 --- !u!4 &3260917710489380457
 Transform:
   m_ObjectHideFlags: 0
@@ -33182,7 +33187,6 @@ MonoBehaviour:
   <_jumpPower>k__BackingField: 12
   isSwithingPlayer: 1
   stateMachine: {fileID: 0}
-  isExitDoor: 0
   _artifact: {fileID: 4903421222893929185}
 --- !u!114 &3616230927025352734
 MonoBehaviour:

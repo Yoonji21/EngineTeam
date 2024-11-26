@@ -7,6 +7,7 @@ public class StageUI : MonoBehaviour
 {
     [SerializeField] private GameObject _stageUI;
     [SerializeField] private GameObject _pauseUI;
+    [SerializeField] private GameObject _InGameTip;
 
     private void Awake()
     {
@@ -21,6 +22,12 @@ public class StageUI : MonoBehaviour
     {
         _stageUI.SetActive(false);
         _pauseUI.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void InGameBtnClik()
+    {
+        _InGameTip.SetActive(true);
         Time.timeScale = 0;
     }
 }
