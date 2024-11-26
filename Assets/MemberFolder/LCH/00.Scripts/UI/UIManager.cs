@@ -9,21 +9,24 @@ public class UIManager : MonoBehaviour
 
     public bool isClearColor;
     public bool isClearNoColor;
+    public bool PopUpOn;
+    public bool PlayerInput = true;
 
-    [SerializeField] private GameObject _clearUiOpen;
-    [SerializeField] private GameObject _lastStageClear;
+    [field: SerializeField] public GameObject settingUI;
+    [SerializeField] private ClearUI _clearUi;
+    [SerializeField] private ClearUI _lastStageClear;
     [SerializeField] public GameObject StageUI;
     [SerializeField] private TextMeshProUGUI _stageText;
-    [SerializeField] private TextMeshProUGUI _lastStageText;
+    [field:SerializeField] public BtnLoadAnim loadTrigger;
 
     private void Awake()
     {
         if (Intance == null)
+        {
             Intance = this;
+        }
         else
             Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
@@ -32,14 +35,23 @@ public class UIManager : MonoBehaviour
         {
             if(SceneManagers.Inatnce.CurrentSceneLevel < 10)
             {
-                _stageText.text = $"Stage {SceneManagers.Inatnce.CurrentSceneLevel} Clear";
-                _clearUiOpen.SetActive(true);
+                _stageText.text = $"Level {SceneManagers.Inatnce.CurrentSceneLevel} Clear";
+                _clearUi.Show();
+                isClearColor = false;
+                isClearNoColor = false;
             }
             else
             {
-                _lastStageText.text = $"Stage {SceneManagers.Inatnce.CurrentSceneLevel} Clear";
-                _lastStageClear.SetActive(true);
+                _stageText.text = $"Level {SceneManagers.Inatnce.CurrentSceneLevel} Clear";
+                _lastStageClear.ShowLast();
+                isClearColor = false;
+                isClearNoColor = false;
             }
+            PlayerInput = false;
+        }
+        else
+        {
+            PlayerInput = true;
         }
     }
 

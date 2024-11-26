@@ -7,10 +7,10 @@ using UnityEngine;
 public class ChromatiColor : Player,ISwitchingPlayer
 {
     private GameObject[] _invisibleObjs;
-    public bool isExitDoor = false;
     [SerializeField] private GameObject _artifact;
 
     private Entity _entity;
+    private bool isStart;
 
     protected override void AfterInit()
     {
@@ -37,6 +37,7 @@ public class ChromatiColor : Player,ISwitchingPlayer
 
     private void Start()
     {
+        isStart = true;
         SwitchingPlayer();
     }
 
@@ -102,13 +103,17 @@ public class ChromatiColor : Player,ISwitchingPlayer
 
     public void MyPlayer(GameObject UI, SpriteRenderer playerVisual, GameObject mybackGround, Rigidbody2D rbcompo, CinemachineVirtualCamera vCam, BoxCollider2D boxCollider,  GameObject myArtifact)
     {
-        UI.SetActive(true);
+        if (!isStart)
+        {
+            UI.SetActive(true);
+        }
         playerVisual.enabled = false;
         mybackGround.SetActive(false);
         rbcompo.bodyType = RigidbodyType2D.Static;
         vCam.Follow = null;
         boxCollider.isTrigger = true;
         myArtifact.SetActive(false);
+        isStart = false;   
     }
 
     public void SwithinPlayerType(Player swithingPlayer, SpriteRenderer playerVisual, GameObject mybackGround, Rigidbody2D rbcompo, CinemachineVirtualCamera vCam, BoxCollider2D boxCollider, GameObject myArtifact)

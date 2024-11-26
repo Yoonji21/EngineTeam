@@ -70,7 +70,7 @@ public abstract class Player : Entity
 
     protected void HandheldJump()
     {
-        if (MovementCompo.IsGrounded)
+        if (MovementCompo.IsGrounded || IsPushObj())
         {
             stateMachine.ChangeState("Jump");
         }
@@ -90,6 +90,14 @@ public abstract class Player : Entity
    protected virtual void Update()
     {
         stateMachine.currentState.Update();
+        if (!UIManager.Intance.PlayerInput)
+        {
+            InputCompo._playerInputAction.Disable();
+        }
+        else
+        {
+            InputCompo._playerInputAction.Enable();
+        }
     }
 
     public EntityState GetState(string state) => stateMachine.GetState(state);

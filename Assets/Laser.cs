@@ -14,7 +14,7 @@ public class Laser : MonoBehaviour
 
     [SerializeField] private Respawn respawn;
 
-
+    public bool isToadstoolContorrl;
 
     private void Update()
     {

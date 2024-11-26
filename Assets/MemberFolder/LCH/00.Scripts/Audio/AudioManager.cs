@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-
     public static AudioManager Intacne;
     public AudioMixer _audioMixer;
 
-    public AudioSource _audioSource;
-    //public Slider _slider;
+    public AudioSource _BGMSource;
+    public AudioSource _SFXSource;
+    private Animator _currentAnimator;
+    private BtnAnim _animTrigger;
 
     public bool isOn = false;
 
@@ -27,28 +29,36 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
         
-        DontDestroyOnLoad(gameObject);
-        _audioSource.Play();
+        _BGMSource.Play();
     }
 
-
-    public void AudioControl(float sound)
+    public void BGMControl(float sound)
     {
-        _audioSource.volume = sound;
+        _BGMSource.volume = sound;
+    }
+    
+    public void SFXControl(float sound)
+    {
+        _SFXSource.volume = sound;
     }
 
     public void MuteSound()
     {
-
+        _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponent<Animator>();
+        _animTrigger = EventSystem.current.currentSelectedGameObject.GetComponent<BtnAnim>();
+        _currentAnimator.SetBool("IsClik", true);
+        _animTrigger.Anim = _currentAnimator;
         if (!isOn)
         {
-            _audioSource.mute = true;
+            _BGMSource.mute = true;
+            _SFXSource.mute = true;
             isOn = true;
         }
 
         else if (isOn)
         {
-            _audioSource.mute = false;
+            _BGMSource.mute = false;
+            _SFXSource.mute = false;
             isOn = false;
         }
 

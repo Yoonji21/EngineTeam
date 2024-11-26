@@ -2,26 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using System;
 
 public class MenuUI : MonoBehaviour
 {
-
-    [SerializeField] private GameObject _settingUI;
     [SerializeField] private GameObject _main;
-
-	public void LevelButtonClik()
+    private Animator _currentAnimator;
+   private BtnGameObjeAnim _gameObjTrigger;
+    public void LevelButtonClik()
     {
-        SceneManager.LoadScene(1);
+        _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponent<Animator>();
+        _currentAnimator.SetBool("IsClik", true);
+        UIManager.Intance.loadTrigger.Anim = _currentAnimator;
+        UIManager.Intance.PopUpOn = true;
+        UIManager.Intance.loadTrigger.LoadNum = 1;
     }
 
     public void ExitGame()
     {
-        DataManger.Intance.SaveData();
-        Application.Quit();
+        _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponent<Animator>();
+        _currentAnimator.SetBool("IsClik", true);
     }
 
     public void SettingBtn()
     {
-        _settingUI.SetActive(true);
+
+        _currentAnimator = EventSystem.current.currentSelectedGameObject.GetComponent<Animator>();
+        _gameObjTrigger = EventSystem.current.currentSelectedGameObject.GetComponent<BtnGameObjeAnim>();
+        _currentAnimator.SetBool("IsClik", true);
+        _gameObjTrigger.Anim = _currentAnimator;
+        _gameObjTrigger.OnUI = UIManager.Intance.settingUI;
+        _gameObjTrigger.OffUI = _main;
     }
 }

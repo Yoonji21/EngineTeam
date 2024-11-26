@@ -14,8 +14,6 @@ public class SceneManagers : MonoBehaviour
             Inatnce = this;
         else
             Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
     }
 
     public int NextScene()
