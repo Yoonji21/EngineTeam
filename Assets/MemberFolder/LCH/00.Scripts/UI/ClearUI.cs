@@ -24,14 +24,6 @@ public class ClearUI : MonoBehaviour
         DOTween.Init();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Show();
-        }
-    }
-
     public void Show()
     {
         var seq = DOTween.Sequence();
