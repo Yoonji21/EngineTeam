@@ -69,7 +69,15 @@ public class ClearUI : MonoBehaviour
             DataManger.Intance.SaveData();
             SceneManagers.Inatnce.CurrentSceneLevel++;
 
-            HideBtn3();
+            if(_btn.Count >= 3)
+            {
+                HideBtn3();
+            }
+            else
+            {
+                HideBtn2();
+            }
+
             isEnd = false;  
         }
     }
@@ -103,8 +111,14 @@ public class ClearUI : MonoBehaviour
             UIManager.Intance.PopUpOn = true;
             UIManager.Intance.StageUI.SetActive(false);
 
-
-            HideBtn3();
+            if (_btn.Count >= 3)
+            {
+                HideBtn3();
+            }
+            else
+            {
+                HideBtn2();
+            }
             isEnd = false;
         }
     }
