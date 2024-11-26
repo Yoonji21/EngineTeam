@@ -147,8 +147,6 @@ public class ClearUI : MonoBehaviour
         _gameObjTrigger = EventSystem.current.currentSelectedGameObject.GetComponentInParent<BtnGameObjeAnim>();
         _currentAnimator.SetBool("IsClik", true);
         _gameObjTrigger.Anim = _currentAnimator;
-        _gameObjTrigger.OnUI = _settingUI;
-        _gameObjTrigger.OffUI = _clearUI;
     }
 }
 

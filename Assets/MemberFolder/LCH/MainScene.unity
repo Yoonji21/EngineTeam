@@ -2216,8 +2216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5340d717d83458641a28ddcf2d3a1f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnUI: {fileID: 0}
-  OffUI: {fileID: 0}
+  OnUI: {fileID: 5872302185057830841}
+  OffUI: {fileID: 428247085}
   Anim: {fileID: 0}
 --- !u!1 &822678975
 GameObject:
@@ -10331,8 +10331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5340d717d83458641a28ddcf2d3a1f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnUI: {fileID: 0}
-  OffUI: {fileID: 0}
+  OnUI: {fileID: 5872302185057830841}
+  OffUI: {fileID: 428247085}
   Anim: {fileID: 0}
 --- !u!95 &7140338657553610212
 Animator:
